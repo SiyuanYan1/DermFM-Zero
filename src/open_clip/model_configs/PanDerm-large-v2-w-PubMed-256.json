@@ -1,0 +1,16 @@
+{
+    "embed_dim": 768,
+    "vision_cfg": {
+        "image_size": 224,
+        "layers": 12,
+        "width": 768,
+        "patch_size": 16,
+        "pretrain_path": "/mnt/hdd/sdd/xieji/model_weight/panderm-large-v2-vit.pth"
+    },
+    "text_cfg": {
+        "context_length": 256,
+        "hf_model_name": "neuml/pubmedbert-base-embeddings",
+        "hf_tokenizer_name": "neuml/pubmedbert-base-embeddings",
+        "hf_pooler_type": "mean_pooler"
+    }
+}

@@ -30,6 +30,101 @@ try:
 except ImportError:
     hvd = None
 
+class BalancedSampler(Sampler):
+    def __init__(self, source_indices, batch_size, total_samples_per_epoch, shuffle=True, sample_ratios=None):
+        self.source_indices = source_indices
+        self.sources = list(source_indices.keys())
+        self.shuffle = shuffle
+        self.batch_size = batch_size
+        self.total_samples_per_epoch = total_samples_per_epoch
+
+        num_sources = len(self.sources)
+        if num_sources == 0:
+            raise ValueError("Number of sources must be greater than 0")
+
+        if sample_ratios is None:
+            logging.info('Enable source balanced sampling with non sample ratios')
+
+            # Distribute batch size among sources
+            base_samples, remainder = divmod(self.batch_size, num_sources)
+            self.samples_per_source = {
+                source: base_samples + (1 if i < remainder else 0)
+                for i, source in enumerate(self.sources)
+            }
+        else:
+            logging.info(f'Enable source balanced sampling with sample ratios {sample_ratios}')
+
+            # Convert command line string to dict
+            if isinstance(sample_ratios, str):
+                sample_ratios = json.loads(sample_ratios)
+
+            self.samples_per_source = {
+                source: int(self.batch_size * ratio)
+                for source, ratio in sample_ratios.items()
+            }
+            # Handle remainder
+            assigned = sum(self.samples_per_source.values())
+            remainder = self.batch_size - assigned
+            for i, source in enumerate(self.sources):
+                if remainder <= 0:
+                    break
+                self.samples_per_source[source] += 1
+                remainder -= 1
+
+        # Prepare indices per source
+        self.indices_per_source = {
+            source: indices.copy()
+            for source, indices in source_indices.items()
+        }
+
+        # Shuffle indices if required
+        if self.shuffle:
+            for indices in self.indices_per_source.values():
+                random.shuffle(indices)
+
+        # Initialize iterators for each source
+        self.iterators = {
+            source: iter(indices)
+            for source, indices in self.indices_per_source.items()
+        }
+
+        # Calculate number of batches needed to reach total_samples_per_epoch
+        self.num_batches = (self.total_samples_per_epoch + self.batch_size - 1) // self.batch_size
+
+    def __iter__(self):
+        samples_yielded = 0
+        total_samples = self.total_samples_per_epoch
+        for _ in range(self.num_batches):
+            batch = []
+            for source in self.sources:
+                num_samples = self.samples_per_source[source]
+                if num_samples == 0:
+                    continue
+                indices = []
+                for _ in range(num_samples):
+                    try:
+                        idx = next(self.iterators[source])
+                    except StopIteration:
+                        # Re-shuffle and restart iterator if exhausted
+                        if self.shuffle:
+                            random.shuffle(self.indices_per_source[source])
+                        self.iterators[source] = iter(self.indices_per_source[source])
+                        idx = next(self.iterators[source])
+                    indices.append(idx)
+                batch.extend(indices)
+            if self.shuffle:
+                random.shuffle(batch)
+            # Trim batch if it exceeds total_samples_per_epoch
+            if samples_yielded + len(batch) > total_samples:
+                batch = batch[:total_samples - samples_yielded]
+            samples_yielded += len(batch)
+            yield batch
+            if samples_yielded >= total_samples:
+                break
+
+    def __len__(self):
+        return self.num_batches
+
 class CsvDataset(Dataset):
     def __init__(self, input_filename, transforms, img_key, caption_key, sep="\t", tokenizer=None):
         logging.debug(f'Loading csv data from {input_filename}.')
@@ -461,17 +556,37 @@ def get_csv_dataset(args, preprocess_fn, is_train, epoch=0, tokenizer=None):
     )
     num_samples = len(dataset)
 
-    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
-    shuffle = is_train and sampler is None
-    dataloader = DataLoader(
-        dataset,
-        batch_size=args.batch_size,
-        shuffle=shuffle,
-        num_workers=args.workers,
-        pin_memory=False,
-        sampler=sampler,
-        drop_last=is_train,
-    )
+    if args.sample_stratagy == 'default' or is_train == False:
+        sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+        shuffle = is_train and sampler is None
+        dataloader = DataLoader(
+            dataset,
+            batch_size=args.batch_size,
+            shuffle=shuffle,
+            num_workers=args.workers,
+            pin_memory=False,
+            sampler=sampler,
+            drop_last=is_train,
+        )
+    elif args.sample_stratagy == 'source_balanced':
+        source_indices = {}
+        for idx, source in enumerate(dataset.sources):
+            source_indices.setdefault(source, []).append(idx)
+
+        sampler = BalancedSampler(
+            source_indices=source_indices,
+            batch_size=args.batch_size,
+            shuffle=is_train,
+            total_samples_per_epoch=num_samples,
+            sample_ratios=args.sample_ratios
+        )
+
+        dataloader = DataLoader(
+            dataset,
+            batch_sampler=sampler,  # Use 'batch_sampler' since sampler yields batches
+            num_workers=args.workers,
+            pin_memory=False,
+        )
 
     dataloader.num_samples = num_samples
     dataloader.num_batches = len(dataloader)

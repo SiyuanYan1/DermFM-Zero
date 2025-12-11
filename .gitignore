@@ -223,5 +223,7 @@ zero-shot-logs/
 linear-probing-logs/
 *activations_img/
 automated-concept-discovery-result/
+wandb/
+multi-skin-modality-finetune-result/
+.vscode/
 multimodal_finetune-result/
-multimodal_finetune/wandb

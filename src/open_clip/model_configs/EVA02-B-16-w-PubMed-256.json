@@ -1,0 +1,16 @@
+{
+    "embed_dim": 512,
+    "vision_cfg": {
+        "image_size": 224,
+        "timm_model_name": "eva02_base_patch16_clip_224",
+        "timm_model_pretrained": false,
+        "timm_pool": "token",
+        "timm_proj": null
+    },
+    "text_cfg": {
+        "context_length": 256,
+        "hf_model_name": "neuml/pubmedbert-base-embeddings",
+        "hf_tokenizer_name": "neuml/pubmedbert-base-embeddings",
+        "hf_pooler_type": "mean_pooler"
+    }
+}
