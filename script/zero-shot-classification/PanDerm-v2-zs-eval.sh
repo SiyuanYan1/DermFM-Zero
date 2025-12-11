@@ -1,5 +1,3 @@
-conda activate PanDerm-v2
-
 # Disease Classification
 python src/main.py \
    --val-data=""  \
