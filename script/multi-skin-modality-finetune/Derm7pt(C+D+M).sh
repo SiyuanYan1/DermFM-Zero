@@ -1,0 +1,47 @@
+CUDA_VISIBLE_DEVICES=2 python train.py \
+    --model_name 'PanDerm-v2' \
+    --dataset_name 'Derm7pt' \
+    --dir_release "../meta-files/multi-modality-finetune/derm7pt/" \
+    --epochs 50 \
+    --batch_size 32 \
+    --accum_freq 2 \
+    --hidden_dim 1024 \
+    --learning_rate 1e-5 \
+    --cuda True \
+    --use_derm \
+    --use_cli \
+    --use_meta \
+    --use_text_encoder \
+    --meta_dim 768 \
+    --num_head 8 \
+    --att_depth 2 \
+    --meta_num_head 8 \
+    --meta_att_depth 4 \
+    --fusion 'cross attention' \
+    --meta_fusion_mode 'cross attention' \
+    --encoder_pool 'mean' \
+    --out 'mlp' \
+    --output_dir '../multi-skin-modality-finetune-result/derm7pt/PanDermv2/'
+
+CUDA_VISIBLE_DEVICES=2 python test.py \
+    --model_name 'PanDerm-v2' \
+    --dataset_name 'Derm7pt' \
+    --dir_release "../meta-files/multi-modality-finetune/derm7pt/" \
+    --epochs 50 \
+    --batch_size 32 \
+    --hidden_dim 1024 \
+    --cuda True \
+    --use_derm \
+    --use_cli \
+    --use_meta \
+    --use_text_encoder \
+    --meta_dim 768 \
+    --num_head 8 \
+    --att_depth 2 \
+    --meta_num_head 8 \
+    --meta_att_depth 4 \
+    --fusion 'cross attention' \
+    --meta_fusion_mode 'cross attention' \
+    --encoder_pool 'mean' \
+    --out 'mlp' \
+    --output_dir '../multi-skin-modality-finetune-result/derm7pt/PanDermv2/'
