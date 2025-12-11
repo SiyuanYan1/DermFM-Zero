@@ -19,11 +19,11 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
     --patience 25 \
     --monitor 'loss' \
     --weight_sampler \
-    --output_dir '../multi-skin-modality-finetune-result/MILK-11/PanDerm-v2_weighted_sampler/'
+    --output_dir '../multimodal_finetune-result/MILK-11/PanDerm-v2_weighted_sampler/'
 
 CUDA_VISIBLE_DEVICES=0 python test.py \
     --model_name 'PanDerm-v2' \
-    --model_path '../multi-skin-modality-finetune-result/MILK-11/PanDerm-v2_weighted_sampler/bestvalloss_model_21.pth' \
+    --model_path '../multimodal_finetune-result/MILK-11/PanDerm-v2_weighted_sampler/bestvalloss_model_21.pth' \
     --dataset_name 'MILK-11' \
     --class_num 11 \
     --epochs 50 \
@@ -37,4 +37,4 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
     --fusion 'cross attention' \
     --encoder_pool 'mean' \
     --out 'mlp' \
-    --output_dir '../multi-skin-modality-finetune-result/MILK-11/PanDerm-v2_weighted_sampler/'
+    --output_dir '../multimodal_finetune-result/MILK-11/PanDerm-v2_weighted_sampler/'
