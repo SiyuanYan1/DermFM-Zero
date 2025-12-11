@@ -12,5 +12,4 @@ python export_visual_features.py \
 python train_sae.py \
     --data Derm1M_v2 \
     --backbone PanDerm-v2 \
-    --save_dir '../automated-concept-discovery-result/SAE-embeddings/' \
-    --expansion 6
+    --save_dir '../automated-concept-discovery-result/SAE-embeddings/'

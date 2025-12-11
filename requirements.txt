@@ -24,3 +24,8 @@ pydantic
 einops
 strenum
 eval_type_backport
+prettytable
+seaborn
+pillow_heif
+albumentations==0.4.6
+numpy<2.0

@@ -23,7 +23,7 @@ sys.path.insert(0, src_path)
 from src import open_clip
 
 def load_model_and_embeddings(sae_path, clip_model_name, clip_checkpoint_path, 
-                               project_root, device='cpu'):
+                             device='cpu'):
     """
     Load SAE dictionary vectors and CLIP model.
     
@@ -31,7 +31,6 @@ def load_model_and_embeddings(sae_path, clip_model_name, clip_checkpoint_path,
         sae_path: Path to the SAE autoencoder checkpoint
         clip_model_name: Name of the CLIP model architecture
         clip_checkpoint_path: Path to the CLIP model checkpoint
-        project_root: Root directory of the project (for importing modules)
         device: Device to load models on ('cpu' or 'cuda')
     
     Returns:
@@ -296,7 +295,6 @@ def main():
             args.sae_checkpoint, 
             args.clip_model_name, 
             args.clip_checkpoint,
-            args.project_root,
             args.device
         )
         
