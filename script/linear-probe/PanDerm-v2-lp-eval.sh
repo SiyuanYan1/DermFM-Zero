@@ -1,11 +1,41 @@
 #!/bin/bash
 #rm -r linear_probing_logs/*
+
+################################################################################
+# MODELS CONFIGURATION - PanDerm-2(From huggingface API)
+################################################################################
 models=('open_clip_hf-hub:redlessone/PanDerm2')
 declare -A checkpoints=(
 )
 
-percent_data_values=(0.1 0.3 0.5 1)
+################################################################################
+# DATA PERCENTAGES
+################################################################################
+# Percentage of training data to use for evaluation
+# Tests model performance with varying amounts of labeled data
+# Values: 0.0-1.0, where 1.0 = 100% of training data
+# 
+# Example:
+#   0.1  = 10% of training data (few-shot scenario)
+#   0.3  = 30% of training data
+#   0.5  = 50% of training data
+#   1.0  = 100% of training data (full supervision)
+percent_data_values=(0.1 0.3 0.5 1.0) 
+
+################################################################################
+# DATASETS CONFIGURATION
+################################################################################
+# Dataset names (used for logging and organization)
+# Each dataset should have a corresponding CSV metadata file
 datasets=('HAM' 'PAD' 'SD128' 'ISIC2020')
+
+# CSV metadata paths for each dataset
+# Each CSV should contain columns:
+#   - image_path: Image paths
+#   - label: Labels/classes
+#   - split: train/val/test
+# 
+# Format: One-to-one correspondence with 'datasets' array
 csv_paths=(
   'data/linear_probe/HAM-official-7-lp.csv'
   'data/linear_probe/pad-lp-ws0.csv'

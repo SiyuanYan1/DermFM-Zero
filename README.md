@@ -160,6 +160,31 @@ Discover interpretable concepts from dermatology images using Sparse Autoencoder
 **Usage (Clinical Malignant Classification as Example):**
 
 *You can also use: `bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh`*
+
+<details>
+<summary>Key Hyperparameters</summary>
+
+**Step2: Feature Extraction ([`export_visual_features.py`](src/export_visual_features.py)):**
+- `--model_name`: Model path (e.g., `hf-hub:redlessone/PanDerm2`)
+- `--batch_size`: Processing batch size (default: 2048, reduce if OOM)
+- `--num_workers`: Data loading workers (default: 16)
+- `--device`: `cuda` or `cpu`
+
+**Step3: SAE Activation Extraction ([`0_extract_sae_activations.py`](automated-concept-discovery/0_extract_sae_activations.py)):**
+- `--checkpoint`: Path to pre-trained SAE weights
+- `--embeddings`: Input visual features (.npy file)
+- `--output`: Output path for SAE activations
+
+**Step4: Classifier Training ([`1_train_clf_binary-class.py`](automated-concept-discovery/3_train_biased-cbm_binary-class.py)):**
+- `--embeddings`: Input features (SAE activations or raw embeddings)
+- `--csv`: Metadata with labels and splits
+- `--gpu`: GPU device ID
+- `--output`: Directory for saving model and results
+
+**Note:** Use SAE activations for interpretable CBM, or raw embeddings for baseline comparison.
+
+</details>
+
 ```bash
 # Quick Start: Use pre-configured script
 bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh
@@ -201,9 +226,9 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 
 Validate CBM effectiveness and interpretability through various experiments:
 
-- **Concept Intervention**: Scripts in `script/automated-concept-discovery/ISIC-intervention/` for testing concept manipulation effects
-- **Global Explanation**: Tools in `automated-concept-discovery/global-explanation/` for visualizing learned concepts
-- **Concept Retrieval**: Scripts in `automated-concept-discovery/concept-retrieval/` for analyzing and retrieving concept patterns
+- **Concept Intervention**: Scripts in [this folder](script/automated-concept-discovery/ISIC-intervention/) for testing concept manipulation effects
+- **Global Explanation**: Tools in [this folder](automated-concept-discovery/global-explanation/) for visualizing learned concepts
+- **Concept Retrieval**: Scripts in [this folder](automated-concept-discovery/concept-retrieval/) for analyzing and retrieving concept patterns
 
 **Available Datasets:**
 - Clinical Malignant Classification
