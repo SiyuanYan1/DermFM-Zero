@@ -2,8 +2,8 @@ cd src
 # extract visual feature for malignancy dataset
 python export_visual_features.py \
     --model_name hf-hub:redlessone/PanDerm2 \
-    --csv_path ../meta-files/automated-concept-discovery/clinical-malignant/meta.csv \
-    --data_root ../meta-files/automated-concept-discovery/clinical-malignant/final_images/ \
+    --csv_path ../data/automated-concept-discovery/clinical-malignant/meta.csv \
+    --data_root ../data/automated-concept-discovery/clinical-malignant/final_images/ \
     --img_col 'ImageID' \
     --batch_size 2048 \
     --num_workers 16 \
@@ -26,17 +26,17 @@ python automated-concept-discovery/0_extract_sae_activations.py \
 
 # build CBM based on SAE concept
 python automated-concept-discovery/1_train_clf_binary-class.py \
-  --csv meta-files/automated-concept-discovery/clinical-malignant/meta.csv \
+  --csv data/automated-concept-discovery/clinical-malignant/meta.csv \
   --embeddings automated-concept-discovery-result/clinical-malignant/learned_activation.npy \
   --image_col ImageID \
-  --image_dir meta-files/automated-concept-discovery/clinical-malignant/final_images \
+  --image_dir data/automated-concept-discovery/clinical-malignant/final_images \
   --gpu 2 \
   --output automated-concept-discovery-result/clinical-malignant/
 
 # build classifier based on vision feature
 python automated-concept-discovery/1_train_clf_binary-class.py \
-  --csv meta-files/automated-concept-discovery/clinical-malignant/meta.csv \
+  --csv data/automated-concept-discovery/clinical-malignant/meta.csv \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --image_col ImageID \
-  --image_dir meta-files/automated-concept-discovery/clinical-malignant/final_images \
+  --image_dir data/automated-concept-discovery/clinical-malignant/final_images \
   --gpu 2

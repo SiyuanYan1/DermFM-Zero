@@ -133,16 +133,16 @@ def main(options):
     elif dataset_name == 'MILK-11':
         meta_input_dim=10
         label_col = 'target'
-        train_dataset = MILK(df_path=f'../meta-files/multi-modality-finetune/MILK-11/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = MILK(df_path=f'../meta-files/multi-modality-finetune/MILK-11/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        test_dataset = MILK(df_path=f'../meta-files/multi-modality-finetune/MILK-11/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        train_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        test_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
         print(f"Training with MILK-11 dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
     elif dataset_name == 'PAD':
         meta_input_dim=49
         label_col = 'target'
-        train_dataset = PAD(df_path='../meta-files/multi-modality-finetune/PAD/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = PAD(df_path='../meta-files/multi-modality-finetune/PAD/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        test_dataset = PAD(df_path='../meta-files/multi-modality-finetune/PAD/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        train_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        test_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
         print(f"Training with PAD dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
     else:
         print(f"No implement for {dataset_name}")
@@ -548,7 +548,7 @@ OPTIONS = argparse.ArgumentParser()
 
 # # parse the input args
 OPTIONS.add_argument('--epochs',dest='epochs',type=int,default=50)
-OPTIONS.add_argument('--dir_release',dest='dir_release',type=str,default="../meta-files/multi-modality-finetune/derm7pt/") # This argument is only used for Derm7PT
+OPTIONS.add_argument('--dir_release',dest='dir_release',type=str,default="../data/multimodal_finetune/derm7pt/") # This argument is only used for Derm7PT
 OPTIONS.add_argument('--pretrain_path',dest='pretrain_path',type=str,
                      default=None)
 OPTIONS.add_argument('--model_name',dest='model_name',type=str,

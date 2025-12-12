@@ -216,7 +216,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Customized
-meta-files/
+data/
 logs/
 linear_probe/linear_probing_logs/
 zero-shot-logs/
@@ -227,3 +227,4 @@ wandb/
 multi-skin-modality-finetune-result/
 .vscode/
 multimodal_finetune-result/
+data/

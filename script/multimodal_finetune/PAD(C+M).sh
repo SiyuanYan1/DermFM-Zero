@@ -24,7 +24,7 @@ CUDA_VISIBLE_DEVICES=2 python train.py \
 
 CUDA_VISIBLE_DEVICES=0 python test.py \
     --model_name 'PanDerm-v2' \
-    --model_path '..multimodal_finetune-result/PAD/PanDermv2/bestacc_model_19.pth' \
+    --model_path '../multimodal_finetune-result/PAD/PanDermv2/bestacc_model_19.pth' \
     --dataset_name 'PAD' \
     --class_num 6 \
     --epochs 50 \

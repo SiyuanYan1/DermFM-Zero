@@ -14,10 +14,10 @@ declare -A checkpoints=(
 percent_data_values=(0.1 0.3 0.5 1)
 datasets=('HAM' 'PAD' 'SD128' 'ISIC2020')
 csv_paths=(
-  'meta-files/lp/HAM-official-7-lp.csv'
-  'meta-files/lp/pad-lp-ws0.csv'
-  'meta-files/lp/sd-128.csv'
-  'meta-files/lp/isic2020-2-lp.csv'
+  'data/linear_probe/HAM-official-7-lp.csv'
+  'data/linear_probe/pad-lp-ws0.csv'
+  'data/linear_probe/sd-128.csv'
+  'data/linear_probe/isic2020-2-lp.csv'
 )
 
 for percent_data in "${percent_data_values[@]}"; do

@@ -129,12 +129,12 @@ def main(options):
     elif dataset_name == 'MILK-11':
         meta_input_dim=10
         label_col = 'target'
-        test_dataset = MILK(df_path=f'../meta-files/multi-modality-finetune/MILK-11/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        test_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
         print(f"Training with MILK-11 dataset: Test - {len(test_dataset)}")
     elif dataset_name == 'PAD':
         meta_input_dim=49
         label_col = 'target'
-        test_dataset = PAD(df_path='../meta-files/multi-modality-finetune/PAD/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
+        test_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
         print(f"Training with PAD dataset: Test - {len(test_dataset)}")
     else:
         print(f"No implement for {dataset_name}")
@@ -225,7 +225,7 @@ def main(options):
 OPTIONS = argparse.ArgumentParser()
 # # parse the input args
 OPTIONS.add_argument('--epochs',dest='epochs',type=int,default=100)
-OPTIONS.add_argument('--dir_release',dest='dir_release',type=str,default="../meta-files/multi-modality-finetune/derm7pt/")
+OPTIONS.add_argument('--dir_release',dest='dir_release',type=str,default="../data/multimodal_finetune/derm7pt/")
 OPTIONS.add_argument('--model_path',dest='model_path',type=str, default="./result/new_model.pth")
 OPTIONS.add_argument('--pretrain_path',dest='pretrain_path',type=str,
                      default=None)

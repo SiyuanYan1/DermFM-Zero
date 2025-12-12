@@ -2,16 +2,16 @@ cd src
 # PanDermv2 - Export image feature
 CUDA_VISIBLE_DEVICES=2 python export_visual_features.py \
   --model_name 'hf-hub:redlessone/PanDerm2' \
-  --csv ../meta-files/automated-concept-discovery/ISIC_hair_bias/train.csv \
+  --csv ../data/automated-concept-discovery/ISIC_hair_bias/train.csv \
   --img_col 'ImageID' \
-  --data_root ../meta-files/automated-concept-discovery/ISIC_hair_bias/final_images/ \
+  --data_root ../data/automated-concept-discovery/ISIC_hair_bias/final_images/ \
   --output ../automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/train/
 
 CUDA_VISIBLE_DEVICES=2 python export_visual_features.py \
   --model_name 'hf-hub:redlessone/PanDerm2' \
-  --csv ../meta-files/automated-concept-discovery/ISIC_hair_bias/test.csv \
+  --csv ../data/automated-concept-discovery/ISIC_hair_bias/test.csv \
   --img_col 'ImageID' \
-  --data_root ../meta-files/automated-concept-discovery/ISIC_hair_bias/final_images/ \
+  --data_root ../data/automated-concept-discovery/ISIC_hair_bias/final_images/ \
   --output ../automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/test/
 
 cd ..
@@ -28,11 +28,11 @@ python automated-concept-discovery/0_extract_sae_activations.py \
 
 # build CBM based on SAE concept
 python automated-concept-discovery/3_train_biased-cbm_binary-class.py \
-  --train_csv meta-files/automated-concept-discovery/ISIC_hair_bias/train.csv \
-  --test_csv meta-files/automated-concept-discovery/ISIC_hair_bias/test.csv \
+  --train_csv data/automated-concept-discovery/ISIC_hair_bias/train.csv \
+  --test_csv data/automated-concept-discovery/ISIC_hair_bias/test.csv \
   --train_embeddings automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/train/learned_activation.npy \
   --test_embeddings automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/test/learned_activation.npy \
-  --image_root '../meta-files/automated-concept-discovery/ISIC_hair_bias/final_images/' \
+  --image_root '../data/automated-concept-discovery/ISIC_hair_bias/final_images/' \
   --image_col 'ImageID' \
   --output 'automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/before-intervention'
 
@@ -50,9 +50,9 @@ python automated-concept-discovery/4_intervention_CBM.py \
 
 # build CBM based on SAE concept
 python automated-concept-discovery/3_train_biased-cbm_binary-class.py \
-  --train_csv meta-files/automated-concept-discovery/ISIC_hair_bias/train.csv \
-  --test_csv meta-files/automated-concept-discovery/ISIC_hair_bias/test.csv \
+  --train_csv data/automated-concept-discovery/ISIC_hair_bias/train.csv \
+  --test_csv data/automated-concept-discovery/ISIC_hair_bias/test.csv \
   --train_embeddings automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/train/learned_activation.npy \
   --test_embeddings automated-concept-discovery-result/ISIC_hair_bias/PanDermv2/test/learned_activation_after_intervention.npy \
-  --image_root '../meta-files/automated-concept-discovery/ISIC_hair_bias/final_images/' \
+  --image_root '../data/automated-concept-discovery/ISIC_hair_bias/final_images/' \
   --image_col 'ImageID'

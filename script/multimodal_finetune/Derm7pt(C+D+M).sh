@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=2 python train.py \
     --model_name 'PanDerm-v2' \
     --dataset_name 'Derm7pt' \
-    --dir_release "../meta-files/multi-modality-finetune/derm7pt/" \
+    --dir_release "../data/multimodal_finetune/derm7pt/" \
     --epochs 50 \
     --batch_size 32 \
     --accum_freq 2 \
@@ -27,7 +27,7 @@ CUDA_VISIBLE_DEVICES=2 python test.py \
     --model_name 'PanDerm-v2' \
     --model_path '../multimodal_finetune-result/derm7pt/PanDermv2/bestacc_model_33.pth' \
     --dataset_name 'Derm7pt' \
-    --dir_release "../meta-files/multi-modality-finetune/derm7pt/" \
+    --dir_release "../data/multimodal_finetune/derm7pt/" \
     --epochs 50 \
     --batch_size 32 \
     --hidden_dim 1024 \
