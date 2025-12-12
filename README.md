@@ -68,6 +68,7 @@ data/
 
 ## Running Evaluations
 
+<details>
 <summary><b>Zero-shot Classification</b></summary>
 
 Evaluate PanDerm-2 on multiple dermatology datasets using zero-shot classification:
@@ -92,6 +93,7 @@ python src/main.py \
    --csv-img-key image_path \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
+</details>
 
 
 <details>
