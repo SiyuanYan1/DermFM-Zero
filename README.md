@@ -131,7 +131,7 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 - **MILK**: Clinical + Dermoscopic  
 - **PAD-UFES-20**: Clinical + Metadata
 
-**Usage(Using Clinical Malignant Dataset as example, you also can choose bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh):**
+**Usage:**
 ```bash
 # Navigate to multimodal finetune directory
 cd multimodal_finetune
