@@ -26,7 +26,7 @@ conda create -n PanDerm-v2 python=3.9.20
 conda activate PanDerm-v2
 pip install -r requirements.txt
 ```
-Here is a [simple example](examples/zero-shot-classification.ipynb) to call PanDerm-2 to conduct **zero-shot disease classifcation**
+Here is a [simple example](examples/zero-shot-classification.ipynb) to call PanDerm-2 to conduct **zero-shot disease classification**
 
 ## Evaluation
 
