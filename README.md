@@ -134,13 +134,51 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 - **PAD-UFES-20**: Clinical + Metadata
 
 **Usage:**
+
+<details>
+<summary>Key Hyperparameters in the script</summary>
+
+**Basic Configuration:**
+- `--model_name`: Base model to finetune (e.g., `PanDerm-v2`)
+- `--dataset_name`: Target dataset (`Derm7pt`, `MILK-11`, `PAD`)
+- `--output_dir`: Directory to save checkpoints and results
+
+**Training Parameters:**
+- `--epochs`: Number of training epochs (default: 50)
+- `--batch_size`: Batch size per GPU (default: 32)
+- `--accum_freq`: Gradient accumulation steps (default: 2, effective batch = 64)
+- `--learning_rate`: Learning rate (default: 1e-5)
+
+**Model Architecture:**
+- `--hidden_dim`: Hidden dimension size (default: 1024)
+- `--meta_dim`: Metadata embedding dimension (default: 768)
+- `--num_head`: Number of attention heads for image fusion (default: 8)
+- `--att_depth`: Depth of attention layers for image fusion (default: 2)
+- `--meta_num_head`: Number of attention heads for metadata fusion (default: 8)
+- `--meta_att_depth`: Depth of attention layers for metadata (default: 4)
+- `--fusion`: Fusion method for images (`'cross attention'`, `'concatenate'`)
+- `--meta_fusion_mode`: Fusion method for metadata (`'cross attention'`, `'concatenate'`)
+- `--encoder_pool`: Pooling method for encoder features (`'mean'`)
+- `--out`: Output layer type (`'mlp'`, `'linear'`)
+
+**Modality Flags** (use flags to enable modalities):
+- `--use_cli`: Use clinical images
+- `--use_derm`: Use dermoscopic images
+- `--use_meta`: Use metadata (age, sex, location, etc.)
+- `--use_text_encoder`: Use text encoder for metadata
+
+**Testing Only:**
+- `--model_path`: Path to trained model checkpoint for inference
+
+</details>
+
 ```bash
 # Navigate to multimodal finetune directory
 cd multimodal_finetune
 
 # Finetune on different datasets (training + inference)
 bash ../script/multimodal_finetune/Derm7pt\(C+D+M\).sh
-bash ../script/multimodal_finetune/MILK11(C+D\).sh
+bash ../script/multimodal_finetune/MILK11\(C+D\).sh
 bash ../script/multimodal_finetune/PAD\(C+M\).sh
 ```
 
