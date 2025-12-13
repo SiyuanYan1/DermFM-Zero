@@ -30,8 +30,6 @@ PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology 
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
 | **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
 
-Note: Average is calculated using top-1 accuracy for all datasets (using top-1 values from SNU and SD-128 for consistency).
-
 #### Few-Shot Learning (10% training data)
 
 Evaluation with limited labeled data to assess data efficiency and representation quality.
