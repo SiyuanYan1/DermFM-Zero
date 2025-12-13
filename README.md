@@ -13,7 +13,9 @@ PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology 
 - **Mel Det.**: Melanoma detection (binary classification)
 - **DDX**: Differential diagnosis (fine-grained classification)
 - **Rare DX**: Rare disease diagnosis
-**Modality:** D = Dermoscopic, C = Clinical
+**Modality:** 
+
+D = Dermoscopic, C = Clinical
 
 ### Zero-Shot Classification Performance
 
