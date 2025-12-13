@@ -3,6 +3,55 @@ Next-generation dermatology FM enables zero-shot clinician collaboration and aut
 
 The repo is Under Construction.
 
+## Benchmark Result
+
+
+PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology tasks and datasets.
+
+**Task Overview:**
+- **Skin Cancer**: General skin cancer classification
+- **Mel Det.**: Melanoma detection (binary classification)
+- **DDX**: Differential diagnosis (fine-grained classification)
+- **Rare DX**: Rare disease diagnosis
+**Modality:** D = Dermoscopic, C = Clinical
+
+### Zero-Shot Classification Performance
+
+| Model | HAM<br>(7-D) | PAD<br>(6-C) | ISIC2020<br>(2-D) | PH2<br>(2-C) | SNU<br>(134-C) | SD-128<br>(128-C) | Daffodil<br>(5-D) | **Average** |
+|-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
+| **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
+| **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
+| **Metric** | top-1 | top-1 | AUROC | AUROC | top-1 / top-3 | top-1 / top-3 | top-1 | - |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 / 0.1775 | 0.1210 / 0.2278 | 0.5304 | 0.3227 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 / 0.2218 | 0.1153 / 0.2655 | 0.5785 | 0.4930 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 / 0.2908 | 0.2028 / 0.3986 | 0.7607 | 0.4919 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 / 0.5597 | 0.3886 / 0.6100 | 0.7785 | 0.6082 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 / 0.4698 | 0.2783 / 0.5046 | 0.7246 | 0.5995 |
+| **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450 / 0.6659** | **0.5075 / 0.7046** | **0.8848** | **0.7320** |
+
+Note: Average is calculated using top-1 accuracy for all datasets (using top-1 values from SNU and SD-128 for consistency).
+
+### Linear Probing Performance
+
+Evaluation of learned visual representations by training linear classifiers on frozen features.
+
+| Model | HAM<br>(7-D) | ISIC20<br>(2-D) | PAD<br>(6-C) | SD-128<br>(128-C) | **Average** |
+|-------|:----:|:--------:|:---:|:--------:|:------:|
+| **Task** | Skin Cancer | Mel Det. | Skin Cancer | DDX | - |
+| **Metric** | top-1 | AUROC | top-1 | top-1 / top-3 | - |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.8456 | 0.8394 | 0.7245 | 0.6157 | 0.7563 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6873 | 0.3664 | 0.6790 | 0.4365 | 0.5423 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8516 | 0.8463 | 0.7310 | 0.6135 | 0.7606 |
+| BiomedGPT [[6]](https://www.nature.com/articles/s41591-024-03185-2) | 0.8157 | 0.7654 | 0.5965 | 0.4605 | 0.6595 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8510 | 0.8729 | 0.7592 | 0.6520 | 0.7838 |
+| PanDerm [[7]](https://www.nature.com/articles/s41591-025-03747-y) | 0.8822 | 0.8920 | 0.7592 | 0.6833 | 0.8042 |
+| DINOv3-ViT-B16 [[8]](https://ai.meta.com/dinov3/) | 0.8536 | 0.8848 | 0.7072 | 0.6292 | 0.7687 |
+| DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.8629 | 0.8776 | 0.7289 | 0.6655 | 0.7837 |
+| DINOv3-ViT-7B [[8]]() | 0.9055 | 0.9094 | 0.7831 | 0.6975 | 0.8238 |
+| **PanDerm-2 (Ours)** | **0.8929** | **0.9386** | **0.7549** | **0.7139** | **0.8251** |
+
+Notes: All models are evaluated under 100% training data
+
 ##  Repository Layout
 ```text
 PanDerm-2/
@@ -265,8 +314,8 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 Validate CBM effectiveness and interpretability through various experiments:
 
 - **Concept Intervention**: Scripts in [this folder](script/automated-concept-discovery/ISIC-intervention/) for testing concept manipulation effects
-- **Global Explanation**: Tools in [this folder](automated-concept-discovery/global-explanation/) for visualizing learned concepts
-- **Concept Retrieval**: Scripts in [this folder](automated-concept-discovery/concept-retrieval/) for analyzing and retrieving concept patterns
+- **Global Explanation**: Visiualization jupyter notebooks are in [this folder](automated-concept-discovery/global-explanation/) for visualizing learned concepts
+- **Concept Retrieval**: Visiualization jupyter notebooks are in [this folder](automated-concept-discovery/concept-retrieval/) for analyzing and retrieving concept patterns
 
 **Available Datasets:**
 - Clinical Malignant Classification
