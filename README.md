@@ -21,36 +21,36 @@ PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology 
 |-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
 | **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
 | **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
-| **Metric** | top-1 | top-1 | AUROC | AUROC | top-1 / top-3 | top-1 / top-3 | top-1 | - |
-| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 / 0.1775 | 0.1210 / 0.2278 | 0.5304 | 0.3227 |
-| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 / 0.2218 | 0.1153 / 0.2655 | 0.5785 | 0.4930 |
-| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 / 0.2908 | 0.2028 / 0.3986 | 0.7607 | 0.4919 |
-| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 / 0.5597 | 0.3886 / 0.6100 | 0.7785 | 0.6082 |
-| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 / 0.4698 | 0.2783 / 0.5046 | 0.7246 | 0.5995 |
-| **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450 / 0.6659** | **0.5075 / 0.7046** | **0.8848** | **0.7320** |
+| **Metric** | top-1 | top-1 | AUROC | AUROC | top-1 | top-1 | top-1 | - |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 | 0.1210 | 0.5304 | 0.3227 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 | 0.1153 | 0.5785 | 0.4930 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 | 0.2028 | 0.7607 | 0.4919 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
+| **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
 
 Note: Average is calculated using top-1 accuracy for all datasets (using top-1 values from SNU and SD-128 for consistency).
 
-### Linear Probing Performance
+#### Few-Shot Learning (10% training data)
 
-Evaluation of learned visual representations by training linear classifiers on frozen features.
+Evaluation with limited labeled data to assess data efficiency and representation quality.
 
-| Model | HAM<br>(7-D) | ISIC20<br>(2-D) | PAD<br>(6-C) | SD-128<br>(128-C) | **Average** |
+| Model | HAM<br>(7-class) | ISIC'20<br>(Melanoma) | PAD<br>(6-class) | SD-128<br>(128-class) | **Average** |
 |-------|:----:|:--------:|:---:|:--------:|:------:|
 | **Task** | Skin Cancer | Mel Det. | Skin Cancer | DDX | - |
-| **Metric** | top-1 | AUROC | top-1 | top-1 / top-3 | - |
-| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.8456 | 0.8394 | 0.7245 | 0.6157 | 0.7563 |
-| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6873 | 0.3664 | 0.6790 | 0.4365 | 0.5423 |
-| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8516 | 0.8463 | 0.7310 | 0.6135 | 0.7606 |
-| BiomedGPT [[6]](https://www.nature.com/articles/s41591-024-03185-2) | 0.8157 | 0.7654 | 0.5965 | 0.4605 | 0.6595 |
-| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8510 | 0.8729 | 0.7592 | 0.6520 | 0.7838 |
-| PanDerm [[7]](https://www.nature.com/articles/s41591-025-03747-y) | 0.8822 | 0.8920 | 0.7592 | 0.6833 | 0.8042 |
-| DINOv3-ViT-B16 [[8]](https://ai.meta.com/dinov3/) | 0.8536 | 0.8848 | 0.7072 | 0.6292 | 0.7687 |
-| DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.8629 | 0.8776 | 0.7289 | 0.6655 | 0.7837 |
-| DINOv3-ViT-7B [[8]]() | 0.9055 | 0.9094 | 0.7831 | 0.6975 | 0.8238 |
-| **PanDerm-2 (Ours)** | **0.8929** | **0.9386** | **0.7549** | **0.7139** | **0.8251** |
-
-Notes: All models are evaluated under 100% training data
+| **Metric** | top-1 | AUROC | top-1 | top-1 | - |
+| CLIP [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.7798 | 0.7828 | 0.6161 | 0.3146 | 0.6233 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
+| BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
+| PanDerm (NMED) [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
+| DINOv2-ViT-L16 [[8]](https://arxiv.org/abs/2304.07193) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
+| DINOv2-ViT-7B [[8]](https://arxiv.org/abs/2304.07193) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
+| **PanDerm-2 (Ours)** | **0.8416** | **0.8687** | 0.6855 | **0.4007** | **0.6991** |
 
 ##  Repository Layout
 ```text
