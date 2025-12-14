@@ -51,7 +51,6 @@ def load_derm7pt_meta(dir_release):
     return derm_data_group
 
 def process_multi_value_columns(df, columns):
-    """处理包含逗号分隔值的列，将它们转换为多个二进制列"""
     from sklearn.preprocessing import MultiLabelBinarizer
     
     processed_df = df.copy()
