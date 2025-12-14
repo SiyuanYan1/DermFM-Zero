@@ -159,7 +159,7 @@ examples/PAT_8_15_820.png,1,disease1
 
 ### 2. Configure Class Names
 
-Edit `src/open_clip/zero_shot_metadata.py` (line 13):
+Edit [`src/open_clip/zero_shot_metadata.py`](src/open_clip/zero_shot_metadata.py#L120) (line 13):
 ```python
 # Class names must match the order of labels: 0 -> disease1, 1 -> disease2, 2 -> disease3
 customized_CLASSNAMES = ['disease1', 'disease2', 'disease3']
