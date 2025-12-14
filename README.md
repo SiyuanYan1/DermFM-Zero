@@ -267,6 +267,9 @@ bash ../script/multimodal_finetune/MILK11\(C+D\).sh
 bash ../script/multimodal_finetune/PAD\(C+M\).sh
 ```
 
+**Metadata as Prompts:**  
+We convert metadata (age, sex, location, etc.) into text prompts for the model. To see how metadata is transformed into prompts, check: [`multimodal_finetune/dataset/prompt.py`](multimodal_finetune/dataset/prompt.py)
+
 **Note:** Each script performs both training and inference. Results and checkpoints will be saved in `multimodal_finetune-result/`.
 
 </details>
