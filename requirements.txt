@@ -29,3 +29,5 @@ seaborn
 pillow_heif
 albumentations==0.4.6
 numpy<2.0
+transformer_lens
+wandb
