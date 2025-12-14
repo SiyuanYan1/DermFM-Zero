@@ -13,3 +13,13 @@ python src/main.py \
    --csv-label-key label \
    --csv-img-key image_path \
    --model 'hf-hub:redlessone/PanDerm2'
+
+# Run PanDerm-2 on your dataset
+python src/main.py \
+   --val-data=""  \
+   --dataset-type "csv" \
+   --batch-size=1024 \
+   --csv-label-key label \
+   --csv-img-key image_path \
+   --zeroshot_eval_custom examples/toy_dataset.csv \
+   --model 'hf-hub:redlessone/PanDerm2'

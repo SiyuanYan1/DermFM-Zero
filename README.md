@@ -13,9 +13,8 @@ PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology 
 - **Mel Det.**: Melanoma detection (binary classification)
 - **DDX**: Differential diagnosis (fine-grained classification)
 - **Rare DX**: Rare disease diagnosis
-**Modality:** 
 
-D = Dermoscopic, C = Clinical
+**Modality:** D = Dermoscopic, C = Clinical
 
 ### Zero-Shot Classification Performance
 
@@ -142,6 +141,43 @@ python src/main.py \
    --csv-img-key image_path \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
+
+<details>
+
+<summary><b>Run Zero-Shot Classification Evaluation on Customized dataset</b></summary>
+
+### 1. Prepare Your CSV
+```csv
+image_path,label,diag
+examples/PAT_8_15_820.png,0,disease1
+examples/PAT_8_15_820.png,1,disease2
+examples/PAT_8_15_820.png,2,disease3
+examples/PAT_8_15_820.png,1,disease1
+```
+
+**Note:** `label` is the class index (0, 1, 2...) corresponding to the disease name in `diag`.
+
+### 2. Configure Class Names
+
+Edit `src/open_clip/zero_shot_metadata.py` (line 13):
+```python
+# Class names must match the order of labels: 0 -> disease1, 1 -> disease2, 2 -> disease3
+customized_CLASSNAMES = ['disease1', 'disease2', 'disease3']
+```
+
+### 3. Run Evaluation
+```bash
+python src/main.py \
+   --val-data="" \
+   --dataset-type "csv" \
+   --batch-size=1024 \
+   --csv-label-key label \
+   --csv-img-key image_path \
+   --zeroshot_eval_custom examples/toy_dataset.csv \
+   --model 'hf-hub:redlessone/PanDerm2'
+```
+</details>
+
 </details>
 
 
