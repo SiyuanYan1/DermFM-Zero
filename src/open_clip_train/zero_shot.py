@@ -9,7 +9,7 @@ from open_clip_train.precision import get_autocast
 
 from open_clip import get_input_dtype, get_tokenizer, build_zero_shot_classifier, \
     OPENAI_SKIN_TEMPLATES,HAM_CLASSNAMES,PAD_CLASSNAMES, DERMNET_CLASSNAMES, \
-    SNU_134_CLASSNAMES, SD_128_CLASSNAMES, DAFFODIL_5_CLASSNAMES, PH2_CLASSNAMES,ISIC20_CLASSNAMES
+    SNU_134_CLASSNAMES, SD_128_CLASSNAMES, DAFFODIL_5_CLASSNAMES, PH2_CLASSNAMES,ISIC20_CLASSNAMES, customized_CLASSNAMES
 
 import torch.nn.functional as F
 from sklearn.metrics import roc_auc_score, f1_score, accuracy_score, top_k_accuracy_score
@@ -261,6 +261,17 @@ def zero_shot_eval(model, data, epoch, args, tokenizer=None):
                 use_tqdm=True,
             )
 
+        if args.zeroshot_eval_custom:
+            classifier_custom = build_zero_shot_classifier(
+                model,
+                tokenizer=tokenizer,
+                classnames=customized_CLASSNAMES,
+                templates=templates,
+                num_classes_per_batch=10,
+                device=args.device,
+                use_tqdm=True,
+            )
+
     logging.info('Using classifier')
     results = {}
     # dermnet
@@ -336,6 +347,15 @@ def zero_shot_eval(model, data, epoch, args, tokenizer=None):
 
         # export df
         export_results_to_csv(df, data['zeroshot_ISIC20-2-classes'].dataloader.dataset, args, 'ISIC2020-2')
+
+    # Customized dataset
+    if args.zeroshot_eval_custom:
+        wf1, acc,df = run(model, classifier_custom, data['zeroshot_customized_dataset'].dataloader, len(customized_CLASSNAMES),args, metric='wf1+acc')
+        results['zeroshot-customized_dataset-wf1'] = wf1
+        results['zeroshot-customized_dataset-acc'] = acc
+
+        # export df
+        export_results_to_csv(df, data['zeroshot_customized_dataset'].dataloader.dataset, args, 'customized_dataset')
 
     logging.info('Finished zero-shot imagenet.')
     return results

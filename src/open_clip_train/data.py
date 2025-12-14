@@ -774,5 +774,8 @@ def get_data(args, preprocess_fns, epoch=0, tokenizer=None):
     if args.zeroshot_eval7 is not None:
         data["zeroshot_ISIC20-2-classes"] = get_csv_test_dataset(args, args.zeroshot_eval7, preprocess_val, is_train=False, tokenizer=tokenizer)
 
+    if args.zeroshot_eval_custom is not None:
+        data["zeroshot_customized_dataset"] = get_csv_test_dataset(args, args.zeroshot_eval_custom, preprocess_val, is_train=False, tokenizer=tokenizer)
+
     return data
 

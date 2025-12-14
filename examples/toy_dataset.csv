@@ -1,0 +1,5 @@
+image_path,label,diag
+examples/PAT_8_15_820.png,0,disease1
+examples/PAT_8_15_820.png,1,disease2
+examples/PAT_8_15_820.png,2,disease3
+examples/PAT_8_15_820.png,1,disease1

@@ -495,6 +495,8 @@ def parse_args(args):
                         help="Path to the CSV file for PH2 zero-shot evaluation.")
     parser.add_argument('--zeroshot-eval7', type=str, default=None,
                         help="Path to the CSV file for ISIC2020 zero-shot evaluation.")
+    parser.add_argument('--zeroshot_eval_custom', type=str, default=None,
+                        help="Path to the CSV file for customized dataset zero-shot evaluation.")
     parser.add_argument('--parent-path', type=str, default='',
                         help="parent path.")
 
