@@ -6,13 +6,7 @@ The repo is Under Construction.
 ## Benchmark Result
 
 
-PanDerm-2 demonstrates state-of-the-art performance across multiple dermatology tasks and datasets.
-
-**Task Overview:**
-- **Skin Cancer**: General skin cancer classification
-- **Mel Det.**: Melanoma detection (binary classification)
-- **DDX**: Differential diagnosis (fine-grained classification)
-- **Rare DX**: Rare disease diagnosis
+PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
 
 **Modality:** D = Dermoscopic, C = Clinical
 
@@ -43,7 +37,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
 | BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
-| PanDerm (NMED) [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
+| PanDerm [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
 | DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
