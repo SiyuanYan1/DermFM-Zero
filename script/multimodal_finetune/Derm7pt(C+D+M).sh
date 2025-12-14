@@ -21,7 +21,7 @@ CUDA_VISIBLE_DEVICES=2 python train.py \
     --meta_fusion_mode 'cross attention' \
     --encoder_pool 'mean' \
     --out 'mlp' \
-    --output_dir '../multimodal_finetune-result/derm7pt/PanDermv2_reproduce/'
+    --output_dir '../multimodal_finetune-result/derm7pt/PanDermv2/'
 
 CUDA_VISIBLE_DEVICES=2 python test.py \
     --model_name 'PanDerm-v2' \
