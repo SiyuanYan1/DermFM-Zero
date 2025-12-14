@@ -37,10 +37,10 @@ datasets=('HAM' 'PAD' 'SD128' 'ISIC2020')
 # 
 # Format: One-to-one correspondence with 'datasets' array
 csv_paths=(
-  'data/linear_probe/HAM-official-7-lp.csv'
-  'data/linear_probe/pad-lp-ws0.csv'
-  'data/linear_probe/sd-128.csv'
-  'data/linear_probe/isic2020-2-lp.csv'
+  'data/linear_probe/HAM-official-7-lp/meta.csv'
+  'data/linear_probe/pad-lp/meta.csv'
+  'data/linear_probe/sd-128-lp/meta.csv'
+  'data/linear_probe/isic2020-2-lp/meta.csv'
 )
 
 

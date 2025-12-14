@@ -133,7 +133,6 @@ class CsvDataset(Dataset):
         self.images = df[img_key].tolist()
         self.captions = df[caption_key].tolist()
         self.transforms = transforms
-        self.sources = df['source'].tolist()
         logging.debug('Done loading data.')
 
         self.tokenize = tokenizer
