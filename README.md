@@ -16,7 +16,7 @@ PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
 |-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
 | **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
 | **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
-| **Metric** | top-1 | top-1 | AUROC | AUROC | top-1 | top-1 | top-1 | - |
+| **Metric** | Acc | Acc | AUROC | AUROC | Acc | Acc | Acc | - |
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 | 0.1210 | 0.5304 | 0.3227 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 | 0.1153 | 0.5785 | 0.4930 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 | 0.2028 | 0.7607 | 0.4919 |
@@ -32,7 +32,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | Model | HAM<br>(7-class) | ISIC'20<br>(Melanoma) | PAD<br>(6-class) | SD-128<br>(128-class) | **Average** |
 |-------|:----:|:--------:|:---:|:--------:|:------:|
 | **Task** | Skin Cancer | Mel Det. | Skin Cancer | DDX | - |
-| **Metric** | top-1 | AUROC | top-1 | top-1 | - |
+| **Metric** | Acc | AUROC | Acc | Acc | - |
 | CLIP [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.7798 | 0.7828 | 0.6161 | 0.3146 | 0.6233 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
