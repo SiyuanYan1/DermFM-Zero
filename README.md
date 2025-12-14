@@ -16,13 +16,13 @@ PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
 |-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
 | **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
 | **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
-| **Metric** | Acc | Acc | AUROC | AUROC | Acc | Acc | Acc | - |
+| **Metric** | ACC | ACC | AUROC | AUROC | ACC | ACC | ACC | - |
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 | 0.1210 | 0.5304 | 0.3227 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 | 0.1153 | 0.5785 | 0.4930 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 | 0.2028 | 0.7607 | 0.4919 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
-| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
-| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
+| DermLIP-ViT-B-16 [[5]](https://openACCess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
+| DermLIP-PanDerm [[5]](https://openACCess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
 | **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
 
 ### Few-Shot Learning (10% training data)
@@ -32,14 +32,14 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | Model | HAM<br>(7-class) | ISIC'20<br>(Melanoma) | PAD<br>(6-class) | SD-128<br>(128-class) | **Average** |
 |-------|:----:|:--------:|:---:|:--------:|:------:|
 | **Task** | Skin Cancer | Mel Det. | Skin Cancer | DDX | - |
-| **Metric** | Acc | AUROC | Acc | Acc | - |
+| **Metric** | ACC | AUROC | ACC | ACC | - |
 | CLIP [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.7798 | 0.7828 | 0.6161 | 0.3146 | 0.6233 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
 | BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
 | PanDerm [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
-| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
-| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
+| DermLIP-ViT-B-16 [[5]](https://openACCess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
+| DermLIP-PanDerm [[5]](https://openACCess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
@@ -225,7 +225,7 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 **Training Parameters:**
 - `--epochs`: Number of training epochs (default: 50)
 - `--batch_size`: Batch size per GPU (default: 32)
-- `--accum_freq`: Gradient accumulation steps (default: 2, effective batch = 64)
+- `--ACCum_freq`: Gradient ACCumulation steps (default: 2, effective batch = 64)
 - `--learning_rate`: Learning rate (default: 1e-5)
 
 **Model Architecture:**
