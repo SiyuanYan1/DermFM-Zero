@@ -170,13 +170,8 @@ python src/main.py \
    --zeroshot_eval_custom examples/toy_dataset.csv \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
-</details>
 
-</details>
-
-
-<details>
-<summary><b>Zero-shot Cross-modal Retrieval</b></summary>
+## Zero-shot Cross-modal Retrieval
 
 Evaluate cross-modal retrieval performance between images and text descriptions.
 
@@ -188,10 +183,7 @@ This script evaluates PanDerm-2 across two datasets for image-text retrieval tas
 bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 ```
 
-</details>
-
-<details>
-<summary><b>Linear Probing</b></summary>
+## Linear Probing
 
 Evaluate feature quality through linear probing on downstream classification tasks:
 ```bash
@@ -199,11 +191,7 @@ Evaluate feature quality through linear probing on downstream classification tas
 bash script/linear-probe/PanDerm-v2-lp-eval.sh
 ```
 
-</details>
-
-<details>
-
-<summary><b>Multimodal Finetune</b></summary>
+## Multimodal Finetune
 
 Finetune PanDerm-2 on three multi-modal dermatology datasets:
 
@@ -214,8 +202,7 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 
 **Usage:**
 
-<details>
-<summary>Key Hyperparameters in the script</summary>
+### Key Hyperparameters in the script
 
 **Basic Configuration:**
 - `--model_name`: Base model to finetune (e.g., `PanDerm-v2`)
@@ -248,9 +235,6 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 
 **Testing Only:**
 - `--model_path`: Path to trained model checkpoint for inference
-
-</details>
-
 ```bash
 # Navigate to multimodal finetune directory
 cd multimodal_finetune
@@ -266,10 +250,7 @@ We convert metadata (age, sex, location, etc.) into text prompts for the model. 
 
 **Note:** Each script performs both training and inference. Results and checkpoints will be saved in `multimodal_finetune-result/`.
 
-</details>
-
-<details>
-<summary><b>Automated Concept Discovery</b></summary>
+## Automated Concept Discovery
 
 Discover interpretable concepts from dermatology images using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 
@@ -281,8 +262,7 @@ Discover interpretable concepts from dermatology images using Sparse Autoencoder
 
 *You can also use: `bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh`*
 
-<details>
-<summary>Key Hyperparameters</summary>
+### Key Hyperparameters
 
 **Step2: Feature Extraction ([`export_visual_features.py`](src/export_visual_features.py)):**
 - `--model_name`: Model path (e.g., `hf-hub:redlessone/PanDerm2`)
@@ -302,9 +282,6 @@ Discover interpretable concepts from dermatology images using Sparse Autoencoder
 - `--output`: Directory for saving model and results
 
 **Note:** Use SAE activations for interpretable CBM, or raw embeddings for baseline comparison.
-
-</details>
-
 ```bash
 # Quick Start: Use pre-configured script
 bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh
@@ -356,5 +333,3 @@ Validate CBM effectiveness and interpretability through various experiments:
 - ISIC Intervention Experiments
 
 **Results:** Saved in `automated-concept-discovery-result/`.
-
-</details>
