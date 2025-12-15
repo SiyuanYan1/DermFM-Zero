@@ -3,7 +3,9 @@ Next-generation dermatology FM enables zero-shot clinician collaboration and aut
 
 The repo is Under Construction.
 
-## Benchmark Result
+---
+
+## 📊 Benchmark Results
 
 PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
 
@@ -44,20 +46,26 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
 | **PanDerm-2 (Ours)** | **0.8416** | **0.8687** | 0.6855 | **0.4007** | **0.6991** |
 
-## Repository Layout
+---
+
+## 📁 Repository Layout
 ```text
 PanDerm-2/
-├── data/                             # data folder (datasets with images and csvs)
-├── src/                              # core models and modules(For zero-shot tasks)
-├── script/                           # scripts for experiments
-├── README.md                         # Project documentation
+├── data/                             # Data folder (datasets with images and csvs)
+├── src/                              # Core models and modules (for zero-shot tasks)
+├── script/                           # Scripts for experiments
 ├── automated-concept-discovery/      # Automated concept discovery implementation
 ├── linear_probe/                     # Linear probing experiments and evaluation
 ├── multimodal_finetune/              # Multimodal fine-tuning scripts and models
-└── requirements.txt                  # Python dependencies
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Project documentation
 ```
 
-## Getting Started
+---
+
+## 🚀 Getting Started
+
+### Installation
 ```bash
 git clone git@github.com:SiyuanYan1/PanDerm-2.git
 cd PanDerm-2
@@ -67,56 +75,65 @@ conda activate PanDerm-v2
 pip install -r requirements.txt
 ```
 
+### Quick Example
+
 Here is a [simple example](examples/zero-shot-classification.ipynb) to call PanDerm-2 to conduct **zero-shot disease classification**
 
-## Evaluation
+---
 
-### Setup
+## 📥 Data Setup
 
-1) Download benchmark data from [Google Drive](xxx)
-2) Unzip to data folder
+### Download Benchmark Data
 
-The directory structure should look like:
+1. Download benchmark data from [Google Drive](xxx)
+2. Unzip to data folder
+
+### Expected Directory Structure
 ```bash
 data/
-├── automated-concept-discovery
-│   ├── clinical-malignant
-│   ├── dermoscopic-melanoma
-│   ├── ISIC_hair_bias
-│   ├── ISIC_ink_bias
-│   └── ISIC_ruler_bias
-├── linear_probe
-│   ├── HAM-official-7-lp
-│   ├── isic2020-2-lp
-│   ├── pad-lp
-│   └── sd-128-lp
-├── multimodal_finetune
-│   ├── derm7pt
-│   ├── MILK-11
-│   └── PAD
-├── zero-shot-classification
-│   ├── daffodil-5-zero-shot
-│   ├── HAM-official-7-zero-shot
-│   ├── isic2020-2-zero-shot
-│   ├── pad-zero-shot
-│   ├── ph2-2-zero-shot
-│   ├── sd-128-zero-shot
-│   └── snu-134-zero-shot
-└── zero-shot-retrieval
-    ├── Derm1M-hold_out
-    └── skincap
+├── automated-concept-discovery/
+│   ├── clinical-malignant/
+│   ├── dermoscopic-melanoma/
+│   ├── ISIC_hair_bias/
+│   ├── ISIC_ink_bias/
+│   └── ISIC_ruler_bias/
+├── linear_probe/
+│   ├── HAM-official-7-lp/
+│   ├── isic2020-2-lp/
+│   ├── pad-lp/
+│   └── sd-128-lp/
+├── multimodal_finetune/
+│   ├── derm7pt/
+│   ├── MILK-11/
+│   └── PAD/
+├── zero-shot-classification/
+│   ├── daffodil-5-zero-shot/
+│   ├── HAM-official-7-zero-shot/
+│   ├── isic2020-2-zero-shot/
+│   ├── pad-zero-shot/
+│   ├── ph2-2-zero-shot/
+│   ├── sd-128-zero-shot/
+│   └── snu-134-zero-shot/
+└── zero-shot-retrieval/
+    ├── Derm1M-hold_out/
+    └── skincap/
 ```
 
-## Running Evaluations
+---
 
-### Zero-shot Classification
+## 🧪 Evaluation Tasks
 
-Evaluate PanDerm-2 on multiple dermatology datasets using zero-shot classification:
+### Task 1: Zero-shot Classification
+
+**Description:** Evaluate PanDerm-2 on multiple dermatology datasets using zero-shot classification
+
+**Quick Run:**
 ```bash
-# Run the zero-shot classification benchmark script
 bash script/zero-shot-eval/PanDerm-v2-zs-classification.sh
+```
 
-# Or run:
+**Detailed Command:**
+```bash
 python src/main.py \
    --val-data=""  \
    --dataset-type "csv" \
@@ -133,9 +150,11 @@ python src/main.py \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
 
-#### Run Zero-Shot Classification Evaluation on Customized Dataset
+#### Custom Dataset Evaluation
 
-**1. Prepare Your CSV**
+**Step 1: Prepare Your CSV File**
+
+Create a CSV file with the following format:
 ```csv
 image_path,label,diag
 examples/PAT_8_15_820.png,0,disease1
@@ -143,10 +162,9 @@ examples/PAT_8_15_820.png,1,disease2
 examples/PAT_8_15_820.png,2,disease3
 examples/PAT_8_15_820.png,1,disease1
 ```
+> **Note:** `label` is the class index (0, 1, 2...) corresponding to the disease name in `diag`
 
-**Note:** `label` is the class index (0, 1, 2...) corresponding to the disease name in `diag`.
-
-**2. Configure Class Names**
+**Step 2: Configure Class Names**
 
 Edit [`src/open_clip/zero_shot_metadata.py`](src/open_clip/zero_shot_metadata.py#L13) (line 13):
 ```python
@@ -154,7 +172,7 @@ Edit [`src/open_clip/zero_shot_metadata.py`](src/open_clip/zero_shot_metadata.py
 customized_CLASSNAMES = ['disease1', 'disease2', 'disease3']
 ```
 
-**3. Run Evaluation**
+**Step 3: Run Evaluation**
 ```bash
 python src/main.py \
    --val-data="" \
@@ -166,38 +184,44 @@ python src/main.py \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
 
-### Zero-shot Cross-modal Retrieval
+---
 
-Evaluate cross-modal retrieval performance between images and text descriptions.
+### Task 2: Zero-shot Cross-modal Retrieval
 
-**Datasets evaluated:** Derm1M-Hold Out Dataset, SkinCAP
+**Description:** Evaluate cross-modal retrieval performance between images and text descriptions
 
-This script evaluates PanDerm-2 across two datasets for image-text retrieval tasks:
+**Datasets Evaluated:** 
+- Derm1M-Hold Out Dataset
+- SkinCAP
+
+**Quick Run:**
 ```bash
-# Run the cross-modal retrieval benchmark script
 bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 ```
 
-### Linear Probing
+---
 
-Evaluate feature quality through linear probing on downstream classification tasks:
+### Task 3: Linear Probing
+
+**Description:** Evaluate feature quality through linear probing on downstream classification tasks
+
+**Quick Run:**
 ```bash
-# Run the script
 bash script/linear-probe/PanDerm-v2-lp-eval.sh
 ```
 
-### Multimodal Finetune
+---
 
-Finetune PanDerm-2 on three multi-modal dermatology datasets:
+### Task 4: Multimodal Finetune
+
+**Description:** Finetune PanDerm-2 on three multi-modal dermatology datasets
 
 **Dataset Modalities Overview:**
-- **Derm7pt**: Clinical + Dermoscopic + Metadata
-- **MILK**: Clinical + Dermoscopic  
-- **PAD-UFES-20**: Clinical + Metadata
+- **Derm7pt:** Clinical + Dermoscopic + Metadata
+- **MILK:** Clinical + Dermoscopic  
+- **PAD-UFES-20:** Clinical + Metadata
 
-**Usage:**
-
-#### Key Hyperparameters in the script
+#### Hyperparameter Configuration
 
 **Basic Configuration:**
 - `--model_name`: Base model to finetune (e.g., `PanDerm-v2`)
@@ -230,6 +254,8 @@ Finetune PanDerm-2 on three multi-modal dermatology datasets:
 
 **Testing Only:**
 - `--model_path`: Path to trained model checkpoint for inference
+
+#### Running Finetuning
 ```bash
 # Navigate to multimodal finetune directory
 cd multimodal_finetune
@@ -240,49 +266,54 @@ bash ../script/multimodal_finetune/MILK11\(C+D\).sh
 bash ../script/multimodal_finetune/PAD\(C+M\).sh
 ```
 
-**Metadata as Prompts:**  
-We convert metadata (age, sex, location, etc.) into text prompts for the model. To see how metadata is transformed into prompts, check: [`multimodal_finetune/dataset/prompt.py`](multimodal_finetune/dataset/prompt.py)
+#### Metadata as Prompts
 
-**Note:** Each script performs both training and inference. Results and checkpoints will be saved in `multimodal_finetune-result/`.
+We convert metadata (age, sex, location, etc.) into text prompts for the model. 
 
-### Automated Concept Discovery
+See how metadata is transformed: [`multimodal_finetune/dataset/prompt.py`](multimodal_finetune/dataset/prompt.py)
 
-Discover interpretable concepts from dermatology images using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
+> **Note:** Each script performs both training and inference. Results and checkpoints will be saved in `multimodal_finetune-result/`
 
-**Prerequisites:**
+---
+
+### Task 5: Automated Concept Discovery
+
+**Description:** Discover interpretable concepts from dermatology images using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM)
+
+#### Prerequisites
+
 - Setup environment: `bash script/automated-concept-discovery/env_setup.sh`
 - Download pre-trained SAE checkpoint from [Google Drive](xxx) and place it in `automated-concept-discovery-result/SAE-embeddings/`
 
-**Usage (Clinical Malignant Classification as Example):**
+#### Hyperparameter Configuration
 
-*You can also use: `bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh`*
-
-#### Key Hyperparameters
-
-**Step 2: Feature Extraction ([`export_visual_features.py`](src/export_visual_features.py)):**
+**Feature Extraction ([`export_visual_features.py`](src/export_visual_features.py)):**
 - `--model_name`: Model path (e.g., `hf-hub:redlessone/PanDerm2`)
 - `--batch_size`: Processing batch size (default: 2048, reduce if OOM)
 - `--num_workers`: Data loading workers (default: 16)
 - `--device`: `cuda` or `cpu`
 
-**Step 3: SAE Activation Extraction ([`0_extract_sae_activations.py`](automated-concept-discovery/0_extract_sae_activations.py)):**
+**SAE Activation Extraction ([`0_extract_sae_activations.py`](automated-concept-discovery/0_extract_sae_activations.py)):**
 - `--checkpoint`: Path to pre-trained SAE weights
 - `--embeddings`: Input visual features (.npy file)
 - `--output`: Output path for SAE activations
 
-**Step 4: Classifier Training ([`1_train_clf_binary-class.py`](automated-concept-discovery/3_train_biased-cbm_binary-class.py)):**
+**Classifier Training ([`1_train_clf_binary-class.py`](automated-concept-discovery/3_train_biased-cbm_binary-class.py)):**
 - `--embeddings`: Input features (SAE activations or raw embeddings)
 - `--csv`: Metadata with labels and splits
 - `--gpu`: GPU device ID
 - `--output`: Directory for saving model and results
 
-**Note:** Use SAE activations for interpretable CBM, or raw embeddings for baseline comparison.
+> **Note:** Use SAE activations for interpretable CBM, or raw embeddings for baseline comparison
+
+#### Quick Start
 ```bash
-# Quick Start: Use pre-configured script
+# Use pre-configured script
 bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh
+```
 
-# Or run step-by-step:
-
+#### Step-by-Step Execution
+```bash
 # Setup environment (run once)
 bash script/automated-concept-discovery/env_setup.sh
 
@@ -314,17 +345,36 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
   --output automated-concept-discovery-result/clinical-malignant/
 ```
 
-**Concept Intervention & Visualization:**
+#### Concept Intervention & Visualization
 
 Validate CBM effectiveness and interpretability through various experiments:
 
-- **Concept Intervention**: Scripts in [this folder](script/automated-concept-discovery/ISIC-intervention/) for testing concept manipulation effects
-- **Global Explanation**: Visualization jupyter notebooks are in [this folder](automated-concept-discovery/global-explanation/) for visualizing learned concepts
-- **Concept Retrieval**: Visualization jupyter notebooks are in [this folder](automated-concept-discovery/concept-retrieval/) for analyzing and retrieving concept patterns
+**Available Analysis Tools:**
+- **Concept Intervention:** Scripts in [`script/automated-concept-discovery/ISIC-intervention/`](script/automated-concept-discovery/ISIC-intervention/) for testing concept manipulation effects
+- **Global Explanation:** Visualization jupyter notebooks in [`automated-concept-discovery/global-explanation/`](automated-concept-discovery/global-explanation/) for visualizing learned concepts
+- **Concept Retrieval:** Visualization jupyter notebooks in [`automated-concept-discovery/concept-retrieval/`](automated-concept-discovery/concept-retrieval/) for analyzing and retrieving concept patterns
 
 **Available Datasets:**
 - Clinical Malignant Classification
 - Dermoscopic Melanoma Classification
 - ISIC Intervention Experiments
 
-**Results:** Saved in `automated-concept-discovery-result/`.
+> **Results:** Saved in `automated-concept-discovery-result/`
+
+
+
+
+---
+
+## 📄 License
+
+The model and associated code are released under the CC-BY-NC-ND 4.0 license and may only be used for non-commercial academic research purposes with proper attribution.
+
+---
+
+
+---
+
+## 📧 Contact
+
+For questions and feedback, please contact: [your-email@example.com](mailto:your-email@example.com)
