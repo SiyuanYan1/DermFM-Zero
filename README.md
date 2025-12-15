@@ -107,7 +107,7 @@ pip install -r requirements.txt
 
 ### Download Data
 
-Download benchmark data from [Google Drive](xxx) and unzip to the `data/` folder.
+Download benchmark data from [Google Drive](https://drive.google.com/drive/folders/1lH53xfkdkBLSMDn6WShjCRV9gi7xQTvM?usp=drive_link) and unzip to the `data/` folder.
 
 Expected directory structure:
 ```
@@ -230,7 +230,7 @@ Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concep
 bash script/automated-concept-discovery/env_setup.sh
 ```
 
-Download SAE checkpoint from [Google Drive](xxx) to `automated-concept-discovery-result/SAE-embeddings/`.
+Download SAE checkpoint from [Google Drive](https://drive.google.com/file/d/1OM16Bultiy8ZEoEw32ppvLvreraS4VB1/view?usp=sharing) to `automated-concept-discovery-result/SAE-embeddings/`.
 
 **Quick run:**
 ```bash
