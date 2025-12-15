@@ -14,7 +14,24 @@
 [📘 Documentation](xxx) | [🚀 Quick Start](#quick-start) | [📊 Benchmarks](#benchmark-results) | [💬 Discussion](xxx)
 
 </div>
+---
 
+## 📑 Table of Contents
+
+- [🌟 Highlights](#-highlights)
+- [📊 Benchmark Results](#-benchmark-results)
+- [🚀 Quick Start](#-quick-start)
+- [📥 Installation](#-installation)
+- [🔧 Evaluation Tasks](#-evaluation-tasks)
+  - [Task 1: Zero-shot Classification](#task-1-zero-shot-classification)
+  - [Task 2: Cross-modal Retrieval](#task-2-zero-shot-cross-modal-retrieval)
+  - [Task 3: Linear Probing](#task-3-linear-probing)
+  - [Task 4: Multimodal Finetuning](#task-4-multimodal-finetune)
+  - [Task 5: Concept Discovery](#task-5-automated-concept-discovery)
+- [📁 Repository Structure](#-repository-structure)
+- [📝 Citation](#-citation)
+
+---
 ## Highlights
 
 🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
