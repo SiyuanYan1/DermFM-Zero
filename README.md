@@ -341,7 +341,7 @@ If you find PanDerm-2 useful, please cite:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The model and associated code are released under the CC-BY-NC-ND 4.0 license and may only be used for non-commercial academic research purposes with proper attribution.
 
 ---
 
@@ -353,11 +353,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Supervisor:** A/Prof. Zongyuan Ge
 
 ---
+##  Contributors
 
-<div align="center">
-
-⭐ **Star us on GitHub!**
-
-[⬆ Back to Top](#panderm-2)
-
-</div>
+- [Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en)
+- [Xieji Li](https://scholar.google.com/citations?user=X50rN1oAAAAJ&hl=en)
