@@ -292,6 +292,10 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 ## Citation
 
 If you find PanDerm-2 useful, please cite:
+
+TBD
+
+**Related work:**
 ```bibtex
 @article{yan2025multimodal,
   title={A multimodal vision foundation model for clinical dermatology},
@@ -302,8 +306,6 @@ If you find PanDerm-2 useful, please cite:
   publisher={Nature Publishing Group}
 }
 ```
-
-**Related work:**
 ```bibtex
 @inproceedings{yan2025derm1m,
   title={Derm1M: A Million-scale Vision-Language Dataset Aligned with Clinical Ontology Knowledge},
