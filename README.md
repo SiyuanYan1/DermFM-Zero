@@ -21,7 +21,7 @@
 - [Repository Structure](#repository-structure)
 - [Quick Start](#quick-start)
 - [Evaluation Tasks](#evaluation-tasks)
-  - [Zero-shot Classification](#zero-shot-classification)
+  - [Task1: Zero-shot Classification](#zero-shot-classification)
   - [Zero-shot Cross-modal Retrieval](#zero-shot-cross-modal-retrieval)
   - [Linear Probing](#linear-probing)
   - [Multimodal Finetuning](#multimodal-finetuning)
