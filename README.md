@@ -11,141 +11,77 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-[📘 Documentation](xxx) | [🚀 Quick Start](#-quick-start) | [📊 Benchmarks](#-benchmark-results) | [💬 Discussion](xxx)
+[📘 Documentation](xxx) | [🚀 Quick Start](#quick-start) | [📊 Benchmarks](#benchmark-results) | [💬 Discussion](xxx)
 
 </div>
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [🌟 Highlights](#-highlights)
-- [📊 Benchmark Results](#-benchmark-results)
-- [🚀 Quick Start](#-quick-start)
-- [📥 Installation](#-installation)
-- [🔧 Evaluation Tasks](#-evaluation-tasks)
-  - [Task 1: Zero-shot Classification](#task-1-zero-shot-classification)
-  - [Task 2: Cross-modal Retrieval](#task-2-zero-shot-cross-modal-retrieval)
-  - [Task 3: Linear Probing](#task-3-linear-probing)
-  - [Task 4: Multimodal Finetuning](#task-4-multimodal-finetune)
-  - [Task 5: Concept Discovery](#task-5-automated-concept-discovery)
-- [📁 Repository Structure](#-repository-structure)
-- [📝 Citation](#-citation)
+- [Highlights](#highlights)
+- [Benchmark Results](#benchmark-results)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Evaluation Tasks](#evaluation-tasks)
+- [Repository Structure](#repository-structure)
+- [Citation](#citation)
 
 ---
 
-## 🌟 Highlights
+## Highlights
 
 - 🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
-- 🔍 **Multimodal Fusion**: Supports clinical images, dermoscopic images, and metadata
+- 🔍 **Multimodal Fusion**: Supports clinical images, dermoscopic images, and patient metadata
 - 🧠 **Interpretable AI**: Built-in concept discovery with Sparse Autoencoders (SAE)
 - 🌍 **Multi-center Validation**: Evaluated on datasets from Austria, Brazil, Korea, Portugal, and more
-- 🔧 **Easy to Use**: Simple API for zero-shot classification and retrieval
 
 ---
 
-## 📊 Benchmark Results
+## Benchmark Results
+
+PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
+
+**Modality:** D = Dermoscopic, C = Clinical
 
 ### Zero-Shot Classification Performance
 
-<table>
-<thead>
-  <tr>
-    <th rowspan="2">Model</th>
-    <th colspan="7">Datasets (Modality)</th>
-    <th rowspan="2">Average</th>
-  </tr>
-  <tr>
-    <th>HAM<br>(7-D)</th>
-    <th>PAD<br>(6-C)</th>
-    <th>ISIC2020<br>(2-D)</th>
-    <th>PH2<br>(2-C)</th>
-    <th>SNU<br>(134-C)</th>
-    <th>SD-128<br>(128-C)</th>
-    <th>Daffodil<br>(5-D)</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td colspan="9" align="center"><b>Baselines</b></td>
-  </tr>
-  <tr>
-    <td>CLIP-Large</td>
-    <td>0.2754</td>
-    <td>0.3839</td>
-    <td>0.4772</td>
-    <td>0.3855</td>
-    <td>0.0857</td>
-    <td>0.1210</td>
-    <td>0.5304</td>
-    <td>0.3227</td>
-  </tr>
-  <tr>
-    <td>BiomedCLIP</td>
-    <td>0.6347</td>
-    <td>0.4512</td>
-    <td>0.7305</td>
-    <td>0.8441</td>
-    <td>0.0966</td>
-    <td>0.1153</td>
-    <td>0.5785</td>
-    <td>0.4930</td>
-  </tr>
-  <tr>
-    <td>MONET</td>
-    <td>0.3347</td>
-    <td>0.4729</td>
-    <td>0.6940</td>
-    <td>0.8370</td>
-    <td>0.1414</td>
-    <td>0.2028</td>
-    <td>0.7607</td>
-    <td>0.4919</td>
-  </tr>
-  <tr>
-    <td>DermLIP-PanDerm</td>
-    <td>0.6281</td>
-    <td>0.6247</td>
-    <td>0.7876</td>
-    <td>0.7975</td>
-    <td>0.3332</td>
-    <td>0.3822</td>
-    <td>0.7812</td>
-    <td>0.6192</td>
-  </tr>
-  <tr>
-    <td colspan="9" align="center"><b>Ours</b></td>
-  </tr>
-  <tr style="background-color: #e8f4f8;">
-    <td><b>PanDerm-2</b></td>
-    <td><b>0.7957</b></td>
-    <td><b>0.6941</b></td>
-    <td><b>0.8663</b></td>
-    <td><b>0.9304</b></td>
-    <td><b>0.4450</b></td>
-    <td><b>0.5075</b></td>
-    <td><b>0.8848</b></td>
-    <td><b>0.7320</b></td>
-  </tr>
-</tbody>
-</table>
-
-> **Note**: D = Dermoscopic, C = Clinical | Full benchmark results in [BENCHMARKS.md](BENCHMARKS.md)
+| Model | HAM<br>(7-D) | PAD<br>(6-C) | ISIC2020<br>(2-D) | PH2<br>(2-C) | SNU<br>(134-C) | SD-128<br>(128-C) | Daffodil<br>(5-D) | **Average** |
+|-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
+| **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
+| **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
+| **Metric** | ACC | ACC | AUROC | AUROC | ACC | ACC | ACC | - |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 | 0.1210 | 0.5304 | 0.3227 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 | 0.1153 | 0.5785 | 0.4930 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 | 0.2028 | 0.7607 | 0.4919 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
+| **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
 
 ### Few-Shot Learning (10% training data)
 
-| Model | HAM (7) | ISIC'20 (Mel) | PAD (6) | SD-128 (128) | Average |
-|-------|:-------:|:-------------:|:-------:|:------------:|:-------:|
-| CLIP | 0.7798 | 0.7828 | 0.6161 | 0.3146 | 0.6233 |
-| DermLIP-PanDerm | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
-| DINOv3-ViT-7B | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
-| **PanDerm-2** | **0.8416** | **0.8687** | 0.6855 | **0.4007** | **0.6991** |
+Evaluation with limited labeled data to assess data efficiency and representation quality.
+
+| Model | HAM<br>(7-class) | ISIC'20<br>(Melanoma) | PAD<br>(6-class) | SD-128<br>(128-class) | **Average** |
+|-------|:----:|:--------:|:---:|:--------:|:------:|
+| **Task** | Skin Cancer | Mel Det. | Skin Cancer | DDX | - |
+| **Metric** | ACC | AUROC | ACC | ACC | - |
+| CLIP [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.7798 | 0.7828 | 0.6161 | 0.3146 | 0.6233 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
+| BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
+| PanDerm [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
+| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
+| DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
+| DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
+| **PanDerm-2 (Ours)** | **0.8416** | **0.8687** | 0.6855 | **0.4007** | **0.6991** |
 
 ---
 
-## 🚀 Quick Start
-
-### 1. Installation
+## Quick Start
 ```bash
 # Clone repository
 git clone git@github.com:SiyuanYan1/PanDerm-2.git
@@ -157,47 +93,18 @@ conda activate panderm
 pip install -r requirements.txt
 ```
 
-### 2. Run Zero-Shot Classification
-```python
-import torch
-from src.model import PanDerm2
-
-# Load model
-model = PanDerm2.from_pretrained('hf-hub:redlessone/PanDerm2')
-
-# Classify image
-image_path = "examples/skin_lesion.jpg"
-diseases = ["melanoma", "basal cell carcinoma", "actinic keratosis"]
-
-predictions = model.zero_shot_classify(image_path, diseases)
-print(predictions)  # {'melanoma': 0.85, 'basal cell carcinoma': 0.10, ...}
-```
-
-📖 **More Examples**: Check out our [interactive notebook](examples/zero-shot-classification.ipynb)
+**Quick Example**: See our [interactive notebook](examples/zero-shot-classification.ipynb) for zero-shot disease classification.
 
 ---
 
-## 📥 Installation
+## Installation
 
-### Prerequisites
+### Download Data
 
-- Python 3.9+
-- CUDA 11.8+ (for GPU support)
-- 16GB+ RAM
+1. Download benchmark data from [Google Drive](xxx)
+2. Unzip to data folder
 
-### Setup
-```bash
-# Clone and install
-git clone git@github.com:SiyuanYan1/PanDerm-2.git
-cd PanDerm-2
-pip install -r requirements.txt
-
-# Download data
-wget [GOOGLE_DRIVE_LINK] -O data.zip
-unzip data.zip -d data/
-```
-
-### Expected Data Structure
+### Expected Directory Structure
 ```
 data/
 ├── zero-shot-classification/     # 7 benchmark datasets
@@ -209,90 +116,30 @@ data/
 
 ---
 
-## 🔧 Evaluation Tasks
+## Evaluation Tasks
 
-<div align="center">
-
-| Task | Description | Datasets | Quick Run |
-|:----:|:-----------|:--------:|:---------:|
-| [#1](#task-1-zero-shot-classification) | Zero-shot Classification | 7 | ✅ |
-| [#2](#task-2-zero-shot-cross-modal-retrieval) | Cross-modal Retrieval | 2 | ✅ |
-| [#3](#task-3-linear-probing) | Linear Probing | 4 | ✅ |
-| [#4](#task-4-multimodal-finetune) | Multimodal Finetuning | 3 | ✅ |
-| [#5](#task-5-automated-concept-discovery) | Concept Discovery | 3 | ✅ |
-
-</div>
+| Task | Description | Datasets |
+|------|-------------|----------|
+| [Zero-shot Classification](#task-1-zero-shot-classification) | Evaluate without fine-tuning | 7 |
+| [Cross-modal Retrieval](#task-2-zero-shot-cross-modal-retrieval) | Image-text retrieval | 2 |
+| [Linear Probing](#task-3-linear-probing) | Evaluate learned features | 4 |
+| [Multimodal Finetuning](#task-4-multimodal-finetune) | Multi-input fine-tuning | 3 |
+| [Concept Discovery](#task-5-automated-concept-discovery) | Interpretable AI with SAE | 3 |
 
 ---
 
 ### Task 1: Zero-shot Classification
 
-<table>
-<tr><td>
+Evaluate PanDerm-2 on 7 dermatology datasets without fine-tuning.
 
-**📝 Description**
+**Datasets**: HAM, PAD, ISIC2020, PH2, SNU, SD-128, Daffodil
 
-Evaluate PanDerm-2's zero-shot classification performance across 7 diverse dermatology datasets without any fine-tuning.
-
-**📊 Datasets**
-- HAM (7 skin cancers, Austria)
-- PAD (6 classes, Brazil)  
-- ISIC2020 (Melanoma detection)
-- PH2 (Melanoma, Portugal)
-- SNU (134 classes, Korea)
-- SD-128 (128 diseases)
-- Daffodil (5 rare diseases)
-
-</td></tr>
-</table>
-
-#### Quick Run
+**Quick Run:**
 ```bash
 bash script/zero-shot-eval/PanDerm-v2-zs-classification.sh
 ```
 
-#### Custom Dataset
-
-<table>
-<tr><td>
-
-**Step 1: Prepare CSV**
-```csv
-image_path,label,diag
-data/image1.png,0,melanoma
-data/image2.png,1,nevus
-data/image3.png,0,melanoma
-```
-
-</td><td>
-
-**Step 2: Configure Classes**
-
-Edit `src/open_clip/zero_shot_metadata.py`:
-```python
-customized_CLASSNAMES = [
-    'melanoma', 
-    'nevus',
-    # add more...
-]
-```
-
-</td></tr>
-</table>
-
-**Step 3: Run**
-```bash
-python src/main.py \
-   --dataset-type csv \
-   --batch-size 1024 \
-   --csv-label-key label \
-   --csv-img-key image_path \
-   --zeroshot_eval_custom your_data.csv \
-   --model 'hf-hub:redlessone/PanDerm2'
-```
-
-<details>
-<summary><b>📋 Advanced Options</b></summary>
+**Detailed Command:**
 ```bash
 python src/main.py \
    --val-data="" \
@@ -310,27 +157,43 @@ python src/main.py \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
 
-</details>
+#### Custom Dataset Evaluation
+
+**Step 1: Prepare CSV**
+```csv
+image_path,label,diag
+examples/image1.png,0,melanoma
+examples/image2.png,1,nevus
+examples/image3.png,0,melanoma
+```
+
+**Step 2: Configure Class Names**
+
+Edit [`src/open_clip/zero_shot_metadata.py`](src/open_clip/zero_shot_metadata.py#L13):
+```python
+customized_CLASSNAMES = ['melanoma', 'nevus', 'basal cell carcinoma']
+```
+
+**Step 3: Run Evaluation**
+```bash
+python src/main.py \
+   --dataset-type csv \
+   --batch-size 1024 \
+   --csv-label-key label \
+   --csv-img-key image_path \
+   --zeroshot_eval_custom your_data.csv \
+   --model 'hf-hub:redlessone/PanDerm2'
+```
 
 ---
 
 ### Task 2: Zero-shot Cross-modal Retrieval
 
-<table>
-<tr><td>
+Evaluate image-text retrieval performance.
 
-**📝 Description**
+**Datasets**: Derm1M Hold-out, SkinCAP
 
-Evaluate image-text retrieval performance: given an image, retrieve relevant text descriptions (and vice versa).
-
-**📊 Datasets**
-- Derm1M Hold-out (10K samples)
-- SkinCAP (Clinical captions)
-
-</td></tr>
-</table>
-
-#### Quick Run
+**Quick Run:**
 ```bash
 bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 ```
@@ -339,23 +202,11 @@ bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 
 ### Task 3: Linear Probing
 
-<table>
-<tr><td>
+Evaluate feature quality by training linear classifiers on frozen features.
 
-**📝 Description**
+**Datasets**: HAM, ISIC2020, PAD, SD-128
 
-Evaluate the quality of learned representations by training a linear classifier on frozen features.
-
-**📊 Datasets**
-- HAM (7 classes)
-- ISIC2020 (Binary)
-- PAD (6 classes)  
-- SD-128 (128 classes)
-
-</td></tr>
-</table>
-
-#### Quick Run
+**Quick Run:**
 ```bash
 bash script/linear-probe/PanDerm-v2-lp-eval.sh
 ```
@@ -364,25 +215,14 @@ bash script/linear-probe/PanDerm-v2-lp-eval.sh
 
 ### Task 4: Multimodal Finetune
 
-<table>
-<tr><td>
+Fine-tune PanDerm-2 with clinical images, dermoscopic images, and patient metadata.
 
-**📝 Description**
+**Dataset Modalities:**
+- **Derm7pt**: Clinical + Dermoscopic + Metadata
+- **MILK-11**: Clinical + Dermoscopic  
+- **PAD-UFES-20**: Clinical + Metadata
 
-Fine-tune PanDerm-2 with multiple input modalities: clinical images, dermoscopic images, and patient metadata.
-
-**📊 Dataset Modalities**
-
-| Dataset | Clinical | Dermoscopic | Metadata | Classes |
-|---------|:--------:|:-----------:|:--------:|:-------:|
-| Derm7pt | ✅ | ✅ | ✅ | 2 |
-| MILK-11 | ✅ | ✅ | ❌ | 11 |
-| PAD-UFES | ✅ | ❌ | ✅ | 6 |
-
-</td></tr>
-</table>
-
-#### Quick Run
+**Quick Run:**
 ```bash
 cd multimodal_finetune
 
@@ -392,89 +232,41 @@ bash ../script/multimodal_finetune/MILK11\(C+D\).sh
 bash ../script/multimodal_finetune/PAD\(C+M\).sh
 ```
 
-#### Configuration
+**Key Hyperparameters:**
+- `--model_name`: Base model (e.g., `PanDerm-v2`)
+- `--dataset_name`: Target dataset (`Derm7pt`, `MILK-11`, `PAD`)
+- `--epochs`: Training epochs (default: 50)
+- `--batch_size`: Batch size per GPU (default: 32)
+- `--learning_rate`: Learning rate (default: 1e-5)
+- `--use_cli`, `--use_derm`, `--use_meta`: Enable modalities
 
-<details>
-<summary><b>⚙️ Hyperparameters</b></summary>
+**Metadata as Prompts**: See [`multimodal_finetune/dataset/prompt.py`](multimodal_finetune/dataset/prompt.py) for how metadata is converted to text prompts.
 
-**Model Configuration**
-```bash
---model_name PanDerm-v2         # Base model
---dataset_name Derm7pt          # Target dataset
---hidden_dim 1024               # Hidden dimension
---meta_dim 768                  # Metadata embedding dim
-```
-
-**Training Settings**
-```bash
---epochs 50                     # Training epochs
---batch_size 32                 # Batch size per GPU
---accum_freq 2                  # Gradient accumulation (effective batch=64)
---learning_rate 1e-5            # Learning rate
-```
-
-**Architecture**
-```bash
---num_head 8                    # Attention heads (image)
---att_depth 2                   # Attention layers (image)
---meta_num_head 8               # Attention heads (metadata)
---meta_att_depth 4              # Attention layers (metadata)
---fusion "cross attention"      # Image fusion method
---meta_fusion_mode "cross attention"  # Metadata fusion
-```
-
-**Modality Flags**
-```bash
---use_cli                       # Enable clinical images
---use_derm                      # Enable dermoscopic images  
---use_meta                      # Enable metadata
---use_text_encoder              # Text encoder for metadata
-```
-
-</details>
-
-💡 **Metadata as Prompts**: We convert patient metadata (age, sex, location) into text prompts. See [`multimodal_finetune/dataset/prompt.py`](multimodal_finetune/dataset/prompt.py)
-
-📁 **Results**: Saved to `multimodal_finetune-result/`
+**Results**: Saved to `multimodal_finetune-result/`
 
 ---
 
 ### Task 5: Automated Concept Discovery
 
-<table>
-<tr><td>
+Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 
-**📝 Description**
+**Experiments**: Clinical Malignant, Dermoscopic Melanoma, ISIC Bias Intervention
 
-Discover interpretable visual concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM) for explainable AI.
+**Prerequisites:**
+- Setup: `bash script/automated-concept-discovery/env_setup.sh`
+- Download SAE checkpoint from [Google Drive](xxx) to `automated-concept-discovery-result/SAE-embeddings/`
 
-**📊 Experiments**
-- Clinical Malignant Classification
-- Dermoscopic Melanoma Detection
-- ISIC Bias Intervention (hair, ink, ruler)
-
-</td></tr>
-</table>
-
-#### Quick Start
+**Quick Run:**
 ```bash
-# One-line execution
 bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh
 ```
 
-#### Step-by-Step Pipeline
-
-<table>
-<tr>
-<td width="50%">
-
-**Step 1: Setup Environment**
+**Step-by-Step:**
 ```bash
+# Step 1: Setup environment
 bash script/automated-concept-discovery/env_setup.sh
-```
 
-**Step 2: Extract Features**
-```bash
+# Step 2: Extract visual features
 cd src
 python export_visual_features.py \
     --model_name hf-hub:redlessone/PanDerm2 \
@@ -484,21 +276,14 @@ python export_visual_features.py \
     --batch_size 2048 \
     --output_dir ../automated-concept-discovery-result/clinical-malignant/
 cd ..
-```
 
-</td>
-<td width="50%">
-
-**Step 3: Extract SAE Concepts**
-```bash
+# Step 3: Extract SAE concepts
 python automated-concept-discovery/0_extract_sae_activations.py \
   --checkpoint automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --output automated-concept-discovery-result/clinical-malignant/learned_activation.npy
-```
 
-**Step 4: Train CBM Classifier**
-```bash
+# Step 4: Train CBM classifier
 python automated-concept-discovery/1_train_clf_binary-class.py \
   --csv data/automated-concept-discovery/clinical-malignant/meta.csv \
   --embeddings automated-concept-discovery-result/clinical-malignant/learned_activation.npy \
@@ -506,79 +291,33 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
   --output automated-concept-discovery-result/clinical-malignant/
 ```
 
-</td>
-</tr>
-</table>
+**Analysis Tools:**
+- **Concept Intervention**: [`script/automated-concept-discovery/ISIC-intervention/`](script/automated-concept-discovery/ISIC-intervention/)
+- **Global Explanation**: [`automated-concept-discovery/global-explanation/`](automated-concept-discovery/global-explanation/)
+- **Concept Retrieval**: [`automated-concept-discovery/concept-retrieval/`](automated-concept-discovery/concept-retrieval/)
 
-#### Analysis & Visualization
-
-| Tool | Description | Location |
-|------|-------------|----------|
-| 🔬 **Concept Intervention** | Test concept manipulation effects | [`script/automated-concept-discovery/ISIC-intervention/`](script/automated-concept-discovery/ISIC-intervention/) |
-| 📊 **Global Explanation** | Visualize learned concepts | [`automated-concept-discovery/global-explanation/`](automated-concept-discovery/global-explanation/) |
-| 🔍 **Concept Retrieval** | Analyze concept patterns | [`automated-concept-discovery/concept-retrieval/`](automated-concept-discovery/concept-retrieval/) |
-
-<details>
-<summary><b>⚙️ Configuration Parameters</b></summary>
-
-**Feature Extraction**
-- `--model_name`: Model path (default: `hf-hub:redlessone/PanDerm2`)
-- `--batch_size`: Processing batch size (default: 2048, reduce if OOM)
-- `--num_workers`: Data loading workers (default: 16)
-- `--device`: Computing device (`cuda` or `cpu`)
-
-**SAE Activation**
-- `--checkpoint`: Pre-trained SAE weights path
-- `--embeddings`: Input visual features (.npy)
-- `--output`: Output SAE activations path
-
-**Classifier Training**
-- `--embeddings`: SAE activations or raw embeddings
-- `--csv`: Metadata with labels and splits
-- `--gpu`: GPU device ID
-- `--output`: Model save directory
-
-</details>
-
-📁 **Results**: Saved to `automated-concept-discovery-result/`
+**Results**: Saved to `automated-concept-discovery-result/`
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 PanDerm-2/
-│
-├── 📂 src/                              # Core models and modules
-│   ├── main.py                          # Main evaluation script
-│   ├── model/                           # Model architectures
-│   └── open_clip/                       # CLIP-based components
-│
-├── 📂 script/                           # Experiment scripts
-│   ├── zero-shot-eval/                  # Zero-shot evaluation
-│   ├── linear-probe/                    # Linear probing
-│   ├── multimodal_finetune/             # Multimodal fine-tuning
-│   └── automated-concept-discovery/     # Concept discovery
-│
-├── 📂 data/                             # Dataset storage
-│   ├── zero-shot-classification/
-│   ├── zero-shot-retrieval/
-│   ├── linear_probe/
-│   ├── multimodal_finetune/
-│   └── automated-concept-discovery/
-│
-├── 📂 automated-concept-discovery/      # SAE & CBM implementation
-├── 📂 linear_probe/                     # Linear probe utilities
-├── 📂 multimodal_finetune/              # Multimodal training code
-│
-├── 📄 requirements.txt                  # Python dependencies
-└── 📄 README.md                         # This file
+├── src/                              # Core models and modules
+├── script/                           # Experiment scripts
+├── data/                             # Dataset storage
+├── automated-concept-discovery/      # SAE & CBM implementation
+├── linear_probe/                     # Linear probe utilities
+├── multimodal_finetune/              # Multimodal training code
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Documentation
 ```
 
 ---
 
-## 📝 Citation
+## Citation
 
-If you find PanDerm-2 useful in your research, please cite:
+If you find PanDerm-2 useful, please cite:
 ```bibtex
 @article{panderm2_2025,
   title={PanDerm-2: Next-generation dermatology foundation model enables zero-shot clinician collaboration and automated concept discovery},
@@ -588,7 +327,7 @@ If you find PanDerm-2 useful in your research, please cite:
 }
 ```
 
-**Related Works:**
+**Related Work:**
 ```bibtex
 @inproceedings{yan2025derm1m,
   title={Derm1M: A Million-scale Vision-Language Dataset Aligned with Clinical Ontology Knowledge},
@@ -600,36 +339,24 @@ If you find PanDerm-2 useful in your research, please cite:
 
 ---
 
-## 🙏 Acknowledgments
-
-This work was supported by:
-- Monash University AIM for Health Lab
-- Department of Data Science & AI
-- [Add funding sources]
-
-Special thanks to all collaborators and data contributors.
-
----
-
-## 📧 Contact
-
-**Siyuan Yan** - Research Fellow, Monash University  
-📧 Email: [siyuan.yan@monash.edu]  
-🔗 [Personal Website](xxx) | [Google Scholar](xxx) | [Twitter](xxx)
-
-**Supervisor:** A/Prof. Zongyuan Ge
-
----
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
+## Contact
+
+**Siyuan Yan** - Research Fellow, Monash University  
+📧 Email: siyuan.yan@monash.edu
+
+**Supervisor:** A/Prof. Zongyuan Ge
+
+---
+
 <div align="center">
 
-### ⭐ Star us on GitHub — it motivates us a lot!
+⭐ **Star us on GitHub!**
 
 [⬆ Back to Top](#panderm-2)
 
