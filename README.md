@@ -21,16 +21,15 @@
 - [Repository Structure](#repository-structure)
 - [Quick Start](#quick-start)
 - [Evaluation Tasks](#evaluation-tasks)
-  - [Task1: Zero-shot Classification](#zero-shot-classification)
-  - [Zero-shot Cross-modal Retrieval](#zero-shot-cross-modal-retrieval)
-  - [Linear Probing](#linear-probing)
-  - [Multimodal Finetuning](#multimodal-finetuning)
-  - [Automated Concept Discovery](#automated-concept-discovery)
+  - [Task1: Zero-shot Classification](#task1-zero-shot-classification)
+  - [Task2: Zero-shot Cross-modal Retrieval](#task2-zero-shot-cross-modal-retrieval)
+  - [Task3: Linear Probing](#task3-linear-probing)
+  - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
+  - [Task5: Automated Concept Discovery](#task5-automated-concept-discovery)
 - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
 - [Citation](#citation)
-
 ## Highlights
 
 🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
