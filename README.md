@@ -14,24 +14,24 @@
 [📘 Documentation](xxx) | [🚀 Quick Start](#quick-start) | [📊 Benchmarks](#benchmark-results) | [💬 Discussion](xxx)
 
 </div>
----
 
 ## 📑 Table of Contents
 
-- [🌟 Highlights](#-highlights)
-- [📊 Benchmark Results](#-benchmark-results)
-- [🚀 Quick Start](#-quick-start)
-- [📥 Installation](#-installation)
-- [🔧 Evaluation Tasks](#-evaluation-tasks)
-  - [Task 1: Zero-shot Classification](#task-1-zero-shot-classification)
-  - [Task 2: Cross-modal Retrieval](#task-2-zero-shot-cross-modal-retrieval)
-  - [Task 3: Linear Probing](#task-3-linear-probing)
-  - [Task 4: Multimodal Finetuning](#task-4-multimodal-finetune)
-  - [Task 5: Concept Discovery](#task-5-automated-concept-discovery)
-- [📁 Repository Structure](#-repository-structure)
-- [📝 Citation](#-citation)
+- [Highlights](#highlights)
+- [Benchmark Results](#benchmark-results)
+- [Quick Start](#quick-start)
+- [Evaluation Tasks](#evaluation-tasks)
+  - [Zero-shot Classification](#zero-shot-classification)
+  - [Zero-shot Cross-modal Retrieval](#zero-shot-cross-modal-retrieval)
+  - [Linear Probing](#linear-probing)
+  - [Multimodal Finetuning](#multimodal-finetuning)
+  - [Automated Concept Discovery](#automated-concept-discovery)
+- [Repository Structure](#repository-structure)
+- [Citation](#citation)
+- [Contributors](#contributors)
+- [License](#license)
+- [Contact](#contact)
 
----
 ## Highlights
 
 🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
@@ -83,6 +83,18 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
 | **PanDerm-2 (Ours)** | **0.8416** | **0.8687** | 0.6855 | **0.4007** | **0.6991** |
 
+## Repository Structure
+```
+PanDerm-2/
+├── src/                              # Core models and modules
+├── script/                           # Experiment scripts
+├── data/                             # Dataset storage
+├── automated-concept-discovery/      # SAE & CBM implementation
+├── linear_probe/                     # Linear probe utilities
+├── multimodal_finetune/              # Multimodal training code
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Documentation
+```
 ## Quick Start
 
 ### Installation
@@ -115,7 +127,7 @@ See our [interactive notebook](examples/zero-shot-classification.ipynb) for zero
 
 ## Evaluation Tasks
 
-### Task1: Zero-shot Classification
+### Zero-shot Classification
 
 Evaluate PanDerm-2 on 7 dermatology datasets without fine-tuning.
 
@@ -166,14 +178,14 @@ python src/main.py \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
 
-### Task2: Zero-shot Cross-modal Retrieval
+### Zero-shot Cross-modal Retrieval
 
 Evaluate image-text retrieval performance on Derm1M Hold-out and SkinCAP datasets.
 ```bash
 bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 ```
 
-### Task3: Linear Probing
+### Linear Probing
 
 Evaluate feature quality by training linear classifiers on frozen features.
 
@@ -182,7 +194,7 @@ Evaluate feature quality by training linear classifiers on frozen features.
 bash script/linear-probe/PanDerm-v2-lp-eval.sh
 ```
 
-### Task4: Multimodal Finetuning
+### Multimodal Finetuning
 
 Fine-tune PanDerm-2 with clinical images, dermoscopic images, and patient metadata.
 
@@ -211,7 +223,7 @@ Metadata is converted to text prompts - see [`multimodal_finetune/dataset/prompt
 
 Results are saved to `multimodal_finetune-result/`.
 
-### Task5: Automated Concept Discovery
+### Automated Concept Discovery
 
 Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 
@@ -261,18 +273,7 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 
 Results are saved to `automated-concept-discovery-result/`.
 
-## Repository Structure
-```
-PanDerm-2/
-├── src/                              # Core models and modules
-├── script/                           # Experiment scripts
-├── data/                             # Dataset storage
-├── automated-concept-discovery/      # SAE & CBM implementation
-├── linear_probe/                     # Linear probe utilities
-├── multimodal_finetune/              # Multimodal training code
-├── requirements.txt                  # Python dependencies
-└── README.md                         # Documentation
-```
+
 
 ## Contributors
 
