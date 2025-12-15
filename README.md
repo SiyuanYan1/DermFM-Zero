@@ -292,8 +292,9 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 ## Citation
 
 If you find PanDerm-2 useful, please cite:
-
+```bibtex
 TBD
+```
 
 **Related work:**
 ```bibtex
