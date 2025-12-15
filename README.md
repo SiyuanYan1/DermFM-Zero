@@ -98,7 +98,7 @@ See our [interactive notebook](examples/zero-shot-classification.ipynb) for zero
 
 ## Evaluation Tasks
 
-### Zero-shot Classification
+### Task1: Zero-shot Classification
 
 Evaluate PanDerm-2 on 7 dermatology datasets without fine-tuning.
 
@@ -149,14 +149,14 @@ python src/main.py \
    --model 'hf-hub:redlessone/PanDerm2'
 ```
 
-### Zero-shot Cross-modal Retrieval
+### Task2: Zero-shot Cross-modal Retrieval
 
 Evaluate image-text retrieval performance on Derm1M Hold-out and SkinCAP datasets.
 ```bash
 bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
 ```
 
-### Linear Probing
+### Task3: Linear Probing
 
 Evaluate feature quality by training linear classifiers on frozen features.
 
@@ -165,7 +165,7 @@ Evaluate feature quality by training linear classifiers on frozen features.
 bash script/linear-probe/PanDerm-v2-lp-eval.sh
 ```
 
-### Multimodal Finetuning
+### Task4: Multimodal Finetuning
 
 Fine-tune PanDerm-2 with clinical images, dermoscopic images, and patient metadata.
 
@@ -194,7 +194,7 @@ Metadata is converted to text prompts - see [`multimodal_finetune/dataset/prompt
 
 Results are saved to `multimodal_finetune-result/`.
 
-### Automated Concept Discovery
+### Task5: Automated Concept Discovery
 
 Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 
