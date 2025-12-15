@@ -274,28 +274,6 @@ PanDerm-2/
 └── README.md                         # Documentation
 ```
 
-## Citation
-
-If you find PanDerm-2 useful, please cite:
-```bibtex
-@article{panderm2_2025,
-  title={PanDerm-2: Next-generation dermatology foundation model enables zero-shot clinician collaboration and automated concept discovery},
-  author={Yan, Siyuan and Ge, Zongyuan},
-  journal={Nature Medicine},
-  year={2025}
-}
-```
-
-**Related work:**
-```bibtex
-@inproceedings{yan2025derm1m,
-  title={Derm1M: A Million-scale Vision-Language Dataset Aligned with Clinical Ontology Knowledge},
-  author={Yan, Siyuan and others},
-  booktitle={ICCV},
-  year={2025}
-}
-```
-
 ## Contributors
 
 - [Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en)
@@ -310,3 +288,27 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 **Siyuan Yan** - Research Fellow, Monash University  
 📧 Email: siyuan.yan@monash.edu  
 **Supervisor:** A/Prof. Zongyuan Ge
+
+## Citation
+
+If you find PanDerm-2 useful, please cite:
+```bibtex
+@article{yan2025multimodal,
+  title={A multimodal vision foundation model for clinical dermatology},
+  author={Yan, Siyuan and Yu, Zhen and Primiero, Clare and Vico-Alonso, Cristina and Wang, Zhonghua and Yang, Litao and Tschandl, Philipp and Hu, Ming and Ju, Lie and Tan, Gin and others},
+  journal={Nature Medicine},
+  pages={1--12},
+  year={2025},
+  publisher={Nature Publishing Group}
+}
+```
+
+**Related work:**
+```bibtex
+@inproceedings{yan2025derm1m,
+  title={Derm1M: A Million-scale Vision-Language Dataset Aligned with Clinical Ontology Knowledge},
+  author={Yan, Siyuan and others},
+  booktitle={ICCV},
+  year={2025}
+}
+```
