@@ -19,6 +19,7 @@
 
 - [Highlights](#highlights)
 - [Benchmark Results](#benchmark-results)
+- [Repository Structure](#repository-structure)
 - [Quick Start](#quick-start)
 - [Evaluation Tasks](#evaluation-tasks)
   - [Zero-shot Classification](#zero-shot-classification)
@@ -26,11 +27,10 @@
   - [Linear Probing](#linear-probing)
   - [Multimodal Finetuning](#multimodal-finetuning)
   - [Automated Concept Discovery](#automated-concept-discovery)
-- [Repository Structure](#repository-structure)
-- [Citation](#citation)
 - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
+- [Citation](#citation)
 
 ## Highlights
 
