@@ -2,7 +2,7 @@
 
 # PanDerm-2
 
-**Next-generation Dermatology Foundation Model**
+**A Vision-Language Dermatology Foundation Model**
 
 *Enabling Zero-shot Clinician Collaboration and Automated Concept Discovery*
 
