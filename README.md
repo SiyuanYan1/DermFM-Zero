@@ -1,6 +1,6 @@
 <div align="center">
 
-# PanDerm-2
+# DermFM-Zero
 
 **A Vision-Language Dermatology Foundation Model**
 
