@@ -42,7 +42,7 @@
 
 ## Benchmark Results
 
-PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
+DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 
 **Modality:** D = Dermoscopic, C = Clinical
 
@@ -59,7 +59,7 @@ PanDerm-2 demonstrates state-of-the-art performance across diverse benchmarks.
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
 | DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
-| **PanDerm-2 (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
+| **DermFM-Zero (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
 
 ### Few-Shot Learning (10% training data)
 
@@ -79,11 +79,11 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
-| **PanDerm-2 (Ours)** | **0.8416** | 0.8687 | 0.6855 | **0.4007** | **0.6991** |
+| **DermFM-Zero (Ours)** | **0.8416** | 0.8687 | 0.6855 | **0.4007** | **0.6991** |
 
 ## Repository Structure
 ```
-PanDerm-2/
+DermFM-Zero/
 ├── src/                              # Core models and modules
 ├── script/                           # Experiment scripts
 ├── data/                             # Dataset storage
@@ -97,8 +97,8 @@ PanDerm-2/
 
 ### Installation
 ```bash
-git clone git@github.com:SiyuanYan1/PanDerm-2.git
-cd PanDerm-2
+git clone git@github.com:SiyuanYan1/DermFM-Zero.git
+cd DermFM-Zero
 
 conda create -n panderm python=3.9.20
 conda activate panderm
@@ -127,7 +127,7 @@ See our [interactive notebook](examples/zero-shot-classification.ipynb) for zero
 
 ### Task1: Zero-shot Classification
 
-Evaluate PanDerm-2 on 7 dermatology datasets without fine-tuning.
+Evaluate DermFM-Zero on 7 dermatology datasets without fine-tuning.
 
 **Benchmark datasets**: HAM, PAD, ISIC2020, PH2, SNU, SD-128, Daffodil
 ```bash
@@ -194,7 +194,7 @@ bash script/linear-probe/PanDerm-v2-lp-eval.sh
 
 ### Task4: Multimodal Finetuning
 
-Fine-tune PanDerm-2 with clinical images, dermoscopic images, and patient metadata.
+Fine-tune DermFM-Zero with clinical images, dermoscopic images, and patient metadata.
 
 **Dataset modalities:**
 - **Derm7pt**: Clinical + Dermoscopic + Metadata
@@ -290,7 +290,7 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 
 ## Citation
 
-If you find PanDerm-2 useful, please cite:
+If you find DermFM-Zero useful, please cite:
 ```bibtex
 TBD
 ```
