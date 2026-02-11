@@ -286,7 +286,6 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 
 **Siyuan Yan** - Research Fellow, Monash University  
 📧 Email: siyuan.yan@monash.edu  
-**Supervisor:** A/Prof. Zongyuan Ge
 
 ## Citation
 
