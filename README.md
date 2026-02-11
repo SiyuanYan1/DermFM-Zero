@@ -81,6 +81,17 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
 | **DermFM-Zero (Ours)** | **0.8416** | 0.8687 | 0.6855 | **0.4007** | **0.6991** |
 
+### Zero-Shot Cross-Modal Retrieval (Mean Recall)
+
+Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 4,000).
+
+| Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
+|-------|:----:|:----:|:----:|:----:|:----:|
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.122 | 0.104 | 0.174 | 0.127 | 0.132 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.188 | 0.179 | 0.187 | 0.175 | 0.182 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
+| DermFM-Zero (Ours) | **0.457** | **0.454** | **0.369** | **0.349** | **0.407** |
+
 ## Repository Structure
 ```
 DermFM-Zero/
