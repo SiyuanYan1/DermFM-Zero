@@ -2,9 +2,13 @@
 
 # DermFM-Zero
 
-**A Vision-Language Dermatology Foundation Model**
+### A Vision-Language Foundation Model for Dermatology
 
-*Enabling Zero-shot Clinician Collaboration and Automated Concept Discovery*
+**Enabling Zero-Shot Clinical Collaboration & Automated Concept Discovery**
+
+---
+
+DermFM-Zero is the first multimodal foundation model to provide effective clinical decision support across primary care and specialty settings—without fine-tuning. Beyond diagnosis, it unlocks emerging capabilities in automated concept discovery, advancing AI-assisted dermatology.
 
 [![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/PanDerm2)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
