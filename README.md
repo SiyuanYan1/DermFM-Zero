@@ -306,7 +306,15 @@ The model and associated code are released under the CC-BY-NC-ND 4.0 license and
 
 If you find DermFM-Zero useful, please cite:
 ```bibtex
-TBD
+@misc{yan2026visionlanguagefoundationmodelzeroshot,
+      title={A Vision-Language Foundation Model for Zero-shot Clinical Collaboration and Automated Concept Discovery in Dermatology}, 
+      author={Siyuan Yan and Xieji Li and Dan Mo and Philipp Tschandl and Yiwen Jiang and Zhonghua Wang and Ming Hu and Lie Ju and Cristina Vico-Alonso and Yizhen Zheng and Jiahe Liu and Juexiao Zhou and Camilla Chello and Jen G. Cheung and Julien Anriot and Luc Thomas and Clare Primiero and Gin Tan and Aik Beng Ng and Simon See and Xiaoying Tang and Albert Ip and Xiaoyang Liao and Adrian Bowling and Martin Haskett and Shuang Zhao and Monika Janda and H. Peter Soyer and Victoria Mar and Harald Kittler and Zongyuan Ge},
+      year={2026},
+      eprint={2602.10624},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.10624}, 
+}
 ```
 
 **Related work:**
