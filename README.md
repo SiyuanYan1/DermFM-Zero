@@ -10,6 +10,7 @@
 
 DermFM-Zero is the first multimodal foundation model to provide effective clinical decision support across primary care and specialty settings without fine-tuning. Beyond diagnosis, it unlocks emerging capabilities in automated concept discovery, advancing AI-assisted dermatology.
 
+[![Paper](https://img.shields.io/badge/arXiv-2602.10624-b31b1b.svg)](https://arxiv.org/abs/2602.10624)
 [![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/PanDerm2)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
