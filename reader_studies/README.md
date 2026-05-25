@@ -6,9 +6,9 @@ Three multinational reader studies evaluating DermFM-Zero in collaborative clini
 
 | Study | Setting | Design | Readers (n) | Cases | Primary tests | Real data |
 |-------|---------|--------|-------------|-------|---------------|-----------|
-| [RS1](reader_study_rs1/)   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs (20 GPs + 10 NPs) | 701   | Wilcoxon signed-rank (reader-level); McNemar (case-level)          | Not included          |
+| [RS1](reader_study_rs1/)   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs (20 GPs + 10 NPs) | 150   | Wilcoxon signed-rank (reader-level); McNemar (case-level)          | Not included          |
 | [RS2A](reader_study_rs2a/) | Specialist benchmark (TODIV)         | Independent cohort       | 1,090 sessions (652 unique clinicians) | 1,117 | Welch's two-sided t-test                                             | **Aggregated anonymized scores included** |
-| [RS2B](reader_study_rs2b/) | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71 (from 87 raw, ≥95% per-test completion) | 4,929 readings across 11 classes | Paired t-test on per-reader proportions; Bonferroni for class-specific | Not included |
+| [RS2B](reader_study_rs2b/) | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71 (from 87 raw, ≥95% per-test completion) | 1,048 | Paired t-test on per-reader proportions; Bonferroni for class-specific | Not included |
 
 ## 📂 Repository Structure
 
