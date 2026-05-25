@@ -1,0 +1,355 @@
+Case ID,GT,Responder_ID,User Role,Years_Derm_Experience,Age_Bracket,Gender,Country,Unaided_Dx_Score,Unaided_Dx_Reason,Unaided_Dx_Confidence,Unaided_Top3_SpotOn,Unaided_Top3_Generic,Unaided_Mgmt_Grade,Unaided_Mgmt_Reason,Unaided_Mgmt_Confidence,Assisted_Dx_Score,Assisted_Dx_Reason,Assisted_Dx_Confidence,Assisted_Top3_SpotOn,Assisted_Top3_Generic,Assisted_Mgmt_Grade,Assisted_Mgmt_Reason,Assisted_Mgmt_Confidence,AI_Trust_Score,Changed_Diagnosis,Changed_Management
+1,Disease_7,1,GP,1-2,45-54,Male,DEMO,5,Demo,3,True,False,Inadequate but harmless,Demo,4,5,Demo,4,True,False,Inadequate and dangerous,Demo,4,4,False,True
+2,Disease_12,1,GP,0,25-34,Male,DEMO,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,5,Demo,4,True,True,Inadequate and dangerous,Demo,2,3,False,False
+3,Disease_9,1,GP,1-2,55-64,Male,DEMO,3,Demo,4,False,False,Adequate,Demo,2,4,Demo,1,True,True,Adequate,Demo,4,4,False,True
+4,Disease_8,1,GP,6-10,35-44,Female,DEMO,5,Demo,2,True,True,Adequate,Demo,1,5,Demo,3,True,False,Adequate,Demo,2,4,False,False
+5,Disease_16,1,GP,>10,35-44,Male,DEMO,1,Demo,1,True,False,Perfect,Demo,4,1,Demo,4,True,True,Adequate,Demo,1,1,True,False
+6,Disease_8,1,GP,3-5,45-54,Male,DEMO,3,Demo,3,True,True,Adequate,Demo,1,3,Demo,4,True,False,Perfect,Demo,2,1,True,False
+7,Disease_3,1,GP,0,45-54,Male,DEMO,3,Demo,3,False,False,Perfect,Demo,2,4,Demo,3,True,False,Adequate,Demo,1,2,True,True
+8,Disease_5,1,GP,>10,45-54,Male,DEMO,1,Demo,1,False,True,Inadequate and dangerous,Demo,3,2,Demo,3,False,True,Perfect,Demo,1,1,True,False
+9,Disease_7,1,GP,0,25-34,Male,DEMO,2,Demo,3,False,False,Perfect,Demo,1,2,Demo,3,True,True,Adequate,Demo,1,5,False,False
+10,Disease_17,1,GP,0,35-44,Female,DEMO,2,Demo,4,True,True,Adequate,Demo,1,2,Demo,1,False,True,Inadequate and dangerous,Demo,1,2,False,True
+11,Disease_2,1,GP,>10,55-64,Female,DEMO,2,Demo,4,True,False,Adequate,Demo,3,4,Demo,3,True,True,Adequate,Demo,2,5,False,False
+12,Disease_6,1,GP,>10,45-54,Female,DEMO,3,Demo,4,False,False,Inadequate and dangerous,Demo,3,3,Demo,3,True,True,Perfect,Demo,4,1,False,False
+13,Disease_18,1,GP,1-2,45-54,Male,DEMO,5,Demo,4,True,True,Perfect,Demo,4,5,Demo,4,True,True,Perfect,Demo,2,4,False,False
+14,Disease_1,1,GP,6-10,45-54,Male,DEMO,2,Demo,4,False,False,Adequate,Demo,2,2,Demo,3,False,True,Perfect,Demo,1,5,True,False
+15,Disease_4,1,GP,0,35-44,Male,DEMO,3,Demo,4,False,False,Adequate,Demo,3,3,Demo,3,True,False,Perfect,Demo,4,3,False,False
+16,Disease_8,1,GP,3-5,45-54,Female,DEMO,2,Demo,1,False,False,Adequate,Demo,4,4,Demo,1,True,True,Perfect,Demo,3,4,True,False
+17,Disease_6,1,GP,3-5,55-64,Male,DEMO,2,Demo,1,False,False,Adequate,Demo,1,4,Demo,3,True,False,Perfect,Demo,3,5,False,False
+18,Disease_3,1,GP,1-2,55-64,Male,DEMO,3,Demo,2,False,False,Inadequate but harmless,Demo,2,3,Demo,2,False,True,Perfect,Demo,1,3,False,False
+19,Disease_7,1,GP,0,55-64,Male,DEMO,2,Demo,4,True,False,Adequate,Demo,4,2,Demo,2,False,False,Adequate,Demo,4,2,True,False
+20,Disease_17,1,GP,6-10,35-44,Female,DEMO,1,Demo,3,False,False,Inadequate and dangerous,Demo,1,1,Demo,4,True,False,Adequate,Demo,1,4,False,True
+21,Disease_16,1,GP,>10,35-44,Female,DEMO,3,Demo,2,True,False,Perfect,Demo,3,4,Demo,3,True,False,Inadequate and dangerous,Demo,1,2,False,False
+22,Disease_1,1,GP,1-2,55-64,Female,DEMO,4,Demo,2,True,False,Adequate,Demo,1,4,Demo,1,True,False,Perfect,Demo,3,5,False,False
+23,Disease_14,1,GP,6-10,25-34,Male,DEMO,2,Demo,1,False,False,Perfect,Demo,1,2,Demo,4,True,True,Perfect,Demo,1,4,True,False
+24,Disease_2,1,GP,6-10,45-54,Female,DEMO,3,Demo,2,False,False,Adequate,Demo,4,4,Demo,1,True,False,Perfect,Demo,4,2,True,False
+25,Disease_18,1,GP,3-5,55-64,Male,DEMO,5,Demo,1,True,False,Perfect,Demo,4,5,Demo,3,True,False,Perfect,Demo,3,4,True,True
+26,Disease_8,2,GP,>10,35-44,Female,DEMO,1,Demo,2,False,False,Inadequate but harmless,Demo,3,1,Demo,4,True,False,Adequate,Demo,3,5,True,False
+27,Disease_5,2,GP,0,55-64,Female,DEMO,5,Demo,3,True,False,Adequate,Demo,2,5,Demo,1,True,False,Adequate,Demo,2,5,True,False
+28,Disease_17,2,GP,0,35-44,Female,DEMO,4,Demo,4,True,False,Inadequate but harmless,Demo,3,4,Demo,1,True,True,Perfect,Demo,3,4,False,False
+29,Disease_15,2,GP,>10,25-34,Male,DEMO,4,Demo,4,True,False,Adequate,Demo,4,4,Demo,1,True,False,Perfect,Demo,1,5,False,True
+30,Disease_18,2,GP,6-10,25-34,Female,DEMO,3,Demo,2,False,False,Inadequate and dangerous,Demo,3,3,Demo,2,True,False,Inadequate and dangerous,Demo,2,3,False,True
+31,Disease_17,2,GP,0,25-34,Female,DEMO,1,Demo,4,False,False,Inadequate and dangerous,Demo,1,3,Demo,4,True,False,Adequate,Demo,2,3,True,False
+32,Disease_9,2,GP,0,45-54,Male,DEMO,1,Demo,4,True,False,Adequate,Demo,1,1,Demo,1,True,False,Adequate,Demo,2,2,True,False
+33,Disease_5,2,GP,6-10,45-54,Male,DEMO,1,Demo,4,False,True,Inadequate and dangerous,Demo,1,2,Demo,2,False,True,Perfect,Demo,2,3,False,True
+34,Disease_12,2,GP,6-10,25-34,Female,DEMO,2,Demo,2,False,True,Adequate,Demo,2,4,Demo,4,True,False,Inadequate and dangerous,Demo,1,4,False,False
+35,Disease_13,2,GP,3-5,25-34,Female,DEMO,3,Demo,2,False,False,Adequate,Demo,1,3,Demo,2,False,True,Perfect,Demo,3,5,True,False
+36,Disease_15,2,GP,0,45-54,Male,DEMO,4,Demo,2,True,False,Perfect,Demo,3,4,Demo,1,True,False,Adequate,Demo,3,1,True,True
+37,Disease_5,2,GP,3-5,25-34,Male,DEMO,4,Demo,1,True,False,Perfect,Demo,3,5,Demo,1,True,True,Adequate,Demo,1,3,True,True
+38,Disease_2,2,GP,6-10,45-54,Female,DEMO,5,Demo,3,True,False,Adequate,Demo,2,5,Demo,3,True,False,Perfect,Demo,2,4,False,False
+39,Disease_14,2,GP,1-2,45-54,Male,DEMO,3,Demo,3,True,True,Inadequate and dangerous,Demo,2,3,Demo,2,False,False,Adequate,Demo,3,3,False,False
+40,Disease_10,2,GP,3-5,25-34,Male,DEMO,3,Demo,1,False,True,Perfect,Demo,2,4,Demo,1,True,True,Adequate,Demo,2,5,False,True
+41,Disease_15,2,GP,0,45-54,Male,DEMO,4,Demo,4,True,True,Inadequate and dangerous,Demo,4,4,Demo,4,True,True,Adequate,Demo,3,3,False,False
+42,Disease_5,2,GP,1-2,55-64,Female,DEMO,4,Demo,1,True,True,Adequate,Demo,1,4,Demo,1,True,True,Perfect,Demo,1,2,False,True
+43,Disease_15,2,GP,3-5,45-54,Female,DEMO,4,Demo,1,True,True,Perfect,Demo,4,5,Demo,1,True,False,Perfect,Demo,3,2,False,False
+44,Disease_19,2,GP,3-5,45-54,Male,DEMO,4,Demo,2,True,False,Inadequate and dangerous,Demo,2,4,Demo,2,True,True,Adequate,Demo,4,1,False,True
+45,Disease_12,2,GP,0,25-34,Male,DEMO,4,Demo,4,True,False,Adequate,Demo,1,5,Demo,1,True,False,Perfect,Demo,2,2,False,False
+46,Disease_5,2,GP,6-10,35-44,Female,DEMO,4,Demo,2,True,True,Adequate,Demo,2,4,Demo,1,True,False,Inadequate and dangerous,Demo,1,4,False,True
+47,Disease_9,2,GP,3-5,45-54,Male,DEMO,5,Demo,4,True,False,Perfect,Demo,2,5,Demo,2,True,False,Perfect,Demo,3,1,False,False
+48,Disease_11,2,GP,1-2,45-54,Male,DEMO,5,Demo,4,True,True,Perfect,Demo,4,5,Demo,3,True,True,Perfect,Demo,4,1,False,False
+49,Disease_4,2,GP,>10,45-54,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,1,4,Demo,3,True,False,Adequate,Demo,4,2,True,True
+50,Disease_3,2,GP,0,25-34,Female,DEMO,1,Demo,4,False,False,Inadequate and dangerous,Demo,4,1,Demo,3,False,False,Inadequate but harmless,Demo,3,1,False,False
+51,Disease_9,2,GP,>10,35-44,Female,DEMO,5,Demo,2,True,False,Inadequate and dangerous,Demo,3,5,Demo,3,True,False,Perfect,Demo,1,5,False,False
+52,Disease_6,2,GP,0,45-54,Male,DEMO,3,Demo,3,False,False,Adequate,Demo,3,4,Demo,3,True,False,Inadequate and dangerous,Demo,4,3,False,False
+53,Disease_15,2,GP,>10,25-34,Female,DEMO,3,Demo,2,False,False,Perfect,Demo,2,4,Demo,1,True,True,Adequate,Demo,3,1,True,False
+54,Disease_1,2,GP,>10,45-54,Male,DEMO,4,Demo,4,True,False,Adequate,Demo,3,5,Demo,1,True,False,Adequate,Demo,4,4,False,True
+55,Disease_11,2,GP,3-5,25-34,Female,DEMO,4,Demo,3,True,False,Inadequate but harmless,Demo,2,5,Demo,4,True,False,Adequate,Demo,3,4,False,True
+56,Disease_11,3,GP,6-10,55-64,Female,DEMO,4,Demo,4,True,False,Perfect,Demo,4,4,Demo,3,True,True,Perfect,Demo,2,1,False,False
+57,Disease_1,3,GP,>10,25-34,Female,DEMO,5,Demo,2,True,True,Perfect,Demo,1,5,Demo,3,True,True,Adequate,Demo,3,5,False,False
+58,Disease_11,3,GP,1-2,45-54,Female,DEMO,2,Demo,3,False,False,Adequate,Demo,3,3,Demo,3,True,False,Inadequate but harmless,Demo,4,1,False,False
+59,Disease_11,3,GP,1-2,55-64,Female,DEMO,5,Demo,1,True,False,Perfect,Demo,1,5,Demo,1,True,False,Perfect,Demo,3,5,True,False
+60,Disease_17,3,GP,>10,25-34,Female,DEMO,3,Demo,4,False,False,Inadequate and dangerous,Demo,2,3,Demo,3,False,False,Adequate,Demo,4,1,False,False
+61,Disease_10,3,GP,1-2,45-54,Female,DEMO,2,Demo,2,False,False,Inadequate and dangerous,Demo,4,2,Demo,4,False,False,Perfect,Demo,1,1,True,True
+62,Disease_15,3,GP,>10,45-54,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,3,4,Demo,4,True,False,Perfect,Demo,2,3,False,False
+63,Disease_10,3,GP,0,45-54,Male,DEMO,1,Demo,3,False,True,Perfect,Demo,1,1,Demo,4,True,False,Perfect,Demo,1,4,False,False
+64,Disease_9,3,GP,1-2,25-34,Female,DEMO,3,Demo,3,False,False,Perfect,Demo,4,3,Demo,1,True,False,Adequate,Demo,2,1,False,False
+65,Disease_7,3,GP,0,35-44,Female,DEMO,4,Demo,3,True,False,Inadequate and dangerous,Demo,1,5,Demo,1,True,False,Perfect,Demo,2,2,False,False
+66,Disease_12,3,GP,>10,35-44,Female,DEMO,3,Demo,1,False,True,Inadequate but harmless,Demo,3,3,Demo,4,False,True,Perfect,Demo,1,2,False,False
+67,Disease_11,3,GP,0,45-54,Male,DEMO,3,Demo,4,True,False,Inadequate and dangerous,Demo,3,4,Demo,4,True,False,Perfect,Demo,3,3,False,False
+68,Disease_1,3,GP,1-2,55-64,Male,DEMO,5,Demo,4,True,True,Perfect,Demo,1,5,Demo,2,True,False,Inadequate but harmless,Demo,1,2,False,False
+69,Disease_7,3,GP,3-5,45-54,Female,DEMO,3,Demo,1,False,True,Perfect,Demo,2,3,Demo,2,False,True,Adequate,Demo,3,3,False,False
+70,Disease_12,3,GP,3-5,55-64,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,4,5,Demo,2,True,False,Perfect,Demo,4,3,False,False
+71,Disease_7,3,GP,>10,45-54,Male,DEMO,1,Demo,3,False,False,Perfect,Demo,3,2,Demo,1,True,False,Perfect,Demo,3,3,False,False
+72,Disease_2,3,GP,3-5,25-34,Male,DEMO,1,Demo,4,True,False,Adequate,Demo,3,2,Demo,3,True,False,Adequate,Demo,2,1,False,False
+73,Disease_3,4,GP,1-2,35-44,Female,DEMO,4,Demo,3,True,False,Adequate,Demo,4,4,Demo,4,True,False,Perfect,Demo,4,5,False,False
+74,Disease_15,4,GP,0,35-44,Female,DEMO,3,Demo,1,False,False,Adequate,Demo,1,4,Demo,2,True,True,Adequate,Demo,4,2,True,True
+75,Disease_17,4,GP,0,55-64,Female,DEMO,1,Demo,4,False,False,Perfect,Demo,1,1,Demo,3,False,False,Perfect,Demo,3,3,False,False
+76,Disease_8,4,GP,6-10,25-34,Male,DEMO,4,Demo,2,True,False,Adequate,Demo,2,4,Demo,3,True,True,Adequate,Demo,1,2,False,False
+77,Disease_17,4,GP,>10,45-54,Female,DEMO,1,Demo,3,False,False,Adequate,Demo,4,3,Demo,3,False,False,Adequate,Demo,4,5,False,False
+78,Disease_9,4,GP,3-5,45-54,Female,DEMO,4,Demo,1,True,False,Perfect,Demo,4,4,Demo,2,True,False,Perfect,Demo,1,3,True,False
+79,Disease_6,4,GP,>10,55-64,Female,DEMO,3,Demo,1,False,False,Perfect,Demo,2,3,Demo,4,False,False,Adequate,Demo,3,2,False,False
+80,Disease_19,4,GP,6-10,25-34,Male,DEMO,3,Demo,3,False,True,Inadequate but harmless,Demo,1,4,Demo,1,True,False,Inadequate but harmless,Demo,3,4,True,False
+81,Disease_10,4,GP,1-2,55-64,Male,DEMO,5,Demo,1,True,False,Inadequate and dangerous,Demo,4,5,Demo,2,True,False,Adequate,Demo,3,2,True,False
+82,Disease_2,4,GP,6-10,55-64,Female,DEMO,5,Demo,1,True,False,Inadequate and dangerous,Demo,2,5,Demo,3,True,False,Perfect,Demo,3,4,False,False
+83,Disease_17,4,GP,6-10,35-44,Male,DEMO,1,Demo,2,False,False,Inadequate and dangerous,Demo,4,3,Demo,3,True,False,Perfect,Demo,3,5,False,False
+84,Disease_11,4,GP,0,35-44,Male,DEMO,4,Demo,3,True,False,Inadequate but harmless,Demo,3,4,Demo,2,True,True,Adequate,Demo,4,1,True,False
+85,Disease_2,4,GP,6-10,35-44,Male,DEMO,3,Demo,3,True,False,Perfect,Demo,4,4,Demo,4,True,False,Perfect,Demo,1,3,False,False
+86,Disease_2,4,GP,>10,45-54,Female,DEMO,3,Demo,1,False,False,Adequate,Demo,3,3,Demo,4,False,False,Perfect,Demo,2,1,False,False
+87,Disease_7,4,GP,3-5,25-34,Female,DEMO,4,Demo,4,True,True,Perfect,Demo,3,5,Demo,4,True,False,Adequate,Demo,2,1,False,True
+88,Disease_2,4,GP,3-5,55-64,Male,DEMO,4,Demo,1,True,True,Inadequate and dangerous,Demo,4,4,Demo,2,True,False,Perfect,Demo,4,3,False,False
+89,Disease_19,4,GP,0,25-34,Female,DEMO,4,Demo,1,True,False,Inadequate and dangerous,Demo,2,4,Demo,2,True,True,Adequate,Demo,4,2,False,False
+90,Disease_7,4,GP,1-2,35-44,Male,DEMO,1,Demo,2,True,False,Perfect,Demo,2,1,Demo,2,True,True,Inadequate but harmless,Demo,3,5,False,True
+91,Disease_9,4,GP,1-2,55-64,Female,DEMO,5,Demo,4,True,False,Perfect,Demo,2,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,4,False,False
+92,Disease_18,4,GP,6-10,45-54,Female,DEMO,3,Demo,1,True,False,Adequate,Demo,3,3,Demo,3,False,False,Perfect,Demo,1,5,False,False
+93,Disease_5,4,GP,0,45-54,Male,DEMO,4,Demo,4,True,True,Adequate,Demo,1,5,Demo,2,True,True,Adequate,Demo,4,1,False,False
+94,Disease_4,4,GP,6-10,55-64,Female,DEMO,4,Demo,4,True,False,Adequate,Demo,3,4,Demo,4,True,False,Inadequate and dangerous,Demo,2,4,False,False
+95,Disease_12,4,GP,3-5,25-34,Female,DEMO,3,Demo,4,False,False,Inadequate but harmless,Demo,2,3,Demo,4,False,False,Perfect,Demo,2,4,False,False
+96,Disease_15,4,GP,0,55-64,Female,DEMO,3,Demo,3,False,True,Adequate,Demo,1,3,Demo,4,True,True,Perfect,Demo,3,1,False,True
+97,Disease_11,4,GP,1-2,45-54,Female,DEMO,5,Demo,2,True,False,Adequate,Demo,4,5,Demo,2,True,True,Adequate,Demo,4,3,False,False
+98,Disease_12,4,GP,>10,25-34,Male,DEMO,3,Demo,4,False,False,Adequate,Demo,3,3,Demo,2,True,True,Inadequate but harmless,Demo,2,2,True,True
+99,Disease_5,4,GP,0,25-34,Male,DEMO,1,Demo,2,True,False,Adequate,Demo,2,2,Demo,4,True,False,Inadequate and dangerous,Demo,1,2,False,False
+100,Disease_13,4,GP,6-10,55-64,Female,DEMO,2,Demo,2,False,False,Inadequate and dangerous,Demo,1,3,Demo,1,False,False,Inadequate but harmless,Demo,2,5,False,False
+101,Disease_11,4,GP,1-2,35-44,Female,DEMO,4,Demo,2,True,False,Perfect,Demo,4,5,Demo,1,True,True,Perfect,Demo,2,4,False,True
+102,Disease_2,5,GP,1-2,55-64,Female,DEMO,3,Demo,3,True,False,Adequate,Demo,4,4,Demo,1,True,False,Perfect,Demo,1,3,False,False
+103,Disease_18,5,GP,>10,25-34,Male,DEMO,3,Demo,3,False,False,Adequate,Demo,2,4,Demo,2,True,False,Adequate,Demo,1,4,False,False
+104,Disease_17,5,GP,3-5,55-64,Female,DEMO,3,Demo,2,False,False,Inadequate and dangerous,Demo,2,4,Demo,2,True,False,Adequate,Demo,1,2,False,False
+105,Disease_12,5,GP,>10,35-44,Female,DEMO,5,Demo,1,True,True,Adequate,Demo,3,5,Demo,4,True,False,Perfect,Demo,4,3,False,False
+106,Disease_15,5,GP,0,55-64,Male,DEMO,3,Demo,3,True,True,Perfect,Demo,2,4,Demo,3,True,True,Adequate,Demo,4,5,True,False
+107,Disease_16,5,GP,1-2,55-64,Female,DEMO,5,Demo,2,True,False,Perfect,Demo,2,5,Demo,1,True,False,Inadequate but harmless,Demo,4,2,False,True
+108,Disease_4,5,GP,0,55-64,Female,DEMO,2,Demo,1,True,False,Perfect,Demo,3,3,Demo,2,False,False,Perfect,Demo,1,2,True,False
+109,Disease_16,5,GP,0,35-44,Male,DEMO,3,Demo,1,False,False,Adequate,Demo,4,4,Demo,4,True,False,Perfect,Demo,3,4,True,False
+110,Disease_17,5,GP,>10,45-54,Male,DEMO,2,Demo,4,False,True,Adequate,Demo,1,2,Demo,2,False,False,Inadequate and dangerous,Demo,1,2,True,False
+111,Disease_7,5,GP,0,25-34,Male,DEMO,4,Demo,3,True,False,Perfect,Demo,4,4,Demo,2,True,True,Perfect,Demo,1,4,True,False
+112,Disease_4,5,GP,>10,25-34,Female,DEMO,2,Demo,2,True,False,Inadequate and dangerous,Demo,4,2,Demo,1,True,True,Perfect,Demo,3,4,False,False
+113,Disease_2,5,GP,0,45-54,Female,DEMO,4,Demo,3,True,False,Inadequate and dangerous,Demo,4,5,Demo,2,True,False,Inadequate but harmless,Demo,3,1,True,False
+114,Disease_16,5,GP,6-10,55-64,Female,DEMO,3,Demo,3,True,False,Inadequate but harmless,Demo,4,4,Demo,3,True,True,Perfect,Demo,4,4,True,False
+115,Disease_16,5,GP,6-10,35-44,Female,DEMO,1,Demo,2,False,True,Inadequate and dangerous,Demo,3,1,Demo,2,False,True,Adequate,Demo,2,3,True,False
+116,Disease_4,5,GP,1-2,45-54,Female,DEMO,5,Demo,3,True,False,Adequate,Demo,4,5,Demo,1,True,True,Adequate,Demo,1,2,False,False
+117,Disease_14,5,GP,3-5,55-64,Male,DEMO,4,Demo,4,True,False,Inadequate but harmless,Demo,3,5,Demo,2,True,True,Adequate,Demo,2,4,False,False
+118,Disease_1,5,GP,6-10,45-54,Female,DEMO,4,Demo,1,True,False,Perfect,Demo,1,4,Demo,4,True,False,Adequate,Demo,1,5,False,True
+119,Disease_13,5,GP,6-10,35-44,Male,DEMO,1,Demo,4,False,False,Inadequate and dangerous,Demo,3,1,Demo,2,False,False,Adequate,Demo,3,3,False,True
+120,Disease_15,5,GP,0,45-54,Male,DEMO,2,Demo,1,False,True,Inadequate and dangerous,Demo,2,2,Demo,2,False,True,Perfect,Demo,4,1,False,False
+121,Disease_4,5,GP,6-10,35-44,Male,DEMO,5,Demo,2,True,True,Perfect,Demo,2,5,Demo,4,True,True,Adequate,Demo,4,5,False,False
+122,Disease_10,5,GP,1-2,55-64,Male,DEMO,2,Demo,1,False,True,Inadequate and dangerous,Demo,2,2,Demo,1,False,False,Perfect,Demo,1,4,False,False
+123,Disease_4,5,GP,1-2,55-64,Female,DEMO,4,Demo,4,True,False,Perfect,Demo,1,4,Demo,4,True,False,Adequate,Demo,2,5,True,True
+124,Disease_2,5,GP,6-10,55-64,Male,DEMO,4,Demo,1,True,False,Inadequate and dangerous,Demo,4,5,Demo,4,True,False,Perfect,Demo,2,3,False,True
+125,Disease_13,5,GP,3-5,25-34,Female,DEMO,5,Demo,4,True,False,Adequate,Demo,1,5,Demo,4,True,True,Perfect,Demo,1,3,True,True
+126,Disease_14,5,GP,6-10,45-54,Female,DEMO,5,Demo,3,True,False,Perfect,Demo,3,5,Demo,3,True,False,Adequate,Demo,2,2,True,True
+127,Disease_8,5,GP,0,25-34,Female,DEMO,5,Demo,3,True,True,Inadequate and dangerous,Demo,2,5,Demo,4,True,False,Perfect,Demo,2,2,False,True
+128,Disease_16,5,GP,6-10,35-44,Male,DEMO,3,Demo,2,False,False,Perfect,Demo,3,3,Demo,1,False,True,Adequate,Demo,4,2,False,False
+129,Disease_3,5,GP,1-2,55-64,Female,DEMO,2,Demo,3,True,False,Inadequate but harmless,Demo,3,2,Demo,2,False,False,Adequate,Demo,2,4,True,False
+130,Disease_13,5,GP,1-2,35-44,Male,DEMO,4,Demo,1,True,False,Perfect,Demo,3,4,Demo,3,True,False,Perfect,Demo,1,3,False,False
+131,Disease_7,5,GP,6-10,45-54,Male,DEMO,4,Demo,4,True,False,Inadequate and dangerous,Demo,2,4,Demo,4,True,False,Perfect,Demo,3,1,True,True
+132,Disease_14,6,GP,3-5,45-54,Female,DEMO,4,Demo,1,True,False,Adequate,Demo,4,4,Demo,2,True,False,Perfect,Demo,4,1,True,False
+133,Disease_16,6,GP,3-5,45-54,Male,DEMO,4,Demo,2,True,False,Perfect,Demo,4,5,Demo,3,True,False,Perfect,Demo,4,3,True,False
+134,Disease_13,6,GP,6-10,25-34,Male,DEMO,1,Demo,3,True,False,Adequate,Demo,4,1,Demo,1,True,False,Perfect,Demo,4,2,False,False
+135,Disease_13,6,GP,6-10,35-44,Female,DEMO,1,Demo,2,False,True,Perfect,Demo,3,1,Demo,4,True,True,Inadequate but harmless,Demo,1,1,True,True
+136,Disease_11,6,GP,0,55-64,Female,DEMO,4,Demo,1,True,True,Adequate,Demo,4,5,Demo,4,True,True,Perfect,Demo,3,4,False,False
+137,Disease_10,6,GP,1-2,45-54,Male,DEMO,4,Demo,3,True,True,Perfect,Demo,1,4,Demo,2,True,False,Adequate,Demo,1,3,True,False
+138,Disease_5,6,GP,6-10,25-34,Male,DEMO,5,Demo,2,True,False,Adequate,Demo,2,5,Demo,4,True,True,Perfect,Demo,3,1,False,True
+139,Disease_4,6,GP,>10,35-44,Female,DEMO,1,Demo,4,True,True,Inadequate and dangerous,Demo,3,1,Demo,3,True,True,Perfect,Demo,2,2,False,False
+140,Disease_11,6,GP,0,25-34,Female,DEMO,2,Demo,2,True,False,Inadequate but harmless,Demo,3,3,Demo,3,False,True,Perfect,Demo,4,5,True,False
+141,Disease_3,6,GP,1-2,25-34,Female,DEMO,2,Demo,1,False,False,Perfect,Demo,4,3,Demo,4,True,True,Inadequate but harmless,Demo,2,5,True,False
+142,Disease_17,6,GP,>10,25-34,Female,DEMO,5,Demo,4,True,False,Inadequate and dangerous,Demo,2,5,Demo,1,True,False,Inadequate and dangerous,Demo,2,2,False,True
+143,Disease_2,6,GP,1-2,35-44,Female,DEMO,5,Demo,4,True,False,Adequate,Demo,4,5,Demo,4,True,False,Inadequate but harmless,Demo,3,2,False,False
+144,Disease_4,6,GP,6-10,35-44,Male,DEMO,3,Demo,4,False,True,Adequate,Demo,4,3,Demo,4,False,True,Perfect,Demo,4,2,False,False
+145,Disease_3,6,GP,6-10,25-34,Female,DEMO,4,Demo,4,True,False,Adequate,Demo,3,4,Demo,1,True,True,Inadequate and dangerous,Demo,1,3,True,True
+146,Disease_8,6,GP,0,45-54,Male,DEMO,1,Demo,4,False,False,Adequate,Demo,4,1,Demo,4,True,False,Inadequate but harmless,Demo,4,3,False,False
+147,Disease_8,6,GP,>10,55-64,Female,DEMO,2,Demo,4,False,True,Adequate,Demo,2,3,Demo,2,True,True,Perfect,Demo,4,3,False,False
+148,Disease_13,6,GP,1-2,55-64,Female,DEMO,3,Demo,2,False,False,Adequate,Demo,4,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,1,False,True
+149,Disease_9,7,GP,6-10,35-44,Female,DEMO,4,Demo,2,True,False,Inadequate but harmless,Demo,3,4,Demo,2,True,False,Adequate,Demo,1,2,False,False
+150,Disease_1,7,GP,>10,45-54,Female,DEMO,3,Demo,2,True,False,Adequate,Demo,2,3,Demo,3,True,False,Perfect,Demo,2,1,False,False
+151,Disease_16,7,GP,1-2,35-44,Male,DEMO,5,Demo,4,True,True,Adequate,Demo,2,5,Demo,1,True,False,Perfect,Demo,3,3,False,False
+152,Disease_14,7,GP,6-10,35-44,Female,DEMO,3,Demo,4,True,True,Perfect,Demo,4,3,Demo,1,True,False,Perfect,Demo,2,3,True,True
+153,Disease_3,7,GP,3-5,35-44,Male,DEMO,3,Demo,2,True,False,Inadequate and dangerous,Demo,4,3,Demo,4,True,True,Perfect,Demo,2,1,True,False
+154,Disease_13,7,GP,0,45-54,Female,DEMO,4,Demo,3,True,False,Adequate,Demo,4,5,Demo,2,True,True,Inadequate but harmless,Demo,4,1,True,True
+155,Disease_14,7,GP,0,55-64,Male,DEMO,3,Demo,4,False,False,Perfect,Demo,1,3,Demo,2,True,True,Perfect,Demo,3,5,False,False
+156,Disease_5,7,GP,6-10,25-34,Male,DEMO,3,Demo,4,False,True,Inadequate and dangerous,Demo,1,3,Demo,1,False,False,Perfect,Demo,4,1,True,False
+157,Disease_19,7,GP,1-2,55-64,Male,DEMO,1,Demo,2,False,False,Adequate,Demo,4,3,Demo,1,True,False,Adequate,Demo,3,4,True,False
+158,Disease_2,7,GP,3-5,45-54,Male,DEMO,3,Demo,1,False,True,Adequate,Demo,2,4,Demo,1,True,True,Inadequate and dangerous,Demo,2,2,False,True
+159,Disease_14,7,GP,3-5,55-64,Male,DEMO,3,Demo,4,False,True,Adequate,Demo,2,3,Demo,1,False,True,Adequate,Demo,3,4,True,False
+160,Disease_10,7,GP,3-5,35-44,Female,DEMO,5,Demo,1,True,False,Inadequate and dangerous,Demo,1,5,Demo,1,True,True,Adequate,Demo,3,1,True,False
+161,Disease_8,7,GP,6-10,45-54,Female,DEMO,1,Demo,4,False,False,Adequate,Demo,4,1,Demo,1,True,True,Perfect,Demo,3,4,False,True
+162,Disease_13,7,GP,0,45-54,Female,DEMO,4,Demo,2,True,True,Adequate,Demo,1,4,Demo,3,True,False,Inadequate and dangerous,Demo,3,4,False,False
+163,Disease_9,7,GP,1-2,35-44,Male,DEMO,3,Demo,3,False,False,Adequate,Demo,3,3,Demo,2,False,True,Inadequate but harmless,Demo,3,4,False,False
+164,Disease_2,7,GP,0,25-34,Female,DEMO,3,Demo,4,False,True,Adequate,Demo,1,4,Demo,3,True,True,Inadequate but harmless,Demo,1,1,False,False
+165,Disease_18,7,GP,6-10,45-54,Male,DEMO,5,Demo,3,True,False,Perfect,Demo,2,5,Demo,4,True,True,Adequate,Demo,3,4,False,False
+166,Disease_4,7,GP,6-10,25-34,Female,DEMO,1,Demo,3,True,False,Inadequate and dangerous,Demo,3,2,Demo,4,True,True,Perfect,Demo,3,4,False,False
+167,Disease_11,7,GP,0,25-34,Female,DEMO,3,Demo,4,False,False,Adequate,Demo,4,3,Demo,4,False,False,Adequate,Demo,4,1,True,False
+168,Disease_14,7,GP,3-5,55-64,Male,DEMO,1,Demo,2,False,False,Inadequate but harmless,Demo,1,2,Demo,3,True,False,Inadequate but harmless,Demo,2,5,False,False
+169,Disease_13,7,GP,3-5,45-54,Female,DEMO,3,Demo,4,False,True,Perfect,Demo,2,3,Demo,4,False,False,Adequate,Demo,1,2,True,True
+170,Disease_2,7,GP,>10,45-54,Female,DEMO,5,Demo,1,True,False,Adequate,Demo,1,5,Demo,4,True,False,Adequate,Demo,1,4,False,False
+171,Disease_3,7,GP,6-10,35-44,Female,DEMO,2,Demo,2,True,False,Adequate,Demo,1,3,Demo,3,False,True,Inadequate and dangerous,Demo,1,5,False,True
+172,Disease_11,7,GP,>10,45-54,Female,DEMO,5,Demo,2,True,True,Perfect,Demo,4,5,Demo,1,True,False,Adequate,Demo,2,2,False,True
+173,Disease_6,7,GP,1-2,55-64,Female,DEMO,3,Demo,3,False,True,Perfect,Demo,3,5,Demo,3,True,False,Adequate,Demo,2,1,False,False
+174,Disease_4,7,GP,>10,45-54,Female,DEMO,3,Demo,3,False,True,Perfect,Demo,1,4,Demo,1,True,False,Perfect,Demo,3,3,False,False
+175,Disease_16,7,GP,1-2,55-64,Female,DEMO,4,Demo,1,True,True,Perfect,Demo,2,5,Demo,2,True,False,Perfect,Demo,4,2,False,False
+176,Disease_18,7,GP,1-2,25-34,Female,DEMO,3,Demo,3,False,True,Inadequate and dangerous,Demo,4,4,Demo,1,True,False,Inadequate and dangerous,Demo,1,5,False,False
+177,Disease_8,7,GP,0,35-44,Female,DEMO,5,Demo,2,True,False,Adequate,Demo,2,5,Demo,3,True,True,Inadequate but harmless,Demo,4,5,False,True
+178,Disease_16,7,GP,1-2,55-64,Male,DEMO,5,Demo,3,True,False,Inadequate but harmless,Demo,2,5,Demo,4,True,True,Perfect,Demo,4,4,False,False
+179,Disease_7,8,GP,0,25-34,Male,DEMO,2,Demo,2,True,False,Adequate,Demo,1,2,Demo,3,False,False,Inadequate but harmless,Demo,1,2,False,False
+180,Disease_15,8,GP,6-10,25-34,Male,DEMO,1,Demo,3,True,False,Adequate,Demo,3,2,Demo,2,False,False,Perfect,Demo,3,3,True,False
+181,Disease_6,8,GP,0,45-54,Female,DEMO,1,Demo,2,False,False,Inadequate but harmless,Demo,4,1,Demo,1,False,True,Perfect,Demo,1,1,True,False
+182,Disease_18,8,GP,3-5,25-34,Male,DEMO,5,Demo,1,True,False,Perfect,Demo,3,5,Demo,1,True,True,Inadequate and dangerous,Demo,1,1,False,False
+183,Disease_11,8,GP,>10,25-34,Male,DEMO,4,Demo,4,True,False,Perfect,Demo,3,4,Demo,1,True,True,Inadequate but harmless,Demo,3,3,False,True
+184,Disease_9,8,GP,3-5,45-54,Female,DEMO,3,Demo,2,False,False,Perfect,Demo,1,5,Demo,4,True,False,Inadequate but harmless,Demo,1,5,False,False
+185,Disease_1,8,GP,6-10,25-34,Male,DEMO,3,Demo,1,False,True,Adequate,Demo,4,4,Demo,3,True,True,Perfect,Demo,2,4,True,False
+186,Disease_11,8,GP,3-5,25-34,Male,DEMO,3,Demo,1,True,True,Adequate,Demo,4,4,Demo,3,True,False,Inadequate and dangerous,Demo,1,2,True,True
+187,Disease_11,8,GP,0,55-64,Female,DEMO,3,Demo,4,False,False,Perfect,Demo,3,3,Demo,4,False,True,Adequate,Demo,4,2,False,False
+188,Disease_7,8,GP,>10,25-34,Male,DEMO,1,Demo,3,False,False,Inadequate but harmless,Demo,2,1,Demo,4,True,True,Adequate,Demo,4,5,False,False
+189,Disease_8,8,GP,>10,35-44,Male,DEMO,1,Demo,4,False,False,Adequate,Demo,1,2,Demo,2,False,False,Adequate,Demo,4,4,True,False
+190,Disease_18,8,GP,3-5,45-54,Female,DEMO,5,Demo,4,True,False,Inadequate but harmless,Demo,2,5,Demo,4,True,False,Perfect,Demo,1,2,False,False
+191,Disease_4,8,GP,6-10,45-54,Male,DEMO,5,Demo,1,True,False,Perfect,Demo,4,5,Demo,2,True,False,Perfect,Demo,1,2,False,False
+192,Disease_6,8,GP,3-5,35-44,Male,DEMO,3,Demo,4,True,False,Adequate,Demo,1,3,Demo,2,False,True,Perfect,Demo,2,2,True,False
+193,Disease_8,8,GP,6-10,25-34,Male,DEMO,4,Demo,4,True,False,Perfect,Demo,1,5,Demo,2,True,False,Adequate,Demo,2,1,True,False
+194,Disease_12,8,GP,3-5,25-34,Male,DEMO,5,Demo,2,True,False,Inadequate and dangerous,Demo,2,5,Demo,2,True,False,Inadequate but harmless,Demo,3,5,False,False
+195,Disease_2,8,GP,1-2,45-54,Female,DEMO,5,Demo,1,True,False,Perfect,Demo,4,5,Demo,3,True,True,Adequate,Demo,1,3,False,False
+196,Disease_5,8,GP,1-2,55-64,Male,DEMO,5,Demo,4,True,False,Inadequate but harmless,Demo,3,5,Demo,1,True,True,Adequate,Demo,2,3,True,True
+197,Disease_4,8,GP,0,35-44,Female,DEMO,3,Demo,3,True,False,Perfect,Demo,4,4,Demo,1,True,False,Adequate,Demo,4,4,False,False
+198,Disease_14,8,GP,0,35-44,Male,DEMO,5,Demo,4,True,False,Adequate,Demo,2,5,Demo,4,True,False,Perfect,Demo,2,5,False,True
+199,Disease_5,8,GP,1-2,25-34,Male,DEMO,5,Demo,2,True,False,Inadequate but harmless,Demo,1,5,Demo,4,True,False,Adequate,Demo,3,5,False,False
+200,Disease_8,8,GP,>10,25-34,Female,DEMO,2,Demo,4,False,False,Perfect,Demo,2,2,Demo,4,False,True,Adequate,Demo,4,3,False,True
+201,Disease_15,8,GP,3-5,25-34,Male,DEMO,4,Demo,3,True,True,Perfect,Demo,3,4,Demo,1,True,False,Perfect,Demo,4,2,False,False
+202,Disease_9,8,GP,0,25-34,Male,DEMO,3,Demo,4,True,False,Inadequate and dangerous,Demo,2,3,Demo,4,False,True,Adequate,Demo,1,4,True,True
+203,Disease_6,8,GP,3-5,45-54,Female,DEMO,4,Demo,3,True,False,Perfect,Demo,2,5,Demo,2,True,False,Perfect,Demo,4,3,True,True
+204,Disease_16,8,GP,>10,35-44,Male,DEMO,3,Demo,4,False,False,Inadequate and dangerous,Demo,3,5,Demo,2,True,False,Inadequate but harmless,Demo,3,1,True,False
+205,Disease_5,8,GP,0,25-34,Male,DEMO,3,Demo,1,False,True,Perfect,Demo,3,3,Demo,4,False,True,Inadequate but harmless,Demo,3,3,False,True
+206,Disease_9,8,GP,>10,25-34,Male,DEMO,1,Demo,2,False,False,Perfect,Demo,3,2,Demo,1,True,False,Perfect,Demo,3,5,False,False
+207,Disease_18,8,GP,0,45-54,Male,DEMO,3,Demo,4,False,True,Perfect,Demo,1,3,Demo,2,False,False,Inadequate and dangerous,Demo,4,3,False,False
+208,Disease_5,8,GP,3-5,55-64,Female,DEMO,3,Demo,4,False,True,Perfect,Demo,3,4,Demo,3,True,True,Inadequate but harmless,Demo,2,1,True,False
+209,Disease_5,9,GP,3-5,35-44,Female,DEMO,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,5,Demo,4,True,True,Adequate,Demo,2,5,False,False
+210,Disease_14,9,GP,>10,35-44,Female,DEMO,4,Demo,3,True,False,Inadequate and dangerous,Demo,1,4,Demo,3,True,False,Inadequate and dangerous,Demo,2,4,False,False
+211,Disease_19,9,GP,>10,55-64,Female,DEMO,4,Demo,1,True,False,Perfect,Demo,1,4,Demo,1,True,True,Adequate,Demo,2,1,True,False
+212,Disease_18,9,GP,1-2,55-64,Male,DEMO,5,Demo,1,True,False,Adequate,Demo,3,5,Demo,3,True,True,Adequate,Demo,4,2,True,False
+213,Disease_7,9,GP,3-5,25-34,Male,DEMO,5,Demo,2,True,True,Adequate,Demo,4,5,Demo,4,True,False,Inadequate and dangerous,Demo,2,5,True,False
+214,Disease_9,9,GP,3-5,55-64,Male,DEMO,2,Demo,4,False,True,Inadequate and dangerous,Demo,3,3,Demo,2,False,False,Perfect,Demo,3,3,False,True
+215,Disease_13,9,GP,6-10,25-34,Male,DEMO,4,Demo,1,True,False,Inadequate but harmless,Demo,4,5,Demo,3,True,False,Adequate,Demo,1,2,False,True
+216,Disease_18,9,GP,3-5,55-64,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,3,4,Demo,4,True,False,Perfect,Demo,2,3,False,False
+217,Disease_13,9,GP,0,25-34,Male,DEMO,4,Demo,3,True,False,Inadequate and dangerous,Demo,3,4,Demo,1,True,True,Adequate,Demo,4,2,True,False
+218,Disease_11,9,GP,1-2,35-44,Female,DEMO,4,Demo,3,True,False,Perfect,Demo,3,5,Demo,4,True,False,Adequate,Demo,2,3,False,False
+219,Disease_19,9,GP,1-2,25-34,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,1,5,Demo,4,True,True,Perfect,Demo,1,2,False,False
+220,Disease_6,9,GP,1-2,55-64,Female,DEMO,4,Demo,2,True,False,Perfect,Demo,4,4,Demo,2,True,False,Adequate,Demo,3,2,True,False
+221,Disease_15,9,GP,0,45-54,Male,DEMO,3,Demo,2,False,True,Adequate,Demo,2,3,Demo,2,False,True,Adequate,Demo,1,2,False,False
+222,Disease_19,9,GP,3-5,55-64,Male,DEMO,4,Demo,1,True,False,Inadequate but harmless,Demo,4,5,Demo,2,True,False,Adequate,Demo,3,2,False,False
+223,Disease_4,9,GP,1-2,25-34,Female,DEMO,3,Demo,2,False,False,Perfect,Demo,1,5,Demo,1,True,True,Perfect,Demo,3,1,False,False
+224,Disease_3,9,GP,0,45-54,Female,DEMO,5,Demo,1,True,True,Adequate,Demo,1,5,Demo,4,True,False,Adequate,Demo,3,5,True,True
+225,Disease_18,9,GP,0,35-44,Male,DEMO,4,Demo,2,True,True,Perfect,Demo,2,5,Demo,2,True,True,Inadequate but harmless,Demo,4,2,False,False
+226,Disease_8,10,GP,3-5,25-34,Male,DEMO,2,Demo,3,True,False,Perfect,Demo,3,2,Demo,2,True,False,Perfect,Demo,1,2,False,False
+227,Disease_15,10,GP,>10,55-64,Male,DEMO,4,Demo,1,True,True,Inadequate but harmless,Demo,4,4,Demo,4,True,False,Adequate,Demo,1,2,False,True
+228,Disease_3,10,GP,>10,25-34,Male,DEMO,3,Demo,4,True,False,Perfect,Demo,2,3,Demo,4,False,False,Perfect,Demo,1,1,False,True
+229,Disease_19,10,GP,1-2,25-34,Male,DEMO,1,Demo,3,False,False,Inadequate and dangerous,Demo,2,1,Demo,1,False,False,Perfect,Demo,4,2,True,False
+230,Disease_17,10,GP,>10,35-44,Female,DEMO,3,Demo,1,False,False,Adequate,Demo,4,4,Demo,1,True,False,Adequate,Demo,3,3,False,False
+231,Disease_11,10,GP,3-5,35-44,Male,DEMO,1,Demo,2,False,False,Adequate,Demo,4,1,Demo,3,False,False,Perfect,Demo,3,1,False,False
+232,Disease_17,10,GP,3-5,25-34,Male,DEMO,3,Demo,4,False,False,Adequate,Demo,4,4,Demo,1,True,True,Adequate,Demo,2,1,True,False
+233,Disease_10,10,GP,6-10,35-44,Male,DEMO,3,Demo,1,False,False,Adequate,Demo,4,4,Demo,3,True,True,Perfect,Demo,2,4,False,False
+234,Disease_18,10,GP,6-10,45-54,Female,DEMO,4,Demo,3,True,False,Perfect,Demo,4,5,Demo,2,True,False,Adequate,Demo,2,3,False,False
+235,Disease_4,10,GP,1-2,45-54,Male,DEMO,2,Demo,3,False,False,Adequate,Demo,3,2,Demo,2,True,False,Perfect,Demo,4,4,True,True
+236,Disease_15,10,GP,>10,55-64,Female,DEMO,3,Demo,2,False,False,Inadequate but harmless,Demo,4,3,Demo,2,False,False,Adequate,Demo,1,5,False,False
+237,Disease_12,10,GP,3-5,25-34,Male,DEMO,2,Demo,3,True,False,Perfect,Demo,1,3,Demo,3,True,True,Inadequate and dangerous,Demo,1,5,True,True
+238,Disease_16,10,GP,>10,45-54,Female,DEMO,3,Demo,2,False,True,Perfect,Demo,1,4,Demo,4,True,True,Inadequate but harmless,Demo,4,3,True,False
+239,Disease_19,10,GP,3-5,35-44,Female,DEMO,3,Demo,1,False,False,Inadequate but harmless,Demo,3,3,Demo,3,True,False,Perfect,Demo,3,4,False,True
+240,Disease_4,10,GP,0,35-44,Female,DEMO,5,Demo,2,True,False,Inadequate and dangerous,Demo,3,5,Demo,1,True,False,Perfect,Demo,2,3,True,False
+241,Disease_9,10,GP,1-2,35-44,Male,DEMO,4,Demo,1,True,False,Adequate,Demo,3,5,Demo,4,True,False,Adequate,Demo,3,1,False,True
+242,Disease_12,10,GP,6-10,35-44,Female,DEMO,1,Demo,3,False,False,Perfect,Demo,1,2,Demo,1,False,False,Perfect,Demo,2,4,True,False
+243,Disease_17,10,GP,6-10,55-64,Male,DEMO,1,Demo,4,False,False,Adequate,Demo,4,2,Demo,1,True,False,Perfect,Demo,3,5,False,False
+244,Disease_8,10,GP,>10,35-44,Female,DEMO,1,Demo,4,True,False,Adequate,Demo,4,1,Demo,1,False,False,Perfect,Demo,1,3,False,False
+245,Disease_10,10,GP,6-10,45-54,Male,DEMO,3,Demo,4,False,False,Perfect,Demo,4,3,Demo,4,True,False,Adequate,Demo,4,3,False,False
+246,Disease_13,10,GP,6-10,25-34,Female,DEMO,2,Demo,2,True,False,Perfect,Demo,2,2,Demo,3,True,False,Adequate,Demo,2,2,False,False
+247,Disease_6,10,GP,1-2,55-64,Female,DEMO,4,Demo,2,True,False,Inadequate and dangerous,Demo,4,4,Demo,2,True,False,Adequate,Demo,3,2,False,True
+248,Disease_19,10,GP,6-10,55-64,Male,DEMO,3,Demo,3,False,True,Inadequate and dangerous,Demo,3,3,Demo,3,False,False,Perfect,Demo,4,4,True,False
+249,Disease_6,10,GP,3-5,55-64,Male,DEMO,3,Demo,1,False,False,Adequate,Demo,3,4,Demo,3,True,False,Perfect,Demo,2,5,False,False
+250,Disease_14,10,GP,6-10,55-64,Male,DEMO,3,Demo,4,False,False,Adequate,Demo,2,4,Demo,3,True,False,Inadequate but harmless,Demo,2,3,True,True
+251,Disease_6,10,GP,0,35-44,Female,DEMO,5,Demo,4,True,False,Adequate,Demo,3,5,Demo,4,True,False,Perfect,Demo,3,5,True,False
+252,Disease_4,10,GP,>10,25-34,Male,DEMO,2,Demo,2,False,False,Adequate,Demo,1,2,Demo,1,True,True,Adequate,Demo,3,5,True,False
+253,Disease_14,10,GP,3-5,35-44,Male,DEMO,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,5,Demo,1,True,False,Perfect,Demo,2,2,False,False
+254,Disease_14,10,GP,1-2,25-34,Male,DEMO,5,Demo,1,True,False,Inadequate and dangerous,Demo,1,5,Demo,4,True,True,Perfect,Demo,4,2,False,True
+255,Disease_9,10,GP,0,55-64,Male,DEMO,4,Demo,3,True,False,Inadequate but harmless,Demo,3,4,Demo,4,True,False,Inadequate but harmless,Demo,1,3,True,False
+256,Disease_17,11,GP,0,55-64,Female,DEMO,3,Demo,1,True,False,Perfect,Demo,4,4,Demo,2,True,True,Adequate,Demo,1,3,False,False
+257,Disease_8,11,GP,3-5,45-54,Female,DEMO,2,Demo,3,True,False,Adequate,Demo,2,2,Demo,4,False,False,Perfect,Demo,3,4,False,False
+258,Disease_17,11,GP,0,55-64,Male,DEMO,2,Demo,4,True,False,Inadequate but harmless,Demo,3,4,Demo,2,True,True,Adequate,Demo,1,2,False,False
+259,Disease_16,11,GP,1-2,55-64,Female,DEMO,5,Demo,4,True,True,Inadequate but harmless,Demo,4,5,Demo,4,True,True,Adequate,Demo,1,1,False,True
+260,Disease_8,11,GP,1-2,45-54,Male,DEMO,1,Demo,4,False,False,Perfect,Demo,4,1,Demo,1,False,True,Adequate,Demo,1,4,False,False
+261,Disease_4,11,GP,0,35-44,Male,DEMO,5,Demo,2,True,True,Inadequate but harmless,Demo,1,5,Demo,4,True,False,Inadequate but harmless,Demo,2,5,False,False
+262,Disease_5,11,GP,0,45-54,Female,DEMO,3,Demo,4,False,False,Adequate,Demo,2,3,Demo,1,False,False,Perfect,Demo,3,3,False,False
+263,Disease_11,11,GP,>10,55-64,Male,DEMO,5,Demo,2,True,False,Adequate,Demo,4,5,Demo,3,True,False,Adequate,Demo,1,3,False,False
+264,Disease_13,11,GP,3-5,55-64,Male,DEMO,1,Demo,4,False,False,Perfect,Demo,2,2,Demo,2,True,True,Perfect,Demo,1,2,True,True
+265,Disease_8,11,GP,>10,45-54,Male,DEMO,4,Demo,1,True,True,Adequate,Demo,2,4,Demo,1,True,False,Inadequate and dangerous,Demo,3,5,False,True
+266,Disease_16,11,GP,>10,35-44,Male,DEMO,1,Demo,2,True,True,Inadequate and dangerous,Demo,3,2,Demo,2,False,False,Perfect,Demo,3,5,True,True
+267,Disease_2,11,GP,1-2,45-54,Male,DEMO,4,Demo,2,True,False,Inadequate and dangerous,Demo,4,4,Demo,2,True,False,Perfect,Demo,2,5,True,True
+268,Disease_3,11,GP,0,45-54,Male,DEMO,3,Demo,4,True,False,Adequate,Demo,4,4,Demo,4,True,False,Perfect,Demo,1,3,False,False
+269,Disease_14,11,GP,>10,55-64,Male,DEMO,4,Demo,3,True,True,Adequate,Demo,4,5,Demo,4,True,False,Inadequate but harmless,Demo,2,4,False,False
+270,Disease_7,11,GP,>10,35-44,Female,DEMO,1,Demo,3,False,False,Perfect,Demo,2,1,Demo,1,True,False,Adequate,Demo,2,2,True,False
+271,Disease_6,11,GP,1-2,25-34,Female,DEMO,3,Demo,4,False,False,Perfect,Demo,4,3,Demo,2,False,False,Adequate,Demo,4,1,False,False
+272,Disease_17,11,GP,6-10,45-54,Female,DEMO,3,Demo,1,True,False,Inadequate but harmless,Demo,2,3,Demo,4,True,False,Perfect,Demo,4,3,False,False
+273,Disease_1,12,GP,1-2,25-34,Male,DEMO,4,Demo,1,True,True,Inadequate and dangerous,Demo,1,5,Demo,3,True,False,Adequate,Demo,3,1,True,True
+274,Disease_14,12,GP,1-2,35-44,Male,DEMO,3,Demo,3,False,True,Adequate,Demo,4,4,Demo,4,True,True,Adequate,Demo,3,5,False,False
+275,Disease_10,12,GP,1-2,35-44,Male,DEMO,1,Demo,3,False,False,Inadequate and dangerous,Demo,3,1,Demo,1,False,False,Perfect,Demo,1,4,False,True
+276,Disease_4,12,GP,1-2,35-44,Male,DEMO,4,Demo,3,True,False,Inadequate but harmless,Demo,3,4,Demo,3,True,True,Adequate,Demo,4,4,False,False
+277,Disease_4,12,GP,>10,55-64,Male,DEMO,5,Demo,2,True,True,Adequate,Demo,1,5,Demo,3,True,False,Inadequate and dangerous,Demo,4,2,False,False
+278,Disease_15,12,GP,6-10,45-54,Female,DEMO,4,Demo,4,True,True,Adequate,Demo,4,5,Demo,1,True,False,Inadequate but harmless,Demo,4,1,True,False
+279,Disease_4,12,GP,>10,45-54,Male,DEMO,3,Demo,2,True,True,Adequate,Demo,1,4,Demo,4,True,False,Perfect,Demo,4,1,True,False
+280,Disease_4,12,GP,1-2,35-44,Male,DEMO,2,Demo,4,False,False,Adequate,Demo,2,3,Demo,2,False,True,Perfect,Demo,1,2,False,False
+281,Disease_19,12,GP,>10,55-64,Female,DEMO,1,Demo,3,False,False,Adequate,Demo,4,1,Demo,4,False,False,Perfect,Demo,2,5,False,False
+282,Disease_12,12,GP,0,25-34,Male,DEMO,1,Demo,4,False,True,Adequate,Demo,1,1,Demo,2,False,False,Perfect,Demo,4,4,True,False
+283,Disease_17,12,GP,1-2,25-34,Female,DEMO,1,Demo,2,True,False,Adequate,Demo,2,3,Demo,4,True,False,Adequate,Demo,4,2,True,False
+284,Disease_5,12,GP,>10,35-44,Male,DEMO,4,Demo,4,True,False,Inadequate and dangerous,Demo,4,4,Demo,2,True,True,Perfect,Demo,4,1,False,True
+285,Disease_1,12,GP,3-5,55-64,Female,DEMO,1,Demo,4,True,False,Adequate,Demo,1,1,Demo,2,False,True,Perfect,Demo,1,4,True,True
+286,Disease_14,12,GP,1-2,55-64,Female,DEMO,3,Demo,4,False,True,Perfect,Demo,1,4,Demo,4,True,False,Perfect,Demo,1,4,False,False
+287,Disease_6,12,GP,3-5,45-54,Female,DEMO,5,Demo,1,True,True,Inadequate but harmless,Demo,4,5,Demo,1,True,False,Perfect,Demo,3,4,False,False
+288,Disease_15,13,GP,6-10,35-44,Male,DEMO,1,Demo,1,False,False,Adequate,Demo,4,1,Demo,3,False,True,Perfect,Demo,1,3,False,False
+289,Disease_3,13,GP,>10,25-34,Male,DEMO,1,Demo,2,False,False,Adequate,Demo,2,2,Demo,1,False,False,Adequate,Demo,4,1,False,True
+290,Disease_16,13,GP,3-5,55-64,Female,DEMO,2,Demo,3,False,False,Inadequate but harmless,Demo,3,4,Demo,1,True,False,Perfect,Demo,2,5,False,False
+291,Disease_12,13,GP,6-10,55-64,Male,DEMO,4,Demo,4,True,False,Perfect,Demo,2,5,Demo,3,True,False,Perfect,Demo,1,5,True,False
+292,Disease_19,13,GP,6-10,55-64,Female,DEMO,3,Demo,2,False,True,Adequate,Demo,3,4,Demo,1,True,False,Inadequate and dangerous,Demo,3,3,False,False
+293,Disease_11,13,GP,3-5,55-64,Female,DEMO,2,Demo,2,False,False,Adequate,Demo,4,3,Demo,1,True,False,Adequate,Demo,4,3,False,False
+294,Disease_12,13,GP,3-5,45-54,Male,DEMO,4,Demo,1,True,True,Inadequate but harmless,Demo,1,5,Demo,1,True,False,Perfect,Demo,1,4,False,False
+295,Disease_11,13,GP,6-10,35-44,Male,DEMO,4,Demo,3,True,False,Inadequate but harmless,Demo,3,4,Demo,3,True,True,Perfect,Demo,1,3,True,True
+296,Disease_13,13,GP,0,45-54,Female,DEMO,1,Demo,2,True,False,Adequate,Demo,2,1,Demo,4,True,True,Adequate,Demo,1,2,False,True
+297,Disease_18,13,GP,3-5,55-64,Male,DEMO,2,Demo,1,True,True,Adequate,Demo,4,2,Demo,1,False,False,Perfect,Demo,4,1,True,False
+298,Disease_11,13,GP,3-5,55-64,Female,DEMO,1,Demo,1,True,False,Inadequate but harmless,Demo,4,1,Demo,3,True,True,Adequate,Demo,4,5,True,False
+299,Disease_4,13,GP,3-5,35-44,Female,DEMO,4,Demo,4,True,False,Perfect,Demo,1,5,Demo,3,True,False,Inadequate but harmless,Demo,2,2,False,True
+300,Disease_19,13,GP,>10,35-44,Male,DEMO,4,Demo,2,True,False,Adequate,Demo,1,4,Demo,2,True,False,Perfect,Demo,3,1,False,True
+301,Disease_7,13,GP,>10,55-64,Female,DEMO,2,Demo,2,False,False,Perfect,Demo,4,3,Demo,2,False,True,Adequate,Demo,3,2,False,True
+302,Disease_6,13,GP,1-2,25-34,Male,DEMO,2,Demo,1,True,True,Inadequate but harmless,Demo,3,3,Demo,2,True,True,Adequate,Demo,3,1,False,True
+303,Disease_10,13,GP,3-5,45-54,Female,DEMO,1,Demo,3,False,False,Inadequate and dangerous,Demo,3,2,Demo,3,False,False,Adequate,Demo,3,4,False,False
+304,Disease_4,13,GP,3-5,25-34,Male,DEMO,3,Demo,1,False,False,Adequate,Demo,3,3,Demo,4,True,True,Adequate,Demo,1,1,False,False
+305,Disease_17,13,GP,>10,55-64,Male,DEMO,5,Demo,2,True,False,Perfect,Demo,4,5,Demo,1,True,True,Inadequate but harmless,Demo,1,4,True,False
+306,Disease_11,13,GP,0,35-44,Female,DEMO,2,Demo,1,False,True,Inadequate but harmless,Demo,3,2,Demo,4,False,True,Inadequate and dangerous,Demo,4,3,False,False
+307,Disease_4,13,GP,0,35-44,Female,DEMO,4,Demo,3,True,False,Adequate,Demo,4,5,Demo,4,True,True,Adequate,Demo,1,1,True,False
+308,Disease_12,13,GP,>10,35-44,Male,DEMO,2,Demo,1,True,False,Perfect,Demo,3,3,Demo,1,True,False,Perfect,Demo,1,4,False,False
+309,Disease_19,13,GP,1-2,55-64,Male,DEMO,4,Demo,4,True,False,Adequate,Demo,3,5,Demo,4,True,False,Perfect,Demo,1,5,False,True
+310,Disease_16,13,GP,6-10,55-64,Male,DEMO,3,Demo,4,False,False,Inadequate and dangerous,Demo,3,4,Demo,3,True,False,Adequate,Demo,1,1,False,False
+311,Disease_13,13,GP,3-5,35-44,Male,DEMO,3,Demo,3,False,True,Adequate,Demo,3,4,Demo,3,True,False,Adequate,Demo,3,3,False,False
+312,Disease_9,13,GP,>10,25-34,Male,DEMO,4,Demo,3,True,True,Adequate,Demo,1,4,Demo,1,True,False,Adequate,Demo,2,5,True,False
+313,Disease_6,13,GP,>10,45-54,Female,DEMO,2,Demo,2,False,False,Inadequate and dangerous,Demo,3,2,Demo,1,False,True,Perfect,Demo,1,4,False,False
+314,Disease_13,13,GP,0,55-64,Female,DEMO,5,Demo,3,True,False,Inadequate but harmless,Demo,1,5,Demo,3,True,False,Perfect,Demo,2,3,True,False
+315,Disease_13,13,GP,>10,35-44,Female,DEMO,2,Demo,4,False,False,Inadequate and dangerous,Demo,3,2,Demo,2,True,False,Perfect,Demo,2,4,True,False
+316,Disease_8,13,GP,0,25-34,Male,DEMO,4,Demo,2,True,False,Inadequate and dangerous,Demo,3,4,Demo,1,True,False,Adequate,Demo,4,2,False,False
+317,Disease_3,13,GP,0,35-44,Male,DEMO,1,Demo,3,True,True,Inadequate and dangerous,Demo,1,2,Demo,4,True,False,Perfect,Demo,2,4,False,False
+318,Disease_7,14,GP,>10,45-54,Male,DEMO,4,Demo,2,True,False,Perfect,Demo,3,5,Demo,1,True,True,Adequate,Demo,3,1,True,False
+319,Disease_3,14,GP,1-2,45-54,Female,DEMO,3,Demo,3,False,False,Adequate,Demo,3,4,Demo,2,True,False,Adequate,Demo,3,1,False,False
+320,Disease_17,14,GP,3-5,35-44,Female,DEMO,5,Demo,3,True,True,Perfect,Demo,4,5,Demo,3,True,True,Perfect,Demo,2,4,False,False
+321,Disease_10,14,GP,1-2,55-64,Male,DEMO,3,Demo,2,False,False,Perfect,Demo,1,5,Demo,2,True,True,Adequate,Demo,4,3,False,True
+322,Disease_14,14,GP,3-5,35-44,Female,DEMO,3,Demo,1,False,False,Inadequate but harmless,Demo,3,4,Demo,4,True,False,Adequate,Demo,2,3,False,False
+323,Disease_4,14,GP,3-5,45-54,Male,DEMO,4,Demo,2,True,False,Perfect,Demo,1,4,Demo,3,True,True,Inadequate and dangerous,Demo,3,1,False,False
+324,Disease_5,14,GP,0,45-54,Male,DEMO,4,Demo,1,True,False,Perfect,Demo,4,4,Demo,3,True,False,Inadequate but harmless,Demo,4,5,False,True
+325,Disease_18,14,GP,3-5,45-54,Female,DEMO,3,Demo,4,False,True,Adequate,Demo,2,3,Demo,3,True,False,Inadequate but harmless,Demo,4,5,True,True
+326,Disease_12,14,GP,0,25-34,Female,DEMO,3,Demo,2,False,False,Perfect,Demo,3,5,Demo,4,True,False,Inadequate but harmless,Demo,4,3,True,True
+327,Disease_3,14,GP,>10,55-64,Female,DEMO,4,Demo,2,True,False,Inadequate and dangerous,Demo,4,5,Demo,2,True,True,Perfect,Demo,3,2,False,False
+328,Disease_16,14,GP,3-5,25-34,Male,DEMO,5,Demo,4,True,False,Perfect,Demo,2,5,Demo,1,True,False,Adequate,Demo,2,2,True,True
+329,Disease_4,14,GP,6-10,25-34,Female,DEMO,1,Demo,3,False,False,Adequate,Demo,4,2,Demo,2,False,True,Inadequate and dangerous,Demo,2,2,True,True
+330,Disease_5,14,GP,3-5,45-54,Male,DEMO,1,Demo,2,False,False,Perfect,Demo,2,1,Demo,3,True,True,Adequate,Demo,4,3,False,False
+331,Disease_1,14,GP,6-10,35-44,Male,DEMO,4,Demo,4,True,False,Inadequate but harmless,Demo,2,4,Demo,2,True,False,Adequate,Demo,2,3,True,True
+332,Disease_8,14,GP,0,35-44,Male,DEMO,5,Demo,1,True,True,Inadequate and dangerous,Demo,3,5,Demo,2,True,False,Adequate,Demo,3,5,False,False
+333,Disease_16,14,GP,1-2,45-54,Female,DEMO,3,Demo,1,True,False,Adequate,Demo,3,3,Demo,2,False,False,Perfect,Demo,3,3,False,True
+334,Disease_6,14,GP,>10,25-34,Male,DEMO,4,Demo,1,True,True,Perfect,Demo,4,4,Demo,3,True,False,Inadequate and dangerous,Demo,4,4,False,False
+335,Disease_12,15,GP,1-2,35-44,Male,DEMO,1,Demo,4,False,False,Adequate,Demo,4,2,Demo,3,False,False,Inadequate but harmless,Demo,1,5,False,False
+336,Disease_6,15,GP,3-5,35-44,Female,DEMO,3,Demo,1,True,True,Perfect,Demo,1,4,Demo,3,True,True,Perfect,Demo,1,4,True,False
+337,Disease_1,15,GP,>10,35-44,Male,DEMO,5,Demo,3,True,False,Adequate,Demo,1,5,Demo,1,True,False,Perfect,Demo,2,2,False,False
+338,Disease_6,15,GP,1-2,45-54,Female,DEMO,4,Demo,2,True,False,Adequate,Demo,4,5,Demo,1,True,False,Perfect,Demo,3,2,False,False
+339,Disease_17,15,GP,3-5,35-44,Female,DEMO,4,Demo,2,True,False,Adequate,Demo,1,5,Demo,3,True,True,Adequate,Demo,4,2,False,True
+340,Disease_6,15,GP,0,25-34,Female,DEMO,4,Demo,4,True,True,Adequate,Demo,4,4,Demo,1,True,False,Adequate,Demo,4,1,False,True
+341,Disease_11,15,GP,>10,25-34,Female,DEMO,4,Demo,3,True,True,Inadequate and dangerous,Demo,1,5,Demo,2,True,False,Adequate,Demo,1,2,True,False
+342,Disease_15,15,GP,3-5,55-64,Male,DEMO,1,Demo,1,False,True,Adequate,Demo,1,1,Demo,3,False,False,Perfect,Demo,1,2,False,False
+343,Disease_17,15,GP,6-10,25-34,Female,DEMO,3,Demo,1,False,False,Adequate,Demo,1,3,Demo,3,False,False,Perfect,Demo,4,5,False,False
+344,Disease_10,15,GP,1-2,55-64,Male,DEMO,3,Demo,3,False,False,Adequate,Demo,4,3,Demo,3,False,False,Adequate,Demo,2,1,False,False
+345,Disease_11,15,GP,1-2,35-44,Female,DEMO,2,Demo,2,False,True,Perfect,Demo,1,4,Demo,1,True,False,Perfect,Demo,4,2,False,False
+346,Disease_17,15,GP,6-10,35-44,Female,DEMO,1,Demo,4,False,False,Adequate,Demo,4,1,Demo,4,True,False,Perfect,Demo,4,3,False,False
+347,Disease_19,15,GP,3-5,35-44,Female,DEMO,1,Demo,3,True,False,Inadequate and dangerous,Demo,3,2,Demo,3,True,False,Adequate,Demo,3,2,False,False
+348,Disease_8,15,GP,>10,25-34,Male,DEMO,1,Demo,2,True,False,Adequate,Demo,3,1,Demo,3,False,False,Perfect,Demo,4,4,True,False
+349,Disease_3,15,GP,3-5,25-34,Female,DEMO,5,Demo,3,True,False,Inadequate and dangerous,Demo,2,5,Demo,1,True,False,Perfect,Demo,1,3,False,False
+350,Disease_19,15,GP,3-5,45-54,Male,DEMO,4,Demo,3,True,True,Adequate,Demo,2,4,Demo,3,True,True,Perfect,Demo,1,4,True,False
+351,Disease_18,15,GP,>10,35-44,Male,DEMO,3,Demo,4,False,False,Perfect,Demo,4,4,Demo,3,True,False,Adequate,Demo,2,5,False,False
+352,Disease_17,15,GP,3-5,35-44,Female,DEMO,5,Demo,4,True,False,Adequate,Demo,1,5,Demo,4,True,True,Adequate,Demo,3,1,False,True
+353,Disease_14,15,GP,0,55-64,Female,DEMO,1,Demo,4,True,False,Adequate,Demo,3,2,Demo,2,True,False,Adequate,Demo,3,5,False,False
+354,Disease_15,15,GP,0,25-34,Female,DEMO,5,Demo,4,True,False,Adequate,Demo,2,5,Demo,2,True,True,Adequate,Demo,1,4,True,False

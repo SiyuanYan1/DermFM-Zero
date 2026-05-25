@@ -31,6 +31,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
   - [Task3: Linear Probing](#task3-linear-probing)
   - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
   - [Task5: Automated Concept Discovery](#task5-automated-concept-discovery)
+  - [Task6: Reader Studies](#task6-reader-studies)
 - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
@@ -106,6 +107,7 @@ DermFM-Zero/
 ├── automated-concept-discovery/      # SAE & CBM implementation
 ├── linear_probe/                     # Linear probe utilities
 ├── multimodal_finetune/              # Multimodal training code
+├── reader_studies/                   # Three multinational clinical reader studies
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
 ```
@@ -286,6 +288,25 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 - Concept Retrieval: [`automated-concept-discovery/concept-retrieval/`](automated-concept-discovery/concept-retrieval/)
 
 Results are saved to `automated-concept-discovery-result/`.
+
+### Task6: Reader Studies
+
+Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code, a synthetic demo dataset, and pre-computed demo outputs.
+
+| Study | Setting | Design | Readers | Cases |
+|-------|---------|--------|---------|-------|
+| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs   | 701     |
+| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 1,090     | 1,117   |
+| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 4,929   |
+
+```bash
+# Quick run (RS1)
+cd reader_studies/reader_study_rs1
+python generate_demo_data.py
+python rs1_statistical_analysis.py --demo
+```
+
+See [`reader_studies/README.md`](reader_studies/README.md) for full documentation, study designs, statistical methods, and data sharing policy.
 
 
 
