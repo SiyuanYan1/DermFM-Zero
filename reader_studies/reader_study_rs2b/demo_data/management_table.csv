@@ -1,0 +1,12 @@
+diagnosis; dismiss; monitor; excise_biopsy; treat_locally
+AKIEC;inappropriate;inappropriate;appropriate;optimal
+BCC;inappropriate;inappropriate;optimal;appropriate
+OTHER_BENIGN;optimal;appropriate;inappropriate;inappropriate
+BKL;optimal;appropriate;inappropriate;inappropriate
+DF;optimal;appropriate;inappropriate;inappropriate
+INF;appropriate;appropriate;inappropriate;optimal
+OTHER_MALIGNANT;inappropriate;inappropriate;optimal;inappropriate
+MEL;inappropriate;inappropriate;optimal;inappropriate
+NV;optimal;appropriate;inappropriate;inappropriate
+SCCKA;inappropriate;inappropriate;optimal;inappropriate
+VASC;optimal;appropriate;inappropriate;inappropriate

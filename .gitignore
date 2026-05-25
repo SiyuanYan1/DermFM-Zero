@@ -228,3 +228,7 @@ multi-skin-modality-finetune-result/
 .vscode/
 multimodal_finetune-result/
 data/
+
+# macOS
+.DS_Store
+**/.DS_Store
