@@ -295,9 +295,9 @@ Three multinational clinical reader studies that evaluate DermFM-Zero in collabo
 
 | Study | Setting | Design | Readers | Cases |
 |-------|---------|--------|---------|-------|
-| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs   | 701     |
-| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 1,090     | 1,117   |
-| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 4,929   |
+| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs   | 150     |
+| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652     | 1,117   |
+| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 1,048   |
 
 ```bash
 # Quick run (RS1)
