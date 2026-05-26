@@ -73,10 +73,13 @@ class MetaSubNet(nn.Module):
         return meta_output
 
 def load_open_clip_state_dict(model, pretrain_path):
-    # Load panderm large
-    state_dict = torch.load(pretrain_path, weights_only=False)['state_dict']
+    # Load panderm large. The checkpoint may either be a flat OpenCLIP
+    # state_dict (as published on Hugging Face: redlessone/DermFM-Zero) or a
+    # training-time dict wrapped under a 'state_dict' key.
+    payload = torch.load(pretrain_path, weights_only=False, map_location='cpu')
+    state_dict = payload['state_dict'] if isinstance(payload, dict) and 'state_dict' in payload else payload
     state_dict = {k.replace('module.', ''): v for k, v in state_dict.items()}
-    model.load_state_dict(state_dict)
+    model.load_state_dict(state_dict, strict=False)
 
 class PanDermTFormer(nn.Module):
     def __init__(self,
