@@ -228,6 +228,7 @@ multi-skin-modality-finetune-result/
 .vscode/
 multimodal_finetune-result/
 data/
+checkpoints/DermFM-Zero/
 
 # macOS
 .DS_Store
