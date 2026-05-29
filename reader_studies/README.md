@@ -10,6 +10,8 @@ Three multinational reader studies evaluating DermFM-Zero in collaborative clini
 | [RS2A](reader_study_rs2a/) | Specialist benchmark (TODIV)         | Independent cohort       | 1,090 sessions (652 unique clinicians) | 1,117 | Welch's two-sided t-test                                             | **Aggregated anonymized scores included** |
 | [RS2B](reader_study_rs2b/) | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71 (from 87 raw, ≥95% per-test completion) | 1,048 | Paired t-test on per-reader proportions; Bonferroni for class-specific | Not included |
 
+*R2-revision additions implement post-hoc power (`post_hoc_power.py`), BCD–agent inter-rater reliability (`reader_study_rs1/bcd_agent_irr.py`), RS2B 71-reader cohort + revision-behaviour + vascular-subgroup analyses (`reader_study_rs2b/cohort_analysis.py`, `reader_study_report.py`, `vascular_subgroup_analysis.py`). All ship as code only; real data on request.*
+
 ## 📂 Repository Structure
 
 ```
@@ -17,6 +19,7 @@ reader_studies/
 ├── reader_study_rs1/
 │   ├── rs1_statistical_analysis.py
 │   ├── agent_grader.py
+│   ├── bcd_agent_irr.py        # NEW (R3 Minor 3)
 │   ├── generate_demo_data.py
 │   ├── demo_data/        demo_output/
 │   └── README.md
@@ -29,9 +32,13 @@ reader_studies/
 │   ├── 01_filter_reader.py
 │   ├── 02_fig2_table_clean.py
 │   ├── 03_fig2_plot.py
+│   ├── cohort_analysis.py      # NEW (R1 C20/C21)
+│   ├── reader_study_report.py  # NEW (R2 C2)
+│   ├── vascular_subgroup_analysis.py        # NEW (R2 C12)
 │   ├── generate_demo_data.py
 │   ├── demo_data/        demo_output/
 │   └── README.md
+├── post_hoc_power.py           # NEW (R3 Major 3)
 └── README.md             # this file
 ```
 
@@ -55,9 +62,20 @@ python generate_demo_data.py
 python 01_filter_reader.py    --demo
 python 02_fig2_table_clean.py --demo
 python 03_fig2_plot.py        --demo
+
+# Reviewer-requested analyses (R2 revision — code only; require real data on request)
+python post_hoc_power.py --real
+cd reader_study_rs1   && python bcd_agent_irr.py --real
+cd ../reader_study_rs2b && python cohort_analysis.py --real
+cd ../reader_study_rs2b && python reader_study_report.py --real
+cd ../reader_study_rs2b && python vascular_subgroup_analysis.py --real
 ```
 
 Each script accepts `--demo` (uses `demo_data/`, writes to `demo_output/`) or `--real` (uses `real_data/`, writes to `real_output/`). Only RS2A ships with real data (aggregated, anonymized). For RS1 and RS2B, `--real` requires obtaining the underlying data from the corresponding author.
+
+### 📑 Reviewer-requested analyses (R2 revision)
+
+These five additional scripts (`post_hoc_power.py`, `reader_study_rs1/bcd_agent_irr.py`, and three under `reader_study_rs2b/`) implement specific analyses requested during peer review. Unlike the main RS1/RS2A/RS2B pipeline scripts, **they ship as code only**: no synthetic demo data is provided, because the analyses (post-hoc power, weighted-κ inter-rater reliability, subgroup statistics) would yield statistically meaningless outputs on synthetic data. To reproduce the published numbers, request the real data corpus from the corresponding author and pass `--real` to each script.
 
 ## 🔬 Data Sharing
 
