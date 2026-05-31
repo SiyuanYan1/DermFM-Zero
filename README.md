@@ -252,7 +252,7 @@ cd VQA
 # Derm7pt-VQA (49 answers; Clinical + Dermoscopic + Metadata-question)
 bash ../script/VQA/Derm7pt-VQA.sh
 
-# SkinCap-VQA (188 answers; clinical photos)
+# SkinCap-VQA (188 answers; clinical photos + question)
 bash ../script/VQA/SkinCap-VQA.sh
 ```
 
@@ -263,7 +263,7 @@ case-split manifest, and the DermVQA4 MCQA JSONs). See
 [`VQA/preprocessing/README.md`](VQA/preprocessing/README.md) for the full
 pipeline.
 
-Results are saved to `multimodal_finetune-result/{derm7pt,SkinCap}-VQA/`.
+Results are saved to `VQA-result/{derm7pt,SkinCap}-VQA/`.
 
 ### Task6: Automated Concept Discovery
 

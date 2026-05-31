@@ -227,9 +227,9 @@ wandb/
 multi-skin-modality-finetune-result/
 .vscode/
 multimodal_finetune-result/
+VQA-result/
 data/
 checkpoints/DermFM-Zero/
-multimodal_finetune-result/
 fail-analysis/
 fail_analysis/
 huggingface/
