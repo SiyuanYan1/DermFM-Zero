@@ -4,7 +4,7 @@
 ################################################################################
 # MODELS CONFIGURATION - PanDerm-2(From huggingface API)
 ################################################################################
-models=('open_clip_hf-hub:redlessone/PanDerm2')
+models=('open_clip_hf-hub:redlessone/DermFM-Zero')
 declare -A checkpoints=(
 )
 

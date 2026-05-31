@@ -361,7 +361,7 @@ def create_model(
             # Load PanDerm-base pretrained weight to model vision encoder
             model.visual = call_PanDerm_base_visual(model_cfg["vision_cfg"]["pretrain_path"], linear_prob=linear_prob).to(device=device)
 
-        elif 'PanDerm-large' in model_name or model_name == 'hf-hub:redlessone/PanDerm2':
+        elif 'PanDerm-large' in model_name or model_name == 'hf-hub:redlessone/DermFM-Zero':
             # Load PanDerm-large pretrained weight to model vision encoder
             model.visual = call_PanDerm_large_visual(model_cfg["vision_cfg"]["pretrain_path"], linear_prob=linear_prob, finetune=finetune).to(device=device)
 

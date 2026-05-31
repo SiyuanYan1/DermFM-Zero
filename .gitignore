@@ -229,7 +229,11 @@ multi-skin-modality-finetune-result/
 multimodal_finetune-result/
 data/
 checkpoints/DermFM-Zero/
+multimodal_finetune-result/
+fail-analysis/
+fail_analysis/
 
 # macOS
 .DS_Store
 **/.DS_Store
+data
