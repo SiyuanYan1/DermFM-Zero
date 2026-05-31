@@ -2,14 +2,14 @@
 # SkinCap-VQA — fine-tune DermFM-Zero on the SkinCap VQA benchmark
 # and report metrics.
 #
-# Data:    data/multimodal_finetune_VQA/SkinCap-VQA/meta/{train,val,test}.csv
+# Data:    data/VQA/SkinCap-VQA/meta/{train,val,test}.csv
 # Model:   checkpoints/DermFM-Zero/open_clip_pytorch_model.bin
 #          (download via huggingface-cli download redlessone/DermFM-Zero)
 #
-# Run from `multimodal_finetune/` so the relative `--pretrain_path` and the
+# Run from `VQA/` so the relative `--pretrain_path` and the
 # `../data/...` CSV paths resolve correctly:
-#   cd multimodal_finetune
-#   bash ../script/multimodal_finetune/SkinCap-VQA.sh
+#   cd VQA
+#   bash ../script/VQA/SkinCap-VQA.sh
 
 set -e
 
@@ -18,7 +18,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Step 1 (Optional) — build the SkinCap-VQA train/val/test CSVs
 # Skipped if the splits already exist.
-META_DIR="../data/multimodal_finetune_VQA/SkinCap-VQA/meta"
+META_DIR="../data/VQA/SkinCap-VQA/meta"
 if [ ! -f "$META_DIR/train.csv" ] || [ ! -f "$META_DIR/val.csv" ] || [ ! -f "$META_DIR/test.csv" ]; then
     echo "[preprocess] regenerating SkinCap-VQA splits..."
     ( cd preprocessing && python build_skincap_vqa.py )

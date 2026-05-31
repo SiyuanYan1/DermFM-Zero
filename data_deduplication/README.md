@@ -34,6 +34,10 @@ data_deduplication/
     ├── zero-shot-benchmark/
     │   ├── overlap_summary.csv         # per-dataset totals + overlap rates
     │   └── <dataset>/overlaps.csv      # flagged eval images (pretrain side redacted)
+    ├── zero-shot-retrieval/
+    │   ├── overlap_summary.csv                  # Derm1M + SkinCap totals + rates
+    │   ├── Derm1M-hold_out_deduplicated.csv     # original meta minus flagged rows
+    │   └── skincap_deduplicated.csv             # original meta minus flagged rows
     └── reader-study/
         ├── overlap_summary.csv
         └── RS*_images/overlaps.csv
@@ -87,3 +91,14 @@ Reader study:
 | RS1_images   |   146 |      20 | 13.70 % |
 | RS2_images   | 2,096 |      14 |  0.67 % |
 | RS3_images   | 3,142 |       4 |  0.13 % |
+
+Zero-shot retrieval:
+
+| Dataset            | Total | Overlap | Rate    |
+|--------------------|------:|--------:|--------:|
+| Derm1M-hold_out    | 9,806 |   1,598 | 16.30 % |
+| skincap            | 3,989 |   3,334 | 83.58 % |
+
+The deduplicated meta CSVs for both retrieval datasets are shipped under
+`results/zero-shot-retrieval/` and were used to produce the dedup-set
+retrieval results in the main paper.

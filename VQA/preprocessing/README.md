@@ -1,15 +1,15 @@
-# Preprocessing — multimodal_finetune_VQA
+# Preprocessing — VQA
 
 Scripts that build the per-dataset VQA splits used in `train.py`.
 
 | Dataset       | Script | Inputs | Outputs |
 |---|---|---|---|
-| Derm7pt-VQA   | `build_derm7pt_vqa.py`   | `data/multimodal_finetune_VQA/preprocessing_inputs/derm7pt-VQA/derm7pt-meta.csv` + `case_split.csv` | `data/multimodal_finetune_VQA/derm7pt-VQA/meta/{train,val,test}.csv` |
-| SkinCap-VQA   | `build_skincap_vqa.py`   | `data/multimodal_finetune_VQA/preprocessing_inputs/SkinCap-VQA/{train,test}_public_MCQA.json` (DermVQA4 reference layout) | `data/multimodal_finetune_VQA/SkinCap-VQA/meta/{train,val,test}.csv` |
+| Derm7pt-VQA   | `build_derm7pt_vqa.py`   | `data/VQA/preprocessing_inputs/derm7pt-VQA/derm7pt-meta.csv` + `case_split.csv` | `data/VQA/derm7pt-VQA/meta/{train,val,test}.csv` |
+| SkinCap-VQA   | `build_skincap_vqa.py`   | `data/VQA/preprocessing_inputs/SkinCap-VQA/{train,test}_public_MCQA.json` (DermVQA4 reference layout) | `data/VQA/SkinCap-VQA/meta/{train,val,test}.csv` |
 
 The `preprocessing_inputs/` subtree holds the official upstream artefacts
 (meta CSV / case-split / DermVQA4 MCQA JSONs); the rest of
-`multimodal_finetune_VQA/<dataset>/` holds the preprocessed splits.
+`VQA/<dataset>/` holds the preprocessed splits.
 
 Both scripts assume they are run from `multimodal_finetune/preprocessing/` and
 write CSVs whose `image_path` column is *relative* to `multimodal_finetune/`
@@ -48,6 +48,6 @@ restrict to answers present in all three splits → rewrite image_path → build
 ## Notes
 
 - All randomness is seeded via `--seed`; re-runs are deterministic.
-- The `multimodal_finetune_VQA/` task folder is self-contained: each dataset
+- The `VQA/` task folder is self-contained: each dataset
   carries its own `images/` subfolder so users who only download the VQA
   bundle can train and evaluate without pulling any other task folder.

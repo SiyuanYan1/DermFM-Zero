@@ -376,3 +376,40 @@ class PAD(Dataset):
         cls._all_categories = None
 
 
+class VQA(Dataset):
+    """VQA-style dataset (one row = one image+question+answer).
+
+    CSV columns expected:
+        image_path  — absolute or repo-relative path to the image
+        question    — natural-language question (tokenised via `tokenizer`)
+        answer_id   — integer class label
+    """
+
+    def __init__(self, df_path, shape, mode='train', tokenizer=None):
+        self.shape = shape
+        self.mode = mode
+        self.df = pd.read_csv(df_path).reset_index(drop=True)
+        self.meta_text = self.df['question']
+        self.tokenizer = tokenizer
+
+    def __getitem__(self, index):
+        row = self.df.iloc[index]
+        img_path = row['image_path']
+        if pd.isna(img_path):
+            raise NotImplementedError("VQA dataset row is missing image_path")
+
+        img = load_image(img_path, self.shape)
+        if self.mode == 'train':
+            augmented = train_data_transformation(image=img)
+        else:
+            augmented = test_data_transformation(image=img)
+        image = augmented['image']
+
+        answer = torch.LongTensor([row['answer_id']])
+        question = self.tokenizer([str(self.meta_text[index])])[0]
+        # 6-tuple matches the (img_path, text, clinic_img, derm_img, meta, label)
+        # contract used by the other multimodal_finetune datasets.
+        return img_path, str(self.meta_text[index]), image, image, question, answer
+
+    def __len__(self):
+        return len(self.df)

@@ -1,7 +1,7 @@
 """Build the SkinCap-VQA train/val/test CSVs.
 
 Outputs the artefacts under
-    data/multimodal_finetune_VQA/SkinCap-VQA/meta/{train,val,test}.csv
+    data/VQA/SkinCap-VQA/meta/{train,val,test}.csv
 
 What the pipeline does
 ----------------------
@@ -120,7 +120,7 @@ def main():
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    inputs_dir = (repo_root / 'data' / 'multimodal_finetune_VQA'
+    inputs_dir = (repo_root / 'data' / 'VQA'
                   / 'preprocessing_inputs' / 'SkinCap-VQA')
     default_train_json = str(inputs_dir / 'train_public_MCQA.json')
     default_test_json  = str(inputs_dir / 'test_public_MCQA.json')
@@ -129,10 +129,10 @@ def main():
     ap.add_argument('--test_json',  default=default_test_json,
                     help='Public-MCQA test JSON (DermVQA4 layout).')
     ap.add_argument('--output_dir',
-                    default=str(repo_root / 'data' / 'multimodal_finetune_VQA'
+                    default=str(repo_root / 'data' / 'VQA'
                                 / 'SkinCap-VQA' / 'meta'))
     ap.add_argument('--image_root',
-                    default='../data/multimodal_finetune_VQA/SkinCap-VQA/images',
+                    default='../data/VQA/SkinCap-VQA/images',
                     help='Image-root prefix written into each row\'s image_path. '
                          'Default resolves from multimodal_finetune/ (the CWD of train.py).')
     ap.add_argument('--min_answer_count', type=int, default=5)
