@@ -1,6 +1,6 @@
 # Export visual feature on SAE Dataset
 python export_visual_features.py \
-    --model_name hf-hub:redlessone/PanDerm2 \
+    --model_name hf-hub:redlessone/DermFM-Zero \
     --csv_path /mnt/hdd/sdd/siyuanyan/Derm1M_v2/csv/Derm1M_v2_pretrain.csv \
     --data_root /mnt/hdd/sdd/siyuanyan/Derm1M_v2/ \
     --batch_size 2048 \

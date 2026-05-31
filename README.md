@@ -11,7 +11,7 @@
 DermFM-Zero is the first multimodal foundation model to provide effective clinical decision support across primary care and specialty settings without fine-tuning. Beyond diagnosis, it unlocks emerging capabilities in automated concept discovery, advancing AI-assisted dermatology.
 
 [![Paper](https://img.shields.io/badge/arXiv-2602.10624-b31b1b.svg)](https://arxiv.org/abs/2602.10624)
-[![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/PanDerm2)
+[![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/DermFM-Zero)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
@@ -118,8 +118,8 @@ DermFM-Zero/
 git clone git@github.com:SiyuanYan1/DermFM-Zero.git
 cd DermFM-Zero
 
-conda create -n panderm python=3.9.20
-conda activate panderm
+conda create -n dermfm-zero python=3.9.20
+conda activate dermfm-zero
 pip install -r requirements.txt
 ```
 
@@ -150,7 +150,7 @@ Evaluate DermFM-Zero on 7 dermatology datasets without fine-tuning.
 **Benchmark datasets**: HAM, PAD, ISIC2020, PH2, SNU, SD-128, Daffodil
 ```bash
 # Quick run
-bash script/zero-shot-eval/PanDerm-v2-zs-classification.sh
+bash script/zero-shot-eval/DermFM-Zero-zs-classification.sh
 
 # Or detailed command
 python src/main.py \
@@ -166,7 +166,7 @@ python src/main.py \
    --zeroshot-eval7=data/zero-shot-classification/isic2020-2-zero-shot-test.csv \
    --csv-label-key label \
    --csv-img-key image_path \
-   --model 'hf-hub:redlessone/PanDerm2'
+   --model 'hf-hub:redlessone/DermFM-Zero'
 ```
 
 **Custom Dataset Evaluation**
@@ -191,14 +191,14 @@ python src/main.py \
    --csv-label-key label \
    --csv-img-key image_path \
    --zeroshot_eval_custom your_data.csv \
-   --model 'hf-hub:redlessone/PanDerm2'
+   --model 'hf-hub:redlessone/DermFM-Zero'
 ```
 
 ### Task2: Zero-shot Cross-modal Retrieval
 
 Evaluate image-text retrieval performance on Derm1M Hold-out and SkinCAP datasets.
 ```bash
-bash script/zero-shot-eval/PanDerm-v2-zs-retrieval.sh
+bash script/zero-shot-eval/DermFM-Zero-zs-retrieval.sh
 ```
 
 ### Task3: Linear Probing
@@ -207,7 +207,7 @@ Evaluate feature quality by training linear classifiers on frozen features.
 
 **Datasets**: HAM, ISIC2020, PAD, SD-128
 ```bash
-bash script/linear-probe/PanDerm-v2-lp-eval.sh
+bash script/linear-probe/DermFM-Zero-lp-eval.sh
 ```
 
 ### Task4: Multimodal Finetuning
@@ -252,7 +252,7 @@ Download SAE checkpoint from [Google Drive](https://drive.google.com/file/d/1OM1
 
 **Quick run:**
 ```bash
-bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanDerm-v2-SAE.sh
+bash script/automated-concept-discovery/dermoscopic-melanoma-classification/DermFM-Zero-SAE.sh
 ```
 
 **Step-by-step pipeline:**
@@ -260,7 +260,7 @@ bash script/automated-concept-discovery/dermoscopic-melanoma-classification/PanD
 # Step 1: Extract visual features
 cd src
 python export_visual_features.py \
-    --model_name hf-hub:redlessone/PanDerm2 \
+    --model_name hf-hub:redlessone/DermFM-Zero \
     --csv_path ../data/automated-concept-discovery/clinical-malignant/meta.csv \
     --data_root ../data/automated-concept-discovery/clinical-malignant/final_images/ \
     --img_col ImageID \

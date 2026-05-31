@@ -1,7 +1,7 @@
 cd src
 # extract visual feature for malignancy dataset
 python export_visual_features.py \
-    --model_name hf-hub:redlessone/PanDerm2 \
+    --model_name hf-hub:redlessone/DermFM-Zero \
     --csv_path ../data/automated-concept-discovery/dermoscopic-melanoma/meta.csv \
     --data_root ../data/automated-concept-discovery/dermoscopic-melanoma/final_images/ \
     --img_col 'ImageID' \

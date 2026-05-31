@@ -184,7 +184,7 @@ class PanDermTFormer(nn.Module):
                         load_open_clip_state_dict(encoder, pretrain_path)
                     encoder = encoder.visual
                 elif model_name == 'PanDerm-v2':
-                    encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/PanDerm2', finetune=True)[0]
+                    encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero', finetune=True)[0]
                     print("Calling Pandermv2 checkpoint from huggingface api")
                     encoder = encoder.visual
                 elif model_name == 'BioMedCLIP':
@@ -251,7 +251,7 @@ class PanDermTFormer(nn.Module):
                 print(f"Initialize text encoder with PanDerm-Large-VL weight: {pretrain_path}")
             self.meta_encoder = encoder.text
         elif model_name == 'PanDerm-v2':
-            encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/PanDerm2')[0]
+            encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero')[0]
             self.meta_encoder = encoder.text
         elif model_name == 'BioMedCLIP':
             encoder = open_clip.create_model_and_transforms('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')[0]

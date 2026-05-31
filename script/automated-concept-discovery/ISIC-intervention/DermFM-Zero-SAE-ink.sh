@@ -1,14 +1,14 @@
 cd src
 # PanDermv2 - Export image feature
 CUDA_VISIBLE_DEVICES=2 python export_visual_features.py \
-  --model_name 'hf-hub:redlessone/PanDerm2' \
+  --model_name 'hf-hub:redlessone/DermFM-Zero' \
   --csv ../data/automated-concept-discovery/ISIC_ink_bias/train.csv \
   --img_col 'ImageID' \
   --data_root ../data/automated-concept-discovery/ISIC_ink_bias/final_images/ \
   --output ../automated-concept-discovery-result/ISIC_ink_bias/PanDermv2/train/
 
 CUDA_VISIBLE_DEVICES=2 python export_visual_features.py \
-  --model_name 'hf-hub:redlessone/PanDerm2' \
+  --model_name 'hf-hub:redlessone/DermFM-Zero' \
   --csv ../data/automated-concept-discovery/ISIC_ink_bias/test.csv \
   --img_col 'ImageID' \
   --data_root ../data/automated-concept-discovery/ISIC_ink_bias/final_images/ \
@@ -46,7 +46,7 @@ python automated-concept-discovery/4_intervention_CBM.py \
     --data_dir automated-concept-discovery-result/ISIC_ink_bias/ \
     --result_dir automated-concept-discovery-result/ISIC_ink_bias/PanDermv2 \
     --sae_checkpoint automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
-    --clip_model_name 'hf-hub:redlessone/PanDerm2'
+    --clip_model_name 'hf-hub:redlessone/DermFM-Zero'
 
 # build CBM based on SAE concept
 python automated-concept-discovery/3_train_biased-cbm_binary-class.py \
