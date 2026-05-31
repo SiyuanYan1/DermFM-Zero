@@ -147,16 +147,16 @@ def main(options):
     elif dataset_name == 'Derm7pt-VQA':
         meta_input_dim = 0
         label_col = 'answer_id'
-        train_dataset = VQA(df_path='../data/multimodal_finetune/derm7pt-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = VQA(df_path='../data/multimodal_finetune/derm7pt-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
-        test_dataset  = VQA(df_path='../data/multimodal_finetune/derm7pt-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
+        train_dataset = VQA(df_path='../data/multimodal_finetune_VQA/derm7pt-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = VQA(df_path='../data/multimodal_finetune_VQA/derm7pt-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
+        test_dataset  = VQA(df_path='../data/multimodal_finetune_VQA/derm7pt-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
         print(f"Training with Derm7pt-VQA dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
     elif dataset_name == 'SkinCap-VQA':
         meta_input_dim = 0
         label_col = 'answer_id'
-        train_dataset = VQA(df_path='../data/multimodal_finetune/SkinCap-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = VQA(df_path='../data/multimodal_finetune/SkinCap-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
-        test_dataset  = VQA(df_path='../data/multimodal_finetune/SkinCap-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
+        train_dataset = VQA(df_path='../data/multimodal_finetune_VQA/SkinCap-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = VQA(df_path='../data/multimodal_finetune_VQA/SkinCap-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
+        test_dataset  = VQA(df_path='../data/multimodal_finetune_VQA/SkinCap-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
         print(f"Training with SkinCap-VQA dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
     else:
         print(f"No implement for {dataset_name}")

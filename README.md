@@ -106,7 +106,8 @@ DermFM-Zero/
 ├── data/                             # Dataset storage
 ├── automated-concept-discovery/      # SAE & CBM implementation
 ├── linear_probe/                     # Linear probe utilities
-├── multimodal_finetune/              # Multimodal training code
+├── multimodal_finetune/              # Multimodal classification fine-tuning code
+├── multimodal_finetune/preprocessing/# VQA preprocessing (Derm7pt-VQA, SkinCap-VQA)
 ├── reader_studies/                   # Three multinational clinical reader studies
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
@@ -133,7 +134,8 @@ data/
 ├── zero-shot-classification/
 ├── zero-shot-retrieval/
 ├── linear_probe/
-├── multimodal_finetune/
+├── multimodal_finetune/               # classification finetune source datasets
+├── multimodal_finetune_VQA/           # self-contained VQA bundle (images + meta + preprocessing inputs)
 └── automated-concept-discovery/
 ```
 
