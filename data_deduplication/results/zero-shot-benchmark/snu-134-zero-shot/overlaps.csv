@@ -1,0 +1,4 @@
+downstream_image,cosine_similarity,downstream_label,downstream_index
+data/zero-shot-classification/snu-134-zero-shot/images/exfoliativedermatitis_9.jpg,0.7824,exfoliative dermatitis,1608
+data/zero-shot-classification/snu-134-zero-shot/images/angiokeratoma_7.jpg,0.7622,angiokeratoma,1243
+data/zero-shot-classification/snu-134-zero-shot/images/subungalhematoma_15.jpg,0.7611,subungual hematoma,729

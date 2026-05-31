@@ -1,0 +1,2 @@
+downstream_image,cosine_similarity,downstream_label,downstream_index
+data/zero-shot-classification/pad-zero-shot/images/PAT_1377_3512_370.png,0.7955,SEK,431
