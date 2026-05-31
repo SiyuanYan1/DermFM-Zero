@@ -291,7 +291,7 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 
 Results are saved to `automated-concept-discovery-result/`.
 
-### Task6: Reader Studies
+### Reader Studies
 
 Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code, a synthetic demo dataset, and pre-computed demo outputs.
 
