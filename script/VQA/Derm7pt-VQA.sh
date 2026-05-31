@@ -13,7 +13,7 @@
 
 set -e
 
-OUTPUT_DIR="../multimodal_finetune-result/derm7pt-VQA/DermFM-Zero/"
+OUTPUT_DIR="../VQA-result/derm7pt-VQA/DermFM-Zero/"
 mkdir -p "$OUTPUT_DIR"
 
 # Step 1 (Optional) — build the Derm7pt-VQA train/val/test CSVs

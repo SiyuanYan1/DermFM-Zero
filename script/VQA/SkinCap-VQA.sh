@@ -13,7 +13,7 @@
 
 set -e
 
-OUTPUT_DIR="../multimodal_finetune-result/SkinCap-VQA/DermFM-Zero/"
+OUTPUT_DIR="../VQA-result/SkinCap-VQA/DermFM-Zero/"
 mkdir -p "$OUTPUT_DIR"
 
 # Step 1 (Optional) — build the SkinCap-VQA train/val/test CSVs
