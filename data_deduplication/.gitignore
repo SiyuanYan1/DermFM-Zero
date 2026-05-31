@@ -1,0 +1,11 @@
+# Never commit data or derived artifacts — pretrain corpus is private.
+embeddings/
+*.npy
+meta/
+models/
+reader-study-meta/
+downstream_root/
+# image-pair visualisations would render private pretrain images
+results/**/overlap_viz.png
+__pycache__/
+*.pyc

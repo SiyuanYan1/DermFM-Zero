@@ -1,0 +1,260 @@
+downstream_image,cosine_similarity,downstream_label,downstream_index
+data/zero-shot-classification/daffodil-5-zero-shot/images/psoriatic-nail-013__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9717,nail psoriasis,1433
+data/zero-shot-classification/daffodil-5-zero-shot/images/3236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9448,nail psoriasis,1542
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-24__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9419,vitiligo,13
+data/zero-shot-classification/daffodil-5-zero-shot/images/pits-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDdd.jpeg,0.939,nail psoriasis,1679
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-35__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9364,vitiligo,328
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_03003236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9339,nail psoriasis,1909
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9327,vitiligo,195
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-53__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9323,vitiligo,348
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300psoriatic-nail-040__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9319,nail psoriasis,1670
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-21__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9315,vitiligo,90
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-30__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9302,vitiligo,396
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9291,vitiligo,42
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-51__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9276,vitiligo,346
+data/zero-shot-classification/daffodil-5-zero-shot/images/3237__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,0.9272,nail psoriasis,1508
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9253,vitiligo,324
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-51__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9252,vitiligo,94
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9231,nail psoriasis,1853
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-32__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9229,vitiligo,210
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-61__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.9195,vitiligo,246
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-05__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIzXQ.jpg,0.9158,vitiligo,16
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-34__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9148,vitiligo,82
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-49__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9133,vitiligo,130
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50onych-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.9121,nail psoriasis,1447
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-39__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9114,vitiligo,213
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-43__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE5XQ.jpg,0.9087,vitiligo,5
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1crumb-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI4XQ.jpeg,0.9072,nail psoriasis,1783
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-34__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9067,vitiligo,355
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-32__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9066,vitiligo,27
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-43__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE5XQ.jpg,0.9055,vitiligo,85
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1194__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9038,acne,620
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo5__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIyXQ.jpg,0.9029,vitiligo,283
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-12__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9009,vitiligo,66
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-55__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.9001,vitiligo,264
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-12__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8992,vitiligo,337
+data/zero-shot-classification/daffodil-5-zero-shot/images/185__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8985,acne,462
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-35__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8979,vitiligo,79
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300171__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.897,acne,478
+data/zero-shot-classification/daffodil-5-zero-shot/images/sjs-ten-oral-13__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI1XQ.jpeg,0.8967,SJS/TEN,913
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50crumb-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI4XQ.jpeg,0.8961,nail psoriasis,1611
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8947,vitiligo,92
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-26__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8943,vitiligo,232
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400185__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8932,acne,471
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo3__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8922,vitiligo,156
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8921,vitiligo,143
+data/zero-shot-classification/daffodil-5-zero-shot/images/178__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8901,acne,592
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-52__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.89,vitiligo,221
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8898,vitiligo,124
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1psoriatic-nail-031__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8895,nail psoriasis,1666
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-03250__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8892,nail psoriasis,1818
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13243__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.889,nail psoriasis,1704
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-60__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.8883,vitiligo,105
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1lp-pigmentosus2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8881,hyperpigmentation,1302
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400178__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.887,acne,490
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300146__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDEwXQ.jpg,0.8842,acne,556
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1196__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8841,acne,532
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400sjs-ten-oral-13__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI1XQ.jpeg,0.8837,SJS/TEN,643
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300sjs-ten-oral-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.883,SJS/TEN,965
+data/zero-shot-classification/daffodil-5-zero-shot/images/sjs-ten-oral-5__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8828,SJS/TEN,970
+data/zero-shot-classification/daffodil-5-zero-shot/images/sjs-ten-nail-53__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8826,SJS/TEN,1233
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400sjs-ten-oral-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8801,SJS/TEN,784
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8786,vitiligo,222
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-36__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8776,vitiligo,33
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400143__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8739,acne,597
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300193__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8718,acne,505
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8713,vitiligo,306
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400acquired-dermal-macular-hyperpigmentation-019__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8711,hyperpigmentation,1399
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400193__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8707,acne,426
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00psoriatic-nail-006__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8703,nail psoriasis,1827
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300edp1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8688,hyperpigmentation,1380
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-19__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8665,vitiligo,110
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-503230__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,0.8642,nail psoriasis,1456
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_10003236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8641,nail psoriasis,1557
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-04__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8636,vitiligo,275
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100onych-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8634,nail psoriasis,1680
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1sjs-ten-nail-53__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8632,SJS/TEN,840
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300lp-pigmentosus1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8629,hyperpigmentation,1354
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_4003232__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,0.862,nail psoriasis,1501
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400lp-pigmentosus1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8618,hyperpigmentation,1326
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1sunburn-vitiligo__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8598,vitiligo,178
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-62__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.8593,vitiligo,303
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50psoriatic-nail-031__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8589,nail psoriasis,1845
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300psoriatic-nail-038__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8576,nail psoriasis,1617
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400148__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8565,acne,618
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_4003247__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8537,nail psoriasis,1866
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8535,vitiligo,354
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300sjs-ten-neck-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8526,SJS/TEN,795
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-55__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.852,vitiligo,15
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-33__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8503,vitiligo,131
+data/zero-shot-classification/daffodil-5-zero-shot/images/181__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8498,acne,494
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400psoriatic-nail-011__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8495,nail psoriasis,1507
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_01003236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8493,nail psoriasis,1735
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300152__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.849,acne,479
+data/zero-shot-classification/daffodil-5-zero-shot/images/3239__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIwXQ.jpeg,0.848,nail psoriasis,1511
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300195__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.848,acne,446
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-19__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8475,vitiligo,357
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0psoriatic-nail-006__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8466,nail psoriasis,1875
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400sjs-ten-neck-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8466,SJS/TEN,851
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100vitiligo-20__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8464,vitiligo,190
+data/zero-shot-classification/daffodil-5-zero-shot/images/144__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8461,acne,578
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-25__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8458,vitiligo,399
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00crumb-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI4XQ.jpeg,0.8453,nail psoriasis,1719
+data/zero-shot-classification/daffodil-5-zero-shot/images/150__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8449,acne,482
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13247__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8446,nail psoriasis,1632
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_03003245__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8444,nail psoriasis,1426
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400144__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8425,acne,571
+data/zero-shot-classification/daffodil-5-zero-shot/images/psoriatic-nail-038__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8421,nail psoriasis,1570
+data/zero-shot-classification/daffodil-5-zero-shot/images/sjs-ten-neck-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8421,SJS/TEN,1188
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_03003239__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIwXQ.jpeg,0.8416,nail psoriasis,1451
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_01003242__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8408,nail psoriasis,1515
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400176__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8395,acne,535
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-27__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8393,vitiligo,336
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50psoriatic-nail-024__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8378,nail psoriasis,1892
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-54__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8375,vitiligo,292
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-02__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8368,vitiligo,272
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1160__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8347,acne,594
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo-04__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8333,vitiligo,155
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-04__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.833,vitiligo,268
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100171__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8322,acne,465
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300acquired-dermal-macular-hyperpigmentation-021-v2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8305,hyperpigmentation,1281
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-22__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8297,vitiligo,113
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-14__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8296,vitiligo,9
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-503248__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,0.8283,nail psoriasis,1524
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-63__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE2XQ.jpeg,0.8278,vitiligo,322
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-33__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8276,vitiligo,40
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_10003240__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8264,nail psoriasis,1567
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_1004003236__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8246,nail psoriasis,1736
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50166__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8245,acne,424
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300vitiligo-09__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8243,vitiligo,174
+data/zero-shot-classification/daffodil-5-zero-shot/images/157__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8243,acne,627
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo-39__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8231,vitiligo,86
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400sjs-ten-trunk-169__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8228,SJS/TEN,704
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0psoriatic-nail-013__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8215,nail psoriasis,1517
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_003237__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,0.8213,nail psoriasis,1902
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-02__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8207,vitiligo,117
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-03__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIwXQ.jpg,0.8199,vitiligo,145
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13229__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,0.8186,nail psoriasis,1778
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-27__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8183,vitiligo,265
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000194__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.818,acne,563
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_4003229__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,0.8157,nail psoriasis,1459
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-43__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE5XQ.jpg,0.8147,vitiligo,11
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0pits-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDdd.jpeg,0.8145,nail psoriasis,1731
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-29__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8143,vitiligo,295
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400acquired-dermal-macular-hyperpigmentation-021-v2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8143,hyperpigmentation,1394
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000psoriatic-nail-013__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8129,nail psoriasis,1490
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1179__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8121,acne,615
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_003240__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8121,nail psoriasis,1718
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300psoriatic-nail-031__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8111,nail psoriasis,1572
+data/zero-shot-classification/daffodil-5-zero-shot/images/154__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8105,acne,506
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400vitiligo-57__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8086,vitiligo,76
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-03242__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8086,nail psoriasis,1625
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000onych-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8078,nail psoriasis,1792
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00psoriatic-nail-040__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8073,nail psoriasis,1577
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300onych-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8066,nail psoriasis,1463
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400149__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8058,acne,448
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_01003232__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpeg,0.8058,nail psoriasis,1817
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-1000_00vitiligo-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8057,vitiligo,277
+data/zero-shot-classification/daffodil-5-zero-shot/images/149__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8044,acne,545
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-10__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8039,vitiligo,17
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100152__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8039,acne,470
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100sunburn-vitiligo__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.8031,vitiligo,402
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300196__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.803,acne,523
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50sjs-ten-trunk-169__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.8,SJS/TEN,1144
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-29__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7998,vitiligo,365
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0crumb-ps__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDI4XQ.jpeg,0.7996,nail psoriasis,1730
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-24__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7988,vitiligo,253
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-14__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7982,vitiligo,102
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-150vitiligo-05__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIzXQ.jpg,0.7976,vitiligo,177
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-100vitiligo-36__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7967,vitiligo,225
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-49__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7962,vitiligo,25
+data/zero-shot-classification/daffodil-5-zero-shot/images/sjs-ten-trunk-157__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7961,SJS/TEN,1204
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip--1vitiligo5__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIyXQ.jpg,0.7955,vitiligo,245
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo5__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIyXQ.jpg,0.7951,vitiligo,91
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100vitiligo-39__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7946,vitiligo,77
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-200vitiligo-29__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7943,vitiligo,4
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip--1vitiligo-49__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7935,vitiligo,175
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000178__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7926,acne,427
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-200184__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7923,acne,420
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00194__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7923,acne,542
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-47__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7917,vitiligo,214
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100psoriatic-nail-025__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDEwXQ.jpeg,0.7903,nail psoriasis,1440
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000psoriatic-nail-031__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7896,nail psoriasis,1554
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1161__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7894,acne,519
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100vitiligo-23__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7881,vitiligo,281
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300146__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDEwXQ.jpg,0.7877,acne,492
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100sjs-ten-neck-55__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7876,SJS/TEN,654
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13248__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,0.7868,nail psoriasis,1803
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00178__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7867,acne,536
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50195__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7865,acne,489
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50154__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7853,acne,466
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300sjs-ten-oral-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7853,SJS/TEN,650
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50177__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7853,acne,416
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_4003250__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7852,nail psoriasis,1682
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300poliosis__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.7851,vitiligo,373
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-46__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7849,vitiligo,146
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-100181__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7845,acne,623
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_1004003242__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7842,nail psoriasis,1897
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo-60__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.7839,vitiligo,147
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1189__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7839,acne,616
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7818,vitiligo,311
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100psoriatic-nail-011__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7814,nail psoriasis,1891
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000psoriatic-nail-037__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7811,nail psoriasis,1618
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-07__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7808,vitiligo,325
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo-45__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7805,vitiligo,171
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-503239__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIwXQ.jpeg,0.7804,nail psoriasis,1837
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-34__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7802,vitiligo,389
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50vitiligo-34__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7798,vitiligo,260
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-1000_00166__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7794,acne,553
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-07__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7785,vitiligo,310
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50vitiligo-03__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDIwXQ.jpg,0.7778,vitiligo,220
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-13241__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7772,nail psoriasis,1822
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100vitiligo3__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7762,vitiligo,20
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_4003241__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7756,nail psoriasis,1588
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-200psoriatic-nail-037__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7752,nail psoriasis,1905
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000sjs-ten-nail-53__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7752,SJS/TEN,664
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00196__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7739,acne,452
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-1000_00vitiligo-37__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7733,vitiligo,270
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50141__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7732,acne,550
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000psoriatic-nail-011__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.773,nail psoriasis,1663
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00171__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.773,acne,586
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-12__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7722,vitiligo,219
+data/zero-shot-classification/daffodil-5-zero-shot/images/psoriatic-nail-007__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7716,nail psoriasis,1582
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1vitiligo-57__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7708,vitiligo,347
+data/zero-shot-classification/daffodil-5-zero-shot/images/psoriatic-nail-015__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7708,nail psoriasis,1455
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-52__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7703,vitiligo,240
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50196__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.77,acne,588
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-40__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7699,vitiligo,350
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-503260__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7694,nail psoriasis,1732
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100166__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7694,acne,606
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_01003258__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7693,nail psoriasis,1488
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-100vitiligo-53__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7672,vitiligo,64
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400acquired-dermal-macular-hyperpigmentation-012__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.767,hyperpigmentation,1307
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip--1193__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7659,acne,496
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-52__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7659,vitiligo,377
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7651,vitiligo,196
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-61__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsInkiLDM2XQ.jpg,0.7639,vitiligo,41
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-1000_00sjs-ten-oral-11__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7635,SJS/TEN,672
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip--1vitiligo-07__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7627,vitiligo,101
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-0100_00vitiligo-36__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7626,vitiligo,181
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300vitiligo-56__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7626,vitiligo,193
+data/zero-shot-classification/daffodil-5-zero-shot/images/saturation-50178__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.762,acne,510
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-200148__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7619,acne,464
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-0350_0300psoriatic-nail-021__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7617,nail psoriasis,1751
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-503245__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7609,nail psoriasis,1711
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100165__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7608,acne,593
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300lp-pigmentosus2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7597,hyperpigmentation,1378
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300172__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7595,acne,632
+data/zero-shot-classification/daffodil-5-zero-shot/images/vitiligo-50__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7594,vitiligo,318
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-63__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE2XQ.jpeg,0.758,vitiligo,173
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_0100vitiligo1__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7579,vitiligo,204
+data/zero-shot-classification/daffodil-5-zero-shot/images/hue-50195__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7573,acne,485
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_1000vitiligo-32__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7558,vitiligo,360
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0vitiligo-35__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7557,vitiligo,216
+data/zero-shot-classification/daffodil-5-zero-shot/images/padd-00_10003237__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDBd.jpeg,0.7556,nail psoriasis,1627
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400psoriatic-nail-020__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7554,nail psoriasis,1758
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-1183__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDE4XQ.jpg,0.7553,acne,431
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip-0lp-pigmentosus2__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7523,hyperpigmentation,1386
+data/zero-shot-classification/daffodil-5-zero-shot/images/Resize-450_400psoriatic-nail-021__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpeg,0.7519,nail psoriasis,1630
+data/zero-shot-classification/daffodil-5-zero-shot/images/flip--1vitiligo-27__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7514,vitiligo,192
+data/zero-shot-classification/daffodil-5-zero-shot/images/Crop-100450_0300143__ProtectWyJQcm90ZWN0Il0_FocusFillWzI5NCwyMjIsIngiLDFd.jpg,0.7506,acne,475

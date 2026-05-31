@@ -1,0 +1,16 @@
+downstream_image,cosine_similarity,downstream_label,downstream_index
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0033454.jpg,0.9468,melanoma,280
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0034098.jpg,0.927,nevus,1425
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0033464.jpg,0.919,nevus,1429
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0033061.jpg,0.9121,melanoma,272
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0032192.jpg,0.904,melanoma,314
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0026378.jpg,0.8446,benign keratosis,83
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0027006.jpg,0.8395,benign keratosis,76
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0028003.jpg,0.8237,melanoma,302
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0025957.jpg,0.8236,actinic keratosis,1492
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0033356.jpg,0.7773,nevus,1083
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0033354.jpg,0.7761,basal cell carcinoma,390
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0032195.jpg,0.7686,nevus,1346
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0032859.jpg,0.7624,nevus,1129
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0029194.jpg,0.7611,nevus,1068
+data/zero-shot-classification/HAM-official-7-zero-shot/images/ISIC_0032838.jpg,0.7599,nevus,1142

@@ -1,0 +1,23 @@
+downstream_image,cosine_similarity,downstream_label,downstream_index
+data/zero-shot-classification/sd-128-zero-shot/images/025267HB.jpg,0.9316,angular cheilitis,1339
+data/zero-shot-classification/sd-128-zero-shot/images/029023HB.jpg,0.9153,keratolysis exfoliativa of wende,172
+data/zero-shot-classification/sd-128-zero-shot/images/009446HB.jpg,0.9128,alopecia areata,259
+data/zero-shot-classification/sd-128-zero-shot/images/041572HB.jpg,0.899,leukocytoclastic vasculitis,67
+data/zero-shot-classification/sd-128-zero-shot/images/023857HB.jpg,0.8954,keloid,915
+data/zero-shot-classification/sd-128-zero-shot/images/009861HB.jpg,0.8921,pseudofolliculitis barbae,659
+data/zero-shot-classification/sd-128-zero-shot/images/045512HB.jpg,0.8915,pityrosporum folliculitis,187
+data/zero-shot-classification/sd-128-zero-shot/images/040507HB.jpg,0.8773,neurodermatitis,1395
+data/zero-shot-classification/sd-128-zero-shot/images/004978HB.jpg,0.8754,actinic solar damage(solar elastosis),832
+data/zero-shot-classification/sd-128-zero-shot/images/009517HB.jpg,0.8746,follicular mucinosis,342
+data/zero-shot-classification/sd-128-zero-shot/images/040524HB.jpg,0.868,lichen simplex chronicus,1259
+data/zero-shot-classification/sd-128-zero-shot/images/027868HB.jpg,0.8554,livedo reticularis,1006
+data/zero-shot-classification/sd-128-zero-shot/images/033073HB.jpg,0.8543,acne vulgaris,1210
+data/zero-shot-classification/sd-128-zero-shot/images/030273HB.jpg,0.8538,favre racouchot,483
+data/zero-shot-classification/sd-128-zero-shot/images/005124HB.jpg,0.8535,favre racouchot,57
+data/zero-shot-classification/sd-128-zero-shot/images/028871HB.jpg,0.8423,keratosis pilaris,377
+data/zero-shot-classification/sd-128-zero-shot/images/043665HB.jpg,0.8415,allergic contact dermatitis,1156
+data/zero-shot-classification/sd-128-zero-shot/images/044700HB.jpg,0.8269,scalp psoriasis,834
+data/zero-shot-classification/sd-128-zero-shot/images/039183HB.jpg,0.8237,candidiasis,976
+data/zero-shot-classification/sd-128-zero-shot/images/009845HB.jpg,0.822,pseudofolliculitis barbae,1206
+data/zero-shot-classification/sd-128-zero-shot/images/009957HB.jpg,0.809,acne keloidalis nuchae,256
+data/zero-shot-classification/sd-128-zero-shot/images/028855HB.jpg,0.7715,keratosis pilaris,1345
