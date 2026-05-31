@@ -30,7 +30,8 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
   - [Task2: Zero-shot Cross-modal Retrieval](#task2-zero-shot-cross-modal-retrieval)
   - [Task3: Linear Probing](#task3-linear-probing)
   - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
-  - [Task5: Automated Concept Discovery](#task5-automated-concept-discovery)
+  - [Task5: Visual Question Answering (VQA)](#task5-visual-question-answering-vqa)
+  - [Task6: Automated Concept Discovery](#task6-automated-concept-discovery)
 - [Reader Studies](#reader-studies)
 - [Contributors](#contributors)
 - [License](#license)
@@ -107,7 +108,7 @@ DermFM-Zero/
 ├── automated-concept-discovery/      # SAE & CBM implementation
 ├── linear_probe/                     # Linear probe utilities
 ├── multimodal_finetune/              # Multimodal classification fine-tuning code
-├── multimodal_finetune/preprocessing/# VQA preprocessing (Derm7pt-VQA, SkinCap-VQA)
+├── VQA/                              # VQA fine-tuning + preprocessing (Derm7pt-VQA, SkinCap-VQA)
 ├── reader_studies/                   # Three multinational clinical reader studies
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
@@ -135,7 +136,7 @@ data/
 ├── zero-shot-retrieval/
 ├── linear_probe/
 ├── multimodal_finetune/               # classification finetune source datasets
-├── multimodal_finetune_VQA/           # self-contained VQA bundle (images + meta + preprocessing inputs)
+├── VQA/                               # self-contained VQA bundle (images + meta + preprocessing inputs)
 └── automated-concept-discovery/
 ```
 
@@ -241,7 +242,30 @@ Metadata is converted to text prompts - see [`multimodal_finetune/dataset/prompt
 
 Results are saved to `multimodal_finetune-result/`.
 
-### Task5: Automated Concept Discovery
+### Task5: Visual Question Answering (VQA)
+
+Fine-tune DermFM-Zero on dermatology VQA benchmarks (Derm7pt-VQA and SkinCap-VQA). Each shell script handles preprocessing on first run and is skipped on subsequent runs.
+
+```bash
+cd VQA
+
+# Derm7pt-VQA (49 answers; Clinical + Dermoscopic + Metadata-question)
+bash ../script/VQA/Derm7pt-VQA.sh
+
+# SkinCap-VQA (188 answers; clinical photos)
+bash ../script/VQA/SkinCap-VQA.sh
+```
+
+The `VQA/preprocessing/` step rebuilds the train/val/test splits from the
+official upstream artefacts under
+`data/VQA/preprocessing_inputs/` (Derm7pt `meta.csv` + the published
+case-split manifest, and the DermVQA4 MCQA JSONs). See
+[`VQA/preprocessing/README.md`](VQA/preprocessing/README.md) for the full
+pipeline.
+
+Results are saved to `multimodal_finetune-result/{derm7pt,SkinCap}-VQA/`.
+
+### Task6: Automated Concept Discovery
 
 Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 

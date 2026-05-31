@@ -2,14 +2,14 @@
 # Derm7pt-VQA — fine-tune DermFM-Zero on the held-out-image VQA benchmark
 # and report metrics.
 #
-# Data:    data/multimodal_finetune_VQA/derm7pt-VQA/meta/{train,val,test}.csv
+# Data:    data/VQA/derm7pt-VQA/meta/{train,val,test}.csv
 # Model:   checkpoints/DermFM-Zero/open_clip_pytorch_model.bin
 #          (download via huggingface-cli download redlessone/DermFM-Zero)
 #
-# Run from `multimodal_finetune/` so the relative `--pretrain_path` and the
+# Run from `VQA/` so the relative `--pretrain_path` and the
 # `../data/...` CSV paths resolve correctly:
-#   cd multimodal_finetune
-#   bash ../script/multimodal_finetune/Derm7pt-VQA.sh
+#   cd VQA
+#   bash ../script/VQA/Derm7pt-VQA.sh
 
 set -e
 
@@ -18,7 +18,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Step 1 (Optional) — build the Derm7pt-VQA train/val/test CSVs
 # Skipped if the splits already exist.
-META_DIR="../data/multimodal_finetune_VQA/derm7pt-VQA/meta"
+META_DIR="../data/VQA/derm7pt-VQA/meta"
 if [ ! -f "$META_DIR/train.csv" ] || [ ! -f "$META_DIR/val.csv" ] || [ ! -f "$META_DIR/test.csv" ]; then
     echo "[preprocess] regenerating Derm7pt-VQA splits..."
     ( cd preprocessing && python build_derm7pt_vqa.py )

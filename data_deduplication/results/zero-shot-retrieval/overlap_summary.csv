@@ -1,0 +1,3 @@
+dataset,total_images,overlapping_images,overlap_rate
+Derm1M-hold_out,9806,1598,16.30%
+skincap,3989,3334,83.58%

@@ -1,7 +1,7 @@
 """Build the Derm7pt-VQA train/val/test CSVs.
 
 Outputs the artefacts under
-    data/multimodal_finetune_VQA/derm7pt-VQA/meta/{train,val,test}.csv
+    data/VQA/derm7pt-VQA/meta/{train,val,test}.csv
 
 What the pipeline does
 ----------------------
@@ -427,18 +427,18 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     ap.add_argument('--meta_csv',
-                    default=str(repo_root / 'data' / 'multimodal_finetune_VQA' /
+                    default=str(repo_root / 'data' / 'VQA' /
                                 'preprocessing_inputs' / 'derm7pt-VQA' / 'derm7pt-meta.csv'),
                     help='Source derm7pt meta CSV.')
     ap.add_argument('--image_root',
-                    default='../data/multimodal_finetune_VQA/derm7pt-VQA/images',
+                    default='../data/VQA/derm7pt-VQA/images',
                     help='Image-root prefix written into each row\'s image_path. '
                          'Default resolves from multimodal_finetune/ (the CWD of train.py).')
     ap.add_argument('--output_dir',
-                    default=str(repo_root / 'data' / 'multimodal_finetune_VQA' /
+                    default=str(repo_root / 'data' / 'VQA' /
                                 'derm7pt-VQA' / 'meta'))
     ap.add_argument('--case_split',
-                    default=str(repo_root / 'data' / 'multimodal_finetune_VQA' /
+                    default=str(repo_root / 'data' / 'VQA' /
                                 'preprocessing_inputs' / 'derm7pt-VQA' / 'case_split.csv'),
                     help='Optional CSV with columns (image_id, split). When provided '
                          'the case-level partition is read from this manifest instead '

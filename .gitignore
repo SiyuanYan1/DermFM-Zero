@@ -232,8 +232,10 @@ checkpoints/DermFM-Zero/
 multimodal_finetune-result/
 fail-analysis/
 fail_analysis/
+huggingface/
 
 # macOS
 .DS_Store
 **/.DS_Store
 data
+VQA.zip

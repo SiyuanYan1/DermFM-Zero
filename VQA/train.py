@@ -13,7 +13,7 @@ from sklearn.metrics import roc_auc_score, balanced_accuracy_score, recall_score
 import random
 from src.eval_metrics import ConfusionMatrix, save_confusion_matrix, calculate_metrics, save_detailed_results, save_metrics_csv
 from models.PanDermFormer import PanDermTFormer
-from src.dataloader import load_derm7pt_meta, Derm7ptDataset, MILK, PAD
+from src.dataloader import VQA
 import wandb
 
 import sys
@@ -122,30 +122,23 @@ def main(options):
     else:
         tokenizer = None
 
-    #load dataset
-    if dataset_name == 'Derm7pt':
-        meta_input_dim=14
-        derm_data_group = load_derm7pt_meta(dir_release=dir_release)
-        label_col = 'target'
-        train_dataset = Derm7ptDataset(derm=derm_data_group, shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = Derm7ptDataset(derm=derm_data_group, shape=(224,224), mode='valid', tokenizer=tokenizer)
-        test_dataset = Derm7ptDataset(derm=derm_data_group, shape=(224,224), mode='test', tokenizer=tokenizer)
-    elif dataset_name == 'MILK-11':
-        meta_input_dim=10
-        label_col = 'target'
-        train_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        test_dataset = MILK(df_path=f'../data/multimodal_finetune/MILK-11/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        print(f"Training with MILK-11 dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
-    elif dataset_name == 'PAD':
-        meta_input_dim=49
-        label_col = 'target'
-        train_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
-        valid_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/val.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        test_dataset = PAD(df_path='../data/multimodal_finetune/PAD/meta/test.csv', shape=(224,224), mode='test', tokenizer=tokenizer)
-        print(f"Training with PAD dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
+    # load VQA dataset
+    if dataset_name == 'Derm7pt-VQA':
+        meta_input_dim = 0
+        label_col = 'answer_id'
+        train_dataset = VQA(df_path='../data/VQA/derm7pt-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = VQA(df_path='../data/VQA/derm7pt-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
+        test_dataset  = VQA(df_path='../data/VQA/derm7pt-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
+        print(f"Training with Derm7pt-VQA dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
+    elif dataset_name == 'SkinCap-VQA':
+        meta_input_dim = 0
+        label_col = 'answer_id'
+        train_dataset = VQA(df_path='../data/VQA/SkinCap-VQA/meta/train.csv', shape=(224,224), mode='train', tokenizer=tokenizer)
+        valid_dataset = VQA(df_path='../data/VQA/SkinCap-VQA/meta/val.csv',   shape=(224,224), mode='test',  tokenizer=tokenizer)
+        test_dataset  = VQA(df_path='../data/VQA/SkinCap-VQA/meta/test.csv',  shape=(224,224), mode='test',  tokenizer=tokenizer)
+        print(f"Training with SkinCap-VQA dataset: Train - {len(train_dataset)}, Val - {len(valid_dataset)}, Test - {len(test_dataset)}")
     else:
-        print(f"No implement for {dataset_name}")
+        print(f"No VQA dataset implement for {dataset_name}; supported: Derm7pt-VQA, SkinCap-VQA")
         raise NotImplementedError
 
     # load model
