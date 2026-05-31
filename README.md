@@ -31,7 +31,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
   - [Task3: Linear Probing](#task3-linear-probing)
   - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
   - [Task5: Automated Concept Discovery](#task5-automated-concept-discovery)
-- [Reader Studies](#task6-reader-studies)
+- [Reader Studies](#reader-studies)
 - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
