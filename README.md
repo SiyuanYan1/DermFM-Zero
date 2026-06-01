@@ -56,12 +56,12 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 Recent additions to the repository (latest first):
 
-- **YYYY-MM-DD** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
-- **YYYY-MM-DD** · 🧪 Released `VQA/` — Visual Question Answering evaluation pipeline.
-- **YYYY-MM-DD** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
-- **YYYY-MM-DD** · 🧠 Released `reader_studies/` — three multinational reader studies (RS1, RS2A, RS2B) with paired-design statistical pipelines.
-- **YYYY-MM-DD** · 🧬 Released `automated-concept-discovery/` — sparse-autoencoder + concept-bottleneck-model pipeline.
-- **YYYY-MM-DD** · 🚀 Initial public release.
+- **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
+- **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering evaluation pipeline.
+- **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
+- **2026-05-25** · 🧠 Released `reader_studies/` — three multinational reader studies (RS1, RS2A, RS2B) with paired-design statistical pipelines.
+- **2025-12-10** · 🧬 Released `automated-concept-discovery/` — sparse-autoencoder + concept-bottleneck-model pipeline.
+- **2025-09-13** · 🚀 Initial public release.
 
 ## Benchmark Results
 
