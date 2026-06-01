@@ -1,0 +1,8 @@
+diag,label
+actinic keratosis,0
+basal cell carcinoma,1
+benign keratosis,2
+dermatofibroma,3
+melanoma,4
+nevus,5
+vascular,6
