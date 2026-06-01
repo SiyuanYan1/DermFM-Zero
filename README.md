@@ -54,8 +54,6 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📰 Updates
 
-Recent additions to the repository (latest first):
-
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering evaluation pipeline.
 - **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
