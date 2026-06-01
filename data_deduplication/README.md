@@ -1,28 +1,28 @@
 # Data Deduplication / Leakage Analysis
 
-Pipeline that quantifies **data leakage** between the DermFM-Zero pre-training
-corpus and the downstream zero-shot / reader-study evaluation sets, using
-**SSCD** copy-detection embeddings + top-1 cosine search.
+Pipeline that quantifies **data leakage** between the DermFM-Zero pre-training corpus and the downstream zero-shot / reader-study evaluation sets, using **SSCD** copy-detection embeddings + top-1 cosine search.
 
-> **No data is shipped.** This folder contains only the *pipeline code* and the
-> *aggregate overlap statistics*. The pre-training corpus and its images are
-> **private** and are supplied by the user at runtime via command-line paths.
-> The per-pair `overlaps.csv` files here have had the pretrain-side columns
-> removed, and no image visualisations are included.
+> **No data is shipped.** This folder contains only the *pipeline code* and the *aggregate overlap statistics*. The pre-training corpus and its images are **private** and are supplied by the user at runtime via command-line paths. The per-pair `overlaps.csv` files here have had the pretrain-side columns removed, and no image visualisations are included.
 
-## Method
+## 📑 Table of Contents
+- [Overview](#-overview)
+- [Repository Structure](#-repository-structure)
+- [Quick Start](#-quick-start)
+- [Method](#-method)
+- [Reported overlap rates](#-reported-overlap-rates)
+- [Data sharing](#-data-sharing)
 
-1. **Embed.** Every image (pretrain + each evaluation set) is resized to
-   320×320, ImageNet-normalised, and forwarded through the public
-   `sscd_disc_mixup` TorchScript model (ResNet-50 + GeM, 512-d output).
-   Model: [facebookresearch/sscd-copy-detection](https://github.com/facebookresearch/sscd-copy-detection).
-2. **Overlap.** Embeddings are L2-normalised. For every evaluation image we
-   compute its top-1 cosine match against the pretrain bank (batched). A pair
-   is flagged as leakage when `cosine_similarity >= 0.75`.
-3. **Report.** Per-dataset overlap counts/rates (`overlap_summary.csv`) and the
-   list of flagged evaluation images (`overlaps.csv`, pretrain side redacted).
+## 📋 Overview
 
-## Files
+DermFM-Zero is pre-trained on roughly 1M dermatology image–text pairs. To rule out benchmark contamination, this pipeline checks every downstream evaluation image against the pretraining bank using SSCD copy-detection embeddings and flags any pair with cosine similarity ≥ 0.75 as a potential leak.
+
+| Pipeline stage | What it does | Output |
+|---|---|---|
+| **Embed** (`embed.py`)     | 320×320 → SSCD ResNet-50 + GeM → 512-d L2-normalised vector | `*.npy` per dataset |
+| **Overlap** (`overlap.py`) | Batched top-1 cosine search against pretrain bank          | `overlaps.csv`, `overlap_summary.csv` |
+| **Driver** (`run.sh`)      | Calls Embed + Overlap end-to-end across all eval sets       | full `results/` tree |
+
+## 📂 Repository Structure
 
 ```
 data_deduplication/
@@ -43,7 +43,7 @@ data_deduplication/
         └── RS*_images/overlaps.csv
 ```
 
-## Run it on your own data
+## 🚀 Quick Start
 
 ```bash
 pip install -r requirements.txt
@@ -70,7 +70,15 @@ python overlap.py downstream \
     --threshold 0.75
 ```
 
-## Reported overlap rates (threshold 0.75)
+## 🔬 Method
+
+1. **Embed.** Every image (pretrain + each evaluation set) is resized to 320×320, ImageNet-normalised, and forwarded through the public `sscd_disc_mixup` TorchScript model (ResNet-50 + GeM, 512-d output). Model: [facebookresearch/sscd-copy-detection](https://github.com/facebookresearch/sscd-copy-detection).
+2. **Overlap.** Embeddings are L2-normalised. For every evaluation image we compute its top-1 cosine match against the pretrain bank (batched). A pair is flagged as leakage when `cosine_similarity >= 0.75`.
+3. **Report.** Per-dataset overlap counts/rates (`overlap_summary.csv`) and the list of flagged evaluation images (`overlaps.csv`, pretrain side redacted).
+
+## 📊 Reported overlap rates
+
+All tables below use cosine threshold 0.75.
 
 Downstream zero-shot:
 
@@ -99,6 +107,12 @@ Zero-shot retrieval:
 | Derm1M-hold_out    | 9,806 |   1,598 | 16.30 % |
 | skincap            | 3,989 |   3,334 | 83.58 % |
 
-The deduplicated meta CSVs for both retrieval datasets are shipped under
-`results/zero-shot-retrieval/` and were used to produce the dedup-set
-retrieval results in the main paper.
+The deduplicated meta CSVs for both retrieval datasets are shipped under `results/zero-shot-retrieval/` and were used to produce the dedup-set retrieval results in the main paper.
+
+## 🔒 Data sharing
+
+Only pipeline code and aggregate statistics live in this folder. Pretrain images and their per-pair matches are kept private; users supply their own pretrain corpus and evaluation images at runtime via the CLI paths in `run.sh`.
+
+## 📄 Citation
+
+If you use this pipeline, please cite the DermFM-Zero manuscript.

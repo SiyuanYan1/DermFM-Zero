@@ -19,9 +19,12 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 </div>
 
+> 🔒 **Availability**: DermFM-Zero is private at this stage and available only upon reasonable request to the corresponding author. The model weights, training code, and accompanying resources will be made **fully public upon publication**.
+
 ## 📑 Table of Contents
 
 - [Highlights](#highlights)
+- [Updates](#-updates)
 - [Benchmark Results](#benchmark-results)
 - [Repository Structure](#repository-structure)
 - [Quick Start](#quick-start)
@@ -33,6 +36,8 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
   - [Task5: Visual Question Answering (VQA)](#task5-visual-question-answering-vqa)
   - [Task6: Automated Concept Discovery](#task6-automated-concept-discovery)
 - [Reader Studies](#reader-studies)
+- [Data Deduplication / Leakage Analysis](#data-deduplication--leakage-analysis)
+- [Statistic for Benchmarking](#statistic-for-benchmarking)
 - [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
@@ -46,6 +51,17 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 🧠 **Interpretable AI**: Built-in concept discovery with Sparse Autoencoders (SAE)
 
 🌍 **Multi-center Validation**: Evaluated on datasets from Austria, Brazil, Korea, Portugal, and more
+
+## 📰 Updates
+
+Recent additions to the repository (latest first):
+
+- **YYYY-MM-DD** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
+- **YYYY-MM-DD** · 🧪 Released `VQA/` — Visual Question Answering evaluation pipeline.
+- **YYYY-MM-DD** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
+- **YYYY-MM-DD** · 🧠 Released `reader_studies/` — three multinational reader studies (RS1, RS2A, RS2B) with paired-design statistical pipelines.
+- **YYYY-MM-DD** · 🧬 Released `automated-concept-discovery/` — sparse-autoencoder + concept-bottleneck-model pipeline.
+- **YYYY-MM-DD** · 🚀 Initial public release.
 
 ## Benchmark Results
 
@@ -333,6 +349,43 @@ python rs1_statistical_analysis.py --demo
 ```
 
 See [`reader_studies/README.md`](reader_studies/README.md) for full documentation, study designs, statistical methods, and data sharing policy.
+
+### Data Deduplication / Leakage Analysis
+
+Quantifies near-duplicate overlap between the DermFM-Zero pretraining corpus and every downstream evaluation set, using SSCD copy-detection embeddings + top-1 cosine search (cosine ≥ 0.75 flagged as potential leakage). The pipeline ships with aggregate overlap statistics; the pretraining image bank itself is private.
+
+| Pipeline stage | What it does | Output |
+|---|---|---|
+| `embed.py`   | SSCD embeddings (ResNet-50 + GeM, 512-d, L2-normalised) | `*.npy` per dataset |
+| `overlap.py` | Top-1 cosine search vs pretrain bank | `overlaps.csv`, `overlap_summary.csv` |
+| `run.sh`     | End-to-end driver across all evaluation sets | full `results/` tree |
+
+```bash
+# Quick run
+cd data_deduplication
+pip install -r requirements.txt
+bash run.sh
+```
+
+See [`data_deduplication/README.md`](data_deduplication/README.md) for the full pipeline, CLI flags, and the per-dataset overlap-rate report.
+
+### Statistic for Benchmarking
+
+Unified bootstrap 95% CI pipeline that reproduces the zero-shot classification and linear-probing benchmark tables from per-image prediction CSVs. A single script supports two `--task` modes; example prediction CSVs and reference outputs are bundled for one-command validation.
+
+| Task | Input format | Output |
+|---|---|---|
+| `zero_shot`     | per-image softmax CSV per `<dataset>/<model>.csv`       | `model_comparison_results_comprehensive.csv` |
+| `linear_probe`  | per-image softmax CSV per `<dataset>_<pct>pct/<model>/` | `lp_results_<pct>percent_bootstrap.csv`      |
+
+```bash
+# Quick run (example data bundled)
+cd statistic_reproduce
+python bootstrap_ci.py --task zero_shot --data-root ./examples/zero_shot --output-dir ./out_zs
+python bootstrap_ci.py --task lp        --data-root ./examples/linear_probe --output-dir ./out_lp --fractions 100
+```
+
+See [`statistic_reproduce/README.md`](statistic_reproduce/README.md) for input schema, CLI flags, and how to run on the full benchmark prediction set.
 
 
 
