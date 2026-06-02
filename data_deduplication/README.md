@@ -2,8 +2,6 @@
 
 Pipeline that quantifies **data leakage** between the DermFM-Zero pre-training corpus and the downstream zero-shot / reader-study evaluation sets, using **SSCD** copy-detection embeddings + top-1 cosine search.
 
-> **No data is shipped.** This folder contains only the *pipeline code* and the *aggregate overlap statistics*. The pre-training corpus and its images are **private** and are supplied by the user at runtime via command-line paths. The per-pair `overlaps.csv` files here have had the pretrain-side columns removed, and no image visualisations are included.
-
 ## 📑 Table of Contents
 - [Overview](#-overview)
 - [Repository Structure](#-repository-structure)
@@ -14,7 +12,7 @@ Pipeline that quantifies **data leakage** between the DermFM-Zero pre-training c
 
 ## 📋 Overview
 
-DermFM-Zero is pre-trained on roughly 1M dermatology image–text pairs. To rule out benchmark contamination, this pipeline checks every downstream evaluation image against the pretraining bank using SSCD copy-detection embeddings and flags any pair with cosine similarity ≥ 0.75 as a potential leak.
+DermFM-Zero is pre-trained on ～1M dermatology image–text pairs. To rule out benchmark contamination, this pipeline checks every downstream evaluation image against the pretraining bank using SSCD copy-detection embeddings and flags any pair with cosine similarity ≥ 0.75 as a potential leak.
 
 | Pipeline stage | What it does | Output |
 |---|---|---|
