@@ -153,9 +153,4 @@ def call_PanDerm_large_visual(vision_pretrain_path, linear_prob, finetune):
 
     model = panderm_large_patch16_224()
 
-    if vision_pretrain_path is not None:
-        unmatch_keys, _ = model.load_state_dict(torch.load(vision_pretrain_path), strict=False)
-        logging.info(f'Successfully load panderm large vision encoder weight from {vision_pretrain_path}')
-        logging.info(f'Unmatched Keys: {unmatch_keys}')
-
     return model
