@@ -15,7 +15,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 [![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-[📘 Documentation](xxx) | [🚀 Quick Start](#quick-start) | [📊 Benchmarks](#benchmark-results) | [💬 Discussion](xxx)
+[📘 Paper](https://arxiv.org/abs/2602.10624) | [🚀 Quick Start](#-quick-start) | [📊 Benchmarks](#-benchmark-results) | [🧪 Tasks](#-evaluation-tasks) | [💬 Issues](https://github.com/SiyuanYan1/DermFM-Zero/issues)
 
 </div>
 
@@ -23,26 +23,26 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📑 Table of Contents
 
-- [Highlights](#highlights)
-- [Updates](#-updates)
-- [Benchmark Results](#benchmark-results)
-- [Repository Structure](#repository-structure)
-- [Quick Start](#quick-start)
-- [Benchmarking Tasks](#evaluation-tasks)
+- [✨ Highlights](#-highlights)
+- [📰 Updates](#-updates)
+- [📊 Benchmark Results](#-benchmark-results)
+- [📂 Repository Structure](#-repository-structure)
+- [🚀 Quick Start](#-quick-start)
+- [🧪 Evaluation Tasks](#-evaluation-tasks)
   - [Task1: Zero-shot Classification](#task1-zero-shot-classification)
   - [Task2: Zero-shot Cross-modal Retrieval](#task2-zero-shot-cross-modal-retrieval)
   - [Task3: Linear Probing](#task3-linear-probing)
   - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
   - [Task5: Visual Question Answering (VQA)](#task5-visual-question-answering-vqa)
   - [Task6: Automated Concept Discovery](#task6-automated-concept-discovery)
-- [Reader Studies](#reader-studies)
-- [Data Deduplication / Leakage Analysis](#data-deduplication--leakage-analysis)
-- [Statistic for Benchmarking](#statistic-for-benchmarking)
-- [Contributors](#contributors)
-- [License](#license)
-- [Contact](#contact)
-- [Citation](#citation)
-## Highlights
+- [🧠 Reader Studies](#-reader-studies)
+- [🧹 Data Deduplication / Leakage Analysis](#-data-deduplication--leakage-analysis)
+- [📈 Statistic for Benchmarking](#-statistic-for-benchmarking)
+- [👥 Contributors](#-contributors)
+- [⚖️ License](#%EF%B8%8F-license)
+- [📧 Contact](#-contact)
+- [📚 Citation](#-citation)
+## ✨ Highlights
 
 🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
 
@@ -61,7 +61,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 - **2025-12-10** · 🧬 Released `automated-concept-discovery/` — sparse-autoencoder + concept-bottleneck-model pipeline.
 - **2025-09-13** · 🚀 Initial public release.
 
-## Benchmark Results
+## 📊 Benchmark Results
 
 DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 
@@ -104,7 +104,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
-Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 4,000).
+Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 3,989).
 
 | Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
 |-------|:----:|:----:|:----:|:----:|:----:|
@@ -113,7 +113,7 @@ Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 4,000).
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
 | DermFM-Zero (Ours) | **0.457** | **0.454** | **0.369** | **0.349** | **0.407** |
 
-## Repository Structure
+## 📂 Repository Structure
 ```
 DermFM-Zero/
 ├── src/                              # Core models and modules
@@ -127,7 +127,7 @@ DermFM-Zero/
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
 ```
-## Quick Start
+## 🚀 Quick Start
 
 ### Installation
 ```bash
@@ -138,6 +138,22 @@ conda create -n dermfm-zero python=3.9.20
 conda activate dermfm-zero
 pip install -r requirements.txt
 ```
+
+### Model Access
+
+DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. To access the model, set your read-only access token as the `HF_TOKEN` environment variable before running any code:
+
+```bash
+# Option 1: set the token as an environment variable
+export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Option 2: log in interactively (paste the token when prompted)
+huggingface-cli login
+```
+
+If you do not have an access token, please contact the corresponding author (siyuan.yan@monash.edu).
+
+**Troubleshooting**: if you see a `401 Unauthorized` error, verify `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`) and the token has been set in the same shell session you run the code in.
 
 ### Download Data
 
@@ -156,9 +172,36 @@ data/
 
 ### Quick Example
 
-See our [interactive notebook](examples/zero-shot-classification.ipynb) for zero-shot disease classification.
+Verify your setup with a minimal zero-shot inference (run from the repo root):
 
-## Evaluation Tasks
+```python
+import sys, torch
+from PIL import Image
+sys.path.insert(0, "src")            # use the bundled open_clip fork
+import open_clip
+
+model, _, preprocess = open_clip.create_model_and_transforms("hf-hub:redlessone/DermFM-Zero")
+tokenizer = open_clip.get_tokenizer("hf-hub:redlessone/DermFM-Zero")
+model.eval()
+
+image = preprocess(Image.open("examples/PAT_8_15_820.png")).unsqueeze(0)
+classnames = ["nevus", "basal cell carcinoma", "actinic keratosis",
+              "seborrheic keratosis", "squamous cell carcinoma", "melanoma"]
+text = tokenizer([f"This is a skin image of {c}" for c in classnames])
+
+with torch.no_grad():
+    image_features = model.encode_image(image)
+    text_features  = model.encode_text(text)
+    image_features /= image_features.norm(dim=-1, keepdim=True)
+    text_features  /= text_features.norm(dim=-1, keepdim=True)
+
+probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
+print(classnames[probs.argmax().item()])    # → basal cell carcinoma
+```
+
+For a more interactive walkthrough, see [`examples/zero-shot-classification.ipynb`](examples/zero-shot-classification.ipynb).
+
+## 🧪 Evaluation Tasks
 
 ### Task1: Zero-shot Classification
 
@@ -329,7 +372,7 @@ python automated-concept-discovery/1_train_clf_binary-class.py \
 
 Results are saved to `automated-concept-discovery-result/`.
 
-### Reader Studies
+## 🧠 Reader Studies
 
 Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code, a synthetic demo dataset, and pre-computed demo outputs.
 
@@ -348,7 +391,7 @@ python rs1_statistical_analysis.py --demo
 
 See [`reader_studies/README.md`](reader_studies/README.md) for full documentation, study designs, statistical methods, and data sharing policy.
 
-### Data Deduplication / Leakage Analysis
+## 🧹 Data Deduplication / Leakage Analysis
 
 Quantifies near-duplicate overlap between the DermFM-Zero pretraining corpus and every downstream evaluation set, using SSCD copy-detection embeddings + top-1 cosine search (cosine ≥ 0.75 flagged as potential leakage). The pipeline ships with aggregate overlap statistics; the pretraining image bank itself is private.
 
@@ -367,7 +410,7 @@ bash run.sh
 
 See [`data_deduplication/README.md`](data_deduplication/README.md) for the full pipeline, CLI flags, and the per-dataset overlap-rate report.
 
-### Statistic for Benchmarking
+## 📈 Statistic for Benchmarking
 
 Unified bootstrap 95% CI pipeline that reproduces the zero-shot classification and linear-probing benchmark tables from per-image prediction CSVs. A single script supports two `--task` modes; example prediction CSVs and reference outputs are bundled for one-command validation.
 
@@ -387,21 +430,21 @@ See [`statistic_reproduce/README.md`](statistic_reproduce/README.md) for input s
 
 
 
-## Contributors
+## 👥 Contributors
 
 - [Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en)
 - [Xieji Li](https://scholar.google.com/citations?user=X50rN1oAAAAJ&hl=en)
 
-## License
+## ⚖️ License
 
 The model and associated code are released under the CC-BY-NC-ND 4.0 license and may only be used for non-commercial academic research purposes with proper attribution.
 
-## Contact
+## 📧 Contact
 
 **Siyuan Yan** - Research Fellow, Monash University  
 📧 Email: siyuan.yan@monash.edu  
 
-## Citation
+## 📚 Citation
 
 If you find DermFM-Zero useful, please cite:
 ```bibtex
