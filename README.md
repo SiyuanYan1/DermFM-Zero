@@ -116,14 +116,16 @@ Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 3,989).
 ## 📂 Repository Structure
 ```
 DermFM-Zero/
-├── src/                              # Core models and modules
-├── script/                           # Experiment scripts
-├── data/                             # Dataset storage
+├── src/                              # Core models and modules (bundled open_clip fork)
+├── script/                           # Experiment shell scripts (one per task)
+├── examples/                         # Quick-start notebook + sample image
 ├── automated-concept-discovery/      # SAE & CBM implementation
 ├── linear_probe/                     # Linear probe utilities
 ├── multimodal_finetune/              # Multimodal classification fine-tuning code
 ├── VQA/                              # VQA fine-tuning + preprocessing (Derm7pt-VQA, SkinCap-VQA)
-├── reader_studies/                   # Three multinational clinical reader studies
+├── reader_studies/                   # Three multinational clinical reader studies (RS1, RS2A, RS2B)
+├── data_deduplication/               # SSCD-based train/eval leakage analysis pipeline
+├── statistic_reproduce/              # Bootstrap 95% CI pipeline for benchmark tables
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
 ```
@@ -141,7 +143,9 @@ pip install -r requirements.txt
 
 ### Model Access
 
-DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. To access the model, set your read-only access token as the `HF_TOKEN` environment variable before running any code:
+DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. The read-only access token is at present shared only with internal collaborators and authorised reviewers; it will be released openly once the manuscript is published.
+
+If you have been provided with the token, set it as the `HF_TOKEN` environment variable before running any code:
 
 ```bash
 # Option 1: set the token as an environment variable
@@ -150,8 +154,6 @@ export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # Option 2: log in interactively (paste the token when prompted)
 huggingface-cli login
 ```
-
-If you do not have an access token, please contact the corresponding author (siyuan.yan@monash.edu).
 
 **Troubleshooting**: if you see a `401 Unauthorized` error, verify `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`) and the token has been set in the same shell session you run the code in.
 
