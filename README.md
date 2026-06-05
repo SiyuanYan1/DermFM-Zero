@@ -290,7 +290,7 @@ bash ../script/multimodal_finetune/PAD\(C+M\).sh
 ```
 
 **Key hyperparameters:**
-- `--model_name`: Base model (e.g., `PanDerm-v2`)
+- `--model_name`: Base model (e.g., `DermFM-Zero`)
 - `--dataset_name`: Target dataset (`Derm7pt`, `MILK-11`, `PAD`)
 - `--epochs`: Training epochs (default: 50)
 - `--batch_size`: Batch size per GPU (default: 32)
