@@ -111,7 +111,7 @@ def main(options):
 
     if use_text_encoder and model_name == 'PanDerm-Large-VL':
         tokenizer = get_tokenizer('PanDerm-large-w-PubMed-256')
-    elif use_text_encoder and model_name == 'PanDerm-v2':
+    elif use_text_encoder and model_name == 'DermFM-Zero':
         tokenizer = get_tokenizer('hf-hub:redlessone/DermFM-Zero')
     elif use_text_encoder and model_name == 'BioMedCLIP':
         tokenizer = get_tokenizer('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')

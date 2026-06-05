@@ -109,7 +109,7 @@ def main(options):
 
     if use_text_encoder and model_name == 'PanDerm-Large-VL':
         tokenizer = get_tokenizer('PanDerm-large-w-PubMed-256')
-    elif use_text_encoder and model_name == 'PanDerm-v2':
+    elif use_text_encoder and model_name == 'DermFM-Zero':
         tokenizer = get_tokenizer('hf-hub:redlessone/DermFM-Zero')
     elif use_text_encoder and model_name == 'BioMedCLIP':
         tokenizer = get_tokenizer('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')
@@ -229,7 +229,7 @@ OPTIONS.add_argument('--dir_release',dest='dir_release',type=str,default="../dat
 OPTIONS.add_argument('--model_path',dest='model_path',type=str, default="./result/new_model.pth")
 OPTIONS.add_argument('--pretrain_path',dest='pretrain_path',type=str,
                      default=None)
-OPTIONS.add_argument('--model_name',dest='model_name',type=str, default="PanDerm-v2")
+OPTIONS.add_argument('--model_name',dest='model_name',type=str, default="DermFM-Zero")
 OPTIONS.add_argument('--use_cli',dest='use_cli',action='store_true', default=False)
 OPTIONS.add_argument('--use_derm',dest='use_derm', action='store_true', default=False)
 OPTIONS.add_argument('--use_meta',dest='use_meta', action='store_true', default=False)

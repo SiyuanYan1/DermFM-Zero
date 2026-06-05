@@ -183,9 +183,9 @@ class PanDermTFormer(nn.Module):
                     if pretrain_path:
                         load_open_clip_state_dict(encoder, pretrain_path)
                     encoder = encoder.visual
-                elif model_name == 'PanDerm-v2':
+                elif model_name == 'DermFM-Zero':
                     encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero', finetune=True)[0]
-                    print("Calling Pandermv2 checkpoint from huggingface api")
+                    print("Loading DermFM-Zero checkpoint from huggingface hub")
                     encoder = encoder.visual
                 elif model_name == 'BioMedCLIP':
                     encoder = open_clip.create_model_and_transforms('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')[0]
@@ -222,7 +222,7 @@ class PanDermTFormer(nn.Module):
                 raise ValueError(f"Unsupported pooling method: {encoder_pool}")
 
             # For PanDerm-Large and PanDerm-Base
-            if pretrain_path and model_name not in ['PanDerm-Large-VL', 'PanDerm-v2','BioMedCLIP', 'CLIP-L14']:
+            if pretrain_path and model_name not in ['PanDerm-Large-VL', 'DermFM-Zero','BioMedCLIP', 'CLIP-L14']:
                 encoder.load_state_dict(torch.load(pretrain_path, map_location='cpu')['state_dict'], strict=False)
 
             # Remove classification head - Replace it with identity layer
@@ -250,7 +250,7 @@ class PanDermTFormer(nn.Module):
                 load_open_clip_state_dict(encoder, pretrain_path)
                 print(f"Initialize text encoder with PanDerm-Large-VL weight: {pretrain_path}")
             self.meta_encoder = encoder.text
-        elif model_name == 'PanDerm-v2':
+        elif model_name == 'DermFM-Zero':
             encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero')[0]
             self.meta_encoder = encoder.text
         elif model_name == 'BioMedCLIP':
