@@ -138,6 +138,10 @@ def get_encoder(model_name,which_img_norm='imagenet'):
     else:
         raise NotImplementedError('model {} not implemented'.format(model_name))
 
+    # DermFM-Zero uses CLIP-style (0.5, 0.5, 0.5) normalization for linear probing.
+    if 'Xieji-Li/DermFM-Zero' in model_name:
+        which_img_norm = 'uniform'
+
     eval_transform = get_eval_transforms(
         which_img_norm=which_img_norm,
         img_resize=256,

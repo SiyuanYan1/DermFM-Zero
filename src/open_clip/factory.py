@@ -356,14 +356,34 @@ def create_model(
 
         pretrained_loaded = False
 
+        # DermFM-Zero wraps the vision tower with mean pooling and uses a text
+        # projection head. Matched by the published checkpoint or its model config.
+        is_dermfm = model_name == 'hf-hub:Xieji-Li/DermFM-Zero' or 'PanDerm-large-v2' in model_name
+
         # if statement for loading pretrained vision encoder
         if 'PanDerm-base' in model_name:
             # Load PanDerm-base pretrained weight to model vision encoder
             model.visual = call_PanDerm_base_visual(model_cfg["vision_cfg"]["pretrain_path"], linear_prob=linear_prob).to(device=device)
 
-        elif 'PanDerm-large' in model_name or model_name == 'hf-hub:redlessone/DermFM-Zero':
+        elif is_dermfm:
+            from .utils import load_dermfm_checkpoint, PanDermVisualWrapper
+            # Mean-pool vision tower; the wrapper exposes 1024-d pre-head features
+            # for linear probing and 768-d aligned features for zero-shot.
+            tower = call_PanDerm_large_visual(
+                model_cfg["vision_cfg"]["pretrain_path"], linear_prob=False, finetune=False)
+            model.visual = PanDermVisualWrapper(tower, image_size=224).to(device=device)
+            if linear_prob:
+                model.visual.use_prehead_features = True  # 1024-d pre-head
+            if checkpoint_path:
+                load_dermfm_checkpoint(model, checkpoint_path)
+                pretrained_loaded = True
+
+        elif 'PanDerm-large' in model_name:
             # Load PanDerm-large pretrained weight to model vision encoder
-            model.visual = call_PanDerm_large_visual(model_cfg["vision_cfg"]["pretrain_path"], linear_prob=linear_prob, finetune=finetune).to(device=device)
+            model.visual = call_PanDerm_large_visual(
+                model_cfg["vision_cfg"]["pretrain_path"],
+                linear_prob=linear_prob, finetune=finetune,
+            ).to(device=device)
 
         elif pretrained:
             checkpoint_path = ''
@@ -386,7 +406,7 @@ def create_model(
                 raise RuntimeError(error_str)
             pretrained_loaded = True
 
-        if has_hf_hub_prefix:
+        if has_hf_hub_prefix and not is_dermfm:
             logging.info(f'Loading pretrained {model_name} weights ({checkpoint_path}).')
             load_checkpoint(model, checkpoint_path)
             pretrained_loaded = True

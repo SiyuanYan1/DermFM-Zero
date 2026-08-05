@@ -111,8 +111,8 @@ def main(options):
 
     if use_text_encoder and model_name == 'PanDerm-Large-VL':
         tokenizer = get_tokenizer('PanDerm-large-w-PubMed-256')
-    elif use_text_encoder and model_name == 'PanDerm-v2':
-        tokenizer = get_tokenizer('hf-hub:redlessone/DermFM-Zero')
+    elif use_text_encoder and model_name == 'DermFM-Zero':
+        tokenizer = get_tokenizer('hf-hub:Xieji-Li/DermFM-Zero')
     elif use_text_encoder and model_name == 'BioMedCLIP':
         tokenizer = get_tokenizer('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')
     elif use_text_encoder and (model_name == 'CLIP-L14' or model_name == 'PanDerm-Large'):
@@ -583,10 +583,11 @@ OPTIONS.add_argument('--learning_rate',dest='learning_rate',type=float,default=0
 
 OPTIONS.add_argument('--cuda', dest='cuda', type=bool, default=True)
 OPTIONS.add_argument('--pretrained', dest='pretrained', type=bool, default=True)
+OPTIONS.add_argument('--seed', dest='seed', type=int, default=122)
 PARAMS = vars(OPTIONS.parse_args())
 
 if __name__ == "__main__":
-    seed_everything(122)
+    seed_everything(OPTIONS.parse_args().seed)
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     args = OPTIONS.parse_args()
     PARAMS = vars(OPTIONS.parse_args())

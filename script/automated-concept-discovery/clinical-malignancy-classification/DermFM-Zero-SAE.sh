@@ -1,7 +1,7 @@
 cd src
 # extract visual feature for malignancy dataset
 python export_visual_features.py \
-    --model_name hf-hub:redlessone/DermFM-Zero \
+    --model_name hf-hub:Xieji-Li/DermFM-Zero \
     --csv_path ../data/automated-concept-discovery/clinical-malignant/meta.csv \
     --data_root ../data/automated-concept-discovery/clinical-malignant/final_images/ \
     --img_col 'ImageID' \
@@ -14,13 +14,13 @@ cd ..
 
 # Extract SAE concept
 python automated-concept-discovery/0_extract_sae_activations.py \
-  --checkpoint /mnt/hdd/sdc/syyan/My_Code/PanDerm-X/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
+  --checkpoint /mnt/hdd/sdb/xieji/DermFM-Zero-Open/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --output automated-concept-discovery-result/clinical-malignant/learned_activation.npy 
 
 # Extract SAE concept
 python automated-concept-discovery/0_extract_sae_activations.py \
-  --checkpoint /mnt/hdd/sdc/syyan/My_Code/PanDerm-X/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
+  --checkpoint /mnt/hdd/sdb/xieji/DermFM-Zero-Open/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --output automated-concept-discovery-result/clinical-malignant/learned_activation.npy
 

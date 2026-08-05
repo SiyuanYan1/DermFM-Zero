@@ -3,8 +3,149 @@ import collections.abc
 import logging
 
 import torch
+import torch.nn.functional as F
 from torch import nn as nn
 from torchvision.ops.misc import FrozenBatchNorm2d
+
+
+def _interpolate_pos_embed(pos_embed, grid_h, grid_w, train_grid_h=14, train_grid_w=14):
+    """Bicubic-interpolate the 2D position embedding (leading CLS slot) to a new
+    patch grid. At 224 the grid is (14, 14) so this is an identity; it lets the
+    wrapper transparently support other input resolutions.
+    """
+    if grid_h == train_grid_h and grid_w == train_grid_w:
+        return pos_embed
+    cls_pe = pos_embed[:, :1, :]
+    patch_pe = pos_embed[:, 1:, :]
+    D = patch_pe.shape[-1]
+    patch_pe = patch_pe.reshape(1, train_grid_h, train_grid_w, D).permute(0, 3, 1, 2).float()
+    patch_pe = F.interpolate(patch_pe, size=(grid_h, grid_w), mode='bicubic', align_corners=False)
+    patch_pe = patch_pe.permute(0, 2, 3, 1).reshape(1, grid_h * grid_w, D)
+    return torch.cat([cls_pe, patch_pe], dim=1)
+
+
+class PanDermVisualWrapper(nn.Module):
+    """DermFM-Zero vision tower: mean-pool the patch tokens, LayerNorm, then the
+    image projection head.
+
+    ``forward`` returns ``(pooled, patch_embeddings)``; ``CLIP.encode_image``
+    keeps element [0]. Set ``use_prehead_features=True`` to expose the 1024-d
+    pre-head pooled features (recommended for linear probing) instead of the
+    768-d aligned projection.
+    """
+
+    def __init__(self, cae_model, image_size=224, use_prehead_features=False,
+                 l2_normalize=False):
+        super().__init__()
+        self.trunk = cae_model
+        self.image_size = (image_size, image_size) if isinstance(image_size, int) else image_size
+        self.use_prehead_features = bool(use_prehead_features)
+        self.l2_normalize = bool(l2_normalize)
+        self.preprocess_cfg = {
+            'size': self.image_size,
+            'mode': 'RGB',
+            'mean': (0.5, 0.5, 0.5),
+            'std': (0.5, 0.5, 0.5),
+            'interpolation': 'bicubic',
+            'resize_mode': 'shortest',
+        }
+
+    def lock(self, unlocked_groups=0, freeze_bn_stats=False):
+        for param in self.trunk.parameters():
+            param.requires_grad = False
+
+    @torch.jit.ignore
+    def set_grad_checkpointing(self, enable=True):
+        if hasattr(self.trunk, 'set_grad_checkpointing'):
+            self.trunk.set_grad_checkpointing(enable)
+
+    def forward(self, x):
+        patch_tokens, (grid_h, grid_w) = self.trunk.patch_embed(x, dynamic_size=True)
+        batch_size = patch_tokens.size(0)
+
+        cls_tokens = self.trunk.cls_token.expand(batch_size, -1, -1)
+        x = torch.cat((cls_tokens, patch_tokens), dim=1)
+
+        if self.trunk.pos_embed is not None:
+            train_grid_h, train_grid_w = self.trunk.patch_embed.patch_shape
+            pos_embed = _interpolate_pos_embed(
+                self.trunk.pos_embed, grid_h, grid_w, train_grid_h, train_grid_w,
+            )
+            x = x + pos_embed.expand(batch_size, -1, -1).type_as(x).to(x.device).detach()
+
+        x = self.trunk.pos_drop(x)
+        rel_pos_bias = self.trunk.rel_pos_bias() if self.trunk.rel_pos_bias is not None else None
+
+        for blk in self.trunk.blocks:
+            x = blk(x, rel_pos_bias=rel_pos_bias)
+
+        patch_tokens = x[:, 1:, :]
+        if self.trunk.norm is not None:
+            pooled = self.trunk.norm(patch_tokens.mean(1))
+        else:
+            pooled = x[:, 0]
+
+        if self.use_prehead_features:
+            if self.l2_normalize:
+                pooled = F.normalize(pooled, dim=-1)
+            return pooled, patch_tokens
+
+        pooled = self.trunk.head(pooled)
+        patch_embeddings = self.trunk.head(patch_tokens)
+        if self.l2_normalize:
+            pooled = F.normalize(pooled, dim=-1)
+        return pooled, patch_embeddings
+
+
+def load_dermfm_checkpoint(model, ckpt_path, *, verbose=True):
+    """Load a DermFM-Zero checkpoint into the CLIP model.
+
+    Strips any DDP ``module.`` prefix, configures the text projection head to
+    match the checkpoint layout (a BERT pooler + a 2-layer MLP projection), and
+    loads the weights non-strictly so auxiliary keys are ignored.
+
+    Returns ``(missing_keys, unexpected_keys)``.
+    """
+    sd = torch.load(ckpt_path, map_location='cpu', weights_only=False)
+    if isinstance(sd, dict) and 'state_dict' in sd:
+        sd = sd['state_dict']
+    sd = {k[len('module.'):] if k.startswith('module.') else k: v for k, v in sd.items()}
+
+    _configure_text_head(model, sd)
+    sd = {k: v for k, v in sd.items() if not k.startswith('knowledge_encoder.')}
+
+    incompat = model.load_state_dict(sd, strict=False)
+    if verbose:
+        logging.info(
+            f"[dermfm-zero] loaded {ckpt_path}: "
+            f"missing={len(incompat.missing_keys)}, unexpected={len(incompat.unexpected_keys)}"
+        )
+    return incompat.missing_keys, incompat.unexpected_keys
+
+
+# Backwards-compatible alias.
+load_panderm_retrain_checkpoint = load_dermfm_checkpoint
+
+
+def _configure_text_head(model, sd):
+    """Set up the text pooler/projection to match the checkpoint layout."""
+    if 'text.transformer.pooler.dense.weight' not in sd or not hasattr(model, 'text'):
+        return
+    from transformers.models.bert.modeling_bert import BertPooler
+    from .hf_model import ClsPooler
+    text_module = model.text
+    bert = text_module.transformer
+    device = next(model.parameters()).device
+    dtype = next(model.parameters()).dtype
+    if getattr(bert, 'pooler', None) is None:
+        bert.pooler = BertPooler(bert.config).to(device=device, dtype=dtype)
+    text_module.pooler = ClsPooler(use_pooler_output=True)
+    embed_dim = sd['text.proj.0.weight'].shape[0]
+    text_module.proj = nn.Sequential(
+        nn.Linear(embed_dim, embed_dim, bias=True),
+        nn.GELU(),
+        nn.Linear(embed_dim, embed_dim, bias=True),
+    ).to(device=device, dtype=dtype)
 
 
 def freeze_batch_norm_2d(module, module_match={}, name=''):

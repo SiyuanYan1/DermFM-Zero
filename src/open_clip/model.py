@@ -267,6 +267,9 @@ class CLIP(nn.Module):
 
     def encode_image(self, image, normalize: bool = False):
         features = self.visual(image)
+        # PanDermVisualWrapper returns (pooled, patch_embeddings); keep pooled.
+        if isinstance(features, (tuple, list)):
+            features = features[0]
         return F.normalize(features, dim=-1) if normalize else features
 
     def encode_text(self, text, normalize: bool = False):
@@ -358,6 +361,9 @@ class CustomTextCLIP(nn.Module):
 
     def encode_image(self, image, normalize: bool = False):
         features = self.visual(image)
+        # PanDermVisualWrapper returns (pooled, patch_embeddings); keep pooled.
+        if isinstance(features, (tuple, list)):
+            features = features[0]
         return F.normalize(features, dim=-1) if normalize else features
 
     def encode_text(self, text, normalize: bool = False):

@@ -199,7 +199,7 @@ def parse_args():
     parser.add_argument(
         '--model_name',
         type=str,
-        default='hf-hub:redlessone/DermFM-Zero',
+        default='hf-hub:Xieji-Li/DermFM-Zero',
         help='OpenCLIP model name'
     )
     parser.add_argument(
