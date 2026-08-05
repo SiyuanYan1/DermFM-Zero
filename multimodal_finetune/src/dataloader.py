@@ -75,9 +75,20 @@ def process_multi_value_columns(df, columns):
     
     return processed_df
 
-# mean and std for imagenet
-mean = [0.485, 0.456, 0.406]
-std = [0.228, 0.224, 0.225]
+# Normalization stats. Default ImageNet (legacy). DermFM-Zero (v15) was trained
+# with CLIP-style (0.5, 0.5, 0.5); the env vars below switch without touching
+# call sites (set by the DermFM-Zero retrain shells).
+def _parse_triplet(env_name, fallback):
+    raw = os.environ.get(env_name)
+    if not raw:
+        return fallback
+    parts = [float(p) for p in raw.split(',') if p.strip()]
+    assert len(parts) == 3, f"{env_name} must be 'a,b,c'"
+    return parts
+
+mean = _parse_triplet('PANDERM_NORM_MEAN', [0.485, 0.456, 0.406])
+std = _parse_triplet('PANDERM_NORM_STD', [0.228, 0.224, 0.225])
+print(f"[dataloader] normalization mean={mean} std={std}")
 
 train_data_transformation = A.Compose(
     [   

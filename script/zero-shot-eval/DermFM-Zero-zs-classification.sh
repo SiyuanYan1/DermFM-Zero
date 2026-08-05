@@ -12,7 +12,7 @@ python src/main.py \
    --zeroshot-eval7=data/zero-shot-classification/isic2020-2-zero-shot/meta.csv \
    --csv-label-key label \
    --csv-img-key image_path \
-   --model 'hf-hub:redlessone/DermFM-Zero'
+   --model 'hf-hub:Xieji-Li/DermFM-Zero'
 
 # Run PanDerm-2 on your dataset
 python src/main.py \
@@ -22,4 +22,4 @@ python src/main.py \
    --csv-label-key label \
    --csv-img-key image_path \
    --zeroshot_eval_custom examples/toy_dataset.csv \
-   --model 'hf-hub:redlessone/DermFM-Zero'
+   --model 'hf-hub:Xieji-Li/DermFM-Zero'

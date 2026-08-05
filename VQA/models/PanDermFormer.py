@@ -74,12 +74,36 @@ class MetaSubNet(nn.Module):
 
 def load_open_clip_state_dict(model, pretrain_path):
     # Load panderm large. The checkpoint may either be a flat OpenCLIP
-    # state_dict (as published on Hugging Face: redlessone/DermFM-Zero) or a
-    # training-time dict wrapped under a 'state_dict' key.
+    # state_dict, or a training-time dict wrapped under a 'state_dict' key.
     payload = torch.load(pretrain_path, weights_only=False, map_location='cpu')
     state_dict = payload['state_dict'] if isinstance(payload, dict) and 'state_dict' in payload else payload
     state_dict = {k.replace('module.', ''): v for k, v in state_dict.items()}
     model.load_state_dict(state_dict, strict=False)
+
+
+class _DermFMZeroMeanPool(nn.Module):
+    """Mean-pool the patch tokens then LayerNorm, yielding the 1024-d pre-head
+    visual feature used as the fusion input."""
+
+    def __init__(self, trunk):
+        super().__init__()
+        self.trunk = trunk
+        self.head = nn.Identity()  # absorbs the unconditional encoder.head = Identity
+
+    def forward(self, x):
+        t = self.trunk
+        x = t.patch_embed(x)
+        b = x.size(0)
+        cls = t.cls_token.expand(b, -1, -1)
+        x = torch.cat((cls, x), dim=1)
+        if t.pos_embed is not None:
+            x = x + t.pos_embed.expand(b, -1, -1).type_as(x).to(x.device).clone().detach()
+        x = t.pos_drop(x)
+        rpb = t.rel_pos_bias() if t.rel_pos_bias is not None else None
+        for blk in t.blocks:
+            x = blk(x, rel_pos_bias=rpb)
+        patch = x[:, 1:, :]
+        return t.norm(patch.mean(1))
 
 class PanDermTFormer(nn.Module):
     def __init__(self,
@@ -183,10 +207,17 @@ class PanDermTFormer(nn.Module):
                     if pretrain_path:
                         load_open_clip_state_dict(encoder, pretrain_path)
                     encoder = encoder.visual
-                elif model_name == 'PanDerm-v2':
-                    encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero', finetune=True)[0]
-                    print("Calling Pandermv2 checkpoint from huggingface api")
-                    encoder = encoder.visual
+                elif model_name == 'DermFM-Zero':
+                    # DermFM-Zero vision tower; weights pulled from the hub.
+                    from huggingface_hub import hf_hub_download
+                    from open_clip.utils import load_dermfm_checkpoint
+                    _bin = hf_hub_download('Xieji-Li/DermFM-Zero', 'open_clip_pytorch_model.bin')
+                    full = open_clip.create_model_and_transforms(
+                        'PanDerm-large-v2-w-PubMed-256',
+                        image_mean=(0.5, 0.5, 0.5), image_std=(0.5, 0.5, 0.5))[0]
+                    load_dermfm_checkpoint(full, _bin)
+                    print('Loading DermFM-Zero checkpoint from huggingface hub')
+                    encoder = _DermFMZeroMeanPool(full.visual.trunk)
                 elif model_name == 'BioMedCLIP':
                     encoder = open_clip.create_model_and_transforms('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')[0]
                     encoder = encoder.visual
@@ -222,7 +253,7 @@ class PanDermTFormer(nn.Module):
                 raise ValueError(f"Unsupported pooling method: {encoder_pool}")
 
             # For PanDerm-Large and PanDerm-Base
-            if pretrain_path and model_name not in ['PanDerm-Large-VL', 'PanDerm-v2','BioMedCLIP', 'CLIP-L14']:
+            if pretrain_path and model_name not in ['PanDerm-Large-VL', 'DermFM-Zero', 'BioMedCLIP', 'CLIP-L14']:
                 encoder.load_state_dict(torch.load(pretrain_path, map_location='cpu')['state_dict'], strict=False)
 
             # Remove classification head - Replace it with identity layer
@@ -250,8 +281,15 @@ class PanDermTFormer(nn.Module):
                 load_open_clip_state_dict(encoder, pretrain_path)
                 print(f"Initialize text encoder with PanDerm-Large-VL weight: {pretrain_path}")
             self.meta_encoder = encoder.text
-        elif model_name == 'PanDerm-v2':
-            encoder = open_clip.create_model_and_transforms('hf-hub:redlessone/DermFM-Zero')[0]
+        elif model_name == 'DermFM-Zero':
+            # DermFM-Zero text encoder; weights pulled from the hub.
+            from huggingface_hub import hf_hub_download
+            from open_clip.utils import load_dermfm_checkpoint
+            _bin = hf_hub_download('Xieji-Li/DermFM-Zero', 'open_clip_pytorch_model.bin')
+            encoder = open_clip.create_model_and_transforms(
+                'PanDerm-large-v2-w-PubMed-256',
+                image_mean=(0.5, 0.5, 0.5), image_std=(0.5, 0.5, 0.5))[0]
+            load_dermfm_checkpoint(encoder, _bin)
             self.meta_encoder = encoder.text
         elif model_name == 'BioMedCLIP':
             encoder = open_clip.create_model_and_transforms('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')[0]

@@ -239,3 +239,5 @@ huggingface/
 **/.DS_Store
 data
 VQA.zip
+rerun-logs/
+results_report.html
