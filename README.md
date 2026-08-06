@@ -19,7 +19,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 </div>
 
-> 🔒 **Availability**:  The DermFM-Zero model weights are private at this stage and available only upon reasonable request to the corresponding author (siyuan.yan@monash.edu). Model weights will be **released upon publication**.
+> 🔒 **Availability**:  The DermFM-Zero model weights are currently private and are expected to be released in the coming months.
 
 ## 📑 Table of Contents
 
