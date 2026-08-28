@@ -54,6 +54,8 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📰 Updates
 
+- **2026-08-28** · 🔓 Released the full de-identified RS1 reader-level dataset (`reader_studies/reader_study_rs1/real_data/`) under an approved MUHREC amendment — all published RS1 results are now reproducible from the repository.
+- **2026-08-28** · 🔓 Released the full de-identified RS2B reader-level dataset (`reader_studies/reader_study_rs2b/real_data/`) — all published RS2B results are now reproducible from the repository.
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
 - **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
@@ -376,19 +378,18 @@ Results are saved to `automated-concept-discovery-result/`.
 
 ## 🧠 Reader Studies
 
-Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code, a synthetic demo dataset, and pre-computed demo outputs.
+Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code and real data: RS1 and RS2B ship full de-identified reader-level datasets, and RS2A ships its complete session-level analysis dataset.
 
-| Study | Setting | Design | Readers | Cases |
-|-------|---------|--------|---------|-------|
-| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 30 PCPs   | 150     |
-| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652     | 1,117   |
-| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 1,048   |
+| Study | Setting | Design | Readers | Cases | Real data |
+|-------|---------|--------|---------|-------|-----------|
+| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 38 PCPs   | 146     | **De-identified reader-level data included** |
+| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652     | 1,117   | Aggregated scores included |
+| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 1,048   | **De-identified reader-level data included** |
 
 ```bash
-# Quick run (RS1)
+# Quick run (RS1, de-identified reader-level data included)
 cd reader_studies/reader_study_rs1
-python generate_demo_data.py
-python rs1_statistical_analysis.py --demo
+python rs1_statistical_analysis.py --real
 ```
 
 See [`reader_studies/README.md`](reader_studies/README.md) for full documentation, study designs, statistical methods, and data sharing policy.

@@ -82,8 +82,9 @@ print(f"{'='*70}")
 print(f"RS1 ANALYSIS — mode: {args.mode}")
 print(f"{'='*70}")
 
-cn = pd.read_csv(os.path.join(DATA_DIR, 'cn_graded.csv'))
-en = pd.read_csv(os.path.join(DATA_DIR, 'en_graded.csv'))
+_all = pd.read_csv(os.path.join(DATA_DIR, 'rs1_reader_data.csv'))
+cn = _all[_all['Cohort'] == 'CN'].copy()
+en = _all[_all['Cohort'] == 'EN'].copy()
 
 # Prefix Responder_ID to avoid collisions between sites
 cn['Responder_ID'] = 'CN_' + cn['Responder_ID'].astype(str)

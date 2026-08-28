@@ -10,18 +10,17 @@ Independent-cohort benchmark of DermFM-Zero zero-shot performance against 1,090+
 
 | Folder | Purpose |
 |--------|---------|
-| `demo_data/` | Synthetic TODIV scores for code verification |
-| `real_data/` | Aggregated, anonymized TODIV evaluation scores (`todiv_scores.xlsx`), included in this repository |
-| `demo_output/` | Results from `--demo` |
-| `real_output/` | Results from `--real` |
+| `real_data/` | **The complete RS2A analysis dataset (included)**: `todiv_scores.xlsx` |
+| `real_output/` | Results written by `todiv_statistical_analysis.py --real` |
 
-Raw clinician-level response data are not included to protect participant privacy and are available upon reasonable request to the corresponding author, subject to institutional data sharing agreements.
+The unit of analysis in RS2A is the clinician session: each of the 1,090 sessions yields an overall diagnostic score, and all reported RS2A comparisons, including the experience-stratified analyses, are computed from these session-level scores. `real_data/todiv_scores.xlsx` contains this complete analysis dataset — the anonymized session-level scores of all clinicians with profession, dermoscopy experience, and platform-use frequency, together with the bootstrapped score distributions of each evaluated model — so the reported RS2A results are reproducible directly from this repository.
+
+The underlying read-level responses were collected on the TODIV platform by the TODIV study investigators and are held by them; requests for read-level data should be directed to the TODIV study team.
 
 ## 🚀 Run
 
 ```bash
 pip install pandas numpy scipy matplotlib openpyxl
 
-python todiv_statistical_analysis.py --demo   # demo data
-python todiv_statistical_analysis.py --real   # real data (aggregated)
+python todiv_statistical_analysis.py --real
 ```
