@@ -54,8 +54,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📰 Updates
 
-- **2026-08-28** · 🔓 Released the full de-identified RS1 reader-level dataset (`reader_studies/reader_study_rs1/real_data/`) under an approved MUHREC amendment — all published RS1 results are now reproducible from the repository.
-- **2026-08-28** · 🔓 Released the full de-identified RS2B reader-level dataset (`reader_studies/reader_study_rs2b/real_data/`) — all published RS2B results are now reproducible from the repository.
+- **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all published results are now reproducible from the repository.
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
 - **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
