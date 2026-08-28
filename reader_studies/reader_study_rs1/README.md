@@ -28,7 +28,6 @@ Within-subject study evaluating AI assistance on clinician diagnostic accuracy a
 | `Cohort` | Reader cohort: `CN` (China) or `EN` (Australia/Italy/Austria) |
 | `Responder_ID` | Pseudonymous reader ID (platform study ID; not linkable to identity) |
 | `Clinician_Role` | `GP` or `NP` |
-| `Experience_Band` | Years of dermatology experience, banded (`0-1`, `2-5`, `6-10`, `>10`) |
 | `Case ID` / `Source_Dataset` | Case identifier and its source atlas (`SNU-134`, `PASSION`, `SKINTONE`) |
 | `GT` | Ground-truth diagnosis |
 | `Unaided_Dx_Text`, `PRE_Differential_1/2` | Reader's unaided primary diagnosis and differentials (English; CN cohort responses translated) |
@@ -42,7 +41,7 @@ Within-subject study evaluating AI assistance on clinician diagnostic accuracy a
 
 ### De-identification
 
-Released under an approved MUHREC amendment (Project 49479): platform study IDs only (anonymised at collection and not linkable to individuals); age, gender, country, timestamps, and all contact fields removed; dermatology experience reported as bands.
+Released under an approved MUHREC amendment (Project 49479): platform study IDs only (anonymised at collection and not linkable to individuals); age, gender, country, experience, timestamps, and all contact fields removed.
 
 ## 🚀 Run
 
