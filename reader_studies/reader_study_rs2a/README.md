@@ -15,7 +15,7 @@ Independent-cohort benchmark of DermFM-Zero zero-shot performance against 1,090+
 
 The unit of analysis in RS2A is the clinician session: each of the 1,090 sessions yields an overall diagnostic score, and all reported RS2A comparisons, including the experience-stratified analyses, are computed from these session-level scores. `real_data/todiv_scores.xlsx` contains this complete analysis dataset — the anonymized session-level scores of all clinicians with profession, dermoscopy experience, and platform-use frequency, together with the bootstrapped score distributions of each evaluated model — so the reported RS2A results are reproducible directly from this repository.
 
-The underlying read-level responses were collected on the TODIV platform by the TODIV study investigators and are held by them; requests for read-level data should be directed to the TODIV study team.
+The raw data were collected on the TODIV platform by the TODIV study investigators and are held by them; requests for read-level data should be directed to the TODIV study team.
 
 ## 🚀 Run
 
