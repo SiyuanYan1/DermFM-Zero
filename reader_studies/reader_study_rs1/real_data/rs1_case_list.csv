@@ -1,0 +1,147 @@
+case_id,source_dataset,source_image_id,source_filename,gt_diagnosis
+1,SNU-134,85019,onychomycosis_M_51_85019.png,onychomycosis
+2,SNU-134,506664,lentigo_F_74_506664.png,lentigo
+3,SNU-134,119291,dermatofibroma_M_35_119291.png,dermatofibroma
+4,SNU-134,5802350,confluentreticulatedpapillomatosis_F_23_5802350.png,confluent and reticulated papillomatosis
+5,SNU-134,257892,keratoacanthoma_F_86_257892.png,keratoacanthoma
+10,SNU-134,231780,juvenilexanthogranuloma_F_12_231780.png,juvenile xanthogranuloma
+11,SNU-134,833990,tineapedis_M_45_833990.png,tinea pedis
+12,SNU-134,757373,basalcellcarcinoma_M_58_757373.png,basal cell carcinoma
+13,PASSION,AA00971777_10,AA00971777_10.jpg,scabies
+14,SNU-134,121131,herpessimplex_M_27_121131.png,herpes simplex
+15,SNU-134,222355,malignantmelanoma_M_43_222355.png,malignant melanoma
+16,PASSION,AA00971183_3,AA00971183_3.jpg,scabies
+17,SNU-134,1170836,tineafaciale_M_29_1170836.png,tinea faciale
+18,SNU-134,30835,pustularpsoriasis_F_54_30835.png,pustular psoriasis
+19,SNU-134,992632,epidermalnevus_M_5_992632.png,epidermal nevus
+20,SNU-134,67351,pompholyx_M_48_67351.png,pompholyx
+21,SNU-134,1150737,furuncle_F_36_1150737.png,furuncle
+23,SNU-134,602366,amyloidosis_M_24_602366.png,amyloidosis
+24,SNU-134,205346,wart_M_41_205346.png,wart
+26,SNU-134,153712,vasculitis_F_5_153712.png,vasculitis
+27,SNU-134,100933,handeczema_M_50_100933.png,hand eczema
+28,SNU-134,28811,insectbite_F_27_28811.png,insect bite
+29,SNU-134,98183,herpeszoster_F_41_98183.png,herpes zoster
+31,SNU-134,999186,morphea_F_31_999186.png,morphea
+32,SNU-134,190951,varicella_F_30_190951.png,varicella
+33,SNU-134,1040068,congenitalnevus_M_18_1040068.png,congenital nevus
+34,SNU-134,33623,urticaria_F_46_33623.png,urticaria
+35,SNU-134,144783,paronychia_M_57_144783.png,paronychia
+36,SNU-134,466179,tineacruris_M_26_466179.png,tinea cruris
+37,SNU-134,138895,skintag_F_51_138895.png,skin tag
+38,SNU-134,100997,squamouscellcarcinoma_F_38_100997.png,squamous cell carcinoma
+39,SNU-134,304288,abscess_F_44_304288.png,abscess
+40,SNU-134,106348,tineacorporis_F_58_106348.png,tinea corporis
+41,SNU-134,73439,herpeszoster_F_65_73439.png,herpes zoster
+42,SNU-134,130979,acne_M_31_130979.png,acne
+43,SNU-134,167490,nevusspilus_M_5_167490.png,nevus spilus
+45,SNU-134,525274,impetigo_F_51_525274.png,impetigo
+48,SKINTONE,0f1c3e692bbf25659b898bcfa3122c44,0f1c3e692bbf25659b898bcfa3122c44.jpg,lichen planus
+49,SNU-134,161501,herpeszoster_M_45_161501.png,herpes zoster
+50,SNU-134,77595,melanocyticnevus_M_31_77595.png,melanocytic nevus
+51,SNU-134,175358,malignantmelanoma_F_66_175358.png,malignant melanoma
+52,SNU-134,396821,pyogenicgranuloma_F_44_396821.png,pyogenic granuloma
+53,SNU-134,203796,malignantmelanoma_F_33_203796.png,malignant melanoma
+55,SNU-134,833603,eczemaherpeticum_F_2_833603.png,eczema herpeticum
+56,SNU-134,571793,neurofibroma_M_48_571793.png,neurofibroma
+57,SNU-134,641807,acutegeneralizedexanthematouspustulosis_F_66_641807.png,acute generalized exanthematous pustulosis
+58,SNU-134,80804,basalcellcarcinoma_F_55_80804.png,basal cell carcinoma
+59,SNU-134,117036,herpeszoster_M_37_117036.png,herpes zoster
+60,SKINTONE,9298a79b4bc0eabc065c02002ed06b63,9298a79b4bc0eabc065c02002ed06b63.jpg,pityriasis rosea
+61,SKINTONE,0b76da7ab2ab57c5df637bebb09ab87c,0b76da7ab2ab57c5df637bebb09ab87c.jpg,atopic dermatitis
+62,SNU-134,572960,herpessimplex_M_66_572960.png,herpes simplex
+63,SKINTONE,0c136d7bb6fdb92049f9509c381388ef,0c136d7bb6fdb92049f9509c381388ef.jpg,atopic dermatitis
+64,SNU-134,464599,angiofibroma_F_5_464599.png,angiofibroma
+66,SNU-134,88008,herpeszoster_F_41_88008.png,herpes zoster
+67,SNU-134,133729,hemangioma_F_10_133729.png,hemangioma
+68,SNU-134,166443,onychomycosis_M_73_166443.png,onychomycosis
+71,SNU-134,191825,acne_M_41_191825.png,acne
+72,SNU-134,3536067,impetigo_F_16_3536067.png,impetigo
+73,SNU-134,26597,sebaceoushyperplasia_M_70_26597.png,sebaceous hyperplasia
+74,SNU-134,492868,lichensimplexchronicus_M_25_492868.png,lichen simplex chronicus
+76,SNU-134,135840,subungalhematoma_F_46_135840.png,subungual hematoma
+77,SNU-134,78324,cellulitis_M_27_78324.png,cellulitis
+80,SKINTONE,59d49d7841de202a6f12c44a44cbe0ad,59d49d7841de202a6f12c44a44cbe0ad.jpg,lichen planus
+81,SNU-134,755539,lentigo_F_49_755539.png,lentigo
+82,SKINTONE,02c82e0f093f9cdbfa17fb0bceb8fa31,02c82e0f093f9cdbfa17fb0bceb8fa31.jpg,atopic dermatitis
+83,SNU-134,167386,xeroticeczema_M_73_167386.png,xerotic eczema
+84,SNU-134,126815,seborrheicdermatitis_M_27_126815.png,seborrheic dermatitis
+85,SNU-134,145489,onychomycosis_M_70_145489.png,onychomycosis
+86,SNU-134,29075,vasculitis_F_82_29075.png,vasculitis
+87,SKINTONE,3a37374f8ce9f4f1c09eb6c8daa4da58,3a37374f8ce9f4f1c09eb6c8daa4da58.jpg,atopic dermatitis
+88,SKINTONE,0666fca007f781f3895e9db579221875,0666fca007f781f3895e9db579221875.jpg,lichen planus
+89,PASSION,AA00971783_3,AA00971783_3.jpg,scabies
+90,SNU-134,173886,erythemamultiforme_M_11_173886.png,erythema multiforme
+91,SNU-134,189332,malignantmelanoma_M_44_189332.png,malignant melanoma
+92,SNU-134,96679,tineacorporis_F_58_96679.png,tinea corporis
+93,SNU-134,475510,bowendisease_F_62_475510.png,bowen disease
+95,SNU-134,198294,lichenamyloidosis_M_18_198294.png,lichen amyloidosis
+97,SNU-134,125379,varicella_M_28_125379.png,varicella
+98,SNU-134,98615,tineapedis_F_46_98615.png,tinea pedis
+100,SNU-134,685777,erythemaannularecentrifugum_M_34_685777.png,erythema annulare centrifugum
+103,SNU-134,188067,tineafaciale_F_37_188067.png,tinea faciale
+105,SNU-134,118875,varicella_M_32_118875.png,varicella
+109,SNU-134,49577,subungalhematoma_F_62_49577.png,subungual hematoma
+110,SNU-134,723192,lymphangioma_M_32_723192.png,lymphangioma
+111,SNU-134,253666,pyodermagangrenosum_F_52_253666.png,pyoderma gangrenosum
+112,SNU-134,227294,xanthelasma_M_52_227294.png,xanthelasma
+113,SKINTONE,1f8a764acfe2257617abd61833fbea83,1f8a764acfe2257617abd61833fbea83.jpg,pityriasis rosea
+114,SNU-134,1104371,juvenilexanthogranuloma_M_6_1104371.png,juvenile xanthogranuloma
+115,PASSION,AA00970742_3,AA00970742_3.jpg,scabies
+116,SNU-134,6841623,eczemaherpeticum_M_6_6841623.png,eczema herpeticum
+117,SNU-134,263775,urticariapigmentosa_M_2_263775.png,urticaria pigmentosa
+118,SNU-134,1487023,organoidnevus_M_12_1487023.png,organoid nevus
+119,SNU-134,65240,urticariapigmentosa_M_3_65240.png,urticaria pigmentosa
+120,SNU-134,545445,verrucaplana_M_28_545445.png,verruca plana
+122,SKINTONE,1c2e554b2725cba72d1c5412e40209f4,1c2e554b2725cba72d1c5412e40209f4.jpg,atopic dermatitis
+124,SNU-134,309186,lichenplanus_M_34_309186.png,lichen planus
+126,SNU-134,143572,tineacruris_M_47_143572.png,tinea cruris
+128,SNU-134,51968,melanocyticnevus_M_39_51968.png,melanocytic nevus
+129,SNU-134,95309,prurigopigmentosa_F_23_95309.png,prurigo pigmentosa
+131,SNU-134,2048605,squamouscellcarcinoma_F_86_2048605.png,squamous cell carcinoma
+132,SNU-134,118222,herpessimplex_M_36_118222.png,herpes simplex
+134,SNU-134,2007109,lichenamyloidosis_M_48_2007109.png,lichen amyloidosis
+135,PASSION,AA00971465_2,AA00971465_2.jpg,tinea corporis
+137,SKINTONE,3cb19992ca7a532de9548641f153820b,3cb19992ca7a532de9548641f153820b.jpg,lichen planus
+138,SNU-134,76847,wart_M_60_76847.png,wart
+139,SNU-134,24034,epidermalcyst_F_49_24034.png,epidermal cyst
+140,SNU-134,186735,sebaceoushyperplasia_F_64_186735.png,sebaceous hyperplasia
+142,SNU-134,219187,bluenevus_F_8_219187.png,blue nevus
+144,SNU-134,122843,nummulareczema_M_61_122843.png,nummular eczema
+147,SNU-134,17931,nummulareczema_M_43_17931.png,nummular eczema
+148,SNU-134,557205,vitiligo_M_15_557205.png,vitiligo
+149,SKINTONE,90e5afe86a2736fa5d86c6cb8d740dea,90e5afe86a2736fa5d86c6cb8d740dea.jpg,pityriasis rosea
+150,SNU-134,44583,folliculitis_M_47_44583.png,folliculitis
+151,SNU-134,6786989,exfoliativedermatitis_F_83_6786989.png,exfoliative dermatitis
+153,SNU-134,1036781,lupuserythematosus_F_32_1036781.png,lupus erythematosus
+155,SNU-134,1461904,palmoplantarpustulosis_M_71_1461904.png,palmoplantar pustulosis
+156,SNU-134,643454,angiokeratoma_F_28_643454.png,angiokeratoma
+157,SNU-134,203310,alopeciaareata_M_35_203310.png,alopecia areata
+158,SNU-134,398458,inflammedcyst_F_59_398458.png,inflamed cyst
+161,SNU-134,108875,pompholyx_M_53_108875.png,pompholyx
+162,SNU-134,3729208,eczemaherpeticum_M_6_3729208.png,eczema herpeticum
+164,SNU-134,116556,psoriasis_M_52_116556.png,psoriasis
+165,SNU-134,204698,seborrheickeratosis_F_58_204698.png,seborrheic keratosis
+167,SNU-134,1323961,granulomaannulare_F_71_1323961.png,granuloma annulare
+168,SNU-134,964050,beckernevus_M_32_964050.png,becker nevus
+169,SNU-134,1816458,neurofibromatosis_M_22_1816458.png,neurofibromatosis
+171,SNU-134,99803,tineapedis_M_40_99803.png,tinea pedis
+172,SNU-134,569810,steatocystomamultiplex_M_22_569810.png,steatocystoma multiplex
+173,SNU-134,85892,onychomycosis_F_48_85892.png,onychomycosis
+174,SNU-134,27014,drugeruption_F_57_27014.png,drug eruption
+175,SNU-134,3301900,confluentreticulatedpapillomatosis_F_18_3301900.png,confluent and reticulated papillomatosis
+176,SNU-134,1433795,contactdermatitis_F_64_1433795.png,contact dermatitis
+177,SNU-134,586424,inflammedcyst_M_76_586424.png,inflamed cyst
+180,SNU-134,158487,basalcellcarcinoma_M_78_158487.png,basal cell carcinoma
+181,SNU-134,155388,tineafaciale_F_37_155388.png,tinea faciale
+182,PASSION,AA00970683_1,AA00970683_1.jpg,tinea corporis
+184,SNU-134,47940,folliculitis_M_29_47940.png,folliculitis
+185,SNU-134,43480,staphylococcalscaldedskinsyndrome_F_6_43480.png,staphylococcal scalded skin syndrome
+187,SNU-134,21419,abscess_F_34_21419.png,abscess
+188,SNU-134,134761,staphylococcalscaldedskinsyndrome_F_7_134761.png,staphylococcal scalded skin syndrome
+190,SKINTONE,2283401632b08dd9f42191c6cd2f4a0e,2283401632b08dd9f42191c6cd2f4a0e.jpg,pityriasis rosea
+193,PASSION,AA00970747_1,AA00970747_1.jpg,scabies
+195,SNU-134,68461,lupuserythematosus_F_26_68461.png,lupus erythematosus
+196,SNU-134,192631,actinickeratosis_F_88_192631.png,actinic keratosis
+198,SNU-134,990542,furuncle_M_33_990542.png,furuncle
+199,SNU-134,600683,squamouscellcarcinoma_F_86_600683.png,squamous cell carcinoma

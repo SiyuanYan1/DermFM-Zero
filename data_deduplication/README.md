@@ -94,9 +94,11 @@ Reader study:
 
 | Dataset      | Total | Overlap | Rate    |
 |--------------|------:|--------:|--------:|
-| RS1_images   |   128 |      2 | 1.56 % |
-| RS2_images   | 2,096 |      14 |  0.67 % |
-| RS3_images   | 3,142 |       4 |  0.13 % |
+| RS1_images (RS1)            |   146 |      20 | 13.70 % |
+| RS2A_images (TODIV)         | 3,142 |       4 |  0.13 % |
+| RS2B_images (MILK10K)       | 2,096 |      14 |  0.67 % |
+
+Flagged RS1 case IDs and the corresponding sensitivity analysis are in `reader_studies/reader_study_rs1/`.
 
 Zero-shot retrieval:
 

@@ -1,0 +1,3 @@
+Metric,n_cases,Unaided_%,Assisted_%,McNemar_b_only_unaided,McNemar_c_only_assisted,n_discordant,P_TwoSided_McNemar
+Harm Rate,750,22.8000,16.9333,57,13,70,0.0000
+Success Rate,750,58.5333,63.3333,22,58,80,0.0001

@@ -24,6 +24,10 @@ parser.add_argument('--real', action='store_const', const='real', dest='mode',
                     help='Use real data (real_data/)')
 parser.add_argument('--demo', action='store_const', const='demo', dest='mode',
                     help='Use demo data (demo_data/)')
+parser.add_argument('--exclude_cases', metavar='CSV', default=None,
+                    help='Sensitivity analysis: CSV with a case_id column; '
+                         'those cases are excluded and outputs go to '
+                         '{OUTPUT_DIR}/sensitivity/')
 parser.set_defaults(mode='real')
 args = parser.parse_args()
 
@@ -33,6 +37,9 @@ if args.mode == 'real':
 else:
     DATA_DIR = 'demo_data'
     OUTPUT_DIR = 'demo_output'
+
+if args.exclude_cases:
+    OUTPUT_DIR = os.path.join(OUTPUT_DIR, 'sensitivity')
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -83,6 +90,12 @@ print(f"RS1 ANALYSIS — mode: {args.mode}")
 print(f"{'='*70}")
 
 _all = pd.read_csv(os.path.join(DATA_DIR, 'rs1_reader_data.csv'))
+if args.exclude_cases:
+    _excl = set(pd.read_csv(args.exclude_cases)['case_id'])
+    _n0 = len(_all)
+    _all = _all[~_all['Case ID'].isin(_excl)].copy()
+    print(f"Sensitivity analysis: excluded {sorted(_excl)} "
+          f"({_n0} -> {len(_all)} observations)")
 cn = _all[_all['Cohort'] == 'CN'].copy()
 en = _all[_all['Cohort'] == 'EN'].copy()
 

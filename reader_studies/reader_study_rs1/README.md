@@ -16,8 +16,8 @@ Within-subject study evaluating AI assistance on clinician diagnostic accuracy a
 
 | Folder | Purpose |
 |--------|---------|
-| `real_data/` | **De-identified reader-level study data (included)**: `rs1_reader_data.csv` |
-| `real_output/` | Results written by `rs1_statistical_analysis.py --real` |
+| `real_data/` | **De-identified reader-level study data (included)**: `rs1_reader_data.csv`; `rs1_case_list.csv` (source dataset, image ID and diagnosis for all 146 cases); `rs1_overlap_cases.csv` (cases flagged by SSCD deduplication, see `data_deduplication/`) |
+| `real_output/` | Results written by `rs1_statistical_analysis.py --real` (`sensitivity/` holds the overlap-exclusion sensitivity analysis) |
 
 `real_data/rs1_reader_data.csv` — one row per case read (both phases), 861 rows from 38 readers over the 146-case bank.
 
@@ -49,4 +49,7 @@ Released under an approved MUHREC amendment (Project 49479): platform study IDs 
 pip install pandas numpy scipy matplotlib
 
 python rs1_statistical_analysis.py --real
+
+# Optional: recompute all endpoints on a case subset (outputs in real_output/sensitivity/)
+python rs1_statistical_analysis.py --real --exclude_cases real_data/rs1_overlap_cases.csv
 ```
