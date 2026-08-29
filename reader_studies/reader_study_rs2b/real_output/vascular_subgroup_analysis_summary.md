@@ -1,4 +1,4 @@
-# RS2B Vascular subgroup analysis (R2 Comment 12)
+# RS2B Vascular subgroup analysis
 
 Source: `panderm_cleaned_95pct.csv`  
 VASC obs: 333 | unique images: 8 | readers: 71

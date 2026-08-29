@@ -1,5 +1,5 @@
 {
-  "analysis": "RS2B vascular subgroup deep-dive (R2 Comment 12)",
+  "analysis": "RS2B vascular subgroup deep-dive",
   "source_csv": "/Users/redless/PycharmProjects/MLCV/PanDerm-X-Project/Reader_Study/NBME revision/DermFM-Zero/reader_studies/reader_study_rs2b/real_output/panderm_cleaned_95pct.csv",
   "n_total_rows": 4929,
   "n_vasc_rows": 333,

@@ -10,7 +10,7 @@ Within-subject study evaluating AI assistance on clinician diagnostic accuracy a
 | `agent_grader.py` | GPT-4o-mini grading agent (diagnosis 1–5 rubric + management decision matrix). Requires `OPENAI_API_KEY` env var. |
 | `bcd_agent_irr.py` | BCD–agent inter-rater reliability (weighted κ, exact-match, correction proportion) for the GPT-4o-mini grading pipeline. Requires the BCD-graded XLSX bundle (not shipped; on request). |
 
-> `bcd_agent_irr.py` is a reviewer-requested R2-revision analysis and ships as code only (pass `--real` plus `--grading_dir` to run on the requested data corpus).
+> `bcd_agent_irr.py` evaluates the grading agent against board-certified dermatologist annotations; it requires the BCD-graded bundle (pass `--grading_dir`; available from the corresponding author).
 
 ## 📂 Data
 
