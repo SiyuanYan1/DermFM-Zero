@@ -10,8 +10,6 @@ Three multinational reader studies evaluating DermFM-Zero in collaborative clini
 | [RS2A](reader_study_rs2a/) | Specialist benchmark (TODIV)         | Independent cohort       | 1,090 sessions (652 unique clinicians) | 1,117 | Welch's two-sided t-test                                             | **Complete session-level analysis dataset included** |
 | [RS2B](reader_study_rs2b/) | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71 (from 87 raw, ≥95% per-test completion) | 1,048 | Paired t-test on per-reader proportions; Bonferroni for experience groups | **De-identified reader-level data included** |
 
-*Additional analyses: post-hoc statistical power (`post_hoc_power.py`), grading-agent inter-rater reliability against board-certified dermatologists (`reader_study_rs1/bcd_agent_irr.py`), and the RS2B cohort-progression, revision-behaviour and vascular-subgroup analyses (`reader_study_rs2b/cohort_analysis.py`, `reader_study_report.py`, `vascular_subgroup_analysis.py`). All run on the included datasets; `bcd_agent_irr.py` additionally requires the BCD-graded annotation bundle (available from the corresponding author).*
-
 ## 📂 Repository Structure
 
 ```
@@ -66,11 +64,7 @@ cd .. && python post_hoc_power.py --real
 cd reader_study_rs1 && python bcd_agent_irr.py --real   # requires BCD grading bundle (on request)
 ```
 
-Every study ships its real dataset and runs with `--real` (reads `real_data/`, writes `real_output/`).
-
-### 📑 Additional analyses
-
-These five scripts extend the main pipelines with post-hoc statistical power, grading-agent inter-rater reliability, and the RS2B cohort-progression, revision-behaviour and vascular-subgroup analyses. All reproduce the reported results directly from the included datasets; `bcd_agent_irr.py` additionally requires the BCD-graded XLSX bundle, available from the corresponding author.
+Every study ships its real dataset and runs on it by default (reads `real_data/`, writes `real_output/`).
 
 ## 🔬 Data Sharing
 
