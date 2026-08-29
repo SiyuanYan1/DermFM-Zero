@@ -457,7 +457,7 @@ def main():
     ap.add_argument("--demo", action="store_true", help="run on synthetic demo data")
     ap.add_argument("--real", action="store_true", help="run on real data")
     args = ap.parse_args()
-    real = args.real and not args.demo
+    real = not args.demo  # real data ship with the repository; default to real
 
     if real:
         # Real mode: require real inputs to be present. No demo fallback.

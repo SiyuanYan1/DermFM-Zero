@@ -1,9 +1,9 @@
 """
-RS2B — Vascular subgroup analysis (R2 Comment 12)
+RS2B — Vascular subgroup analysis
 ==================================================
 
-Reviewer #2 Comment 12 asks why vascular lesions appear to perform worse under
-AI assistance. This script performs a multi-dimensional vascular-subgroup
+Vascular lesions appear to perform differently under AI assistance; this script
+performs a multi-dimensional vascular-subgroup
 deep-dive on the 71-reader analytic cohort:
 
   1. Overall VASC accuracy (unaided vs assisted) and per-reader paired Wilcoxon.
@@ -368,7 +368,7 @@ clin_dec = clinical_decision_dist(df, "VASC")
 # Assemble + write JSON
 # ---------------------------------------------------------------------------
 out = {
-    "analysis": "RS2B vascular subgroup deep-dive (R2 Comment 12)",
+    "analysis": "RS2B vascular subgroup deep-dive",
     "source_csv": str(INPUT_CSV),
     "n_total_rows": int(len(df)),
     "n_vasc_rows": int(len(vasc)),
@@ -403,7 +403,7 @@ def fmt(x, nd=3):
 
 
 md = []
-md.append("# RS2B Vascular subgroup analysis (R2 Comment 12)\n")
+md.append("# RS2B Vascular subgroup analysis\n")
 md.append(f"Source: `{INPUT_CSV.name}`  \n"
           f"VASC obs: {len(vasc)} | unique images: {vasc['image_id'].nunique()} | "
           f"readers: {vasc['reader_id'].nunique()}\n")

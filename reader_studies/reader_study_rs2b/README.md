@@ -62,7 +62,7 @@ python 01_filter_reader.py        --real
 python 02_fig2_table_clean.py     --real
 python 03_fig2_plot.py            --real
 
-# Reviewer-requested analyses (require 02_fig2_table_clean --real output):
+# Additional analyses (require 02_fig2_table_clean output):
 python cohort_analysis.py             --real
 python reader_study_report.py         --real
 python vascular_subgroup_analysis.py  --real

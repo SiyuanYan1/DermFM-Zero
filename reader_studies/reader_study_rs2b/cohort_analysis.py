@@ -285,7 +285,7 @@ with PdfPages(OUT_PDF) as pdf:
     )
     fig.text(
         0.5, 0.96,
-        "C1: v1 original (Nature paper)  |  C2: v2 raw (any valid)  |  "
+        "C1: v1 original (original cohort)  |  C2: v2 raw (any valid)  |  "
         "C3: v2 ≥95% per test (default)  |  C4: v2 strict 15 per test (sensitivity)",
         ha="center", fontsize=9, style="italic", color="#555555",
     )
@@ -381,7 +381,7 @@ with PdfPages(OUT_PDF) as pdf:
     flow = pd.DataFrame(
         {
             "Step": [
-                "v1 baseline (Nature paper)",
+                "v1 baseline (original cohort)",
                 "v2 raw export (any valid answer)",
                 "v2 filter ≥95% per test (default)",
                 "v2 filter strict 15 per test (sensitivity)",

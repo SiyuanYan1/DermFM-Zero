@@ -1,5 +1,5 @@
 """
-RS1 — BCD vs Agent Inter-Rater Reliability (R3 Minor Comment 3)
+RS1 — BCD vs Agent Inter-Rater Reliability
 ================================================================
 
 Quantifies agreement between the LLM/agent grading pipeline (AI-only) and the
@@ -402,7 +402,7 @@ def main() -> None:
     # -----------------------------------------------------------------------
     md: List[str] = []
     md.append("# RS1 — BCD vs Agent Inter-Rater Reliability\n")
-    md.append("Reviewer 3, Minor Comment 3. Quadratic-weighted Cohen's kappa "
+    md.append("Quadratic-weighted Cohen's kappa "
               "with 1000-resample percentile 95% CI.\n")
     md.append("## Input alignment\n")
     md.append("| File pair | Cohort | AI rows | BCD rows | Aligned | Readers | Cases |")
