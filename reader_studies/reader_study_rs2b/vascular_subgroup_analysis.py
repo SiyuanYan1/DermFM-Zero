@@ -49,17 +49,14 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--real", action="store_true",
                     help="Use real_data/ -> real_output/. Without this flag, "
                          "the script exits without running (this analysis is "
-                         "not meaningful on synthetic data).")
+                         "run on the released real data.).")
 parser.add_argument("--data_dir", type=Path, default=None,
                     help="Override input data directory (default: real_output/)")
 parser.add_argument("--out_dir", type=Path, default=None,
                     help="Override output directory (default: real_output/)")
 args = parser.parse_args()
 
-if not args.real:
-    print("This vascular-subgroup analysis requires real RS2B data; "
-          "pass --real to run.")
-    sys.exit(0)
+# Real data ship with the repository; --real retained for backward compatibility.
 
 DATA_DIR = args.data_dir or (ROOT / "real_output")
 OUT_DIR = args.out_dir or (ROOT / "real_output")
@@ -70,8 +67,7 @@ OUT_JSON = OUT_DIR / "vascular_subgroup_analysis.json"
 OUT_MD = OUT_DIR / "vascular_subgroup_analysis_summary.md"
 
 if not INPUT_CSV.exists():
-    print(f"Input missing: {INPUT_CSV}. Real data are not shipped publicly; "
-          f"obtain on request.")
+    print(f"Input missing: {INPUT_CSV}. Run 01_filter_reader.py --real and 02_fig2_table_clean.py --real first.")
     sys.exit(0)
 
 

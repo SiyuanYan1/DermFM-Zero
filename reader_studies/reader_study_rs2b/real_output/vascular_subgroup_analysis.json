@@ -1,0 +1,401 @@
+{
+  "analysis": "RS2B vascular subgroup deep-dive (R2 Comment 12)",
+  "source_csv": "/Users/redless/PycharmProjects/MLCV/PanDerm-X-Project/Reader_Study/NBME revision/DermFM-Zero/reader_studies/reader_study_rs2b/real_output/panderm_cleaned_95pct.csv",
+  "n_total_rows": 4929,
+  "n_vasc_rows": 333,
+  "n_vasc_unique_images": 8,
+  "n_vasc_readers": 71,
+  "1_overall_paired_wilcoxon": {
+    "n_readers": 71,
+    "mean_unaided": 0.7504191817572099,
+    "mean_assisted": 0.7155264922870557,
+    "mean_diff": -0.03489268947015427,
+    "median_diff": 0.0,
+    "stat": 136.0,
+    "p_value": 0.4695880515976868,
+    "per_obs_unaided_acc": 0.7228915662650602,
+    "per_obs_assisted_acc": 0.6826347305389222,
+    "n_obs_unaided": 166,
+    "n_obs_assisted": 167,
+    "unique_images": 8
+  },
+  "2_by_expertise": {
+    "expert": {
+      "n_readers": 39,
+      "mean_unaided": 0.6994810744810745,
+      "mean_assisted": 0.7919413919413919,
+      "mean_diff": 0.09246031746031746,
+      "median_diff": 0.0,
+      "stat": 33.5,
+      "p_value": 0.22879369135174987,
+      "per_obs_unaided": 0.6842105263157895,
+      "per_obs_assisted": 0.7043478260869566
+    },
+    "non-expert": {
+      "n_readers": 32,
+      "mean_unaided": 0.8125,
+      "mean_assisted": 0.6223958333333333,
+      "mean_diff": -0.19010416666666669,
+      "median_diff": 0.0,
+      "stat": 8.5,
+      "p_value": 0.02585224946611403,
+      "per_obs_unaided": 0.8076923076923077,
+      "per_obs_assisted": 0.6346153846153846
+    }
+  },
+  "3_by_profession_bcd_vs_non_bcd": {
+    "BCD": {
+      "n_readers": 21,
+      "mean_unaided": 0.7679138321995465,
+      "mean_assisted": 0.849546485260771,
+      "mean_diff": 0.0816326530612245,
+      "median_diff": 0.0,
+      "stat": 13.5,
+      "p_value": 0.5229555877454194,
+      "per_obs_unaided": 0.7741935483870968,
+      "per_obs_assisted": 0.8095238095238095
+    },
+    "non-BCD": {
+      "n_readers": 50,
+      "mean_unaided": 0.7430714285714285,
+      "mean_assisted": 0.6592380952380953,
+      "mean_diff": -0.08383333333333333,
+      "median_diff": 0.0,
+      "stat": 49.5,
+      "p_value": 0.19457518453597444,
+      "per_obs_unaided": 0.6923076923076923,
+      "per_obs_assisted": 0.6057692307692307
+    }
+  },
+  "3b_by_profession_detail": {
+    "boardCertifiedDermatologist": {
+      "n_obs_unaided": 62,
+      "n_obs_assisted": 63,
+      "unaided_acc": 0.7741935483870968,
+      "assisted_acc": 0.8095238095238095
+    },
+    "dermatologyResident": {
+      "n_obs_unaided": 42,
+      "n_obs_assisted": 42,
+      "unaided_acc": 0.7142857142857143,
+      "assisted_acc": 0.7142857142857143
+    },
+    "generalPractitioner": {
+      "n_obs_unaided": 22,
+      "n_obs_assisted": 22,
+      "unaided_acc": 0.7272727272727273,
+      "assisted_acc": 0.5454545454545454
+    },
+    "medicalSpecialist": {
+      "n_obs_unaided": 15,
+      "n_obs_assisted": 15,
+      "unaided_acc": 0.5333333333333333,
+      "assisted_acc": 0.5333333333333333
+    },
+    "medicalStudent": {
+      "n_obs_unaided": 9,
+      "n_obs_assisted": 9,
+      "unaided_acc": 0.7777777777777778,
+      "assisted_acc": 0.4444444444444444
+    },
+    "nonMedical": {
+      "n_obs_unaided": 7,
+      "n_obs_assisted": 7,
+      "unaided_acc": 0.42857142857142855,
+      "assisted_acc": 0.14285714285714285
+    },
+    "resident": {
+      "n_obs_unaided": 6,
+      "n_obs_assisted": 6,
+      "unaided_acc": 0.8333333333333334,
+      "assisted_acc": 0.8333333333333334
+    }
+  },
+  "4_per_image_accuracy": [
+    {
+      "image_id": "242762",
+      "isic_id": "ISIC_8791057",
+      "n_unaided": 21,
+      "n_assisted": 21,
+      "unaided_acc": 0.9047619047619048,
+      "assisted_acc": 0.5238095238095238,
+      "diff": -0.38095238095238093
+    },
+    {
+      "image_id": "241004",
+      "isic_id": "ISIC_1708907",
+      "n_unaided": 21,
+      "n_assisted": 21,
+      "unaided_acc": 0.9523809523809523,
+      "assisted_acc": 0.6666666666666666,
+      "diff": -0.2857142857142857
+    },
+    {
+      "image_id": "241596",
+      "isic_id": "ISIC_1996485",
+      "n_unaided": 20,
+      "n_assisted": 21,
+      "unaided_acc": 0.55,
+      "assisted_acc": 0.3333333333333333,
+      "diff": -0.21666666666666673
+    },
+    {
+      "image_id": "241124",
+      "isic_id": "ISIC_0417486",
+      "n_unaided": 20,
+      "n_assisted": 20,
+      "unaided_acc": 0.6,
+      "assisted_acc": 0.4,
+      "diff": -0.19999999999999996
+    },
+    {
+      "image_id": "241542",
+      "isic_id": "ISIC_8614567",
+      "n_unaided": 18,
+      "n_assisted": 18,
+      "unaided_acc": 0.8888888888888888,
+      "assisted_acc": 0.9444444444444444,
+      "diff": 0.05555555555555558
+    },
+    {
+      "image_id": "244306",
+      "isic_id": "ISIC_3570541",
+      "n_unaided": 24,
+      "n_assisted": 24,
+      "unaided_acc": 0.9166666666666666,
+      "assisted_acc": 1.0,
+      "diff": 0.08333333333333337
+    },
+    {
+      "image_id": "240191",
+      "isic_id": "ISIC_8462138",
+      "n_unaided": 22,
+      "n_assisted": 22,
+      "unaided_acc": 0.6363636363636364,
+      "assisted_acc": 0.8636363636363636,
+      "diff": 0.2272727272727273
+    },
+    {
+      "image_id": "241622",
+      "isic_id": "ISIC_4821214",
+      "n_unaided": 20,
+      "n_assisted": 20,
+      "unaided_acc": 0.3,
+      "assisted_acc": 0.7,
+      "diff": 0.39999999999999997
+    }
+  ],
+  "5_reader_diagnosis_distribution": {
+    "unaided": {
+      "n": 166,
+      "counts": {
+        "VASC": 120,
+        "MEL": 26,
+        "NV": 6,
+        "BCC": 6,
+        "OTHER_MALIGNANT": 4,
+        "OTHER_BENIGN": 3,
+        "INF": 1
+      },
+      "proportions": {
+        "VASC": 0.7228915662650602,
+        "MEL": 0.1566265060240964,
+        "NV": 0.03614457831325301,
+        "BCC": 0.03614457831325301,
+        "OTHER_MALIGNANT": 0.024096385542168676,
+        "OTHER_BENIGN": 0.018072289156626505,
+        "INF": 0.006024096385542169
+      }
+    },
+    "assisted": {
+      "n": 167,
+      "counts": {
+        "VASC": 114,
+        "MEL": 17,
+        "BCC": 15,
+        "NV": 11,
+        "OTHER_BENIGN": 8,
+        "AKIEC": 1,
+        "OTHER_MALIGNANT": 1
+      },
+      "proportions": {
+        "VASC": 0.6826347305389222,
+        "MEL": 0.10179640718562874,
+        "BCC": 0.08982035928143713,
+        "NV": 0.0658682634730539,
+        "OTHER_BENIGN": 0.04790419161676647,
+        "AKIEC": 0.005988023952095809,
+        "OTHER_MALIGNANT": 0.005988023952095809
+      }
+    }
+  },
+  "6_error_entropy": {
+    "unaided": {
+      "shannon_entropy_bits": 1.915173473829062,
+      "error_proportion": 0.2771084337349398,
+      "n_distinct_error_classes": 6,
+      "error_distribution": {
+        "MEL": 0.5652173913043477,
+        "NV": 0.13043478260869562,
+        "BCC": 0.13043478260869562,
+        "OTHER_MALIGNANT": 0.08695652173913042,
+        "OTHER_BENIGN": 0.06521739130434781,
+        "INF": 0.021739130434782605
+      }
+    },
+    "assisted": {
+      "shannon_entropy_bits": 2.1402982839897304,
+      "error_proportion": 0.31736526946107785,
+      "n_distinct_error_classes": 6,
+      "error_distribution": {
+        "MEL": 0.32075471698113206,
+        "BCC": 0.2830188679245283,
+        "NV": 0.20754716981132076,
+        "OTHER_BENIGN": 0.1509433962264151,
+        "AKIEC": 0.018867924528301886,
+        "OTHER_MALIGNANT": 0.018867924528301886
+      }
+    }
+  },
+  "7_revision_pattern": {
+    "n_paired_observations": 148,
+    "n_changed": 41,
+    "n_productive_change": 14,
+    "n_harmful_change": 21,
+    "change_rate": 0.27702702702702703,
+    "productive_to_harmful_ratio": 0.6666666666666666
+  },
+  "8_class_comparison": {
+    "AKIEC": {
+      "n_obs_un": 168,
+      "n_obs_ai": 170,
+      "obs_unaided_acc": 0.5416666666666666,
+      "obs_assisted_acc": 0.6235294117647059,
+      "diff": 0.08186274509803926,
+      "paired_p_value": 0.045205619295143655,
+      "n_readers_paired": 71
+    },
+    "BCC": {
+      "n_obs_un": 414,
+      "n_obs_ai": 412,
+      "obs_unaided_acc": 0.6183574879227053,
+      "obs_assisted_acc": 0.7111650485436893,
+      "diff": 0.09280756062098405,
+      "paired_p_value": 0.0027639888266197134,
+      "n_readers_paired": 71
+    },
+    "BKL": {
+      "n_obs_un": 342,
+      "n_obs_ai": 344,
+      "obs_unaided_acc": 0.38011695906432746,
+      "obs_assisted_acc": 0.4941860465116279,
+      "diff": 0.11406908744730043,
+      "paired_p_value": 0.00029228245083974086,
+      "n_readers_paired": 71
+    },
+    "DF": {
+      "n_obs_un": 163,
+      "n_obs_ai": 165,
+      "obs_unaided_acc": 0.4723926380368098,
+      "obs_assisted_acc": 0.6424242424242425,
+      "diff": 0.17003160438743264,
+      "paired_p_value": 8.062048415738181e-05,
+      "n_readers_paired": 70
+    },
+    "INF": {
+      "n_obs_un": 66,
+      "n_obs_ai": 66,
+      "obs_unaided_acc": 0.16666666666666666,
+      "obs_assisted_acc": 0.22727272727272727,
+      "diff": 0.06060606060606061,
+      "paired_p_value": 0.12411482761101693,
+      "n_readers_paired": 40
+    },
+    "MEL": {
+      "n_obs_un": 345,
+      "n_obs_ai": 344,
+      "obs_unaided_acc": 0.6753623188405797,
+      "obs_assisted_acc": 0.7093023255813954,
+      "diff": 0.033940006740815654,
+      "paired_p_value": 0.6544578575945097,
+      "n_readers_paired": 71
+    },
+    "NV": {
+      "n_obs_un": 511,
+      "n_obs_ai": 511,
+      "obs_unaided_acc": 0.5655577299412916,
+      "obs_assisted_acc": 0.6575342465753424,
+      "diff": 0.09197651663405082,
+      "paired_p_value": 0.22945852596280725,
+      "n_readers_paired": 71
+    },
+    "OTHER_BENIGN": {
+      "n_obs_un": 81,
+      "n_obs_ai": 81,
+      "obs_unaided_acc": 0.20987654320987653,
+      "obs_assisted_acc": 0.2962962962962963,
+      "diff": 0.08641975308641975,
+      "paired_p_value": 0.15440653110764646,
+      "n_readers_paired": 47
+    },
+    "OTHER_MALIGNANT": {
+      "n_obs_un": 20,
+      "n_obs_ai": 20,
+      "obs_unaided_acc": 0.0,
+      "obs_assisted_acc": 0.0,
+      "diff": 0.0,
+      "paired_p_value": null,
+      "n_readers_paired": 17
+    },
+    "SCCKA": {
+      "n_obs_un": 186,
+      "n_obs_ai": 187,
+      "obs_unaided_acc": 0.44623655913978494,
+      "obs_assisted_acc": 0.48128342245989303,
+      "diff": 0.03504686332010809,
+      "paired_p_value": 0.08189940532050215,
+      "n_readers_paired": 70
+    },
+    "VASC": {
+      "n_obs_un": 166,
+      "n_obs_ai": 167,
+      "obs_unaided_acc": 0.7228915662650602,
+      "obs_assisted_acc": 0.6826347305389222,
+      "diff": -0.04025683572613803,
+      "paired_p_value": 0.4695880515976868,
+      "n_readers_paired": 71
+    }
+  },
+  "9_clinical_decision_distribution": {
+    "unaided": {
+      "n": 166,
+      "counts": {
+        "dismiss": 71,
+        "biopsy": 51,
+        "monitor": 42,
+        "local_therapy": 2
+      },
+      "proportions": {
+        "dismiss": 0.42771084337349397,
+        "biopsy": 0.3072289156626506,
+        "monitor": 0.25301204819277107,
+        "local_therapy": 0.012048192771084338
+      }
+    },
+    "assisted": {
+      "n": 167,
+      "counts": {
+        "dismiss": 70,
+        "biopsy": 61,
+        "monitor": 34,
+        "local_therapy": 2
+      },
+      "proportions": {
+        "dismiss": 0.41916167664670656,
+        "biopsy": 0.3652694610778443,
+        "monitor": 0.20359281437125748,
+        "local_therapy": 0.011976047904191617
+      }
+    }
+  }
+}

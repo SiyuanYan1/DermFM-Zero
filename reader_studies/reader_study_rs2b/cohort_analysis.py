@@ -34,12 +34,7 @@ _parser.add_argument(
 )
 _args = _parser.parse_args()
 
-if not _args.real:
-    print(
-        "This analysis requires real reader-study data; "
-        "pass --real to run."
-    )
-    sys.exit(0)
+# Real data ship with the repository; --real retained for backward compatibility.
 
 # ---------------------------------------------------------------------------
 # Paths (all relative to this file)
@@ -59,14 +54,13 @@ OUT.mkdir(parents=True, exist_ok=True)
 _required_inputs = [
     RAW_V2,
     OUT / "panderm_cleaned_95pct.csv",
-    OUT / "panderm_cleaned_strict15.csv",
     V1_CSV,
 ]
 for _p in _required_inputs:
     if not _p.exists():
         print(
             f"Input missing: {_p}. "
-            "Real data are not shipped publicly; obtain on request."
+            "Run 01_filter_reader.py --real and 02_fig2_table_clean.py --real first."
         )
         sys.exit(0)
 
@@ -92,7 +86,10 @@ v1_ids = set(v1["reader_id"].unique())
 v2_all_ids = set(v2_raw["tequ_user_id"].unique())
 v2_95 = pd.read_csv(OUT / "panderm_cleaned_95pct.csv")
 v2_95_ids = set(v2_95["reader_id"].unique())
-v2_strict = pd.read_csv(OUT / "panderm_cleaned_strict15.csv")
+_std = pd.read_csv(OUT / "panderm_standardized_v2.csv")
+_valid = _std[_std["is_completed"]]
+_full = _valid.groupby("test_session_id").size()
+v2_strict = _valid[_valid["test_session_id"].isin(_full[_full == 30].index)]
 v2_strict_ids = set(v2_strict["reader_id"].unique())
 
 

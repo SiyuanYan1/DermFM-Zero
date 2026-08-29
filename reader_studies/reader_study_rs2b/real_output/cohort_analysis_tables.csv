@@ -1,0 +1,19 @@
+Table,Cohort,N readers,Experts,Non-experts,Shared with v1,New vs v1,Lost vs v1,Category,C1: v1 (original),C2: v2 raw (any valid),C3: v2 ≥95% / test,C4: v2 strict 15 / test
+Cohort summary,C1: v1 (original),34.0,16.0,18.0,34.0,0.0,0.0,,,,,
+Cohort summary,C2: v2 raw (any valid),87.0,44.0,43.0,34.0,53.0,0.0,,,,,
+Cohort summary,C3: v2 ≥95% / test,71.0,39.0,32.0,33.0,38.0,1.0,,,,,
+Cohort summary,C4: v2 strict 15 / test,62.0,35.0,27.0,29.0,33.0,5.0,,,,,
+Profession breakdown,,,,,,,,boardCertifiedDermatologist,8.0,24.0,21.0,18.0
+Profession breakdown,,,,,,,,dermatologyResident,11.0,31.0,23.0,19.0
+Profession breakdown,,,,,,,,generalPractitioner,7.0,12.0,9.0,8.0
+Profession breakdown,,,,,,,,medicalSpecialist,1.0,3.0,3.0,3.0
+Profession breakdown,,,,,,,,medicalStudent,4.0,8.0,6.0,5.0
+Profession breakdown,,,,,,,,nonMedical,1.0,2.0,2.0,2.0
+Profession breakdown,,,,,,,,nursePractitioner,1.0,1.0,1.0,1.0
+Profession breakdown,,,,,,,,physicianAssistant,0.0,2.0,2.0,2.0
+Profession breakdown,,,,,,,,resident,1.0,4.0,4.0,4.0
+Profession breakdown,,,,,,,,TOTAL,34.0,87.0,71.0,62.0
+Age breakdown,,,,,,,,Unknown,34.0,87.0,71.0,62.0
+Age breakdown,,,,,,,,TOTAL,34.0,87.0,71.0,62.0
+Gender breakdown,,,,,,,,Unknown,34.0,87.0,71.0,62.0
+Gender breakdown,,,,,,,,TOTAL,34.0,87.0,71.0,62.0
