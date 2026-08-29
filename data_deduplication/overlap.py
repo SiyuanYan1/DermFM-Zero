@@ -37,7 +37,7 @@ DOWNSTREAM_DATASETS = [
     "sd-128-zero-shot",
 ]
 
-READER_STUDY_DATASETS = ["RS1_images", "RS2_images", "RS3_images"]
+READER_STUDY_DATASETS = ["RS1_images", "RS2A_images", "RS2B_images"]
 
 
 def l2_normalize(x: np.ndarray) -> np.ndarray:
