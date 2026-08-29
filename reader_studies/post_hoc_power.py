@@ -465,7 +465,7 @@ def main():
             if not p.exists():
                 print(
                     f"Input missing: {p}. "
-                    "Real data are not shipped publicly; obtain on request."
+                    ""
                 )
                 sys.exit(0)
         results = []

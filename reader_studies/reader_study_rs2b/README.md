@@ -28,6 +28,8 @@ Within-subject study evaluating AI assistance on multimodal skin-cancer diagnosi
 - `management_table.csv` — the management-appropriateness rubric (11 diagnoses × 4 clinical actions → optimal / appropriate / inappropriate), developed by consensus of four senior board-certified dermatologists.
 > To view the CSVs in Excel, use Data → Get Data (Text/CSV) and set the delimiter to semicolon; the files are kept semicolon-separated because the analysis scripts read them in this format.
 
+`../panderm_cleaned_15cases.csv` (in `reader_studies/`) is the original 34-reader v1 dataset, used by `cohort_analysis.py` for the cohort-progression comparison.
+
 ### Column dictionary (`panderm_reader_data.csv`)
 
 | Column | Description |

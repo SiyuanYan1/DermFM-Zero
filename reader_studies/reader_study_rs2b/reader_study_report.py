@@ -43,7 +43,7 @@ _parser.add_argument("--real", action="store_const", const="real", dest="mode",
                      help="Use real_data/ -> real_output/")
 _parser.add_argument("--demo", action="store_const", const="demo", dest="mode",
                      help="Use demo_data/ -> demo_output/  (default)")
-_parser.set_defaults(mode="demo")
+_parser.set_defaults(mode="real")
 _args = _parser.parse_args()
 
 # ---------------------------------------------------------------------------
@@ -70,7 +70,7 @@ for _p in (RAW_V2, CLEAN_V2, RESULTS_CSV):
     if not _p.exists():
         print(
             f"Input missing: {_p}. "
-            "Real data are not shipped publicly; obtain on request."
+            ""
         )
         sys.exit(0)
 
@@ -126,6 +126,10 @@ v2_95_ids = set(clean_v2["reader_id"].unique())
 included_demo = demo[demo["reader_id"].isin(v2_95_ids)].copy()
 
 results = pd.read_csv(RESULTS_CSV)
+if "N_Unaided" not in results.columns:
+    _n = results["N_readers"].where(results["N_readers"].notna(), results["N"])
+    results["N_Unaided"] = _n
+    results["N_Assisted"] = _n
 
 # ---------------------------------------------------------------------------
 # Helpers

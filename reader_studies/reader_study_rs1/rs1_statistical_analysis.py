@@ -24,7 +24,7 @@ parser.add_argument('--real', action='store_const', const='real', dest='mode',
                     help='Use real data (real_data/)')
 parser.add_argument('--demo', action='store_const', const='demo', dest='mode',
                     help='Use demo data (demo_data/)')
-parser.set_defaults(mode='demo')
+parser.set_defaults(mode='real')
 args = parser.parse_args()
 
 if args.mode == 'real':
