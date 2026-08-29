@@ -40,7 +40,7 @@ reader_studies/
 ## 🚀 Quick Start
 
 ```bash
-pip install pandas numpy scipy matplotlib seaborn openpyxl
+pip install pandas numpy scipy matplotlib seaborn openpyxl statsmodels pypdf
 
 # RS1 (de-identified reader-level data included)
 cd reader_study_rs1
@@ -69,7 +69,7 @@ Every study ships its real dataset and runs on it by default (reads `real_data/`
 ## 🔬 Data Sharing
 
 - **RS1** ships with the full de-identified reader-level dataset (`reader_study_rs1/real_data/rs1_reader_data.csv`), released under an approved MUHREC amendment (Project 49479): pseudonymous platform study IDs; age, gender, country, experience, timestamps, and contact fields removed. Source images are from public atlases (SNU-134, PASSION, SKINTONE), referenced by case ID and source dataset.
-- **RS2A** ships with aggregated, anonymized session-level scores (`todiv_scores.xlsx`), the unit of analysis for all reported RS2A comparisons. Raw clinician-level responses are held by the data provider.
+- **RS2A** ships with the complete anonymized session-level analysis dataset (`todiv_scores.xlsx`), the unit of analysis for all reported RS2A comparisons. Raw clinician-level responses are held by the data provider.
 - **RS2B** ships with the full de-identified reader-level dataset (`reader_study_rs2b/real_data/`), released with the agreement of the hosting platform (Department of Dermatology, Medical University of Vienna): pseudonymous reader IDs; age, year of birth, and gender removed; no timestamps or country data. Profession, expertise, votes, and ground truth are retained.
 
 ## 📄 Citation

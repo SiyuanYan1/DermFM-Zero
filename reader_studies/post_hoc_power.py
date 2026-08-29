@@ -202,7 +202,7 @@ def _run_rs2b_filter() -> None:
     if not script.exists():
         raise FileNotFoundError(f"missing {script}")
     subprocess.run(
-        ["/usr/bin/python3", str(script), "--real"],
+        [sys.executable, str(script), "--real"],
         cwd=str(cwd),
         check=True,
     )
@@ -400,7 +400,7 @@ def write_outputs(results: list[dict], out_dir: Path) -> None:
 
     # Markdown
     lines = []
-    lines.append("# Post-hoc power analysis (R3 Major Comment 3)")
+    lines.append("# Post-hoc power analysis — reader-study primary outcomes")
     lines.append("")
     lines.append(f"alpha = {ALPHA} (two-sided); Wilcoxon ARE adjustment = sqrt({WILCOXON_ARE}).")
     lines.append("")
@@ -454,7 +454,8 @@ def write_outputs(results: list[dict], out_dir: Path) -> None:
 # ---------------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--demo", action="store_true", help="run on synthetic demo data")
+    ap.add_argument("--demo", action="store_true",
+                    help="run on synthetic demo data (demo data not shipped in this repository)")
     ap.add_argument("--real", action="store_true", help="run on real data")
     args = ap.parse_args()
     real = not args.demo  # real data ship with the repository; default to real

@@ -277,7 +277,7 @@ harm_a = (sub['Assisted_Mgmt_Score'] == 1)
 succ_u = (sub['Unaided_Mgmt_Score'] >= 3)
 succ_a = (sub['Assisted_Mgmt_Score'] >= 3)
 
-print(f"  n cases = {n_cases}")
+print(f"  n observations = {n_cases}")
 print(f"  Harm    (case-level): {harm_u.mean():.1%} -> {harm_a.mean():.1%}")
 print(f"  Success (case-level): {succ_u.mean():.1%} -> {succ_a.mean():.1%}")
 
@@ -291,12 +291,12 @@ print(f"  Success Rate McNemar (two-sided): b={mn_s['b']}  c={mn_s['c']}  "
 
 case_level_path = os.path.join(OUTPUT_DIR, 'rs1_caselevel_mcnemar.csv')
 pd.DataFrame([
-    {'Metric': 'Harm Rate', 'n_cases': n_cases,
+    {'Metric': 'Harm Rate', 'n_observations': n_cases,
      'Unaided_%': harm_u.mean() * 100, 'Assisted_%': harm_a.mean() * 100,
      'McNemar_b_only_unaided': mn_h['b'], 'McNemar_c_only_assisted': mn_h['c'],
      'n_discordant': mn_h['n_disc'],
      'P_TwoSided_McNemar': mn_h['p_two']},
-    {'Metric': 'Success Rate', 'n_cases': n_cases,
+    {'Metric': 'Success Rate', 'n_observations': n_cases,
      'Unaided_%': succ_u.mean() * 100, 'Assisted_%': succ_a.mean() * 100,
      'McNemar_b_only_unaided': mn_s['b'], 'McNemar_c_only_assisted': mn_s['c'],
      'n_discordant': mn_s['n_disc'],

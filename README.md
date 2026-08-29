@@ -144,7 +144,7 @@ pip install -r requirements.txt
 
 ### Model Access
 
-DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. The read-only access token is at present shared only with internal collaborators and authorised reviewers; it will be released openly once the manuscript is published.
+DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. The read-only access token is at present shared only with named collaborators; it will be released openly once the manuscript is published.
 
 If you have been provided with the token, set it as the `HF_TOKEN` environment variable before running any code:
 
@@ -382,7 +382,7 @@ Three multinational clinical reader studies that evaluate DermFM-Zero in collabo
 | Study | Setting | Design | Readers | Cases | Real data |
 |-------|---------|--------|---------|-------|-----------|
 | RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 38 PCPs   | 146     | **De-identified reader-level data included** |
-| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652     | 1,117   | Aggregated scores included |
+| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652 (1,090 sessions) | 1,117   | **Complete session-level analysis dataset included** |
 | RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 1,048   | **De-identified reader-level data included** |
 
 ```bash

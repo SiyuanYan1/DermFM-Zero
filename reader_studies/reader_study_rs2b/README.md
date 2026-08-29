@@ -56,7 +56,7 @@ The released data are fully anonymized under the conditions agreed with the host
 ## 🚀 Run
 
 ```bash
-pip install pandas numpy scipy matplotlib seaborn
+pip install pandas numpy scipy matplotlib seaborn pypdf
 
 python 01_filter_reader.py        --real
 python 02_fig2_table_clean.py     --real

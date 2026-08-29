@@ -1,4 +1,4 @@
-# Post-hoc power analysis (R3 Major Comment 3)
+# Post-hoc power analysis — reader-study primary outcomes
 
 alpha = 0.05 (two-sided); Wilcoxon ARE adjustment = sqrt(0.864).
 

@@ -42,7 +42,7 @@ _parser = argparse.ArgumentParser(description="RS2B Step 4: combined report PDF.
 _parser.add_argument("--real", action="store_const", const="real", dest="mode",
                      help="Use real_data/ -> real_output/")
 _parser.add_argument("--demo", action="store_const", const="demo", dest="mode",
-                     help="Use demo_data/ -> demo_output/  (default)")
+                     help="Use demo_data/ -> demo_output/  (default) (demo data not shipped)")
 _parser.set_defaults(mode="real")
 _args = _parser.parse_args()
 
