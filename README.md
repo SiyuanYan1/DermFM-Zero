@@ -149,7 +149,6 @@ pip install -r requirements.txt
 
 DermFM-Zero weights are publicly hosted on the Hugging Face Hub at redlessone/DermFM-Zero. The model loads directly with
 `open_clip.create_model_and_transforms("hf-hub:redlessone/DermFM-Zero")` (see Quick Example below).
-```
 
 **Troubleshooting**: if you see a `401 Unauthorized` error, verify `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`) and the token has been set in the same shell session you run the code in.
 
