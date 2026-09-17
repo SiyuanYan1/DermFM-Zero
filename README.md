@@ -19,7 +19,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 </div>
 
-> 🔒 **Availability**:  The DermFM-Zero model weights are currently private and are expected to be released in the coming months.
+> 🔒 **Availability**: The DermFM-Zero model weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The model was retrained exclusively on public data and achieves performance comparable to the original version.
 
 ## 📑 Table of Contents
 
@@ -144,16 +144,8 @@ pip install -r requirements.txt
 
 ### Model Access
 
-DermFM-Zero weights are currently hosted as a private repository on the Hugging Face Hub at `redlessone/DermFM-Zero`. The read-only access token is at present shared only with named collaborators; it will be released openly once the manuscript is published.
-
-If you have been provided with the token, set it as the `HF_TOKEN` environment variable before running any code:
-
-```bash
-# Option 1: set the token as an environment variable
-export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# Option 2: log in interactively (paste the token when prompted)
-huggingface-cli login
+DermFM-Zero weights are publicly hosted on the Hugging Face Hub at redlessone/DermFM-Zero. The model loads directly with
+`open_clip.create_model_and_transforms("hf-hub:redlessone/DermFM-Zero")` (see Quick Example below).
 ```
 
 **Troubleshooting**: if you see a `401 Unauthorized` error, verify `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`) and the token has been set in the same shell session you run the code in.
