@@ -81,7 +81,8 @@ DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
 | DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
-| **DermFM-Zero (Ours)** | **0.7957** | **0.6941** | **0.8663** | **0.9304** | **0.4450** | **0.5075** | **0.8848** | **0.7320** |
+| **DermFM-Zero (Ours)** | **0.7957** | 0.6941 | **0.8663** | **0.9304** | **0.4450** | 0.5075 | **0.8848** | **0.7320** |
+| **DermFM-Zero-Open (Ours)** | 0.7858 | **0.7592** | 0.8490 | 0.9196 | 0.4212 | **0.5196** | 0.8686 | 0.7319 |
 
 ### Few-Shot Learning (10% training data)
 
@@ -97,11 +98,12 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
 | PanDerm [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
 | DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
-| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | **0.8707** | 0.6529 | 0.3637 | 0.6764 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
-| DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | **0.6985** | 0.3345 | 0.6607 |
-| **DermFM-Zero (Ours)** | **0.8416** | 0.8687 | 0.6855 | **0.4007** | **0.6991** |
+| DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | 0.6985 | 0.3345 | 0.6607 |
+| **DermFM-Zero (Ours)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
+| **DermFM-Zero-Open (Ours)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7740** |
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
@@ -112,7 +114,8 @@ Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 3,989).
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.122 | 0.104 | 0.174 | 0.127 | 0.132 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.188 | 0.179 | 0.187 | 0.175 | 0.182 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
-| DermFM-Zero (Ours) | **0.457** | **0.454** | **0.369** | **0.349** | **0.407** |
+| **DermFM-Zero (Ours)** | **0.457** | **0.454** | 0.369 | 0.349 | **0.407** |
+| **DermFM-Zero-Open (Ours)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
 ```
