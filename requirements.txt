@@ -7,6 +7,10 @@ huggingface_hub
 safetensors
 timm
 scikit-learn
+scipy
+statsmodels
+openpyxl
+pypdf
 braceexpand
 pandas
 webdataset
