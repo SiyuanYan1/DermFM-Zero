@@ -24,7 +24,11 @@ parser.add_argument('--real', action='store_const', const='real', dest='mode',
                     help='Use real data (real_data/)')
 parser.add_argument('--demo', action='store_const', const='demo', dest='mode',
                     help='Use demo data (demo_data/)')
-parser.set_defaults(mode='demo')
+parser.add_argument('--exclude_cases', metavar='CSV', default=None,
+                    help='Sensitivity analysis: CSV with a case_id column; '
+                         'those cases are excluded and outputs go to '
+                         '{OUTPUT_DIR}/sensitivity/')
+parser.set_defaults(mode='real')
 args = parser.parse_args()
 
 if args.mode == 'real':
@@ -33,6 +37,9 @@ if args.mode == 'real':
 else:
     DATA_DIR = 'demo_data'
     OUTPUT_DIR = 'demo_output'
+
+if args.exclude_cases:
+    OUTPUT_DIR = os.path.join(OUTPUT_DIR, 'sensitivity')
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -82,8 +89,15 @@ print(f"{'='*70}")
 print(f"RS1 ANALYSIS — mode: {args.mode}")
 print(f"{'='*70}")
 
-cn = pd.read_csv(os.path.join(DATA_DIR, 'cn_graded.csv'))
-en = pd.read_csv(os.path.join(DATA_DIR, 'en_graded.csv'))
+_all = pd.read_csv(os.path.join(DATA_DIR, 'rs1_reader_data.csv'))
+if args.exclude_cases:
+    _excl = set(pd.read_csv(args.exclude_cases)['case_id'])
+    _n0 = len(_all)
+    _all = _all[~_all['Case ID'].isin(_excl)].copy()
+    print(f"Sensitivity analysis: excluded {sorted(_excl)} "
+          f"({_n0} -> {len(_all)} observations)")
+cn = _all[_all['Cohort'] == 'CN'].copy()
+en = _all[_all['Cohort'] == 'EN'].copy()
 
 # Prefix Responder_ID to avoid collisions between sites
 cn['Responder_ID'] = 'CN_' + cn['Responder_ID'].astype(str)
@@ -263,7 +277,7 @@ harm_a = (sub['Assisted_Mgmt_Score'] == 1)
 succ_u = (sub['Unaided_Mgmt_Score'] >= 3)
 succ_a = (sub['Assisted_Mgmt_Score'] >= 3)
 
-print(f"  n cases = {n_cases}")
+print(f"  n observations = {n_cases}")
 print(f"  Harm    (case-level): {harm_u.mean():.1%} -> {harm_a.mean():.1%}")
 print(f"  Success (case-level): {succ_u.mean():.1%} -> {succ_a.mean():.1%}")
 
@@ -277,12 +291,12 @@ print(f"  Success Rate McNemar (two-sided): b={mn_s['b']}  c={mn_s['c']}  "
 
 case_level_path = os.path.join(OUTPUT_DIR, 'rs1_caselevel_mcnemar.csv')
 pd.DataFrame([
-    {'Metric': 'Harm Rate', 'n_cases': n_cases,
+    {'Metric': 'Harm Rate', 'n_observations': n_cases,
      'Unaided_%': harm_u.mean() * 100, 'Assisted_%': harm_a.mean() * 100,
      'McNemar_b_only_unaided': mn_h['b'], 'McNemar_c_only_assisted': mn_h['c'],
      'n_discordant': mn_h['n_disc'],
      'P_TwoSided_McNemar': mn_h['p_two']},
-    {'Metric': 'Success Rate', 'n_cases': n_cases,
+    {'Metric': 'Success Rate', 'n_observations': n_cases,
      'Unaided_%': succ_u.mean() * 100, 'Assisted_%': succ_a.mean() * 100,
      'McNemar_b_only_unaided': mn_s['b'], 'McNemar_c_only_assisted': mn_s['c'],
      'n_discordant': mn_s['n_disc'],

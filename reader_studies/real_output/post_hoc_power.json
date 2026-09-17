@@ -1,0 +1,78 @@
+{
+  "alpha": 0.05,
+  "wilcoxon_ARE": 0.864,
+  "results": [
+    {
+      "outcome": "RS1 diagnostic accuracy",
+      "design": "paired t-test (Wilcoxon signed-rank in manuscript)",
+      "n": 38,
+      "mean_diff": 0.5986,
+      "unaided_sd": 0.5745,
+      "assisted_sd": 0.6137,
+      "effect_size_r_wilcoxon": 0.7471,
+      "d_z_primary": 0.7471,
+      "d_z_method": "d_z ~ Wilcoxon r (Z/sqrt(N))",
+      "d_z_sensitivity_rho0.5": 1.0059335167581631,
+      "alpha": 0.05,
+      "power_t": 0.9941822666772765,
+      "power_wilcoxon_ARE_adjusted": 0.986354953254175,
+      "status": "ok"
+    },
+    {
+      "outcome": "RS2A session accuracy (DermFM-Zero vs Humans-All)",
+      "design": "two-sample Welch t-test approximation",
+      "n_humans": 1090,
+      "n_model_iterations": 20000,
+      "mean_humans": 65.93577981651376,
+      "sd_humans": 10.323131220147756,
+      "mean_dermfm_zero": 71.7403,
+      "sd_dermfm_zero": 3.8065050090626706,
+      "pooled_sd": 4.386847835676755,
+      "cohen_d": 1.3231642402273542,
+      "alpha": 0.05,
+      "power_t_full_n_m": 1.0,
+      "power_t_conservative_n_m_eq_n_h": 1.0,
+      "status": "ok"
+    },
+    {
+      "outcome": "RS2B diagnostic accuracy",
+      "design": "paired t-test (within-reader, with_ai vs without_ai)",
+      "n_pairs": 71,
+      "mean_without_ai": 0.5139705142508795,
+      "mean_with_ai": 0.594061411485759,
+      "mean_diff": 0.08009089723487949,
+      "sd_diff": 0.12474254036958872,
+      "d_z": 0.6420495926857446,
+      "alpha": 0.05,
+      "power_t": 0.9996303048721528,
+      "power_wilcoxon_ARE_adjusted": 0.9986442384617643,
+      "status": "ok"
+    },
+    {
+      "outcome": "RS2B management appropriateness",
+      "design": "paired t-test (within-reader, with_ai vs without_ai)",
+      "ground_truth_source": "Fig. 5a Management Standards matrix (Opt/App=appropriate, Inp=inappropriate)",
+      "decision_to_action_map": {
+        "dismiss": "Dismiss",
+        "monitor": "Monitor",
+        "local_therapy": "Treat",
+        "biopsy": "Excise"
+      },
+      "n_rows_unmatched_to_matrix": 0,
+      "n_pairs": 71,
+      "mean_without_ai": 0.6776742495861444,
+      "mean_with_ai": 0.703567040952641,
+      "per_reader_appropriateness_range": [
+        0.4,
+        0.9333333333333333
+      ],
+      "mean_diff": 0.02589279136649647,
+      "sd_diff": 0.08064029328188174,
+      "d_z": 0.3210899949977496,
+      "alpha": 0.05,
+      "power_t": 0.7606229272006083,
+      "power_wilcoxon_ARE_adjusted": 0.6985640315615053,
+      "status": "ok"
+    }
+  ]
+}

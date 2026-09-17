@@ -3,11 +3,9 @@
 # and report metrics.
 #
 # Data:    data/VQA/SkinCap-VQA/meta/{train,val,test}.csv
-# Model:   checkpoints/DermFM-Zero/open_clip_pytorch_model.bin
-#          (download via huggingface-cli download redlessone/DermFM-Zero)
+# Model:   hf-hub:redlessone/DermFM-Zero (loaded directly from the HF Hub)
 #
-# Run from `VQA/` so the relative `--pretrain_path` and the
-# `../data/...` CSV paths resolve correctly:
+# Run from `VQA/` so the `../data/...` CSV paths resolve correctly:
 #   cd VQA
 #   bash ../script/VQA/SkinCap-VQA.sh
 
@@ -26,8 +24,7 @@ fi
 
 # Step 2 — train + evaluate.
 CUDA_VISIBLE_DEVICES=0 python train.py \
-    --model_name 'PanDerm-Large-VL' \
-    --pretrain_path '../checkpoints/DermFM-Zero/open_clip_pytorch_model.bin' \
+    --model_name 'DermFM-Zero' \
     --dataset_name 'SkinCap-VQA' \
     --class_num 188 \
     --epochs 50 \

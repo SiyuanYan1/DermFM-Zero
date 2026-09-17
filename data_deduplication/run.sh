@@ -56,7 +56,7 @@ done
 
 # Step 3 — Reader study embeddings (folder mode).
 echo "[3/4] Reader study embeddings"
-for RS in RS1_images RS2_images RS3_images; do
+for RS in RS1_images RS2A_images RS2B_images; do
   [ -f "${EMB_DIR}/${RS}_embeddings.npy" ] && { echo "  $RS: exists — skip"; continue; }
   python embed.py folder \
       --folder "${RS_ROOT}/${RS}" \

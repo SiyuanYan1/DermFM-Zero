@@ -11,5 +11,5 @@ python export_visual_features.py \
 # SAE Training
 python train_sae.py \
     --data Derm1M_v2 \
-    --backbone PanDerm-v2 \
+    --backbone DermFM-Zero \
     --save_dir '../automated-concept-discovery-result/SAE-embeddings/'

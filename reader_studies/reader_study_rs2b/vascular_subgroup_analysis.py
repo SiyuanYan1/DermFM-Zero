@@ -1,9 +1,9 @@
 """
-RS2B — Vascular subgroup analysis (R2 Comment 12)
+RS2B — Vascular subgroup analysis
 ==================================================
 
-Reviewer #2 Comment 12 asks why vascular lesions appear to perform worse under
-AI assistance. This script performs a multi-dimensional vascular-subgroup
+Vascular lesions appear to perform differently under AI assistance; this script
+performs a multi-dimensional vascular-subgroup
 deep-dive on the 71-reader analytic cohort:
 
   1. Overall VASC accuracy (unaided vs assisted) and per-reader paired Wilcoxon.
@@ -49,17 +49,14 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--real", action="store_true",
                     help="Use real_data/ -> real_output/. Without this flag, "
                          "the script exits without running (this analysis is "
-                         "not meaningful on synthetic data).")
+                         "run on the released real data.).")
 parser.add_argument("--data_dir", type=Path, default=None,
                     help="Override input data directory (default: real_output/)")
 parser.add_argument("--out_dir", type=Path, default=None,
                     help="Override output directory (default: real_output/)")
 args = parser.parse_args()
 
-if not args.real:
-    print("This vascular-subgroup analysis requires real RS2B data; "
-          "pass --real to run.")
-    sys.exit(0)
+# Real data ship with the repository; --real retained for backward compatibility.
 
 DATA_DIR = args.data_dir or (ROOT / "real_output")
 OUT_DIR = args.out_dir or (ROOT / "real_output")
@@ -70,8 +67,7 @@ OUT_JSON = OUT_DIR / "vascular_subgroup_analysis.json"
 OUT_MD = OUT_DIR / "vascular_subgroup_analysis_summary.md"
 
 if not INPUT_CSV.exists():
-    print(f"Input missing: {INPUT_CSV}. Real data are not shipped publicly; "
-          f"obtain on request.")
+    print(f"Input missing: {INPUT_CSV}. Run 01_filter_reader.py --real and 02_fig2_table_clean.py --real first.")
     sys.exit(0)
 
 
@@ -372,7 +368,7 @@ clin_dec = clinical_decision_dist(df, "VASC")
 # Assemble + write JSON
 # ---------------------------------------------------------------------------
 out = {
-    "analysis": "RS2B vascular subgroup deep-dive (R2 Comment 12)",
+    "analysis": "RS2B vascular subgroup deep-dive",
     "source_csv": str(INPUT_CSV),
     "n_total_rows": int(len(df)),
     "n_vasc_rows": int(len(vasc)),
@@ -407,7 +403,7 @@ def fmt(x, nd=3):
 
 
 md = []
-md.append("# RS2B Vascular subgroup analysis (R2 Comment 12)\n")
+md.append("# RS2B Vascular subgroup analysis\n")
 md.append(f"Source: `{INPUT_CSV.name}`  \n"
           f"VASC obs: {len(vasc)} | unique images: {vasc['image_id'].nunique()} | "
           f"readers: {vasc['reader_id'].nunique()}\n")
