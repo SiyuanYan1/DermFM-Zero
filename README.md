@@ -337,7 +337,7 @@ Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concep
 bash script/automated-concept-discovery/env_setup.sh
 ```
 
-Download SAE checkpoint from [Google Drive](https://drive.google.com/file/d/1OM16Bultiy8ZEoEw32ppvLvreraS4VB1/view?usp=sharing) to `automated-concept-discovery-result/SAE-embeddings/`.
+Download SAE checkpoint (`autoencoder.pth`) from [Google Drive](https://drive.google.com/drive/folders/10BWs5vZu8eaif9Y_kIQnHl36hDSA8-aR) to `automated-concept-discovery-result/SAE-embeddings/`.
 
 **Quick run:**
 ```bash
