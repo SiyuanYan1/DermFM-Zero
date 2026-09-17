@@ -358,7 +358,7 @@ def create_model(
 
         # DermFM-Zero wraps the vision tower with mean pooling and uses a text
         # projection head. Matched by the published checkpoint or its model config.
-        is_dermfm = model_name == 'hf-hub:Xieji-Li/DermFM-Zero' or 'PanDerm-large-v2' in model_name
+        is_dermfm = model_name == 'hf-hub:redlessone/DermFM-Zero' or 'PanDerm-large-v2' in model_name
 
         # if statement for loading pretrained vision encoder
         if 'PanDerm-base' in model_name:

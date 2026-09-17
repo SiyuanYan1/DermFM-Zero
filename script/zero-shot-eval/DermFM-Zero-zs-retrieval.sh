@@ -6,7 +6,7 @@ python src/main.py \
     --batch-size=256 \
     --csv-label-key label \
     --csv-img-key filename \
-    --model 'hf-hub:Xieji-Li/DermFM-Zero'
+    --model 'hf-hub:redlessone/DermFM-Zero'
 
 # Cross Retrieval - Derm1M-holdout
 python src/main.py \
@@ -16,4 +16,4 @@ python src/main.py \
     --batch-size=256 \
     --csv-label-key label \
     --csv-img-key image_path \
-    --model 'hf-hub:Xieji-Li/DermFM-Zero'
+    --model 'hf-hub:redlessone/DermFM-Zero'

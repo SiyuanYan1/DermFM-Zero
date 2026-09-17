@@ -211,7 +211,7 @@ class PanDermTFormer(nn.Module):
                     # DermFM-Zero vision tower; weights pulled from the hub.
                     from huggingface_hub import hf_hub_download
                     from open_clip.utils import load_dermfm_checkpoint
-                    _bin = hf_hub_download('Xieji-Li/DermFM-Zero', 'open_clip_pytorch_model.bin')
+                    _bin = hf_hub_download('redlessone/DermFM-Zero', 'open_clip_pytorch_model.bin')
                     full = open_clip.create_model_and_transforms(
                         'PanDerm-large-v2-w-PubMed-256',
                         image_mean=(0.5, 0.5, 0.5), image_std=(0.5, 0.5, 0.5))[0]
@@ -285,7 +285,7 @@ class PanDermTFormer(nn.Module):
             # DermFM-Zero text encoder; weights pulled from the hub.
             from huggingface_hub import hf_hub_download
             from open_clip.utils import load_dermfm_checkpoint
-            _bin = hf_hub_download('Xieji-Li/DermFM-Zero', 'open_clip_pytorch_model.bin')
+            _bin = hf_hub_download('redlessone/DermFM-Zero', 'open_clip_pytorch_model.bin')
             encoder = open_clip.create_model_and_transforms(
                 'PanDerm-large-v2-w-PubMed-256',
                 image_mean=(0.5, 0.5, 0.5), image_std=(0.5, 0.5, 0.5))[0]
