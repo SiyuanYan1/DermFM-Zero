@@ -242,3 +242,4 @@ VQA.zip
 rerun-logs/
 results_report.html
 data_deduplication/models
+HF/
