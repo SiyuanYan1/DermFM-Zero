@@ -265,10 +265,20 @@ def create_model(
 
         model_cfg = model_cfg or get_model_config(model_name)
 
-        if model_cfg is not None or model_name == 'monet':
-            logging.info(f'Loaded {model_name} model config.')
+        if model_cfg is None:
+            logging.error(f'Model config for {model_name} not found; available models {list_models()}.')
+            raise RuntimeError(f'Model config for {model_name} not found.')
+
+        logging.info(f'Loaded {model_name} model config.')
+
+        # MONET ships as an OpenAI CLIP ViT-L/14 with its own published weights,
+        # so it is built here rather than from the open_clip config below. Keep
+        # this scoped to MONET: every other model must honour the caller's
+        # `device` and must not pull in the `clip` package.
+        if model_name == 'monet':
             import clip
             import torchvision.transforms as T
+
             def get_transform(n_px):
                 def convert_image_to_rgb(image):
                     return image.convert("RGB")
@@ -281,14 +291,11 @@ def create_model(
                         T.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
                     ]
                 )
-    
-            device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-            model, preprocess = clip.load("ViT-L/14", device=device, jit=False)[0], get_transform(n_px=224)
-            model.load_state_dict(torch.hub.load_state_dict_from_url("https://aimslab.cs.washington.edu/MONET/weight_clip.pt", map_location=device))
+
+            monet_device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+            model, preprocess = clip.load("ViT-L/14", device=monet_device, jit=False)[0], get_transform(n_px=224)
+            model.load_state_dict(torch.hub.load_state_dict_from_url("https://aimslab.cs.washington.edu/MONET/weight_clip.pt", map_location=monet_device))
             model.eval()
-        else:
-            logging.error(f'Model config for {model_name} not found; available models {list_models()}.')
-            raise RuntimeError(f'Model config for {model_name} not found.')
 
         if force_quick_gelu:
             # override for use of QuickGELU on non-OpenAI transformer models

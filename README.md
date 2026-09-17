@@ -103,7 +103,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | 0.6985 | 0.3345 | 0.6607 |
 | **DermFM-Zero (Ours)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
-| **DermFM-Zero-Open (Ours)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7740** |
+| **DermFM-Zero-Open (Ours)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
