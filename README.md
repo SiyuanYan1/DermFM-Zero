@@ -19,7 +19,7 @@ DermFM-Zero is a dermatology vision–language foundation model that provides ze
 
 </div>
 
-> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint was retrained on 517,455 publicly available image–text pairs using improved training approaches and performs on par with the paper checkpoint; see the benchmark tables below.
+> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint, DermFM-Zero-Open, was retrained on 517,455 publicly available image–text pairs using improved training approaches and performs on par with the paper checkpoint; see the benchmark tables below and the [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf) for training details and full results.
 
 ## 📑 Table of Contents
 
@@ -54,7 +54,7 @@ DermFM-Zero is a dermatology vision–language foundation model that provides ze
 
 ## 📰 Updates
 
-- **2026-09-18** · 🔓 Released checkpoint documented: benchmark tables list the paper checkpoint and the released checkpoint separately; deduplication statistics for both corpora are under `data_deduplication/`.
+- **2026-09-18** · 🔓 Model weights released on the Hugging Face Hub as **DermFM-Zero-Open**, retrained on public data only, with a [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf) (source under `docs/technical_report/`). Benchmark tables now list the paper checkpoint and DermFM-Zero-Open side by side.
 - **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all reader-study results are reproducible from the repository.
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
@@ -82,7 +82,7 @@ DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.4259 | 0.8222 | 0.3260 | 0.3886 | 0.7785 | 0.5403 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.5190 | 0.6799 | 0.3332 | 0.3822 | 0.7812 | 0.5640 |
 | **DermFM-Zero (paper checkpoint)** | **0.7957** | 0.6941 | 0.5979 | 0.7998 | **0.4450** | 0.5075 | **0.8848** | 0.6750 |
-| **DermFM-Zero (released checkpoint)** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
+| **DermFM-Zero-Open (released)** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
 
 ### Few-Shot Learning (10% training data)
 
@@ -103,7 +103,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | 0.6985 | 0.3345 | 0.6607 |
 | **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
-| **DermFM-Zero (released checkpoint)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
+| **DermFM-Zero-Open (released)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
@@ -115,7 +115,7 @@ Evaluated on the Derm1M held-out set (n = 9,806) and SkinCap (n = 3,989).
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.188 | 0.179 | 0.187 | 0.175 | 0.182 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
 | **DermFM-Zero (paper checkpoint)** | **0.457** | **0.454** | 0.369 | 0.349 | **0.407** |
-| **DermFM-Zero (released checkpoint)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
+| **DermFM-Zero-Open (released)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
 ```
@@ -130,6 +130,7 @@ DermFM-Zero/
 ├── reader_studies/                   # Three multinational clinical reader studies (RS1, RS2A, RS2B)
 ├── data_deduplication/               # SSCD-based train/eval leakage analysis pipeline
 ├── statistic_reproduce/              # Bootstrap 95% CI pipeline for benchmark tables
+├── docs/                             # DermFM-Zero-Open technical report (PDF + LaTeX source)
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
 ```
@@ -330,7 +331,7 @@ Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concep
 bash script/automated-concept-discovery/env_setup.sh
 ```
 
-Download the SAE checkpoint (`autoencoder.pth`, trained on features of the released checkpoint) from [Google Drive](https://drive.google.com/drive/folders/10BWs5vZu8eaif9Y_kIQnHl36hDSA8-aR) to `automated-concept-discovery-result/SAE-embeddings/`.
+Download the SAE checkpoint (`autoencoder.pth`, trained on features of DermFM-Zero-Open) from [Google Drive](https://drive.google.com/drive/folders/10BWs5vZu8eaif9Y_kIQnHl36hDSA8-aR) to `automated-concept-discovery-result/SAE-embeddings/`.
 
 **Quick run:**
 ```bash

@@ -39,7 +39,7 @@ data_deduplication/
 │   └── reader-study/
 │       ├── overlap_summary.csv
 │       └── RS*_images/overlaps.csv
-└── results_released/                # against the corpus of the RELEASED checkpoint (same layout; zero-shot and retrieval only)
+└── results_released/                # against the corpus of DermFM-Zero-Open, the RELEASED checkpoint (same layout; zero-shot and retrieval only)
     ├── zero-shot-benchmark/
     └── zero-shot-retrieval/
 ```
@@ -114,7 +114,7 @@ Zero-shot retrieval:
 
 The deduplicated meta CSVs for both retrieval datasets are shipped under `results/zero-shot-retrieval/` and were used to produce the dedup-set retrieval results in the main paper.
 
-### Released checkpoint (`results_released/`)
+### DermFM-Zero-Open, the released checkpoint (`results_released/`)
 
 Same pipeline, run against the 517,455-image corpus of the released checkpoint. Reader-study sets were not re-run.
 
