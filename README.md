@@ -4,77 +4,56 @@
 
 ### A Vision-Language Foundation Model for Dermatology
 
-**Enabling Zero-Shot Clinical Collaboration & Automated Concept Discovery**
-
----
-
-DermFM-Zero is a dermatology vision–language foundation model that provides zero-shot diagnostic decision support, evaluated in primary care and specialist reader studies, and supports automated concept discovery with sparse autoencoders.
+**Zero-shot diagnosis · Clinical collaboration · Automated concept discovery**
 
 [![Paper](https://img.shields.io/badge/arXiv-2602.10624-b31b1b.svg)](https://arxiv.org/abs/2602.10624)
 [![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/DermFM-Zero)
+[![Report](https://img.shields.io/badge/Technical%20Report-PDF-blue.svg)](docs/DermFM-Zero-Open_Technical_Report.pdf)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-[📘 Paper](https://arxiv.org/abs/2602.10624) | [🚀 Quick Start](#-quick-start) | [📊 Benchmarks](#-benchmark-results) | [🧪 Tasks](#-evaluation-tasks) | [💬 Issues](https://github.com/SiyuanYan1/DermFM-Zero/issues)
+[🚀 Quick Start](#-quick-start) | [📊 Benchmarks](#-benchmark-results) | [🧪 Tasks](#-evaluation-tasks) | [🧠 Reader Studies](#-reader-studies) | [💬 Issues](https://github.com/SiyuanYan1/DermFM-Zero/issues)
 
 </div>
 
-> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint, DermFM-Zero-Open, was retrained on 517,455 publicly available image–text pairs using improved training approaches and performs on par with the paper checkpoint; see the benchmark tables below and the [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf) for training details and full results.
+DermFM-Zero is a dermatology vision–language foundation model pretrained with masked latent modelling on over 3 million dermatological images and contrastive alignment on 1 million image–text pairs. This repository contains the released weights, the evaluation code for every task in the paper, the de-identified reader-study data, and the deduplication and statistics pipelines.
 
-## 📑 Table of Contents
+### Key Features
 
-- [✨ Highlights](#-highlights)
-- [📰 Updates](#-updates)
-- [📊 Benchmark Results](#-benchmark-results)
-- [📂 Repository Structure](#-repository-structure)
-- [🚀 Quick Start](#-quick-start)
-- [🧪 Evaluation Tasks](#-evaluation-tasks)
-  - [Task1: Zero-shot Classification](#task1-zero-shot-classification)
-  - [Task2: Zero-shot Cross-modal Retrieval](#task2-zero-shot-cross-modal-retrieval)
-  - [Task3: Linear Probing](#task3-linear-probing)
-  - [Task4: Multimodal Finetuning](#task4-multimodal-finetuning)
-  - [Task5: Visual Question Answering (VQA)](#task5-visual-question-answering-vqa)
-  - [Task6: Automated Concept Discovery](#task6-automated-concept-discovery)
-- [🧠 Reader Studies](#-reader-studies)
-- [🧹 Data Deduplication / Leakage Analysis](#-data-deduplication--leakage-analysis)
-- [📈 Statistic for Benchmarking](#-statistic-for-benchmarking)
-- [👥 Contributors](#-contributors)
-- [⚖️ License](#%EF%B8%8F-license)
-- [📧 Contact](#-contact)
-- [📚 Citation](#-citation)
-## ✨ Highlights
+- 🩺 **Zero-Shot Diagnosis**: Classifies 400+ skin conditions without task-specific training
+- 🔗 **Multimodal Learning**: Supports combining clinical photographs, dermoscopy and patient metadata for skin disease diagnosis and prognosis
+- 🔍 **Cross-Modal Retrieval**: Image-to-text and text-to-image search
+- 🧠 **Built-in Interpretability**: Sparse autoencoders expose named clinical concepts and suppress artefact biases (ruler, hair, pen marks) at inference
+- 👩‍⚕️ **Clinically Validated**: Improved diagnosis and management for 761 clinicians across three multinational reader studies
+- 📐 **Native Resolution**: The released checkpoint accepts any image size and aspect ratio
+- 🔓 **Open Release**: Public-data weights, evaluation code for every task, reader-study data and a technical report
 
-🏆 **State-of-the-art Performance**: Best mean score across 7 zero-shot classification benchmarks (0.675 paper checkpoint, 0.691 released checkpoint)
+## 🔓 Released checkpoint: DermFM-Zero-Open
 
-🔍 **Multimodal Fusion**: Supports clinical images, dermoscopic images, and patient metadata
+The image–text corpus used for the checkpoint evaluated in the paper includes in-house pairs that cannot be redistributed, so the released weights (`hf-hub:redlessone/DermFM-Zero`) are a retrained checkpoint, **DermFM-Zero-Open**:
 
-🧠 **Interpretable AI**: Built-in concept discovery with Sparse Autoencoders (SAE)
+- **Data** — 517,455 publicly available image–text pairs (ISIC, BCN20000, MSKCC, DermNet, Fitzpatrick17k, Derm12345, HIBA and the web/literature sources of Derm1M).
+- **Vision encoder** — initialised from the public [PanDerm](https://github.com/SiyuanYan1/PanDerm) ViT-L/16.
+- **Native-resolution input (new)** — NaViT-style patch-and-pack replaces the fixed 224 × 224 input, keeping fine dermoscopic structure in the >60% of corpus images larger than 224 px; training uses ScaleJitter (short side 224 to native, long side ≤ 448). All results below are at 224 × 224 for a fair comparison; the native-resolution gain is in the technical report (Table 14).
+- **Objective** — [MAKE](https://github.com/XiejiLi/MAGEN-O-MAKE) multi-aspect contrastive alignment (raw caption, disease aspect, concept aspect, sub-captions) plus a [KEP](https://github.com/MAGIC-AI4Med/KEP) knowledge-distillation term from a Derm1M-pretrained text encoder.
+- **Performance** — on par with the paper checkpoint: mean zero-shot score 0.691 vs 0.675 over seven benchmarks, higher on linear probing and multimodal fine-tuning, lower on Derm1M retrieval (tables below).
 
-🌍 **Multi-center Validation**: Evaluated on datasets from Austria, Brazil, Korea, Portugal, and more
+Full details: [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf). Results in the paper refer to the paper checkpoint.
 
 ## 📰 Updates
 
-- **2026-09-18** · 🔓 Model weights released on the Hugging Face Hub as **DermFM-Zero-Open**, retrained on public data only, with a [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf) (source under `docs/technical_report/`). Benchmark tables now list the paper checkpoint and DermFM-Zero-Open side by side.
-- **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all reader-study results are reproducible from the repository.
-- **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
-- **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
-- **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
-- **2026-05-25** · 🧠 Released `reader_studies/` — three multinational reader studies (RS1, RS2A, RS2B) with paired-design statistical pipelines.
-- **2025-12-10** · 🧬 Released `automated-concept-discovery/` — sparse-autoencoder + concept-bottleneck-model pipeline.
-- **2025-09-13** · 🚀 Initial public release.
+- **2026-09-18** · DermFM-Zero-Open weights released on the Hugging Face Hub with a technical report; benchmark tables list both checkpoints.
+- **2026-08-28** · Full de-identified reader-study data released under an approved MUHREC amendment; all reader-study results are reproducible from `reader_studies/`.
 
 ## 📊 Benchmark Results
 
-DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
+**Modality:** D = dermoscopic, C = clinical. Bold = best per column.
 
-**Modality:** D = Dermoscopic, C = Clinical
-
-### Zero-Shot Classification Performance
+### Zero-shot classification
 
 | Model | HAM<br>(7-D) | PAD<br>(6-C) | ISIC2020<br>(2-D) | PH2<br>(2-D) | SNU<br>(134-C) | SD-128<br>(128-C) | Daffodil<br>(5-D) | **Average** |
 |-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
 | **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
-| **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
 | **Metric** | ACC | ACC | Macro F1 | Macro F1 | ACC | ACC | ACC | - |
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4896 | 0.4494 | 0.0857 | 0.1210 | 0.5304 | 0.3336 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.5317 | 0.6292 | 0.0966 | 0.1153 | 0.5785 | 0.4339 |
@@ -84,9 +63,7 @@ DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 | **DermFM-Zero (paper checkpoint)** | **0.7957** | 0.6941 | 0.5979 | 0.7998 | **0.4450** | 0.5075 | **0.8848** | 0.6750 |
 | **DermFM-Zero-Open (released)** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
 
-### Few-Shot Learning (10% training data)
-
-Evaluation with limited labeled data to assess data efficiency and representation quality.
+### Linear probing (10% training data)
 
 | Model | HAM<br>(7-class) | ISIC'20<br>(Melanoma) | PAD<br>(6-class) | SD-128<br>(128-class) | **Average** |
 |-------|:----:|:--------:|:---:|:--------:|:------:|
@@ -105,9 +82,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
 | **DermFM-Zero-Open (released)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
-### Zero-Shot Cross-Modal Retrieval (Mean Recall)
-
-Evaluated on the Derm1M held-out set (n = 9,806) and SkinCap (n = 3,989).
+### Zero-shot cross-modal retrieval (mean recall; Derm1M held-out n = 9,806, SkinCap n = 3,989)
 
 | Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
 |-------|:----:|:----:|:----:|:----:|:----:|
@@ -118,6 +93,7 @@ Evaluated on the Derm1M held-out set (n = 9,806) and SkinCap (n = 3,989).
 | **DermFM-Zero-Open (released)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
+
 ```
 DermFM-Zero/
 ├── src/                              # Core models and modules (bundled open_clip fork)
@@ -130,49 +106,22 @@ DermFM-Zero/
 ├── reader_studies/                   # Three multinational clinical reader studies (RS1, RS2A, RS2B)
 ├── data_deduplication/               # SSCD-based train/eval leakage analysis pipeline
 ├── statistic_reproduce/              # Bootstrap 95% CI pipeline for benchmark tables
-├── docs/                             # DermFM-Zero-Open technical report (PDF + LaTeX source)
+├── docs/                             # DermFM-Zero-Open technical report (PDF)
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Documentation
 ```
+
 ## 🚀 Quick Start
 
-### Installation
 ```bash
-git clone git@github.com:SiyuanYan1/DermFM-Zero.git
+git clone https://github.com/SiyuanYan1/DermFM-Zero.git
 cd DermFM-Zero
-
 conda create -n dermfm-zero python=3.9.20
 conda activate dermfm-zero
 pip install -r requirements.txt
 ```
 
-The concept-discovery task (Task 6) requires Python 3.10; `script/automated-concept-discovery/env_setup.sh` creates a separate environment for it.
-
-### Model Access
-
-DermFM-Zero weights are publicly hosted on the Hugging Face Hub at redlessone/DermFM-Zero. The model loads directly with
-`open_clip.create_model_and_transforms("hf-hub:redlessone/DermFM-Zero")` (see Quick Example below).
-
-**Troubleshooting**: if loading fails, verify that `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`).
-
-### Download Data
-
-Download benchmark data from [Google Drive](https://drive.google.com/drive/folders/1lH53xfkdkBLSMDn6WShjCRV9gi7xQTvM?usp=drive_link) and unzip to the `data/` folder.
-
-Expected directory structure:
-```
-data/
-├── zero-shot-classification/
-├── zero-shot-retrieval/
-├── linear_probe/
-├── multimodal_finetune/               # classification finetune source datasets
-├── VQA/                               # self-contained VQA bundle (images + meta + preprocessing inputs)
-└── automated-concept-discovery/
-```
-
-### Quick Example
-
-Verify your setup with a minimal zero-shot inference (run from the repo root):
+The weights load directly from the Hub through the bundled `open_clip` fork (run from the repo root):
 
 ```python
 import sys, torch
@@ -199,11 +148,36 @@ probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 print(classnames[probs.argmax().item()])    # → basal cell carcinoma
 ```
 
-For a more interactive walkthrough, see [`examples/zero-shot-classification.ipynb`](examples/zero-shot-classification.ipynb).
+A notebook version is in [`examples/zero-shot-classification.ipynb`](examples/zero-shot-classification.ipynb). The upstream `open_clip` package builds a different architecture and will not load this checkpoint.
+
+### Benchmark data
+
+Download from [Google Drive](https://drive.google.com/drive/folders/1lH53xfkdkBLSMDn6WShjCRV9gi7xQTvM?usp=drive_link) and unzip to the `data/` folder:
+
+```
+data/
+├── zero-shot-classification/
+├── zero-shot-retrieval/
+├── linear_probe/
+├── multimodal_finetune/               # classification finetune source datasets
+├── VQA/                               # self-contained VQA bundle (images + meta + preprocessing inputs)
+└── automated-concept-discovery/
+```
 
 ## 🧪 Evaluation Tasks
 
-### Task1: Zero-shot Classification
+One script per task; results are written to `<task>-result/`. The table is an index; full commands and options for each task follow.
+
+| Task | Datasets | Run |
+|---|---|---|
+| Zero-shot classification | HAM, PAD, ISIC2020, PH2, SNU, SD-128, Daffodil | `bash script/zero-shot-eval/DermFM-Zero-zs-classification.sh` |
+| Zero-shot retrieval | Derm1M held-out, SkinCap | `bash script/zero-shot-eval/DermFM-Zero-zs-retrieval.sh` |
+| Linear probing | HAM, ISIC2020, PAD, SD-128 | `bash script/linear-probe/DermFM-Zero-lp-eval.sh` |
+| Multimodal fine-tuning | Derm7pt (C+D+meta), MILK-11 (C+D), PAD (C+meta) | `cd multimodal_finetune && bash ../script/multimodal_finetune/<dataset>.sh` |
+| Visual question answering | Derm7pt-VQA, SkinCap-VQA | `cd VQA && bash ../script/VQA/<dataset>.sh` |
+| Automated concept discovery | F17K+DDI, Derm7pt, ISIC-Intervention | `bash script/automated-concept-discovery/<task>/DermFM-Zero-SAE.sh` (Python 3.10 env via `env_setup.sh`) |
+
+### Task 1: Zero-shot Classification
 
 Evaluate DermFM-Zero on 7 dermatology datasets without fine-tuning.
 
@@ -254,14 +228,14 @@ python src/main.py \
    --model 'hf-hub:redlessone/DermFM-Zero'
 ```
 
-### Task2: Zero-shot Cross-modal Retrieval
+### Task 2: Zero-shot Cross-modal Retrieval
 
 Evaluate image-text retrieval performance on Derm1M Hold-out and SkinCAP datasets.
 ```bash
 bash script/zero-shot-eval/DermFM-Zero-zs-retrieval.sh
 ```
 
-### Task3: Linear Probing
+### Task 3: Linear Probing
 
 Evaluate feature quality by training linear classifiers on frozen features.
 
@@ -270,7 +244,7 @@ Evaluate feature quality by training linear classifiers on frozen features.
 bash script/linear-probe/DermFM-Zero-lp-eval.sh
 ```
 
-### Task4: Multimodal Finetuning
+### Task 4: Multimodal Finetuning
 
 Fine-tune DermFM-Zero with clinical images, dermoscopic images, and patient metadata.
 
@@ -299,7 +273,7 @@ Metadata is converted to text prompts - see [`multimodal_finetune/dataset/prompt
 
 Results are saved to `multimodal_finetune-result/`.
 
-### Task5: Visual Question Answering (VQA)
+### Task 5: Visual Question Answering (VQA)
 
 Fine-tune DermFM-Zero on dermatology VQA benchmarks (Derm7pt-VQA and SkinCap-VQA). Each shell script handles preprocessing on first run and is skipped on subsequent runs.
 
@@ -322,7 +296,7 @@ pipeline.
 
 Results are saved to `VQA-result/{derm7pt,SkinCap}-VQA/`.
 
-### Task6: Automated Concept Discovery
+### Task 6: Automated Concept Discovery
 
 Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concept Bottleneck Models (CBM).
 
@@ -374,13 +348,13 @@ Results are saved to `automated-concept-discovery-result/`.
 
 ## 🧠 Reader Studies
 
-Three multinational clinical reader studies that evaluate DermFM-Zero in collaborative diagnostic workflows: primary care (RS1), specialist benchmarking (RS2A), and specialist collaborative diagnosis (RS2B). Each subfolder is self-contained with code and real data: RS1 and RS2B ship full de-identified reader-level datasets, and RS2A ships its complete session-level analysis dataset.
+Three multinational reader studies with code and real de-identified data in [`reader_studies/`](reader_studies/README.md):
 
-| Study | Setting | Design | Readers | Cases | Real data |
-|-------|---------|--------|---------|-------|-----------|
-| RS1   | Primary care (CN + AU/EN)            | Within-subject, paired   | 38 PCPs   | 146     | **De-identified reader-level data included** |
-| RS2A  | Specialist benchmark (TODIV)         | Independent cohort       | 652 (1,090 sessions) | 1,117   | **Complete session-level analysis dataset included** |
-| RS2B  | Specialist collab. (DermaChallenge)  | Within-subject, paired   | 71        | 1,048   | **De-identified reader-level data included** |
+| Study | Setting | Design | Readers | Cases | Data |
+|-------|---------|--------|---------|-------|------|
+| RS1  | Primary care (CN + AU/EN) | Within-subject, paired | 38 PCPs | 146 | Reader-level |
+| RS2A | Specialist benchmark (TODIV) | Independent cohort | 652 (1,090 sessions) | 1,117 | Session-level |
+| RS2B | Specialist collaboration (DermaChallenge) | Within-subject, paired | 71 | 1,048 | Reader-level |
 
 ```bash
 # Quick run (RS1, de-identified reader-level data included)
@@ -388,17 +362,11 @@ cd reader_studies/reader_study_rs1
 python rs1_statistical_analysis.py --real
 ```
 
-See [`reader_studies/README.md`](reader_studies/README.md) for full documentation, study designs, statistical methods, and data sharing policy.
+## 🔁 Reproducibility
 
-## 🧹 Data Deduplication / Leakage Analysis
+### Data deduplication / leakage analysis
 
-Quantifies near-duplicate overlap between the DermFM-Zero pretraining corpus and every downstream evaluation set, using SSCD copy-detection embeddings + top-1 cosine search (cosine ≥ 0.75 flagged as potential leakage). The pipeline ships with aggregate overlap statistics; the pretraining image bank itself is private. `results/` holds the statistics against the pretraining corpus of the paper checkpoint (as reported in the paper); `results_released/` holds the same statistics against the corpus of the released checkpoint.
-
-| Pipeline stage | What it does | Output |
-|---|---|---|
-| `embed.py`   | SSCD embeddings (ResNet-50 + GeM, 512-d, L2-normalised) | `*.npy` per dataset |
-| `overlap.py` | Top-1 cosine search vs pretrain bank | `overlaps.csv`, `overlap_summary.csv` |
-| `run.sh`     | End-to-end driver across all evaluation sets | full `results/` tree |
+[`data_deduplication/`](data_deduplication/README.md) quantifies near-duplicate overlap between the pretraining corpus and every evaluation set with SSCD copy-detection embeddings (cosine ≥ 0.75 flagged). `results/` holds the statistics for the paper checkpoint's corpus, as reported in the paper; `results_released/` the same for DermFM-Zero-Open. The pretraining image bank itself is private; users supply their own corpus via the paths in `run.sh`.
 
 ```bash
 # Quick run
@@ -407,16 +375,9 @@ pip install -r requirements.txt
 bash run.sh
 ```
 
-See [`data_deduplication/README.md`](data_deduplication/README.md) for the full pipeline, CLI flags, and the per-dataset overlap-rate report.
+### Bootstrap confidence intervals
 
-## 📈 Statistic for Benchmarking
-
-Unified bootstrap 95% CI pipeline that reproduces the zero-shot classification and linear-probing benchmark tables from per-image prediction CSVs. A single script supports two `--task` modes; example prediction CSVs and reference outputs are bundled for one-command validation.
-
-| Task | Input format | Output |
-|---|---|---|
-| `zero_shot`     | per-image softmax CSV per `<dataset>/<model>.csv`       | `model_comparison_results_comprehensive.csv` |
-| `linear_probe`  | per-image softmax CSV per `<dataset>_<pct>pct/<model>/` | `lp_results_<pct>percent_bootstrap.csv`      |
+[`statistic_reproduce/`](statistic_reproduce/README.md) reproduces the zero-shot and linear-probing benchmark tables with 95% bootstrap CIs from per-image prediction CSVs. Example predictions (paper checkpoint) and reference outputs are bundled for one-command validation.
 
 ```bash
 # Quick run (example data bundled)
@@ -425,27 +386,12 @@ python bootstrap_ci.py --task zero_shot --data-root ./examples/zero_shot --outpu
 python bootstrap_ci.py --task lp        --data-root ./examples/linear_probe --output-dir ./out_lp --fractions 100
 ```
 
-See [`statistic_reproduce/README.md`](statistic_reproduce/README.md) for input schema, CLI flags, and how to run on the full benchmark prediction set.
+## ⚖️ License and Terms of Use
 
-
-
-## 👥 Contributors
-
-- [Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en)
-- [Xieji Li](https://scholar.google.com/citations?user=X50rN1oAAAAJ&hl=en)
-
-## ⚖️ License
-
-The model and associated code are released under the CC-BY-NC-ND 4.0 license and may only be used for non-commercial academic research purposes with proper attribution.
-
-## 📧 Contact
-
-**Siyuan Yan** - Research Fellow, Monash University  
-📧 Email: siyuan.yan@monash.edu  
+Model weights and code are released under [CC BY-NC-ND 4.0](LICENSE). They may be used for non-commercial academic research only, may not be redistributed or used to build derivative checkpoints for distribution, and are not a medical device: they must not be used for clinical diagnosis or patient management. Please cite the paper when using the model or code.
 
 ## 📚 Citation
 
-If you find DermFM-Zero useful, please cite:
 ```bibtex
 @misc{yan2026visionlanguagefoundationmodelzeroshot,
       title={A Vision-Language Foundation Model for Zero-shot Clinical Collaboration and Automated Concept Discovery in Dermatology}, 
@@ -458,22 +404,21 @@ If you find DermFM-Zero useful, please cite:
 }
 ```
 
-**Related work:**
+The released vision encoder is initialised from PanDerm; please also cite:
+
 ```bibtex
 @article{yan2025multimodal,
   title={A multimodal vision foundation model for clinical dermatology},
   author={Yan, Siyuan and Yu, Zhen and Primiero, Clare and Vico-Alonso, Cristina and Wang, Zhonghua and Yang, Litao and Tschandl, Philipp and Hu, Ming and Ju, Lie and Tan, Gin and others},
   journal={Nature Medicine},
-  pages={1--12},
-  year={2025},
-  publisher={Nature Publishing Group}
-}
-```
-```bibtex
-@inproceedings{yan2025derm1m,
-  title={Derm1M: A Million-scale Vision-Language Dataset Aligned with Clinical Ontology Knowledge},
-  author={Yan, Siyuan and others},
-  booktitle={ICCV},
+  volume={31},
+  pages={2691--2702},
   year={2025}
 }
 ```
+
+Related: [Derm1M](https://github.com/SiyuanYan1/Derm1M) (ICCV 2025) · [MAKE](https://github.com/XiejiLi/MAGEN-O-MAKE) (MICCAI 2025)
+
+## 📧 Contact
+
+[Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en) (siyuan.yan@monash.edu) · [Xieji Li](https://scholar.google.com/citations?user=X50rN1oAAAAJ&hl=en) — Monash University
