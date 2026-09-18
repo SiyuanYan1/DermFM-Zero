@@ -8,7 +8,7 @@
 
 ---
 
-DermFM-Zero is the first multimodal foundation model to provide effective clinical decision support across primary care and specialty settings without fine-tuning. Beyond diagnosis, it unlocks emerging capabilities in automated concept discovery, advancing AI-assisted dermatology.
+DermFM-Zero is a dermatology vision–language foundation model that provides zero-shot diagnostic decision support, evaluated in primary care and specialist reader studies, and supports automated concept discovery with sparse autoencoders.
 
 [![Paper](https://img.shields.io/badge/arXiv-2602.10624-b31b1b.svg)](https://arxiv.org/abs/2602.10624)
 [![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/DermFM-Zero)
@@ -44,7 +44,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 - [📚 Citation](#-citation)
 ## ✨ Highlights
 
-🏆 **State-of-the-art Performance**: Achieves 73.20% average accuracy across 7 zero-shot classification benchmarks
+🏆 **State-of-the-art Performance**: Best mean score across 7 zero-shot classification benchmarks (0.675 paper checkpoint, 0.691 released checkpoint)
 
 🔍 **Multimodal Fusion**: Supports clinical images, dermoscopic images, and patient metadata
 
@@ -107,7 +107,7 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
-Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 3,989).
+Evaluated on the Derm1M held-out set (n = 9,806) and SkinCap (n = 3,989).
 
 | Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
 |-------|:----:|:----:|:----:|:----:|:----:|
