@@ -20,11 +20,11 @@ CUDA_VISIBLE_DEVICES=2 python train.py \
     --meta_fusion_mode 'cross attention' \
     --encoder_pool 'mean' \
     --out 'mlp' \
-    --output_dir '../multimodal_finetune-result/PAD/PanDermv2/'
+    --output_dir '../multimodal_finetune-result/PAD/DermFM-Zero/'
 
 CUDA_VISIBLE_DEVICES=0 python test.py \
     --model_name 'DermFM-Zero' \
-    --model_path '../multimodal_finetune-result/PAD/PanDermv2/bestacc_model_19.pth' \
+    --model_path '../multimodal_finetune-result/PAD/DermFM-Zero/bestacc_model_19.pth' \
     --dataset_name 'PAD' \
     --class_num 6 \
     --epochs 50 \
@@ -43,4 +43,4 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
     --meta_fusion_mode 'cross attention' \
     --encoder_pool 'mean' \
     --out 'mlp' \
-    --output_dir '../multimodal_finetune-result/PAD/PanDermv2/'
+    --output_dir '../multimodal_finetune-result/PAD/DermFM-Zero/'

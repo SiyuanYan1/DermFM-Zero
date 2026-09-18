@@ -14,7 +14,7 @@ python src/main.py \
    --csv-img-key image_path \
    --model 'hf-hub:redlessone/DermFM-Zero'
 
-# Run PanDerm-2 on your dataset
+# Run DermFM-Zero on your dataset
 python src/main.py \
    --val-data=""  \
    --dataset-type "csv" \

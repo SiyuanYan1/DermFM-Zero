@@ -2,7 +2,7 @@
 #rm -r linear_probing_logs/*
 
 ################################################################################
-# MODELS CONFIGURATION - PanDerm-2(From huggingface API)
+# MODELS CONFIGURATION - DermFM-Zero (from the Hugging Face Hub)
 ################################################################################
 models=('open_clip_hf-hub:redlessone/DermFM-Zero')
 declare -A checkpoints=(

@@ -52,7 +52,7 @@ def get_eval_transforms(
 # import torchsnooper
 # @torchsnooper.snoop()
 def get_encoder(model_name,which_img_norm='imagenet'):
-    roo_path='/home/share/FM_Code/PanDerm/Model_Weights/'
+    roo_path='Model_Weights/'
     # which_img_norm='imagenet'
     print('loading model checkpoint')
 

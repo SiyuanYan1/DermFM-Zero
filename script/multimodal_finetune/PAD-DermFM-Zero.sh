@@ -3,7 +3,7 @@
 set -euo pipefail
 CUDA_DEVICES="${CUDA_DEVICES:-0}"
 SEED="${SEED:-122}"
-PY="${PY:-/mnt/hdd/sda/xjli/miniconda3/envs_old/PanDerm-v2/bin/python}"
+PY="${PY:-python}"
 OUT_DIR="${OUT_DIR:-../multimodal_finetune-result/PAD/DermFM-Zero/}"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
