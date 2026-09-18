@@ -19,7 +19,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 </div>
 
-> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint was retrained on 517,455 publicly available image–text pairs (the corpus used in the paper includes in-house pairs that cannot be redistributed) and performs on par with the paper checkpoint; see the benchmark tables below.
+> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint was retrained on 517,455 publicly available image–text pairs using improved training approaches and performs on par with the paper checkpoint; see the benchmark tables below.
 
 ## 📑 Table of Contents
 
