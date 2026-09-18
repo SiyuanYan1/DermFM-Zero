@@ -1,8 +1,8 @@
 # Export visual feature on SAE Dataset
 python export_visual_features.py \
     --model_name hf-hub:redlessone/DermFM-Zero \
-    --csv_path /mnt/hdd/sdd/siyuanyan/Derm1M_v2/csv/Derm1M_v2_pretrain.csv \
-    --data_root /mnt/hdd/sdd/siyuanyan/Derm1M_v2/ \
+    --csv_path data/Derm1M/pretrain.csv \
+    --data_root data/Derm1M/ \
     --batch_size 2048 \
     --num_workers 16 \
     --device cuda \

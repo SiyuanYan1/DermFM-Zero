@@ -14,13 +14,13 @@ cd ..
 
 # Extract SAE concept
 python automated-concept-discovery/0_extract_sae_activations.py \
-  --checkpoint /mnt/hdd/sdb/xieji/DermFM-Zero-Open/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
+  --checkpoint automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --output automated-concept-discovery-result/clinical-malignant/learned_activation.npy 
 
 # Extract SAE concept
 python automated-concept-discovery/0_extract_sae_activations.py \
-  --checkpoint /mnt/hdd/sdb/xieji/DermFM-Zero-Open/automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
+  --checkpoint automated-concept-discovery-result/SAE-embeddings/autoencoder.pth \
   --embeddings automated-concept-discovery-result/clinical-malignant/all_embeddings.npy \
   --output automated-concept-discovery-result/clinical-malignant/learned_activation.npy
 

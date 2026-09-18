@@ -19,7 +19,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 </div>
 
-> 🔒 **Availability**: The DermFM-Zero model weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The model was retrained exclusively on public data and achieves performance comparable to the original version.
+> 🔓 **Availability**: The DermFM-Zero weights are publicly available on the Hugging Face Hub at https://huggingface.co/redlessone/DermFM-Zero. The released checkpoint was retrained on 517,455 publicly available image–text pairs (the corpus used in the paper includes in-house pairs that cannot be redistributed) and performs on par with the paper checkpoint; see the benchmark tables below.
 
 ## 📑 Table of Contents
 
@@ -54,7 +54,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📰 Updates
 
-- **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all published results are now reproducible from the repository.
+- **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all reader-study results are reproducible from the repository.
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
 - **2026-05-31** · 🧹 Released `data_deduplication/` — image-level deduplication scripts and reports.
@@ -70,19 +70,18 @@ DermFM-Zero demonstrates state-of-the-art performance across diverse benchmarks.
 
 ### Zero-Shot Classification Performance
 
-| Model | HAM<br>(7-D) | PAD<br>(6-C) | ISIC2020<br>(2-D) | PH2<br>(2-C) | SNU<br>(134-C) | SD-128<br>(128-C) | Daffodil<br>(5-D) | **Average** |
+| Model | HAM<br>(7-D) | PAD<br>(6-C) | ISIC2020<br>(2-D) | PH2<br>(2-D) | SNU<br>(134-C) | SD-128<br>(128-C) | Daffodil<br>(5-D) | **Average** |
 |-------|:----:|:----:|:-----:|:---:|:------:|:-------:|:--------:|:------:|
 | **Task** | Skin Cancer | Skin Cancer | Mel Det. | Mel Det. | DDX | DDX | Rare DX | - |
 | **Country/Inst** | Austria | Brazil | Multi-center | Portugal | Korea | Multi-center | Multi-center | - |
-| **Metric** | ACC | ACC | AUROC | AUROC | ACC | ACC | ACC | - |
-| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4772 | 0.3855 | 0.0857 | 0.1210 | 0.5304 | 0.3227 |
-| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.7305 | 0.8441 | 0.0966 | 0.1153 | 0.5785 | 0.4930 |
-| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.6940 | 0.8370 | 0.1414 | 0.2028 | 0.7607 | 0.4919 |
-| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.8141 | 0.9095 | 0.3260 | 0.3886 | 0.7785 | 0.6082 |
-| DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6813 | 0.6074 | 0.8235 | 0.8285 | 0.2532 | 0.2783 | 0.7246 | 0.5995 |
-| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.7876 | 0.7975 | 0.3332 | 0.3822 | 0.7812 | 0.6192 |
-| **DermFM-Zero (Ours)** | **0.7957** | 0.6941 | **0.8663** | **0.9304** | **0.4450** | 0.5075 | **0.8848** | **0.7320** |
-| **DermFM-Zero-Open (Ours)** | 0.7858 | **0.7592** | 0.8490 | 0.9196 | 0.4212 | **0.5196** | 0.8686 | 0.7319 |
+| **Metric** | ACC | ACC | Macro F1 | Macro F1 | ACC | ACC | ACC | - |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.2754 | 0.3839 | 0.4896 | 0.4494 | 0.0857 | 0.1210 | 0.5304 | 0.3336 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6347 | 0.4512 | 0.5317 | 0.6292 | 0.0966 | 0.1153 | 0.5785 | 0.4339 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.5208 | 0.6774 | 0.1414 | 0.2028 | 0.7607 | 0.4444 |
+| MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.4259 | 0.8222 | 0.3260 | 0.3886 | 0.7785 | 0.5403 |
+| DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.5190 | 0.6799 | 0.3332 | 0.3822 | 0.7812 | 0.5640 |
+| **DermFM-Zero (paper checkpoint)** | **0.7957** | 0.6941 | 0.5979 | 0.7998 | **0.4450** | 0.5075 | **0.8848** | 0.6750 |
+| **DermFM-Zero (released checkpoint)** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
 
 ### Few-Shot Learning (10% training data)
 
@@ -102,8 +101,8 @@ Evaluation with limited labeled data to assess data efficiency and representatio
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | 0.6985 | 0.3345 | 0.6607 |
-| **DermFM-Zero (Ours)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
-| **DermFM-Zero-Open (Ours)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
+| **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
+| **DermFM-Zero (released checkpoint)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
 ### Zero-Shot Cross-Modal Retrieval (Mean Recall)
 
@@ -114,8 +113,8 @@ Evaluated on Derm1M validation set (n = 9,806) and SkinCap (n = 3,989).
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.122 | 0.104 | 0.174 | 0.127 | 0.132 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.188 | 0.179 | 0.187 | 0.175 | 0.182 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
-| **DermFM-Zero (Ours)** | **0.457** | **0.454** | 0.369 | 0.349 | **0.407** |
-| **DermFM-Zero-Open (Ours)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
+| **DermFM-Zero (paper checkpoint)** | **0.457** | **0.454** | 0.369 | 0.349 | **0.407** |
+| **DermFM-Zero (released checkpoint)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
 ```
@@ -145,12 +144,14 @@ conda activate dermfm-zero
 pip install -r requirements.txt
 ```
 
+The concept-discovery task (Task 6) requires Python 3.10; `script/automated-concept-discovery/env_setup.sh` creates a separate environment for it.
+
 ### Model Access
 
 DermFM-Zero weights are publicly hosted on the Hugging Face Hub at redlessone/DermFM-Zero. The model loads directly with
 `open_clip.create_model_and_transforms("hf-hub:redlessone/DermFM-Zero")` (see Quick Example below).
 
-**Troubleshooting**: if you see a `401 Unauthorized` error, verify `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`) and the token has been set in the same shell session you run the code in.
+**Troubleshooting**: if loading fails, verify that `huggingface_hub >= 0.20` is installed (`pip install -U huggingface_hub`).
 
 ### Download Data
 
@@ -389,7 +390,7 @@ See [`reader_studies/README.md`](reader_studies/README.md) for full documentatio
 
 ## 🧹 Data Deduplication / Leakage Analysis
 
-Quantifies near-duplicate overlap between the DermFM-Zero pretraining corpus and every downstream evaluation set, using SSCD copy-detection embeddings + top-1 cosine search (cosine ≥ 0.75 flagged as potential leakage). The pipeline ships with aggregate overlap statistics; the pretraining image bank itself is private.
+Quantifies near-duplicate overlap between the DermFM-Zero pretraining corpus and every downstream evaluation set, using SSCD copy-detection embeddings + top-1 cosine search (cosine ≥ 0.75 flagged as potential leakage). The pipeline ships with aggregate overlap statistics; the pretraining image bank itself is private. `results/` holds the statistics against the pretraining corpus of the paper checkpoint (as reported in the paper); `results_released/` holds the same statistics against the corpus of the released checkpoint.
 
 | Pipeline stage | What it does | Output |
 |---|---|---|

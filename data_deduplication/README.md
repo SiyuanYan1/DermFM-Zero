@@ -77,18 +77,19 @@ python overlap.py downstream \
 ## 📊 Reported overlap rates
 
 All tables below use cosine threshold 0.75 and are computed against the
-**retrained** pre-training corpus (`PanDerm-2-Retrain-fixed-origin_resolution.csv`,
-517,455 images). The reader-study table is reported against the original corpus.
+pre-training corpus of the checkpoint evaluated in the paper (`results/`), as
+reported in the paper. The same statistics against the corpus of the released
+checkpoint (517,455 publicly available images) are in `results_released/`.
 
 Downstream zero-shot:
 
 | Dataset                   | Total | Overlap | Rate    |
 |---------------------------|------:|--------:|--------:|
-| daffodil-5-zero-shot      | 1,910 |     258 | 13.51 % |
+| daffodil-5-zero-shot      | 1,910 |     259 | 13.56 % |
 | ph2-2-zero-shot           |   200 |      25 | 12.50 % |
-| sd-128-zero-shot          | 1,405 |      23 |  1.64 % |
-| isic2020-2-zero-shot      | 4,969 |      78 |  1.57 % |
-| HAM-official-7-zero-shot  | 1,503 |      18 |  1.20 % |
+| sd-128-zero-shot          | 1,405 |      22 |  1.57 % |
+| isic2020-2-zero-shot      | 4,969 |      38 |  0.76 % |
+| HAM-official-7-zero-shot  | 1,503 |      15 |  1.00 % |
 | pad-zero-shot             |   461 |       1 |  0.22 % |
 | snu-134-zero-shot         | 2,101 |       3 |  0.14 % |
 
@@ -106,7 +107,7 @@ Zero-shot retrieval:
 
 | Dataset            | Total | Overlap | Rate    |
 |--------------------|------:|--------:|--------:|
-| Derm1M-hold_out    | 9,806 |   1,600 | 16.32 % |
+| Derm1M-hold_out    | 9,806 |   1,598 | 16.30 % |
 | skincap            | 3,989 |   3,334 | 83.58 % |
 
 The deduplicated meta CSVs for both retrieval datasets are shipped under `results/zero-shot-retrieval/` and were used to produce the dedup-set retrieval results in the main paper.

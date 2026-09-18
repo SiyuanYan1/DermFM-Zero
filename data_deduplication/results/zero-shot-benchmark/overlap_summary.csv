@@ -1,8 +1,8 @@
 dataset,total_images,overlapping_images,overlap_rate
-HAM-official-7-zero-shot,1503,18,1.20%
+HAM-official-7-zero-shot,1503,15,1.00%
 ph2-2-zero-shot,200,25,12.50%
-isic2020-2-zero-shot,4969,78,1.57%
+isic2020-2-zero-shot,4969,38,0.76%
 snu-134-zero-shot,2101,3,0.14%
-daffodil-5-zero-shot,1910,258,13.51%
+daffodil-5-zero-shot,1910,259,13.56%
 pad-zero-shot,461,1,0.22%
-sd-128-zero-shot,1405,23,1.64%
+sd-128-zero-shot,1405,22,1.57%

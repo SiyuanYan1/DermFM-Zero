@@ -235,17 +235,17 @@ def main():
     
     # === Path Parameters ===
     parser.add_argument('--data_dir', type=str, 
-                       default='/mnt/hdd/sda/xjli/repos/MAKE/data/ISIC_hair_bias-XJ',
+                       default='data/automated-concept-discovery/ISIC_hair_bias',
                        help='Data directory containing images and metadata')
     parser.add_argument('--result_dir', type=str,
-                       default='/mnt/hdd/sda/xjli/repos/CFN/result/ISIC_hair_bias-XJ/PanDermv2',
+                       default='automated-concept-discovery-result/ISIC_hair_bias/DermFM-Zero',
                        help='Result directory containing activations and importance weights')
     parser.add_argument('--project_root', type=str, default='../',
                        help='Project root directory (for importing modules)')
     
     # === Model Parameters ===
     parser.add_argument('--sae_checkpoint', type=str,
-                       default='/mnt/hdd/sda/xjli/repos/CFN/result-pretrain-using-pandermv2-data/pandermv2-pretrain/PanDermv2/autoencoder.pth',
+                       default='automated-concept-discovery-result/SAE-embeddings/autoencoder.pth',
                        help='Path to SAE autoencoder checkpoint')
     parser.add_argument('--clip_model_name', type=str,
                        default='PanDerm-large-w-PubMed-256',

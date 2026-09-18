@@ -37,7 +37,7 @@ models=('PanDerm' 'MONET' 'biomedclip' 'open_clip_vit_large_14' 'dinov3-l16' 'di
 #   ['MODEL_NAME']='None'                     # Online/HF model
 
 declare -A checkpoints=(
-  ['PanDerm']='/mnt/hdd/sdc/syyan/My_Code/PanDerm/classification/panderm_ll_data6_checkpoint-499.pth' # Path to PanDerm checkpoint in your local workstation
+  ['PanDerm']='Model_Weights/panderm_ll_data6_checkpoint-499.pth' # Path to PanDerm checkpoint in your local workstation
   ['MONET']='None'
   ['biomedclip']='None'
   ['open_clip_vit_large_14']='None'
