@@ -12,7 +12,7 @@ Pipeline that quantifies **data leakage** between the DermFM-Zero pre-training c
 
 ## 📋 Overview
 
-DermFM-Zero is pre-trained on ～1M dermatology image–text pairs. To rule out benchmark contamination, this pipeline checks every downstream evaluation image against the pretraining bank using SSCD copy-detection embeddings and flags any pair with cosine similarity ≥ 0.75 as a potential leak.
+The checkpoint evaluated in the paper is pre-trained on ~1M dermatology image–text pairs; the released checkpoint on 517,455 publicly available pairs. To rule out benchmark contamination, this pipeline checks every downstream evaluation image against the pretraining bank using SSCD copy-detection embeddings and flags any pair with cosine similarity ≥ 0.75 as a potential leak.
 
 | Pipeline stage | What it does | Output |
 |---|---|---|
@@ -28,17 +28,20 @@ data_deduplication/
 ├── overlap.py          # overlap detector (downstream | reader_study modes)
 ├── run.sh              # end-to-end driver (edit the paths at the top)
 ├── requirements.txt
-└── results/
+├── results/                         # against the corpus of the PAPER checkpoint (numbers reported in the paper)
+│   ├── zero-shot-benchmark/
+│   │   ├── overlap_summary.csv         # per-dataset totals + overlap rates
+│   │   └── <dataset>/overlaps.csv      # flagged eval images (pretrain side redacted)
+│   ├── zero-shot-retrieval/
+│   │   ├── overlap_summary.csv                  # Derm1M + SkinCap totals + rates
+│   │   ├── Derm1M-hold_out_deduplicated.csv     # original meta minus flagged rows
+│   │   └── skincap_deduplicated.csv             # original meta minus flagged rows
+│   └── reader-study/
+│       ├── overlap_summary.csv
+│       └── RS*_images/overlaps.csv
+└── results_released/                # against the corpus of the RELEASED checkpoint (same layout; zero-shot and retrieval only)
     ├── zero-shot-benchmark/
-    │   ├── overlap_summary.csv         # per-dataset totals + overlap rates
-    │   └── <dataset>/overlaps.csv      # flagged eval images (pretrain side redacted)
-    ├── zero-shot-retrieval/
-    │   ├── overlap_summary.csv                  # Derm1M + SkinCap totals + rates
-    │   ├── Derm1M-hold_out_deduplicated.csv     # original meta minus flagged rows
-    │   └── skincap_deduplicated.csv             # original meta minus flagged rows
-    └── reader-study/
-        ├── overlap_summary.csv
-        └── RS*_images/overlaps.csv
+    └── zero-shot-retrieval/
 ```
 
 ## 🚀 Quick Start
@@ -76,10 +79,9 @@ python overlap.py downstream \
 
 ## 📊 Reported overlap rates
 
-All tables below use cosine threshold 0.75 and are computed against the
-pre-training corpus of the checkpoint evaluated in the paper (`results/`), as
-reported in the paper. The same statistics against the corpus of the released
-checkpoint (517,455 publicly available images) are in `results_released/`.
+All tables use cosine threshold 0.75.
+
+### Paper checkpoint (`results/`) — numbers reported in the paper
 
 Downstream zero-shot:
 
@@ -111,6 +113,22 @@ Zero-shot retrieval:
 | skincap            | 3,989 |   3,334 | 83.58 % |
 
 The deduplicated meta CSVs for both retrieval datasets are shipped under `results/zero-shot-retrieval/` and were used to produce the dedup-set retrieval results in the main paper.
+
+### Released checkpoint (`results_released/`)
+
+Same pipeline, run against the 517,455-image corpus of the released checkpoint. Reader-study sets were not re-run.
+
+| Dataset                   | Total | Overlap | Rate    |
+|---------------------------|------:|--------:|--------:|
+| daffodil-5-zero-shot      | 1,910 |     258 | 13.51 % |
+| ph2-2-zero-shot           |   200 |      25 | 12.50 % |
+| sd-128-zero-shot          | 1,405 |      23 |  1.64 % |
+| isic2020-2-zero-shot      | 4,969 |      78 |  1.57 % |
+| HAM-official-7-zero-shot  | 1,503 |      18 |  1.20 % |
+| pad-zero-shot             |   461 |       1 |  0.22 % |
+| snu-134-zero-shot         | 2,101 |       3 |  0.14 % |
+| Derm1M-hold_out (retrieval) | 9,806 | 1,600 | 16.32 % |
+| skincap (retrieval)       | 3,989 |   3,334 | 83.58 % |
 
 ## 🔒 Data sharing
 
