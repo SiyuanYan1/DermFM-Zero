@@ -54,6 +54,7 @@ DermFM-Zero is the first multimodal foundation model to provide effective clinic
 
 ## 📰 Updates
 
+- **2026-09-18** · 🔓 Released checkpoint documented: benchmark tables list the paper checkpoint and the released checkpoint separately; deduplication statistics for both corpora are under `data_deduplication/`.
 - **2026-08-28** · 🔓 Released the full de-identified reader study data under approved MUHREC amendment — all reader-study results are reproducible from the repository.
 - **2026-06-01** · 📊 Released `statistic_reproduce/` — unified bootstrap 95% CI pipeline for zero-shot classification and linear-probing benchmark tables, with example prediction CSVs and reference outputs.
 - **2026-05-31** · 🧪 Released `VQA/` — Visual Question Answering preprocessing and evaluation pipeline.
@@ -329,7 +330,7 @@ Discover interpretable concepts using Sparse Autoencoders (SAE) and build Concep
 bash script/automated-concept-discovery/env_setup.sh
 ```
 
-Download SAE checkpoint (`autoencoder.pth`) from [Google Drive](https://drive.google.com/drive/folders/10BWs5vZu8eaif9Y_kIQnHl36hDSA8-aR) to `automated-concept-discovery-result/SAE-embeddings/`.
+Download the SAE checkpoint (`autoencoder.pth`, trained on features of the released checkpoint) from [Google Drive](https://drive.google.com/drive/folders/10BWs5vZu8eaif9Y_kIQnHl36hDSA8-aR) to `automated-concept-discovery-result/SAE-embeddings/`.
 
 **Quick run:**
 ```bash

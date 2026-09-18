@@ -1,6 +1,6 @@
 # Benchmark Bootstrap CI
 
-Provides a single command-line bootstrap-CI pipeline for the zero-shot classification and linear-probing benchmark tables. Includes example prediction CSVs and reference outputs so the pipeline can be validated end-to-end before being applied to a full prediction set.
+Provides a single command-line bootstrap-CI pipeline for the zero-shot classification and linear-probing benchmark tables. Includes example prediction CSVs and reference outputs so the pipeline can be validated end-to-end before being applied to a full prediction set. The `DermFM-Zero` prediction CSVs in `examples/` come from the paper checkpoint, so the reference outputs match the paper's tables.
 
 ## 📋 Tasks at a glance
 
