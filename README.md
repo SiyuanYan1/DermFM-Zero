@@ -73,7 +73,7 @@ Full details: [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf). Re
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.6959 | 0.4318 | 0.6499 | 0.2541 | 0.5079 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.8064 | 0.8036 | 0.6464 | 0.2747 | 0.6328 |
 | BiomedGPT [[6]](https://arxiv.org/abs/2305.17100) | 0.7565 | 0.7838 | 0.5249 | 0.1694 | 0.5586 |
-| PanDerm [[7]](https://www.nature.com/articles/s41591-024-02887-x) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
+| PanDerm [[7]](https://www.nature.com/articles/s41591-025-03747-y) | 0.7898 | 0.8417 | 0.6508 | 0.3483 | 0.6577 |
 | DermLIP-ViT-B-16 [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8157 | 0.8058 | 0.6594 | 0.3552 | 0.6590 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.8184 | 0.8707 | 0.6529 | 0.3637 | 0.6764 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
@@ -82,14 +82,14 @@ Full details: [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf). Re
 | **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
 | **DermFM-Zero-Open (released)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
-### Zero-shot cross-modal retrieval (mean recall; Derm1M held-out n = 9,806, SkinCap n = 3,989)
+### Zero-shot cross-modal retrieval (mean of R@5, R@10 and R@50; Derm1M held-out n = 9,806, SkinCap n = 3,989)
 
 | Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
 |-------|:----:|:----:|:----:|:----:|:----:|
-| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.122 | 0.104 | 0.174 | 0.127 | 0.132 |
-| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.188 | 0.179 | 0.187 | 0.175 | 0.182 |
-| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.171 | 0.159 | 0.215 | 0.203 | 0.187 |
-| **DermFM-Zero (paper checkpoint)** | **0.457** | **0.454** | 0.369 | 0.349 | **0.407** |
+| CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.124 | 0.105 | 0.176 | 0.128 | 0.133 |
+| BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.191 | 0.181 | 0.188 | 0.176 | 0.184 |
+| MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.173 | 0.161 | 0.219 | 0.205 | 0.189 |
+| **DermFM-Zero (paper checkpoint)** | **0.465** | **0.460** | 0.375 | 0.353 | **0.413** |
 | **DermFM-Zero-Open (released)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
@@ -191,13 +191,13 @@ python src/main.py \
    --val-data="" \
    --dataset-type "csv" \
    --batch-size=1024 \
-   --zeroshot-eval1=data/zero-shot-classification/pad-zero-shot-test.csv \
-   --zeroshot-eval2=data/zero-shot-classification/HAM-official-7-zero-shot-test.csv \
-   --zeroshot-eval3=data/zero-shot-classification/snu-134-zero-shot-test.csv \
-   --zeroshot-eval4=data/zero-shot-classification/sd-128-zero-shot-test.csv \
-   --zeroshot-eval5=data/zero-shot-classification/daffodil-5-zero-shot-test.csv \
-   --zeroshot-eval6=data/zero-shot-classification/ph2-2-zero-shot-test.csv \
-   --zeroshot-eval7=data/zero-shot-classification/isic2020-2-zero-shot-test.csv \
+   --zeroshot-eval1=data/zero-shot-classification/pad-zero-shot/meta.csv \
+   --zeroshot-eval2=data/zero-shot-classification/HAM-official-7-zero-shot/meta.csv \
+   --zeroshot-eval3=data/zero-shot-classification/snu-134-zero-shot/meta.csv \
+   --zeroshot-eval4=data/zero-shot-classification/sd-128-zero-shot/meta.csv \
+   --zeroshot-eval5=data/zero-shot-classification/daffodil-5-zero-shot/meta.csv \
+   --zeroshot-eval6=data/zero-shot-classification/ph2-2-zero-shot/meta.csv \
+   --zeroshot-eval7=data/zero-shot-classification/isic2020-2-zero-shot/meta.csv \
    --csv-label-key label \
    --csv-img-key image_path \
    --model 'hf-hub:redlessone/DermFM-Zero'
