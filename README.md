@@ -82,7 +82,9 @@ Full details: [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf). Re
 | **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
 | **DermFM-Zero-Open (released)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
-### Zero-shot cross-modal retrieval (mean of R@5, R@10 and R@50; Derm1M held-out n = 9,806, SkinCap n = 3,989)
+### Zero-shot cross-modal retrieval
+
+Mean recall over R@5, R@10 and R@50 on the Derm1M held-out set (n = 9,806) and SkinCap (n = 3,989).
 
 | Model | Derm1M<br>I→T | Derm1M<br>T→I | SkinCap<br>I→T | SkinCap<br>T→I | Average |
 |-------|:----:|:----:|:----:|:----:|:----:|
