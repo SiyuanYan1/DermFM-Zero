@@ -421,4 +421,4 @@ Related: [Derm1M](https://github.com/SiyuanYan1/Derm1M) (ICCV 2025) · [MAKE](ht
 
 ## 📧 Contact
 
-[Siyuan Yan](https://scholar.google.com/citations?user=LGcOLREAAAAJ&hl=en) (siyuan.yan@monash.edu) · [Xieji Li](https://scholar.google.com/citations?user=X50rN1oAAAAJ&hl=en) — Monash University
+[Siyuan Yan](https://scholar.google.com/citations?hl=en&user=HANR6RYAAAAJ&sortby=pubdate) (siyuan.yan@monash.edu) — Monash University
