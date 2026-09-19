@@ -23,7 +23,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
 
 CUDA_VISIBLE_DEVICES=0 python test.py \
     --model_name 'DermFM-Zero' \
-    --model_path '../multimodal_finetune-result/MILK-11/DermFM-Zero_weighted_sampler/bestvalloss_model_21.pth' \
+    --model_path "$(ls -t ../multimodal_finetune-result/MILK-11/DermFM-Zero_weighted_sampler/bestvalloss_model_*.pth | head -1)"   # checkpoint saved by train.py (epoch varies per run) \
     --dataset_name 'MILK-11' \
     --class_num 11 \
     --epochs 50 \

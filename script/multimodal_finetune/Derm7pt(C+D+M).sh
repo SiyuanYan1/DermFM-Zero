@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES=2 python train.py \
 
 CUDA_VISIBLE_DEVICES=2 python test.py \
     --model_name 'DermFM-Zero' \
-    --model_path '../multimodal_finetune-result/derm7pt/DermFM-Zero/bestacc_model_33.pth' \
+    --model_path "$(ls -t ../multimodal_finetune-result/derm7pt/DermFM-Zero/bestacc_model_*.pth | head -1)"   # checkpoint saved by train.py (epoch varies per run) \
     --dataset_name 'Derm7pt' \
     --dir_release "../data/multimodal_finetune/derm7pt/" \
     --epochs 50 \
