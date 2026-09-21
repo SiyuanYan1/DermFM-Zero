@@ -28,18 +28,6 @@ DermFM-Zero is a dermatology vision–language foundation model pretrained with 
 - 📐 **Native Resolution**: The released checkpoint accepts any image size and aspect ratio
 - 🔓 **Open Release**: Public-data weights, evaluation code for every task, reader-study data and a technical report
 
-## 🔓 Released checkpoint: DermFM-Zero-Open
-
-The image–text corpus used for the checkpoint evaluated in the paper includes in-house pairs that cannot be redistributed, so the released weights (`hf-hub:redlessone/DermFM-Zero`) are a retrained checkpoint, **DermFM-Zero-Open**:
-
-- **Data** — 517,455 publicly available image–text pairs (ISIC, BCN20000, MSKCC, DermNet, Fitzpatrick17k, Derm12345, HIBA and the web/literature sources of Derm1M).
-- **Vision encoder** — initialised from the public [PanDerm](https://github.com/SiyuanYan1/PanDerm) ViT-L/16.
-- **Native-resolution input (new)** — NaViT-style patch-and-pack replaces the fixed 224 × 224 input, keeping fine dermoscopic structure in the >60% of corpus images larger than 224 px; training uses ScaleJitter (short side 224 to native, long side ≤ 448). All results below are at 224 × 224 for a fair comparison; the native-resolution gain is in the technical report (Table 14).
-- **Objective** — [MAKE](https://github.com/XiejiLi/MAGEN-O-MAKE) multi-aspect contrastive alignment (raw caption, disease aspect, concept aspect, sub-captions) plus a [KEP](https://github.com/MAGIC-AI4Med/KEP) knowledge-distillation term from a Derm1M-pretrained text encoder.
-- **Performance** — on par with the paper checkpoint: mean zero-shot score 0.691 vs 0.675 over seven benchmarks, higher on linear probing and multimodal fine-tuning, lower on Derm1M retrieval (tables below).
-
-Full details: [technical report](docs/DermFM-Zero-Open_Technical_Report.pdf). Results in the paper refer to the paper checkpoint.
-
 ## 📰 Updates
 
 - **2026-09-18** · DermFM-Zero-Open weights released on the Hugging Face Hub with a technical report; benchmark tables list both checkpoints.
