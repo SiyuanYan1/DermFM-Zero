@@ -48,8 +48,8 @@ DermFM-Zero is a dermatology vision–language foundation model pretrained with 
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.3347 | 0.4729 | 0.5208 | 0.6774 | 0.1414 | 0.2028 | 0.7607 | 0.4444 |
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.4551 | 0.5857 | 0.4259 | 0.8222 | 0.3260 | 0.3886 | 0.7785 | 0.5403 |
 | DermLIP-PanDerm [[5]](https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_Derm1M_A_Million-scale_Vision-Language_Dataset_Aligned_with_Clinical_Ontology_Knowledge_ICCV_2025_paper.pdf) | 0.6281 | 0.6247 | 0.5190 | 0.6799 | 0.3332 | 0.3822 | 0.7812 | 0.5640 |
-| **DermFM-Zero (paper checkpoint)** | **0.7957** | 0.6941 | 0.5979 | 0.7998 | **0.4450** | 0.5075 | **0.8848** | 0.6750 |
-| **DermFM-Zero-Open (released)** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
+| **DermFM-Zero** | **0.7957** | 0.6941 | 0.5979 | 0.7998 | **0.4450** | 0.5075 | **0.8848** | 0.6750 |
+| **DermFM-Zero-Open** | 0.7858 | **0.7592** | **0.6112** | **0.8708** | 0.4212 | **0.5196** | 0.8686 | **0.6909** |
 
 ### Linear probing (10% training data)
 
@@ -67,8 +67,8 @@ DermFM-Zero is a dermatology vision–language foundation model pretrained with 
 | MAKE [[4]](https://link.springer.com/chapter/10.1007/978-3-032-04971-1_35) | 0.8257 | 0.7813 | 0.6790 | 0.3986 | 0.6712 |
 | DINOv3-ViT-L16 [[8]](https://ai.meta.com/dinov3/) | 0.7705 | 0.8310 | 0.6573 | 0.3018 | 0.6401 |
 | DINOv3-ViT-7B [[8]](https://ai.meta.com/dinov3/) | 0.7871 | 0.8226 | 0.6985 | 0.3345 | 0.6607 |
-| **DermFM-Zero (paper checkpoint)** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
-| **DermFM-Zero-Open (released)** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
+| **DermFM-Zero** | 0.8416 | 0.8687 | 0.6855 | 0.4007 | 0.6991 |
+| **DermFM-Zero-Open** | **0.8629** | **0.9008** | **0.7527** | **0.4797** | **0.7490** |
 
 ### Zero-shot cross-modal retrieval
 
@@ -79,8 +79,8 @@ Mean recall over R@5, R@10 and R@50 on the Derm1M held-out set (n = 9,806) and S
 | CLIP-Large [[1]](https://proceedings.mlr.press/v139/radford21a) | 0.124 | 0.105 | 0.176 | 0.128 | 0.133 |
 | BiomedCLIP [[2]](https://ai.nejm.org/doi/full/10.1056/AIoa2400640) | 0.191 | 0.181 | 0.188 | 0.176 | 0.184 |
 | MONET [[3]](https://www.nature.com/articles/s41591-024-02887-x) | 0.173 | 0.161 | 0.219 | 0.205 | 0.189 |
-| **DermFM-Zero (paper checkpoint)** | **0.465** | **0.460** | 0.375 | 0.353 | **0.413** |
-| **DermFM-Zero-Open (released)** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
+| **DermFM-Zero** | **0.465** | **0.460** | 0.375 | 0.353 | **0.413** |
+| **DermFM-Zero-Open** | 0.365 | 0.367 | **0.400** | **0.382** | 0.378 |
 
 ## 📂 Repository Structure
 
