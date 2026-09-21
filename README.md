@@ -9,7 +9,7 @@
 [![Paper](https://img.shields.io/badge/arXiv-2602.10624-b31b1b.svg)](https://arxiv.org/abs/2602.10624)
 [![Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow)](https://huggingface.co/redlessone/DermFM-Zero)
 [![Report](https://img.shields.io/badge/Technical%20Report-PDF-blue.svg)](docs/DermFM-Zero-Open_Technical_Report.pdf)
-[![License](https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-CC--BY--NC%204.0-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 [🚀 Quick Start](#-quick-start) | [📊 Benchmarks](#-benchmark-results) | [🧪 Tasks](#-evaluation-tasks) | [🧠 Reader Studies](#-reader-studies) | [💬 Issues](https://github.com/SiyuanYan1/DermFM-Zero/issues)
@@ -378,7 +378,7 @@ python bootstrap_ci.py --task lp        --data-root ./examples/linear_probe --ou
 
 ## ⚖️ License and Terms of Use
 
-Model weights and code are released under [CC BY-NC-ND 4.0](LICENSE). They may be used for non-commercial academic research only, may not be redistributed or used to build derivative checkpoints for distribution, and are not a medical device: they must not be used for clinical diagnosis or patient management. Please cite the paper when using the model or code.
+Model weights and code are released under [CC BY-NC 4.0](LICENSE). They may be used for non-commercial academic research only, including fine-tuning and building derivative models, provided that any redistributed derivative credits this work and remains non-commercial. They are not a medical device: they must not be used for clinical diagnosis or patient management. Please cite the paper when using the model or code.
 
 ## 📚 Citation
 

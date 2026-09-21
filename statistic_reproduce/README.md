@@ -93,4 +93,4 @@ python bootstrap_ci.py --task lp \
 
 ## 📄 Citation
 
-If you use this code, please cite the main DermFM-Zero paper (see the top-level repository [README](../README.md#citation)). Released under CC-BY-NC-ND.
+If you use this code, please cite the main DermFM-Zero paper (see the top-level repository [README](../README.md#citation)). Released under CC BY-NC 4.0.
