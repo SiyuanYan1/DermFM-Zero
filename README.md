@@ -16,7 +16,7 @@
 
 </div>
 
-DermFM-Zero is a dermatology vision–language foundation model pretrained with masked latent modelling on over 3 million dermatological images and contrastive alignment on 1 million image–text pairs. This repository contains the released weights, the evaluation code for every task in the paper, the de-identified reader-study data, and the deduplication and statistics pipelines.
+DermFM-Zero is a dermatology vision–language foundation model pretrained with masked latent modelling on over 3 million dermatological images and Bootstrapped contrastive alignment on 1 million image–text pairs. This repository contains the released weights, the evaluation code for every task in the paper, the de-identified reader-study data, and the deduplication and statistics pipelines.
 
 ### Key Features
 
