@@ -111,7 +111,7 @@ conda activate dermfm-zero
 pip install -r requirements.txt
 ```
 
-The weights load directly from the Hub through the bundled `open_clip` fork (run from the repo root):
+The weights are hosted on the Hugging Face Hub with gated access (approval is automatic): accept the terms on the [model page](https://huggingface.co/redlessone/DermFM-Zero) and log in once with `huggingface-cli login`. They then load directly through the bundled `open_clip` fork (run from the repo root):
 
 ```python
 import sys, torch
